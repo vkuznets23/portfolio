@@ -1,18 +1,19 @@
-import { Typewriter } from 'react-simple-typewriter'
-import '../Hero.css'
+import { Typewriter as TypewriterDef } from 'react-simple-typewriter'
+import '../Typewriter.css'
 
-export default function Hero() {
+type TypewriterProps = {
+  line1: string
+  options: string[]
+}
+
+export default function Typewriter({ line1, options }: TypewriterProps) {
   return (
     <div className="hero">
       <h1 className="hero-title">
-        Hi! I'm a{' '}
+        {line1}{' '}
         <span className="hero-typewriter">
-          <Typewriter
-            words={[
-              'Software\nDeveloper',
-              'Career\nChanger',
-              'Student\nat Hive',
-            ]}
+          <TypewriterDef
+            words={options}
             loop={true}
             cursor
             cursorStyle="|"
