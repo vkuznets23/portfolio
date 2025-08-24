@@ -1,0 +1,16 @@
+.hero {
+  display: flex;
+  justify-content: flex-end;
+  color: #000;
+}
+
+.hero-title {
+  font-size: clamp(40px, 6vw, 120px);
+  text-align: left;
+  word-break: break-word;
+}
+
+.hero-typewriter {
+  display: inline;
+  white-space: pre-wrap;
+}
