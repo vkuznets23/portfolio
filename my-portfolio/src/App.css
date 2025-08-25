@@ -14,7 +14,7 @@ body {
 @font-face {
   font-family: "Formular";
   src: url("/fonts/Formular-Regular.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
@@ -22,7 +22,7 @@ body {
 @font-face {
   font-family: "Formular";
   src: url("/fonts/Formular-Medium.ttf") format("truetype");
-  font-weight: 400;
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }

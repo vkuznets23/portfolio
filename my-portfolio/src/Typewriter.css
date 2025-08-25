@@ -1,13 +1,8 @@
-/* delete */
-.main-container {
-  border: 1px solid black;
-}
-
 .hero {
-  border: 1px solid red;
-  display: flex;
+  /* border: 1px solid red; */
   font-family: "Formular";
   font-size: 120px;
+  font-weight: 500px;
   color: black;
   justify-content: flex-end;
   position: absolute;
@@ -15,6 +10,7 @@
   padding: 0px;
   padding-left: 235px;
   top: 80px;
+  line-height: 130px;
 }
 
 .line1-fixed {

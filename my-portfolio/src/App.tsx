@@ -32,10 +32,15 @@ function App() {
   if (!firstScreenData) return null
   const firstLine = firstScreenData[0].header.line1
   const options = Object.values(firstScreenData[0].header.options)
+  const description = firstScreenData[0].description
 
   return (
     <div className="main-container">
-      <FirstScreen firstLine={firstLine} options={options} />
+      <FirstScreen
+        firstLine={firstLine}
+        options={options}
+        description={description}
+      />
     </div>
   )
 }
