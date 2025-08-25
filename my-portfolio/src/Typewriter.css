@@ -1,13 +1,24 @@
-.hero {
-  width: 100%;
-  display: flex;
-  color: #000;
+/* delete */
+.main-container {
+  border: 1px solid black;
 }
 
-.hero-title {
+.hero {
+  border: 1px solid red;
+  display: flex;
+  font-family: "Formular";
   font-size: 120px;
-  text-align: left;
-  word-break: break-word;
+  color: black;
+  justify-content: flex-end;
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  padding-left: 235px;
+  top: 80px;
+}
+
+.line1-fixed {
+  position: relative;
 }
 
 .hero-typewriter {

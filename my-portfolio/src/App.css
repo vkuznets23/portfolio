@@ -1,6 +1,14 @@
 #root {
   font-family: "Formular";
-  max-width: 1280px;
+  max-width: 1180px;
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 @font-face {

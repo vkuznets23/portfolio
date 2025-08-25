@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import Typewriter from './Components/Typewriter'
+import FirstScreen from './Components/FirstScreen'
 import './App.css'
 
 interface HeaderData {
@@ -34,9 +34,9 @@ function App() {
   const options = Object.values(firstScreenData[0].header.options)
 
   return (
-    <>
-      <Typewriter line1={firstLine} options={options} />
-    </>
+    <div className="main-container">
+      <FirstScreen firstLine={firstLine} options={options} />
+    </div>
   )
 }
 
