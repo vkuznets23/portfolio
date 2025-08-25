@@ -25,6 +25,7 @@ export default function FirstScreen({
               radius={71}
             />
             <img src="/img038.jpg" alt="my_photo" className="photo"></img>
+            <span className="emoji-hand">👋</span>
           </div>
         </div>
       </div>
