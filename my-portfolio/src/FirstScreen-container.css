@@ -3,6 +3,8 @@
   padding: 0px;
   position: absolute;
   top: 360px;
+  font-family: "Formular";
+  font-weight: 300;
 }
 
 .description-flex-container {
@@ -13,14 +15,6 @@
   justify-content: space-between;
 }
 
-.photo {
-  width: 106px;
-  height: 106px;
-  border-radius: 50%;
-  object-fit: cover;
-  flex-shrink: 0;
-}
-
 .description {
   width: 860px;
   font-family: "Formular";
@@ -28,4 +22,41 @@
   font-size: 28px;
   color: black;
   text-indent: 235px;
+}
+
+.photo {
+  width: 106px;
+  height: 106px;
+  border-radius: 50%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.circle-photo-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circle-photo-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotate 12s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
