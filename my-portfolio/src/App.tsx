@@ -76,6 +76,10 @@ function App() {
       </div>
       <div className="content-wrapper">
         <Marquee text="career changer >> career changer || career changer * career changer &&" />
+        <Marquee
+          text=" projects && projects * projects >> projects && projects * projects >>"
+          style="1.95deg"
+        />
         <Projects description={description2} projects={projectsArray} />
       </div>
     </div>
