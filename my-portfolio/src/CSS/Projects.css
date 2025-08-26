@@ -113,3 +113,27 @@
 .project-wrapper.delay-3 {
   transition-delay: 0.8s;
 }
+
+.allProjectsButton {
+  cursor: pointer;
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 120px;
+  padding: 20px;
+  font-size: 22px;
+  font-family: "Formular";
+  font-weight: 300;
+  border: 1px solid #000000;
+  background-color: transparent;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+.allProjectsButton:hover {
+  background-color: #b4fb6d;
+}

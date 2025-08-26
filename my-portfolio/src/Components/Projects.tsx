@@ -89,6 +89,13 @@ export default function Projects({ projects, description }: ProjectsProps) {
           </div>
         ))}
       </div>
+      <button
+        type="button"
+        className="allProjectsButton"
+        onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
+      >
+        Check out all projects at GitHub
+      </button>
     </div>
   )
 }
