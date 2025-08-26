@@ -8,11 +8,7 @@ type ProjectProps = {
 export default function Project({ project }: ProjectProps) {
   return (
     <div>
-      <img
-        src={project.img + '.png'}
-        alt={project.header}
-        className="project-img"
-      />
+      <img src={project.img} alt={project.header} className="project-img" />
       <h2 className="projectHeader">{project.header}</h2>
       <p className="projectDescription">{project.description}</p>
       <div className="tags">
