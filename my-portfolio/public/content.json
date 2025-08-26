@@ -19,18 +19,24 @@
       "projects": {
         "project1": {
           "img": "/Camagru.png",
+          "deployUrl": "dfs",
+          "githubUrl": "dfs",
           "header": "Camagru | Instagram clone",
           "description": "Built from scratch with secure email-verified authentication, photo uploads/webcam shots, likes, comments, bookmarks, post editing, profile management, QR code sharing, user search, dark mode, and live chat. ",
           "tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
         },
         "project2": {
           "img": "/Camagru.png",
+          "deployUrl": "dfs",
+          "githubUrl": "dfs",
           "header": "ft_transendance | ping pong game",
           "description": "Co-developed a website in a 4-person team. I focused on UX/UI and frontend game loop logic, adding accessibility and mobile adaptation for bug-free play on all devices.",
           "tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Hive project"]
         },
         "project3": {
           "img": "/Camagru.png",
+          "deployUrl": "dfs",
+          "githubUrl": "dfs",
           "header": "portfolio website",
           "description": "Designed and developed the website with a focus on animations and smooth user experience. Implemented mobile responsiveness, accessibility features for visually impaired users (adjustable font sizes and screen reader support), dark mode, and multi-language support.",
           "tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]

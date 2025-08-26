@@ -7,8 +7,27 @@ type ProjectProps = {
 
 export default function Project({ project }: ProjectProps) {
   return (
-    <div>
-      <img src={project.img} alt={project.header} className="project-img" />
+    <div className="project-card">
+      <div className="project-image-wrapper">
+        <img src={project.img} alt={project.header} className="project-img" />
+        <div className="overlay">
+          <button
+            type="button"
+            className="overlayBtn"
+            onClick={() => window.open(project.deployUrl, '_blank')}
+          >
+            Deploy
+          </button>
+          <button
+            type="button"
+            className="overlayBtn"
+            onClick={() => window.open(project.githubUrl, '_blank')}
+          >
+            GitHub
+          </button>
+        </div>
+      </div>
+
       <h2 className="projectHeader">{project.header}</h2>
       <p className="projectDescription">{project.description}</p>
       <div className="tags">

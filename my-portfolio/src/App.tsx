@@ -9,6 +9,8 @@ export type Project = {
   header: string
   description: string
   tags: string[]
+  deployUrl?: string
+  githubUrl: string
 }
 
 type ProjectsSection = {

@@ -42,7 +42,49 @@
 .project-img {
   width: 100%;
   object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(81, 81, 81, 0.5);
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-image-wrapper {
+  position: relative;
   border-radius: 40px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.project-image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.overlayBtn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #b4fb6d;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.overlayBtn:hover {
+  background-color: #99e255;
 }
 
 .projectHeader {
