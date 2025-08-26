@@ -72,18 +72,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
           </div>
         </div>
       </div>
-      {/* <div className="projects">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`project-wrapper ${
-              visible ? `fade-in delay-${index}` : 'hidden'
-            }`}
-          >
-            <Project project={project} />
-          </div>
-        ))}
-      </div> */}
+
       <div className="projects">
         {projects.map((project, index) => (
           <div
