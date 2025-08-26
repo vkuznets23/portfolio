@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import FirstScreen from './Components/FirstScreen'
 import './App.css'
+import Marquee from './Components/Marquee'
 
 interface HeaderData {
   line1: string
@@ -36,11 +37,16 @@ function App() {
 
   return (
     <div className="main-container">
-      <FirstScreen
-        firstLine={firstLine}
-        options={options}
-        description={description}
-      />
+      <div className="first-wrapper">
+        <FirstScreen
+          firstLine={firstLine}
+          options={options}
+          description={description}
+        />
+      </div>
+      <div className="content-wrapper">
+        <Marquee text="career changer >> career changer || career changer * career changer &&" />
+      </div>
     </div>
   )
 }

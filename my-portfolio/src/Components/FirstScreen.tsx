@@ -1,5 +1,5 @@
 import Typewriter from './Typewriter'
-import '../FirstScreen-container.css'
+import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
 
 type FirstScreenProps = {
