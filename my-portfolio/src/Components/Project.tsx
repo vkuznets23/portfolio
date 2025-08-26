@@ -13,14 +13,14 @@ export default function Project({ project }: ProjectProps) {
         <div className="overlay">
           <button
             type="button"
-            className="overlayBtn"
+            className="overlayBtnDeploy"
             onClick={() => window.open(project.deployUrl, '_blank')}
           >
             Deploy
           </button>
           <button
             type="button"
-            className="overlayBtn"
+            className="overlayBtnGit"
             onClick={() => window.open(project.githubUrl, '_blank')}
           >
             GitHub

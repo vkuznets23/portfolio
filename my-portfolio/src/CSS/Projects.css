@@ -73,14 +73,24 @@
   opacity: 1;
 }
 
-.overlayBtn {
+.overlayBtnDeploy {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #b4fb6d;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
+  background-color: #b4fb6d;
+}
+.overlayBtnGit {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  background-color: #e06998;
 }
 
 .overlayBtn:hover {
