@@ -19,7 +19,7 @@
       "projects": {
         "project1": {
           "img": "/Camagru.png",
-          "deployUrl": "dfs",
+          "deployUrl": "ва",
           "githubUrl": "dfs",
           "header": "Camagru | Instagram clone",
           "description": "Built from scratch with secure email-verified authentication, photo uploads/webcam shots, likes, comments, bookmarks, post editing, profile management, QR code sharing, user search, dark mode, and live chat. ",

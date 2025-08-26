@@ -11,13 +11,15 @@ export default function Project({ project }: ProjectProps) {
       <div className="project-image-wrapper">
         <img src={project.img} alt={project.header} className="project-img" />
         <div className="overlay">
-          <button
-            type="button"
-            className="overlayBtnDeploy"
-            onClick={() => window.open(project.deployUrl, '_blank')}
-          >
-            Deploy
-          </button>
+          {project.deployUrl && (
+            <button
+              type="button"
+              className="overlayBtnDeploy"
+              onClick={() => window.open(project.deployUrl, '_blank')}
+            >
+              Deploy
+            </button>
+          )}
           <button
             type="button"
             className="overlayBtnGit"

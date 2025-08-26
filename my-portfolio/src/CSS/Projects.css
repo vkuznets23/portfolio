@@ -93,8 +93,11 @@
   background-color: #e06998;
 }
 
-.overlayBtn:hover {
+.overlayBtnDeploy:hover {
   background-color: #99e255;
+}
+.overlayBtnGit:hover {
+  background-color: #d85e8f;
 }
 
 .projectHeader {
