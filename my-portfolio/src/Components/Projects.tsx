@@ -20,7 +20,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
           observer.disconnect() // activates once
         }
       },
-      { threshold: 0.2 } // when 20% of the element is visible
+      { threshold: 0.5 } // when 20% of the element is visible
     )
 
     if (ref.current) {
@@ -32,7 +32,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
 
   return (
     <div className="projectsContainer">
-      <div ref={ref} className={visible ? 'slide-up' : ''}>
+      <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
         <div className="description-flex-container">
           <div className="description">{description}</div>
           <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
@@ -45,8 +45,15 @@ export default function Projects({ projects, description }: ProjectsProps) {
         </div>
       </div>
       <div className="projects">
-        {projects.map((project) => (
-          <Project project={project} />
+        {projects.map((project, index) => (
+          <div
+            key={index}
+            className={`project-wrapper ${
+              visible ? `fade-in delay-${index}` : 'hidden'
+            }`}
+          >
+            <Project project={project} />
+          </div>
         ))}
       </div>
     </div>
