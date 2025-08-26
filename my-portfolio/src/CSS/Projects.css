@@ -1,0 +1,194 @@
+.scrolldown-wrapper {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrolldown-wrapper svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: rotate 60s linear infinite;
+  transform-origin: 50% 50%;
+}
+
+.emoji-pointer {
+  position: absolute;
+  font-size: 54px;
+  opacity: 1;
+  transform: rotate(-90deg);
+}
+
+.projects {
+  display: grid;
+  font-family: "Formular";
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.projects > div:nth-child(2n) {
+  margin-top: 60px;
+}
+
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(81, 81, 81, 0.5);
+  border-radius: inherit;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.project-image-wrapper {
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  width: 100%;
+  height: auto;
+}
+
+.project-image-wrapper:hover .overlay {
+  opacity: 1;
+}
+
+.overlayBtnDeploy {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  background-color: #b4fb6d;
+}
+.overlayBtnGit {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+  background-color: #e06998;
+}
+
+.overlayBtnDeploy:hover {
+  background-color: #99e255;
+}
+.overlayBtnGit:hover {
+  background-color: #d85e8f;
+}
+
+.projectHeader {
+  font-family: "Formular";
+  font-weight: 300;
+  font-size: 36px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.projectDescription {
+  font-family: "Formular";
+  color: #656565;
+  font-size: 20px;
+  padding: 0px;
+  margin-bottom: 30px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tag.category1 {
+  background-color: #e06998;
+  color: white;
+}
+
+.tag.category2 {
+  background-color: #d9d9d9;
+}
+
+.tag.category3 {
+  background-color: #b4fb6d;
+}
+
+.project-wrapper.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-wrapper.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.project-wrapper.delay-0 {
+  transition-delay: 0.2s;
+}
+.project-wrapper.delay-1 {
+  transition-delay: 0.4s;
+}
+.project-wrapper.delay-2 {
+  transition-delay: 0.6s;
+}
+.project-wrapper.delay-3 {
+  transition-delay: 0.8s;
+}
+
+.allProjectsButton {
+  cursor: pointer;
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+  margin-top: 90px;
+  margin-bottom: 120px;
+  padding: 20px;
+  font-size: 22px;
+  font-family: "Formular";
+  font-weight: 300;
+  border: 1px solid #000000;
+  background-color: transparent;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+}
+
+.allProjectsButton:hover {
+  background-color: #b4fb6d;
+}

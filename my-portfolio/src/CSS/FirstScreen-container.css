@@ -10,8 +10,9 @@
 .description-flex-container {
   /* border: 1px solid red; */
   display: flex;
+  margin: auto;
   width: 1180px;
-  align-items: center;
+  align-items: top;
   justify-content: space-between;
 }
 
@@ -22,6 +23,7 @@
   font-size: 28px;
   color: black;
   text-indent: 235px;
+  margin-bottom: 60px;
 }
 
 .photo {
@@ -101,6 +103,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 .slide-up {

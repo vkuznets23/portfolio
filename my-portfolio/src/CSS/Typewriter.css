@@ -1,8 +1,8 @@
 .hero {
   /* border: 1px solid red; */
-  font-family: "Formular";
   font-size: 120px;
-  font-weight: 500px;
+  font-family: "Formular";
+  font-weight: 400;
   color: black;
   justify-content: flex-end;
   position: absolute;
