@@ -1,11 +1,12 @@
-import type { Project } from '../App'
+import type { Project as ProjectType } from '../App'
 import CircularText from './CircleText'
 import '../CSS/Projects.css'
 import { useEffect, useRef, useState } from 'react'
+import Project from './Project'
 
 type ProjectsProps = {
   description: string
-  projects: Project[]
+  projects: ProjectType[]
 }
 export default function Projects({ projects, description }: ProjectsProps) {
   const ref = useRef<HTMLDivElement>(null)
@@ -43,7 +44,11 @@ export default function Projects({ projects, description }: ProjectsProps) {
           </div>
         </div>
       </div>
-      {projects.map((project) => project.header)}
+      <div>
+        {projects.map((project) => (
+          <Project project={project} />
+        ))}
+      </div>
     </div>
   )
 }
