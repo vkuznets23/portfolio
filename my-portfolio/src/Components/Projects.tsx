@@ -31,7 +31,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
   }, [])
 
   return (
-    <div>
+    <div className="projectsContainer">
       <div ref={ref} className={visible ? 'slide-up' : ''}>
         <div className="description-flex-container">
           <div className="description">{description}</div>
@@ -44,7 +44,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
           </div>
         </div>
       </div>
-      <div>
+      <div className="projects">
         {projects.map((project) => (
           <Project project={project} />
         ))}

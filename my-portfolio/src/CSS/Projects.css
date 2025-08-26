@@ -23,3 +23,68 @@
   opacity: 1;
   transform: rotate(-90deg);
 }
+
+.projects {
+  display: grid;
+  font-family: "Formular";
+  max-width: 1180px;
+  width: 100%;
+  margin: auto;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.projects > div:nth-child(2n) {
+  margin-top: 60px;
+}
+
+.project-img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+
+.projectHeader {
+  font-family: "Formular";
+  font-weight: 300;
+  font-size: 36px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.projectDescription {
+  font-family: "Formular";
+  color: #656565;
+  font-size: 20px;
+  padding: 0px;
+  margin-bottom: 30px;
+}
+
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 10px 30px;
+  font-size: 20px;
+  border-radius: 30px;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.tag.category1 {
+  background-color: #e06998;
+  color: white;
+}
+
+.tag.category2 {
+  background-color: #d9d9d9;
+}
+
+.tag.category3 {
+  background-color: #b4fb6d;
+}

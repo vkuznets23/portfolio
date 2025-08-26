@@ -5,6 +5,7 @@ import Marquee from './Components/Marquee'
 import Projects from './Components/Projects'
 
 export type Project = {
+  img: string
   header: string
   description: string
   tags: string[]
