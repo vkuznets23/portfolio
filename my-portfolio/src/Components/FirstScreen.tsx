@@ -14,7 +14,7 @@ export default function FirstScreen({
   description,
 }: FirstScreenProps) {
   return (
-    <div className="firstScreen-container">
+    <div className="firstScreen-container, slide-up">
       <Typewriter line1={firstLine} options={options} />
       <div className="description-absolute-container">
         <div className="description-flex-container">

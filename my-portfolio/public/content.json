@@ -9,5 +9,29 @@
           }
         },
         "description": "I started in UX/UI, but one day decided to dive into software development. I love learning by doing, exploring new tools, and building high-quality projects. For me, code is about clarity, joy, and leaving something others can run with"
+    },
+    {
+      "header": "Experience & Skills",
+      "description": "I bring a design background and hands-on experience with React, APIs, and CI/CD pipelines. Most of my formal education is from Hive Helsinki, where I build projects and deepen my skills"
+    },
+    {
+      "description": "Most of my Hive projects are written in C and aren’t related to frontend development. Here, you’ll mainly find my pet projects, which helped me learn frontend architecture, state management, working with APIs, and building production-ready applications with CI/CD pipelines.",
+      "projects": {
+        "project1": {
+          "header": "Camagru | Instagram clone",
+          "description": "Built from scratch with secure email-verified authentication, photo uploads/webcam shots, likes, comments, bookmarks, post editing, profile management, QR code sharing, user search, dark mode, and live chat. ",
+          "Tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
+        },
+        "project2": {
+          "header": "ft_transendance | ping pong game",
+          "description": "Co-developed a website in a 4-person team. I focused on UX/UI and frontend game loop logic, adding accessibility and mobile adaptation for bug-free play on all devices.",
+          "Tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Hive project"]
+        },
+        "project3": {
+          "header": "portfolio website",
+          "description": "Designed and developed the website with a focus on animations and smooth user experience. Implemented mobile responsiveness, accessibility features for visually impaired users (adjustable font sizes and screen reader support), dark mode, and multi-language support.",
+          "Tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
+        }
+      }
     }
   ]
