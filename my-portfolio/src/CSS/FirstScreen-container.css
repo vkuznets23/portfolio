@@ -12,8 +12,9 @@
   display: flex;
   margin: auto;
   width: 1180px;
-  align-items: top;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 .description {
@@ -22,8 +23,7 @@
   font-weight: 200;
   font-size: 28px;
   color: black;
-  text-indent: 235px;
-  margin-bottom: 60px;
+  text-indent: 295px;
 }
 
 .photo {

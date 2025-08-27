@@ -192,3 +192,18 @@
 .allProjectsButton:hover {
   background-color: #b4fb6d;
 }
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1180px;
+  width: 100%;
+}
+.h2 {
+  font-family: "Formular";
+  font-size: 74px;
+  text-indent: 295px;
+  margin: 0px;
+  margin-bottom: 40px;
+}

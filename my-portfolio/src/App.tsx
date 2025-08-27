@@ -3,6 +3,8 @@ import FirstScreen from './Components/FirstScreen'
 import './App.css'
 import Marquee from './Components/Marquee'
 import Projects from './Components/Projects'
+import type { ExperienceType } from './Components/Experience'
+import Experience from './Components/Experience'
 
 export type Project = {
   img: string
@@ -21,6 +23,7 @@ type ProjectsSection = {
 type ExperienceSection = {
   header: string
   description: string
+  experience: ExperienceType[]
 }
 
 type FirstScreenHeaderOptions = {
@@ -61,9 +64,14 @@ function App() {
   const options = Object.values(content[0].header.options)
   const description = content[0].description
 
-  // second screen
+  // projects screen
   const description2 = content[2].description
   const projectsArray = Object.values(content[2].projects || {})
+
+  // experience
+  const header = content[1].header
+  const description3 = content[1].description
+  const experience = content[1].experience
 
   return (
     <div className="main-container">
@@ -76,6 +84,11 @@ function App() {
       </div>
       <div className="content-wrapper">
         <Marquee text="career changer >> career changer || career changer * career changer &&" />
+        <Experience
+          header={header}
+          description={description3}
+          experience={experience}
+        />
         <Marquee
           text=" projects && projects * projects >> projects && projects * projects >>"
           style="1.95deg"

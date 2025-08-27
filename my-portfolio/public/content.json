@@ -5,14 +5,36 @@
           "options": {
             "option1": "Software\nDeveloper",
             "option2": "Career\nChanger",
-            "option3": "Student\nat Hive Helsinki"
+            "option3": "Student\nat Hive"
           }
         },
-        "description": "I started in UX/UI, but one day decided to dive into software development. I love learning by doing, exploring new tools, and building high-quality projects. For me, code is about clarity, joy, and leaving something others can run with"
+        "description": "I started in UX/UI, but one day decided to dive into software development. I love learning by doing, exploring new tools, and building high-quality projects. For me, code is about clarity, joy, and creating something others can build upon"
     },
     {
-      "header": "Experience & Skills",
-      "description": "I bring a design background and hands-on experience with React, APIs, and CI/CD pipelines. Most of my formal education is from Hive Helsinki, where I build projects and deepen my skills"
+      "header": "Bio & Experience",
+      "description": "I didn’t grow up as a computer geek and never imagined I’d work in tech. My background combines Journalism and Design, and later I transitioned into software development through Hive Helsinki  — a peer-to-peer project-based school, where ownership, curiosity, and collaboration drive progress.  My strongest expertise is in TypeScript and React.",
+      "experience": [
+        {
+          "date": "Sep 2018 - Jun 2021",
+          "name": "Bachelor’s in Journalism 🇷🇺",
+          "description": ""
+        },
+        {
+          "date": "Nov 2021 - Jun 2022",
+          "name": "UX/UI designer at Func. 🇷🇺",
+          "description": "Built apps and websites in an Agile-like environment using no-code tools. Applied custom CSS and JavaScript to enhance functionality and design. Managed database setup. Handled app store publishing and deployment"
+        },
+        {
+          "date": "Apr 2024 - present",
+          "name": "Hive Helsinki 🇫🇮",
+          "description": ""
+        },
+        {
+          "date": "Nov 2024 - present",
+          "name": "Full Stack Open by University of Helsinki 🇫🇮",
+          "description": ""
+        }
+      ]
     },
     {
       "description": "Most of my Hive projects are written in C and aren’t related to frontend development. Here, you’ll mainly find my pet projects, which helped me learn frontend architecture, state management, working with APIs, and building production-ready applications with CI/CD pipelines.",
