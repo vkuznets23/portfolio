@@ -230,10 +230,36 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-bottom: 120px;
 }
 
 .toggle {
+  position: relative;
   border: 1px solid #000000;
   border-radius: 30px;
   padding: 30px 45px;
+  overflow: hidden;
+}
+
+.toggle.active::before {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  right: -130px;
+  width: 420px;
+  height: 440px;
+  background: radial-gradient(circle, #b4fb6d 0%, rgba(180, 251, 109, 0) 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.toggle * {
+  position: relative;
+  z-index: 1;
+}
+
+.experienceDesc {
+  font-size: 24px;
+  padding-right: 70px;
 }

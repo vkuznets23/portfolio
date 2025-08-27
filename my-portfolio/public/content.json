@@ -16,23 +16,23 @@
       "experience": [
         {
           "date": "Sep 2018 - Jun 2021",
-          "name": "Bachelor’s in Journalism 🇷🇺",
-          "description": ""
+          "name": "Bachelor’s in Journalism",
+          "description": "Developed strong research and analytical skills, able to gather, verify, and synthesize complex information. Skilled in storytelling and audience-focused communication, adapting style for different platforms and media.Gained understanding of media ethics, information verification, and critical thinking"
         },
         {
           "date": "Nov 2021 - Jun 2022",
-          "name": "UX/UI designer at Func. 🇷🇺",
+          "name": "UX/UI designer at Func.",
           "description": "Built apps and websites in an Agile-like environment using no-code tools. Applied custom CSS and JavaScript to enhance functionality and design. Managed database setup. Handled app store publishing and deployment"
         },
         {
           "date": "Apr 2024 - present",
           "name": "Hive Helsinki 🇫🇮",
-          "description": ""
+          "description": "Developed solo and group projects in C, programmed from scratch or using minimal libraries. Gained foundational knowledge in C++ basics. Completed a web development project, applying front-end and back-end concepts. Participated in a mentorship program, collaborating with a mentor to build Camagru, deepening understanding of front-end development, API integration, state management, and building production-ready projects"
         },
         {
           "date": "Nov 2024 - present",
           "name": "Full Stack Open by University of Helsinki 🇫🇮",
-          "description": ""
+          "description": "Completed comprehensive full-stack web development training focusing on modern JavaScript, React, Redux, Node.js, and Express. Gained hands-on experience with REST APIs, GraphQL, and database integration (MongoDB, PostgreSQL). Learned state management, component architecture, and hooks in React. Practiced testing, CI/CD pipelines, and deployment of production-ready applications.Explored TypeScript, async programming, and best practices for scalable web apps"
         }
       ]
     },

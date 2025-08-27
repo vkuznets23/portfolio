@@ -7,8 +7,14 @@ export default function ExperienceObj({
   description,
 }: ExperienceType) {
   const [toggle, setToggle] = useState(false)
+
+  const bulletPoints = description
+    .split('.')
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0)
+
   return (
-    <div className="toggle">
+    <div className={toggle ? 'toggle active' : 'toggle'}>
       <div className="toggleVisibleRow">
         <div>
           <span className="date">{date}</span>
@@ -16,7 +22,13 @@ export default function ExperienceObj({
         </div>
         <button onClick={() => setToggle(!toggle)}> Click</button>
       </div>
-      {toggle && <p>{description}</p>}
+      {toggle && (
+        <ul className="experienceDesc">
+          {bulletPoints.map((point, i) => (
+            <li key={i}>{point}.</li>
+          ))}
+        </ul>
+      )}
     </div>
   )
 }
