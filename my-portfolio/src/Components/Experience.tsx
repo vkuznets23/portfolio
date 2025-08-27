@@ -1,4 +1,5 @@
 import CircularText from './CircleText'
+import ExperienceObj from './ExperienceObj'
 
 export type ExperienceType = {
   date: string
@@ -29,13 +30,11 @@ export default function Experience({
           <span className="emoji-pointer">👈</span>
         </div>
       </div>
-      {experience.map((obj) => (
-        <div>
-          <span> {obj.date}</span>
-          <h4>{obj.name}</h4>
-          <p>{obj.description}</p>
-        </div>
-      ))}
+      <div className="toggleAll">
+        {experience.map((obj, i) => (
+          <ExperienceObj key={i} {...obj} />
+        ))}
+      </div>
     </div>
   )
 }
