@@ -263,3 +263,51 @@
   font-size: 24px;
   padding-right: 70px;
 }
+
+.closeButton {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.toggleButton {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggleButton::before,
+.toggleButton::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 3px; /* толщина палочек */
+  background-color: #000;
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.toggleButton::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.toggleButton::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.toggleButton.active::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.toggleButton.active::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
