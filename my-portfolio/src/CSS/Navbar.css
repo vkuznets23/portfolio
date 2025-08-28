@@ -1,0 +1,47 @@
+.navbar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+  padding-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.navbar-container.default {
+  opacity: 0;
+}
+
+.navbar-container.scrolled {
+  background: rgba(255, 255, 255, 0.592);
+  backdrop-filter: blur(12px);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 30px;
+}
+
+.Links {
+  display: flex;
+  gap: 40px;
+  flex: 1;
+  justify-content: center;
+}
+
+.Links a {
+  all: unset;
+  cursor: pointer;
+  font-size: 24px;
+  color: inherit;
+}
+
+.navbar button {
+  margin-left: 20px;
+}

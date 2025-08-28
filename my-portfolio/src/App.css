@@ -29,6 +29,14 @@ body {
   flex-direction: column;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
 @font-face {
   font-family: "Formular";
   src: url("/fonts/Formular-Regular.ttf") format("truetype");

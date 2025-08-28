@@ -5,6 +5,8 @@ import Marquee from './Components/Marquee'
 import Projects from './Components/Projects'
 import type { ExperienceType } from './Components/Experience'
 import Experience from './Components/Experience'
+import Footer from './Components/Footer'
+import Navbar from './Components/Navbar'
 
 export type Project = {
   img: string
@@ -75,6 +77,7 @@ function App() {
 
   return (
     <div className="main-container">
+      <Navbar />
       <div className="first-wrapper">
         <FirstScreen
           firstLine={firstLine}
@@ -84,16 +87,23 @@ function App() {
       </div>
       <div className="content-wrapper">
         <Marquee text="career changer >> career changer || career changer * career changer &&" />
-        <Experience
-          header={header}
-          description={description3}
-          experience={experience}
-        />
+        <section id="Resume">
+          <Experience
+            header={header}
+            description={description3}
+            experience={experience}
+          />
+        </section>
         <Marquee
           text=" projects && projects * projects >> projects && projects * projects >>"
           style="1.95deg"
         />
-        <Projects description={description2} projects={projectsArray} />
+        <section id="Projects">
+          <Projects description={description2} projects={projectsArray} />
+        </section>
+        <section id="Contacts">
+          <Footer />
+        </section>
       </div>
     </div>
   )
