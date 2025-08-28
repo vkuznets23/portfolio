@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import CircularText from './CircleText'
 import ExperienceObj from './ExperienceObj'
+import { useGlobal } from '../context/useGlobal'
 
 export type ExperienceType = {
   date: string
@@ -18,6 +19,8 @@ export default function Experience({
   description,
   experience,
 }: ExperienceProps) {
+  const { language } = useGlobal()
+
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -45,7 +48,11 @@ export default function Experience({
           <div className="description">{description}</div>
           <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
             <CircularText
-              text="click * click * click * click * click * click *"
+              text={
+                language == 'en'
+                  ? 'click * click * click ** click * click * click **'
+                  : 'клик ** клик ** клик ** клик ** клик ***'
+              }
               radius={62}
             />
             <span className="emoji-pointer">👈</span>

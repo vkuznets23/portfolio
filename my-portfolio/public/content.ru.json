@@ -45,7 +45,7 @@
         "githubUrl": "dfs",
         "header": "Camagru | Клон Instagram",
         "description": "Создан с нуля с безопасной проверкой email, загрузкой фото/снимков с вебкамеры, лайками, комментариями, закладками, редактированием постов, управлением профилем, обменом QR-кодами, поиском пользователей, тёмной темой и чатом в реальном времени.",
-        "tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Личный проект"]
+        "tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
       },
       "project2": {
         "img": "/Camagru.png",
@@ -53,7 +53,7 @@
         "githubUrl": "dfs",
         "header": "ft_transendance | игра в пинг-понг",
         "description": "Совместная разработка сайта в команде из 4 человек. Я сосредоточился на UX/UI и фронтенд-логике игрового цикла, добавил доступность и мобильную адаптацию для бесперебойной игры на всех устройствах.",
-        "tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Проект Hive"]
+        "tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Hive project"]
       },
       "project3": {
         "img": "/Camagru.png",
@@ -61,7 +61,7 @@
         "githubUrl": "dfs",
         "header": "Портфолио-сайт",
         "description": "Разработан с упором на анимации и плавный пользовательский опыт. Реализована мобильная адаптивность, функции доступности для людей с нарушениями зрения (регулировка размера шрифта и поддержка экранного читалки), тёмная тема и поддержка нескольких языков.",
-        "tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Личный проект"]
+        "tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
       }
     }
   }

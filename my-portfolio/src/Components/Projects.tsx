@@ -3,12 +3,15 @@ import CircularText from './CircleText'
 import '../CSS/Projects.css'
 import { useEffect, useRef, useState } from 'react'
 import Project from './Project'
+import { useGlobal } from '../context/useGlobal'
 
 type ProjectsProps = {
   description: string
   projects: ProjectType[]
 }
 export default function Projects({ projects, description }: ProjectsProps) {
+  const { language } = useGlobal()
+
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
@@ -65,7 +68,11 @@ export default function Projects({ projects, description }: ProjectsProps) {
           <div className="description">{description}</div>
           <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
             <CircularText
-              text="scroll down > scroll down > scroll down >"
+              text={
+                language === 'en'
+                  ? 'scroll down > scroll down > scroll down >'
+                  : 'ещё вниз >> ещё вниз >> ещё вниз >>'
+              }
               radius={62}
             />
             <span className="emoji-pointer">👈</span>
@@ -94,7 +101,9 @@ export default function Projects({ projects, description }: ProjectsProps) {
         className="allProjectsButton"
         onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
       >
-        Check out all projects at GitHub
+        {language === 'en'
+          ? 'Check out all projects at GitHub'
+          : 'Посмотри все проекты на GitHub'}
       </button>
     </div>
   )
