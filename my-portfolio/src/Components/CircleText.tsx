@@ -24,7 +24,7 @@ export default function CircularText({
         />
       </defs>
 
-      <text fontSize={fontSize} fill="black" textAnchor="middle">
+      <text fontSize={fontSize} fill="var(--text-color)" textAnchor="middle">
         <textPath href={`#${circleId}`} startOffset="50%">
           {text}
         </textPath>

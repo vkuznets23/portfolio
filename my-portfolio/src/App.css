@@ -2,8 +2,9 @@
   font-weight: 300;
   font-family: "Formular";
   --bg-color: #ffffff;
-  --accent-color: #656565;
+  --bg-nav-color: rgba(255, 255, 255, 0.592);
   --text-color: #000000;
+  --accent-color: #656565;
 }
 
 body {
@@ -18,6 +19,7 @@ body {
 body.dark {
   --bg-color: #212121;
   --text-color: #ffffff;
+  --bg-nav-color: rgba(30, 30, 30, 0.592);
 }
 
 .main-container {

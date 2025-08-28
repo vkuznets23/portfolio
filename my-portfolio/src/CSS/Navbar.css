@@ -13,7 +13,7 @@
 }
 
 .navbar-container.scrolled {
-  background: rgba(255, 255, 255, 0.592);
+  background: var(--bg-nav-color);
   backdrop-filter: blur(12px);
 }
 
@@ -44,11 +44,15 @@
 
 .nav-buttons {
   display: flex;
+  align-items: center;
+  margin: 0px;
+  padding: 0px;
   gap: 30px;
 }
 
 .nav-buttons button {
   background-color: transparent;
+  color: var(--text-color);
   cursor: pointer;
   border: none;
   margin: 0px;

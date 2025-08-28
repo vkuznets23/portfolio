@@ -42,8 +42,9 @@ export default function Navbar() {
             </button>
             <button
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+              style={{ marginTop: '5px' }}
             >
-              {theme === 'dark' ? <IoMdMoon /> : <IoSunnyOutline />}
+              {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
             </button>
           </div>
         </div>
@@ -62,6 +63,7 @@ export default function Navbar() {
           </button>
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            style={{ marginTop: '5px' }}
           >
             {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
           </button>

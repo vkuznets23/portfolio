@@ -182,7 +182,8 @@
   font-size: 22px;
   font-family: "Formular";
   font-weight: 300;
-  border: 1px solid #000000;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   background-color: transparent;
   border-radius: 40px;
   display: flex;
@@ -193,6 +194,8 @@
 
 .allProjectsButton:hover {
   background-color: #b4fb6d;
+  border: 1px solid black;
+  color: black;
 }
 
 .experience-container {
