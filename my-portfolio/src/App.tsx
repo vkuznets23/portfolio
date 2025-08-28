@@ -45,12 +45,13 @@ type FirstScreenSection = {
 type ContentType = [FirstScreenSection, ExperienceSection, ProjectsSection]
 
 function App() {
+  const [language, setLanguage] = useState<'en' | 'ru'>('en')
   const [content, setContent] = useState<ContentType | null>(null)
 
   useEffect(() => {
     async function fetchData() {
       try {
-        const res = await fetch('/content.json')
+        const res = await fetch(`/content.${language}.json`)
         const data = await res.json()
         setContent(data)
       } catch (err) {
@@ -58,7 +59,7 @@ function App() {
       }
     }
     fetchData()
-  }, [])
+  }, [language])
 
   if (!content) return null
   // first screen content
@@ -77,7 +78,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <Navbar />
+      <Navbar language={language} setLanguage={setLanguage} />
       <div className="first-wrapper">
         <FirstScreen
           firstLine={firstLine}

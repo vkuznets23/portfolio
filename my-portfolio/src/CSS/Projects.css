@@ -242,6 +242,10 @@
   overflow: hidden;
 }
 
+.toggle.active {
+  transform: scale(1.01);
+}
+
 .toggle.active::before {
   content: "";
   position: absolute;
@@ -302,4 +306,11 @@
 
 .toggleButton.active::after {
   transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.toggleCard {
+  transition: all 0.3s ease-in-out;
+}
+.toggleCard:hover {
+  transform: scale(1.01);
 }

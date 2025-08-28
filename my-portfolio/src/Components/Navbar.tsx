@@ -2,7 +2,12 @@ import { useEffect, useState } from 'react'
 import '../CSS/Navbar.css'
 import { IoMdMoon } from 'react-icons/io'
 
-export default function Navbar() {
+type NavbarProps = {
+  language: 'en' | 'ru'
+  setLanguage: React.Dispatch<React.SetStateAction<'en' | 'ru'>>
+}
+
+export default function Navbar({ language, setLanguage }: NavbarProps) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -23,13 +28,19 @@ export default function Navbar() {
         <div className="navbar">
           <div>LOGO</div>
           <div className="Links">
-            <a href="#Resume">Resume</a>
-            <a href="#Projects">Projects</a>
-            <a href="#About">About me</a>
-            <a href="#Contacts">Contacts</a>
+            <a href="#Resume">{language === 'en' ? 'Resume' : 'Резюме'}</a>
+            <a href="#Projects">{language === 'en' ? 'Projects' : 'Проекты'}</a>
+            <a href="#About">{language === 'en' ? 'About me' : 'Обо мне'}</a>
+            <a href="#Contacts">
+              {language === 'en' ? 'Contacts' : 'Контакты'}
+            </a>
           </div>
           <div className="nav-buttons">
-            <button>eng</button>
+            {language === 'en' ? (
+              <button onClick={() => setLanguage('ru')}>rus</button>
+            ) : (
+              <button onClick={() => setLanguage('en')}>eng</button>
+            )}
             <button>
               <IoMdMoon />
             </button>
@@ -39,13 +50,17 @@ export default function Navbar() {
       <div className="navbar">
         <div>LOGO</div>
         <div className="Links">
-          <a href="#Resume">Resume</a>
-          <a href="#Projects">Projects</a>
-          <a href="#About">About me</a>
-          <a href="#Contacts">Contacts</a>
+          <a href="#Resume">{language === 'en' ? 'Resume' : 'Резюме'}</a>
+          <a href="#Projects">{language === 'en' ? 'Projects' : 'Проекты'}</a>
+          <a href="#About">{language === 'en' ? 'About me' : 'Обо мне'}</a>
+          <a href="#Contacts">{language === 'en' ? 'Contacts' : 'Контакты'}</a>
         </div>
         <div className="nav-buttons">
-          <button>eng</button>
+          {language === 'en' ? (
+            <button onClick={() => setLanguage('ru')}>rus</button>
+          ) : (
+            <button onClick={() => setLanguage('en')}>eng</button>
+          )}
           <button>
             <IoMdMoon />
           </button>
