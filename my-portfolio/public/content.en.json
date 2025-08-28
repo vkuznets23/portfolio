@@ -32,7 +32,7 @@
         {
           "date": "Nov 2024 - present",
           "name": "Full Stack Open by University of Helsinki 🇫🇮",
-          "description": "Completed comprehensive full-stack web development training focusing on modern JavaScript, React, Redux, Node.js, and Express. Gained hands-on experience with REST APIs, GraphQL, and database integration (MongoDB, PostgreSQL). Learned state management, component architecture, and hooks in React. Practiced testing, CI/CD pipelines, and deployment of production-ready applications.Explored TypeScript, async programming, and best practices for scalable web apps"
+          "description": "Completed comprehensive full-stack web development training focusing on modern JavaScript, React, Redux, NodeJS, and Express. Gained hands-on experience with REST APIs, GraphQL, and database integration (MongoDB, PostgreSQL). Learned state management, component architecture, and hooks in React. Practiced testing, CI/CD pipelines, and deployment of production-ready applications.Explored TypeScript, async programming, and best practices for scalable web apps"
         }
       ]
     },
@@ -66,7 +66,7 @@
       }
     },
     {
-      "header": "Who am I beyond coding and studying?",
+      "header": "Who am I beyond coding\nand studying?",
       "description":"It’s a bit hard for me to introduce myself in just a few words, so I’ll share a few fun facts about me instead",
       "facts": [
         {

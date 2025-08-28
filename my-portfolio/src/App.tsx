@@ -8,6 +8,8 @@ import Experience from './Components/Experience'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import { useGlobal } from './context/useGlobal'
+import AboutMe from './Components/AboutMe'
+import { typografText, useTypograf } from './context/useTypograph'
 
 export type Project = {
   img: string
@@ -43,7 +45,18 @@ type FirstScreenSection = {
   description: string
 }
 
-type ContentType = [FirstScreenSection, ExperienceSection, ProjectsSection]
+type AboutMeSection = {
+  header: string
+  description: string
+  facts: string[]
+}
+
+type ContentType = [
+  FirstScreenSection,
+  ExperienceSection,
+  ProjectsSection,
+  AboutMeSection
+]
 
 export default function App() {
   const { language, theme } = useGlobal()
@@ -67,20 +80,24 @@ export default function App() {
     document.body.classList.add(theme)
   }, [theme])
 
-  if (!content) return null
-  // first screen content
-  const firstLine = content[0].header.line1
-  const options = Object.values(content[0].header.options)
-  const description = content[0].description
+  const firstLine = useTypograf(content?.[0]?.header?.line1 || '', language)
+  const options = Object.values(content?.[0]?.header?.options || {})
+  const description = useTypograf(content?.[0]?.description || '', language)
 
-  // projects screen
-  const description2 = content[2].description
-  const projectsArray = Object.values(content[2].projects || {})
+  const header = useTypograf(content?.[1]?.header || '', language)
+  const description3 = useTypograf(content?.[1]?.description || '', language)
+  // const experience = content?.[1]?.experience || []
+  const experience = (content?.[1]?.experience || []).map((item) => ({
+    ...item,
+    name: typografText(item.name, language),
+    description: typografText(item.description, language),
+  }))
 
-  // experience
-  const header = content[1].header
-  const description3 = content[1].description
-  const experience = content[1].experience
+  const description2 = useTypograf(content?.[2]?.description || '', language)
+  const projectsArray = Object.values(content?.[2]?.projects || {})
+
+  const headerAbout = useTypograf(content?.[3]?.header || '', language)
+  const description4 = useTypograf(content?.[3]?.description || '', language)
 
   return (
     <div className="main-container">
@@ -93,7 +110,13 @@ export default function App() {
         />
       </div>
       <div className="content-wrapper">
-        <Marquee text="career changer >> career changer || career changer * career changer &&" />
+        <Marquee
+          text={
+            language === 'en'
+              ? ' && about me >> about me || about me * about me '
+              : ' * обо мне >> обо мне || обо мне * обо мне && обо мне >> обо мне '
+          }
+        />
         <section id="Resume">
           <Experience
             header={header}
@@ -102,11 +125,18 @@ export default function App() {
           />
         </section>
         <Marquee
-          text=" projects && projects * projects >> projects && projects * projects >>"
+          text={
+            language === 'en'
+              ? ' projects && projects * projects >> projects && projects * projects >>'
+              : ' проекты && проекты * проекты >> проекты && проекты * проекты >>'
+          }
           style="1.95deg"
         />
         <section id="Projects">
           <Projects description={description2} projects={projectsArray} />
+        </section>
+        <section id="About">
+          <AboutMe header={headerAbout} description={description4} />
         </section>
         <section id="Contacts">
           <Footer />
