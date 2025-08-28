@@ -26,7 +26,7 @@
 
 .projects {
   display: grid;
-  font-family: "Formular";
+  font-family: "Montserrat";
   max-width: 1180px;
   width: 100%;
   margin: auto;
@@ -101,7 +101,7 @@
 }
 
 .projectHeader {
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
   font-size: 36px;
   padding: 0px;
@@ -110,7 +110,7 @@
 }
 
 .projectDescription {
-  font-family: "Formular";
+  font-family: "Montserrat";
   color: #656565;
   font-size: 20px;
   padding: 0px;
@@ -180,7 +180,7 @@
   margin-bottom: 120px;
   padding: 20px;
   font-size: 22px;
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
   border: 1px solid var(--text-color);
   color: var(--text-color);
@@ -206,7 +206,7 @@
   width: 100%;
 }
 .h2 {
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-size: 74px;
   padding-left: 295px;
   margin: 0px;
@@ -220,7 +220,7 @@
 }
 
 .h4 {
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-size: 28px;
   margin: 0px;
   margin-top: 10px;

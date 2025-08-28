@@ -53,3 +53,13 @@ export function useExperienceTypograf(
     [experience, lang]
   )
 }
+
+export function useFactsTypograf(
+  facts: string[] | undefined,
+  lang: 'ru' | 'en'
+) {
+  return useMemo(() => {
+    if (!facts) return []
+    return facts.map((text) => typografCombined(text, lang))
+  }, [facts, lang])
+}

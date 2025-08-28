@@ -11,6 +11,7 @@ import { useGlobal } from './context/useGlobal'
 import AboutMe from './Components/AboutMe'
 import {
   useExperienceTypograf,
+  useFactsTypograf,
   useTypografCombined,
 } from './context/useTypograph'
 
@@ -51,7 +52,7 @@ type FirstScreenSection = {
 type AboutMeSection = {
   header: string
   description: string
-  facts: string[]
+  facts: { fact: string }[]
 }
 
 type ContentType = [
@@ -116,6 +117,11 @@ export default function App() {
     language
   )
 
+  const facts = useFactsTypograf(
+    (content?.[3]?.facts || []).map((f) => f.fact),
+    language
+  )
+
   return (
     <div className="main-container">
       <Navbar />
@@ -153,7 +159,11 @@ export default function App() {
           <Projects description={description2} projects={projectsArray} />
         </section>
         <section id="About">
-          <AboutMe header={headerAbout} description={description4} />
+          <AboutMe
+            header={headerAbout}
+            description={description4}
+            facts={facts}
+          />
         </section>
         <section id="Contacts">
           <Footer />

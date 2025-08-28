@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react'
 type AboutMeProps = {
   description: string
   header: string
+  facts: string[]
 }
-export default function AboutMe({ description, header }: AboutMeProps) {
+export default function AboutMe({ description, header, facts }: AboutMeProps) {
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
   useEffect(() => {
@@ -32,6 +33,9 @@ export default function AboutMe({ description, header }: AboutMeProps) {
           <div className="description">{description}</div>
         </div>
       </div>
+      {facts.map((fact, i) => (
+        <p key={i}>{fact}</p>
+      ))}
     </div>
   )
 }

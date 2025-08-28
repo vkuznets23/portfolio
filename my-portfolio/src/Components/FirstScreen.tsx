@@ -18,7 +18,9 @@ export default function FirstScreen({
 
   return (
     <div className="firstScreen-container, slide-up">
-      <Typewriter line1={firstLine} options={options} />
+      {options && options.length > 0 && (
+        <Typewriter line1={firstLine} options={options} />
+      )}
       <div className="description-absolute-container">
         <div className="description-flex-container">
           <p className="description">{description}</p>
@@ -26,8 +28,8 @@ export default function FirstScreen({
             <CircularText
               text={
                 language === 'en'
-                  ? 'Hi! My name is Viktoriia Hi! My name is Viktoriia '
-                  : 'Привет! Меня зовут Вика Привет! Меня зовут Вика '
+                  ? 'Hello! My name is Viktoriia! But call me Vika.'
+                  : 'Хэй! Меня зовут Виктория, но лучше Вика.'
               }
               radius={71}
             />
