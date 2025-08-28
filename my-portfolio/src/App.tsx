@@ -9,7 +9,10 @@ import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
 import { useGlobal } from './context/useGlobal'
 import AboutMe from './Components/AboutMe'
-import { typografText, useTypograf } from './context/useTypograph'
+import {
+  useExperienceTypograf,
+  useTypografCombined,
+} from './context/useTypograph'
 
 export type Project = {
   img: string
@@ -80,24 +83,38 @@ export default function App() {
     document.body.classList.add(theme)
   }, [theme])
 
-  const firstLine = useTypograf(content?.[0]?.header?.line1 || '', language)
+  const firstLine = useTypografCombined(
+    content?.[0]?.header?.line1 || '',
+    language
+  )
   const options = Object.values(content?.[0]?.header?.options || {})
-  const description = useTypograf(content?.[0]?.description || '', language)
+  const description = useTypografCombined(
+    content?.[0]?.description || '',
+    language
+  )
 
-  const header = useTypograf(content?.[1]?.header || '', language)
-  const description3 = useTypograf(content?.[1]?.description || '', language)
-  // const experience = content?.[1]?.experience || []
-  const experience = (content?.[1]?.experience || []).map((item) => ({
-    ...item,
-    name: typografText(item.name, language),
-    description: typografText(item.description, language),
-  }))
+  const header = useTypografCombined(content?.[1]?.header || '', language)
+  const description3 = useTypografCombined(
+    content?.[1]?.description || '',
+    language
+  )
 
-  const description2 = useTypograf(content?.[2]?.description || '', language)
+  const experience = useExperienceTypograf(
+    content?.[1]?.experience || [],
+    language
+  )
+
+  const description2 = useTypografCombined(
+    content?.[2]?.description || '',
+    language
+  )
   const projectsArray = Object.values(content?.[2]?.projects || {})
 
-  const headerAbout = useTypograf(content?.[3]?.header || '', language)
-  const description4 = useTypograf(content?.[3]?.description || '', language)
+  const headerAbout = useTypografCombined(content?.[3]?.header || '', language)
+  const description4 = useTypografCombined(
+    content?.[3]?.description || '',
+    language
+  )
 
   return (
     <div className="main-container">
