@@ -3,11 +3,11 @@
   font-family: "Formular";
   font-weight: 300;
   font-size: 24px;
+  color: black;
   background-color: #b4fb6d;
   width: 100vw;
   overflow: hidden;
   white-space: nowrap;
-  /* rotate: -1.95deg; */
   margin-bottom: 105px;
 }
 

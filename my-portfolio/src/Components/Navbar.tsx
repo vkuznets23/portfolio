@@ -63,7 +63,7 @@ export default function Navbar() {
           <button
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           >
-            {theme === 'dark' ? <IoMdMoon /> : <IoSunnyOutline />}
+            {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
           </button>
         </div>
       </div>

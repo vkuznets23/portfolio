@@ -1,9 +1,7 @@
 .hero {
-  /* border: 1px solid red; */
   font-size: 120px;
   font-family: "Formular";
   font-weight: 400;
-  color: black;
   justify-content: flex-end;
   position: absolute;
   margin: 0px;

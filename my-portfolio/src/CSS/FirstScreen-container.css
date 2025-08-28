@@ -8,7 +8,6 @@
 }
 
 .description-flex-container {
-  /* border: 1px solid red; */
   display: flex;
   margin: auto;
   width: 1180px;
@@ -22,7 +21,6 @@
   font-family: "Formular";
   font-weight: 200;
   font-size: 28px;
-  color: black;
   text-indent: 295px;
 }
 

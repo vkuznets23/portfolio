@@ -1,7 +1,9 @@
-#root {
-  font-family: "Formular";
+:root {
   font-weight: 300;
-  width: 100%;
+  font-family: "Formular";
+  --bg-color: #ffffff;
+  --accent-color: #656565;
+  --text-color: #000000;
 }
 
 body {
@@ -9,6 +11,13 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark {
+  --bg-color: #212121;
+  --text-color: #ffffff;
 }
 
 .main-container {

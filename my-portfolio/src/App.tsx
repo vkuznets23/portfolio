@@ -46,7 +46,7 @@ type FirstScreenSection = {
 type ContentType = [FirstScreenSection, ExperienceSection, ProjectsSection]
 
 export default function App() {
-  const { language } = useGlobal()
+  const { language, theme } = useGlobal()
   const [content, setContent] = useState<ContentType | null>(null)
 
   useEffect(() => {
@@ -61,6 +61,11 @@ export default function App() {
     }
     fetchData()
   }, [language])
+
+  useEffect(() => {
+    document.body.classList.remove('light', 'dark')
+    document.body.classList.add(theme)
+  }, [theme])
 
   if (!content) return null
   // first screen content
