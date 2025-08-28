@@ -1,25 +1,26 @@
 .marquee {
   position: relative;
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
   font-size: 24px;
+  color: black;
   background-color: #b4fb6d;
   width: 100vw;
   overflow: hidden;
   white-space: nowrap;
-  /* rotate: -1.95deg; */
   margin-bottom: 105px;
 }
 
 .marquee-content {
-  display: inline-block;
+  display: inline-flex;
   padding-top: 8px;
   padding-bottom: 8px;
-  animation: marquee 20s linear infinite;
+  animation: marquee 40s linear infinite;
 }
 
 .marquee-content span {
   display: inline-block;
+  padding: 0.2rem;
 }
 
 @keyframes marquee {

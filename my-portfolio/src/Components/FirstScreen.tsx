@@ -1,6 +1,7 @@
 import Typewriter from './Typewriter'
 import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
+import { useGlobal } from '../context/useGlobal'
 
 type FirstScreenProps = {
   firstLine: string
@@ -13,15 +14,23 @@ export default function FirstScreen({
   options,
   description,
 }: FirstScreenProps) {
+  const { language } = useGlobal()
+
   return (
     <div className="firstScreen-container, slide-up">
-      <Typewriter line1={firstLine} options={options} />
+      {options && options.length > 0 && (
+        <Typewriter line1={firstLine} options={options} />
+      )}
       <div className="description-absolute-container">
         <div className="description-flex-container">
           <p className="description">{description}</p>
           <div className="circle-photo-wrapper">
             <CircularText
-              text="Hi! My name is Viktoriia Hi! My name is Viktoriia "
+              text={
+                language === 'en'
+                  ? 'Hello! My name is Viktoriia! But call me Vika.'
+                  : 'Хэй! Меня зовут Виктория, но лучше Вика.'
+              }
               radius={71}
             />
             <img src="/img038.jpg" alt="my_photo" className="photo"></img>

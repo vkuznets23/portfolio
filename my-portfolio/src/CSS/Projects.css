@@ -26,18 +26,18 @@
 
 .projects {
   display: grid;
-  font-family: "Formular";
+  font-family: "Montserrat";
   max-width: 1180px;
   width: 100%;
   margin: auto;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
-  row-gap: 20px;
+  row-gap: 60px;
 }
 
-.projects > div:nth-child(2n) {
+/* .projects > div:nth-child(2n) {
   margin-top: 60px;
-}
+} */
 
 .project-img {
   width: 100%;
@@ -49,7 +49,7 @@
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(81, 81, 81, 0.5);
+  background: rgba(30, 30, 30, 0.592);
   border-radius: inherit;
   display: flex;
   justify-content: center;
@@ -101,7 +101,7 @@
 }
 
 .projectHeader {
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
   font-size: 36px;
   padding: 0px;
@@ -110,11 +110,11 @@
 }
 
 .projectDescription {
-  font-family: "Formular";
+  font-family: "Montserrat";
   color: #656565;
   font-size: 20px;
   padding: 0px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .tags {
@@ -138,10 +138,12 @@
 
 .tag.category2 {
   background-color: #d9d9d9;
+  color: black;
 }
 
 .tag.category3 {
   background-color: #b4fb6d;
+  color: black;
 }
 
 .project-wrapper.hidden {
@@ -178,9 +180,10 @@
   margin-bottom: 120px;
   padding: 20px;
   font-size: 22px;
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
-  border: 1px solid #000000;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
   background-color: transparent;
   border-radius: 40px;
   display: flex;
@@ -191,4 +194,128 @@
 
 .allProjectsButton:hover {
   background-color: #b4fb6d;
+  border: 1px solid black;
+  color: black;
+}
+
+.experience-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  max-width: 1180px;
+  width: 100%;
+}
+.h2 {
+  font-family: "Montserrat";
+  font-size: 74px;
+  padding-left: 295px;
+  margin: 0px;
+  margin-bottom: 40px;
+}
+
+.date {
+  color: #666666;
+  font-size: 22px;
+  margin: 0px;
+}
+
+.h4 {
+  font-family: "Montserrat";
+  font-size: 28px;
+  margin: 0px;
+  margin-top: 10px;
+}
+
+.toggleVisibleRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.toggleAll {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 120px;
+}
+
+.toggle {
+  position: relative;
+  border: 1px solid var(--accent-color);
+  border-radius: 30px;
+  padding: 30px 45px;
+  overflow: hidden;
+}
+
+.toggle.active {
+  transform: scale(1.01);
+}
+
+.toggle.active::before {
+  content: "";
+  position: absolute;
+  bottom: -150px;
+  right: -130px;
+  width: 420px;
+  height: 440px;
+  background: radial-gradient(circle, #b4fb6d 0%, rgba(180, 251, 109, 0) 70%);
+  border-radius: 50%;
+  filter: blur(50px);
+  z-index: 0;
+}
+
+.toggle * {
+  position: relative;
+  z-index: 1;
+}
+
+.experienceDesc {
+  font-size: 24px;
+  padding-right: 70px;
+}
+
+.toggleButton {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.toggleButton::before,
+.toggleButton::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 35px;
+  height: 3px;
+  background-color: var(--text-color);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.toggleButton::before {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.toggleButton::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.toggleButton.active::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.toggleButton.active::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.toggleCard {
+  transition: all 0.3s ease-in-out;
+}
+.toggleCard:hover {
+  transform: scale(1.01);
 }

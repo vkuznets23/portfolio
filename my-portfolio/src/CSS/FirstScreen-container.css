@@ -3,27 +3,25 @@
   padding: 0px;
   position: absolute;
   top: 360px;
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 300;
 }
 
 .description-flex-container {
-  /* border: 1px solid red; */
   display: flex;
   margin: auto;
   width: 1180px;
-  align-items: top;
+  align-items: center;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 .description {
   width: 860px;
-  font-family: "Formular";
+  font-family: "Montserrat";
   font-weight: 200;
   font-size: 28px;
-  color: black;
-  text-indent: 235px;
-  margin-bottom: 60px;
+  text-indent: 295px;
 }
 
 .photo {

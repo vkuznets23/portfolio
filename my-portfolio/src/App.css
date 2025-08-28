@@ -1,7 +1,10 @@
-#root {
-  font-family: "Formular";
+:root {
   font-weight: 300;
-  width: 100%;
+  font-family: "Montserrat";
+  --bg-color: #ffffff;
+  --bg-nav-color: rgba(255, 255, 255, 0.592);
+  --text-color: #000000;
+  --accent-color: #656565;
 }
 
 body {
@@ -9,6 +12,14 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark {
+  --bg-color: #212121;
+  --text-color: #ffffff;
+  --bg-nav-color: rgba(30, 30, 30, 0.592);
 }
 
 .main-container {
@@ -29,17 +40,35 @@ body {
   flex-direction: column;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  scroll-margin-top: 120px;
+}
+
 @font-face {
-  font-family: "Formular";
-  src: url("/fonts/Formular-Regular.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+    url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
   font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"),
+    url("/fonts/Montserrat/Montserrat-Medium.woff") format("woff");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Formular";
-  src: url("/fonts/Formular-Medium.ttf") format("truetype");
+  font-family: "Montserrat";
+  src: url("/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2"),
+    url("/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
   font-display: swap;

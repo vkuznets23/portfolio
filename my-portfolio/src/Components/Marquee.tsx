@@ -14,6 +14,12 @@ export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
         <span>{text}</span>
         <span>{text}</span>
         <span>{text}</span>
+
+        <span>{text}</span>
+        <span>{text}</span>
+        <span>{text}</span>
+        <span>{text}</span>
+        <span>{text}</span>
       </div>
     </div>
   )
