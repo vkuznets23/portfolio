@@ -7,6 +7,7 @@ import type { ExperienceType } from './Components/Experience'
 import Experience from './Components/Experience'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
+import { useGlobal } from './context/useGlobal'
 
 export type Project = {
   img: string
@@ -44,8 +45,8 @@ type FirstScreenSection = {
 
 type ContentType = [FirstScreenSection, ExperienceSection, ProjectsSection]
 
-function App() {
-  const [language, setLanguage] = useState<'en' | 'ru'>('en')
+export default function App() {
+  const { language } = useGlobal()
   const [content, setContent] = useState<ContentType | null>(null)
 
   useEffect(() => {
@@ -78,7 +79,7 @@ function App() {
 
   return (
     <div className="main-container">
-      <Navbar language={language} setLanguage={setLanguage} />
+      <Navbar />
       <div className="first-wrapper">
         <FirstScreen
           firstLine={firstLine}
@@ -109,5 +110,3 @@ function App() {
     </div>
   )
 }
-
-export default App

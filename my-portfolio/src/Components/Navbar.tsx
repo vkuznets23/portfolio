@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react'
 import '../CSS/Navbar.css'
 import { IoMdMoon } from 'react-icons/io'
+import { IoSunnyOutline } from 'react-icons/io5'
 
-type NavbarProps = {
-  language: 'en' | 'ru'
-  setLanguage: React.Dispatch<React.SetStateAction<'en' | 'ru'>>
-}
+import { useGlobal } from '../context/useGlobal'
 
-export default function Navbar({ language, setLanguage }: NavbarProps) {
+export default function Navbar() {
+  const { language, setLanguage, theme, setTheme } = useGlobal()
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
@@ -36,13 +35,15 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
             </a>
           </div>
           <div className="nav-buttons">
-            {language === 'en' ? (
-              <button onClick={() => setLanguage('ru')}>rus</button>
-            ) : (
-              <button onClick={() => setLanguage('en')}>eng</button>
-            )}
-            <button>
-              <IoMdMoon />
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}
+            >
+              {language === 'en' ? 'rus' : 'eng'}
+            </button>
+            <button
+              onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+            >
+              {theme === 'dark' ? <IoMdMoon /> : <IoSunnyOutline />}
             </button>
           </div>
         </div>
@@ -56,13 +57,13 @@ export default function Navbar({ language, setLanguage }: NavbarProps) {
           <a href="#Contacts">{language === 'en' ? 'Contacts' : 'Контакты'}</a>
         </div>
         <div className="nav-buttons">
-          {language === 'en' ? (
-            <button onClick={() => setLanguage('ru')}>rus</button>
-          ) : (
-            <button onClick={() => setLanguage('en')}>eng</button>
-          )}
-          <button>
-            <IoMdMoon />
+          <button onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}>
+            {language === 'en' ? 'rus' : 'eng'}
+          </button>
+          <button
+            onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          >
+            {theme === 'dark' ? <IoMdMoon /> : <IoSunnyOutline />}
           </button>
         </div>
       </div>
