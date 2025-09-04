@@ -58,6 +58,11 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
             <b>Fact #3</b> {facts[2]}
           </p>
         </div>
+        <div className="fact fact4">
+          <p>
+            <b>Fact #4</b> {facts[3]}
+          </p>
+        </div>
       </div>
       {/* {facts.map((fact, i) => (
         <p key={i}>{fact}</p>
