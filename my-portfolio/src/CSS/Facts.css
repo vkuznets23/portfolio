@@ -54,3 +54,19 @@
   top: 0px;
   left: 990px;
 }
+
+.fact5 {
+  color: black;
+  border: 1px solid black;
+  max-width: 435px;
+  top: 370px;
+  left: 840px;
+}
+
+.fact6 {
+  color: white;
+  background-color: #e88fb2;
+  max-width: 310px;
+  top: 500px;
+  left: 1340px;
+}
