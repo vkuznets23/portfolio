@@ -13,6 +13,7 @@
 }
 
 .navbar-container.scrolled {
+  transition: backgroun-color 0.3s ease;
   background: var(--bg-nav-color);
   backdrop-filter: blur(12px);
 }

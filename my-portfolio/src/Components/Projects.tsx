@@ -32,7 +32,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
       const rect = containerRef.current.getBoundingClientRect()
 
       const offsetTop = 500 // включаем фон чуть раньше верхней границы
-      const offsetBottom = 500 // выключаем фон чуть позже нижней границы
+      const offsetBottom = 300 // выключаем фон чуть позже нижней границы
 
       if (rect.top <= offsetTop && rect.bottom >= offsetBottom) {
         document.body.classList.add('projects-bg')

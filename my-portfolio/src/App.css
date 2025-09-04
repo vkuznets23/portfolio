@@ -25,6 +25,10 @@ body.projects-bg {
   background-color: #b4fb6d;
 }
 
+body.projects-bg .navbar-container.scrolled {
+  background-color: #b4fb6d9a;
+}
+
 body.dark {
   --bg-color: #212121;
   --text-color: #ffffff;
