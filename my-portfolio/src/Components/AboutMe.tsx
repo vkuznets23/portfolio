@@ -66,11 +66,28 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
       </div>
       <div className="scroll-section">
         <div className="container" ref={containerRef}>
+          <img src="/photos/dogphoto.png" alt="photo" className="img1" />
+          <img src="/photos/fugler.png" alt="fugler" className="img2" />
+          <img src="/photos/mirrorPic.png" alt="fugler" className="img3" />
+          <img src="/photos/mug.png" alt="fugler" className="img4" />
+          <img src="/photos/knitting.png" alt="fugler" className="img5" />
+          <img src="/photos/office.gif" alt="office" className="img6" />
+          <img src="/photos/cuteme.png" alt="me" className="img7" />
+
           {facts.map((fact, i) => (
             <div key={i} className={`fact fact${i + 1}`}>
-              <p>
-                <b>Fact #{i + 1}</b> {fact}
-              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                }}
+              >
+                <p>
+                  <b>Fact #{i + 1}</b>
+                </p>
+                <p>{fact}</p>
+              </div>
             </div>
           ))}
         </div>

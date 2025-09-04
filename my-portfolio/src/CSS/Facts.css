@@ -1,6 +1,7 @@
 .scroll-section {
   height: 100vh;
   position: relative;
+  margin-top: 20px;
   margin-bottom: 160px;
 }
 
@@ -26,10 +27,85 @@
   justify-content: center;
 }
 
+.img1 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 155px;
+  left: 470px;
+  top: 10px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.img2 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 155px;
+  left: 0px;
+  top: 360px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.img3 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 155px;
+  left: 600px;
+  top: 550px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+.img4 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 140px;
+  left: 1230px;
+  top: 250px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.img5 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 160px;
+  left: 1580px;
+  top: 470px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+.img6 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 260px;
+  left: 1720px;
+  top: 320px;
+  border-radius: 60px;
+}
+.img7 {
+  position: absolute;
+  z-index: 1;
+  object-fit: cover;
+  width: 150px;
+  left: 2520px;
+  top: 420px;
+  border-radius: 50%;
+}
+
 .fact p {
   font-size: 22px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-left: 50px;
+  padding-right: 50px;
+  text-align: left;
+  margin: 0px;
+  margin-bottom: 10px;
 }
 
 .fact1 {
