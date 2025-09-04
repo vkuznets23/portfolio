@@ -158,7 +158,7 @@
 }
 
 .tag.category3 {
-  background-color: #b4fb6d;
+  background-color: #ffffff;
   color: black;
 }
 
@@ -209,9 +209,9 @@
 }
 
 .allProjectsButton:hover {
-  background-color: #b4fb6d;
-  border: 1px solid black;
-  color: black;
+  background-color: #e06998;
+  border: none;
+  color: white;
 }
 
 .experience-container {
