@@ -9,10 +9,15 @@ type ProjectsProps = {
   description: string
   projects: ProjectType[]
 }
+
 export default function Projects({ projects, description }: ProjectsProps) {
   const { language } = useGlobal()
 
-  const ref = useRef<HTMLDivElement>(null)
+  // 🔹 ref на ВЕСЬ блок секции (для смены фона body)
+  const containerRef = useRef<HTMLDivElement>(null)
+
+  // 🔹 отдельный ref на шапку (для анимации появления)
+  const headerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -20,50 +25,95 @@ export default function Projects({ projects, description }: ProjectsProps) {
     Array(projects.length).fill(false)
   )
 
+  // === Фон body зелёный, пока ЛЮБАЯ часть секции Projects видна ===
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const handleScroll = () => {
+      if (!containerRef.current) return
+      const rect = containerRef.current.getBoundingClientRect()
+
+      const offsetTop = 500 // включаем фон чуть раньше верхней границы
+      const offsetBottom = 500 // выключаем фон чуть позже нижней границы
+
+      if (rect.top <= offsetTop && rect.bottom >= offsetBottom) {
+        document.body.classList.add('projects-bg')
+      } else {
+        document.body.classList.remove('projects-bg')
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    handleScroll() // проверка при загрузке
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      document.body.classList.remove('projects-bg')
+    }
+  }, [])
+  // useEffect(() => {
+  //   if (!containerRef.current) return
+  //   const io = new IntersectionObserver(
+  //     ([entry]) => {
+  //       if (entry.isIntersecting) {
+  //         document.body.classList.add('projects-bg')
+  //       } else {
+  //         document.body.classList.remove('projects-bg')
+  //       }
+  //     },
+  //     {
+  //       threshold: 0,
+  //       rootMargin: '-400px 0px -500px 0px',
+  //     }
+  //   )
+  //   io.observe(containerRef.current)
+
+  //   return () => {
+  //     io.disconnect()
+  //     document.body.style.backgroundColor = ''
+  //   }
+  // }, [])
+
+  // === Анимация появления шапки (один раз) ===
+  useEffect(() => {
+    if (!headerRef.current) return
+    const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect() // activates once
+          io.disconnect()
         }
       },
-      { threshold: 0.5 } // when 20% of the element is visible
+      { threshold: 0.5 } // когда ~50% шапки видно
     )
-
-    if (ref.current) {
-      observer.observe(ref.current)
-    }
-
-    return () => observer.disconnect()
+    io.observe(headerRef.current)
+    return () => io.disconnect()
   }, [])
 
+  // === Появление карточек проектов по мере прокрутки ===
   useEffect(() => {
-    const observer = new IntersectionObserver(
+    const io = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute('data-index'))
           if (entry.isIntersecting) {
             setVisibleProjects((prev) => {
-              const newState = [...prev]
-              newState[index] = true
-              return newState
+              const next = [...prev]
+              next[index] = true
+              return next
             })
-            observer.unobserve(entry.target)
+            io.unobserve(entry.target)
           }
         })
       },
       { threshold: 0.2 }
     )
 
-    projectRefs.current.forEach((el) => el && observer.observe(el))
-
-    return () => observer.disconnect()
+    projectRefs.current.forEach((el) => el && io.observe(el))
+    return () => io.disconnect()
   }, [projects])
 
   return (
-    <div className="projectsContainer">
-      <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+    <div ref={containerRef} className="projectsContainer">
+      <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
         <div className="description-flex-container">
           <div className="description">{description}</div>
           <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
@@ -96,6 +146,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
           </div>
         ))}
       </div>
+
       <button
         type="button"
         className="allProjectsButton"
