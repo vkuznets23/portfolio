@@ -40,7 +40,7 @@
       "description": "Most of my Hive projects are written in C and aren’t related to frontend development. Here, you’ll mainly find my pet projects, which helped me learn frontend architecture, state management, working with APIs, and building production-ready applications with CI/CD pipelines.",
       "projects": {
         "project1": {
-          "img": "/photos/camagru.png",
+          "img": "/photos/camagru.gif",
           "deployUrl": "https://camagru-tau.vercel.app/",
           "githubUrl": "https://github.com/vkuznets23/camagru",
           "header": "Camagru | Instagram clone",
@@ -48,7 +48,7 @@
           "tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
         },
         "project2": {
-          "img": "/photos/pong.png",
+          "img": "/photos/pong.gif",
           "deployUrl": "",
           "githubUrl": "",
           "header": "ft_transendance | ping pong game",

@@ -40,7 +40,7 @@
     "description": "Большинство моих проектов в Hive написаны на C и не связаны с фронтендом. Здесь вы найдете в основном мои личные проекты, которые помогли изучить архитектуру фронтенда, управление состоянием, работу с API и создание production-ready приложений с CI/CD.",
     "projects": {
       "project1": {
-        "img": "/Camagru.png",
+        "img": "/photos/camagru.gif",
         "deployUrl": "ва",
         "githubUrl": "dfs",
         "header": "Camagru | Клон Instagram",
@@ -48,7 +48,7 @@
         "tags": ["Next.js", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
       },
       "project2": {
-        "img": "/Camagru.png",
+        "img": "/photos/pong.gif",
         "deployUrl": "dfs",
         "githubUrl": "dfs",
         "header": "ft_transendance | игра в пинг-понг",
@@ -56,7 +56,7 @@
         "tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Hive project"]
       },
       "project3": {
-        "img": "/Camagru.png",
+        "img": "/photos/portfolio.png",
         "deployUrl": "dfs",
         "githubUrl": "dfs",
         "header": "Портфолио-сайт",

@@ -22,6 +22,20 @@
   font-size: 54px;
   opacity: 1;
   transform: rotate(-90deg);
+  transition: transform 0.3s ease;
+}
+
+.emoji-pointer:hover {
+  animation: bounce 0.6s infinite alternate ease-in-out;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0px) rotate(-90deg);
+  }
+  to {
+    transform: translateY(-5px) rotate(-90deg);
+  }
 }
 
 .projects {
@@ -81,6 +95,7 @@
   border-radius: 8px;
   cursor: pointer;
   font-weight: 500;
+  color: black;
   background-color: #b4fb6d;
 }
 .overlayBtnGit {
