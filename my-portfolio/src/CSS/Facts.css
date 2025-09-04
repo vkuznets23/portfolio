@@ -110,11 +110,13 @@
 
 .fact1 {
   background-color: #b4fb6d;
+  color: black;
   max-width: 415px;
 }
 
 .fact2 {
   background: #212121;
+  border: 1px solid var(--text-color);
   color: white;
   max-width: 310px;
   top: 440px;
@@ -131,6 +133,7 @@
 }
 
 .fact4 {
+  border: 1px solid var(--text-color);
   background: #212121;
   color: white;
   max-width: 310px;
@@ -139,6 +142,7 @@
 }
 
 .fact5 {
+  background: #ffffff;
   color: black;
   border: 1px solid black;
   max-width: 435px;
@@ -162,6 +166,7 @@
 }
 
 .fact8 {
+  border: 1px solid var(--text-color);
   color: white;
   background-color: #212121;
   max-width: 300px;
@@ -170,6 +175,7 @@
 }
 
 .fact9 {
+  background: #ffffff;
   color: black;
   border: 1px solid black;
   max-width: 435px;
