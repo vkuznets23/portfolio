@@ -1,8 +1,15 @@
-.container {
-  position: relative;
-  width: 100%;
+.scroll-section {
   height: 100vh;
+  position: relative;
   margin-bottom: 160px;
+}
+
+.container {
+  position: sticky;
+  top: 0px;
+  height: 100vh;
+  width: 2950px;
+  align-items: center;
 }
 
 .fact {
@@ -66,7 +73,38 @@
 .fact6 {
   color: white;
   background-color: #e88fb2;
-  max-width: 310px;
-  top: 500px;
+  max-width: 280px;
+  top: 470px;
   left: 1340px;
+}
+.fact7 {
+  color: black;
+  background-color: #b4fb6d;
+  max-width: 505px;
+  top: -80px;
+  left: 1370px;
+}
+
+.fact8 {
+  color: white;
+  background-color: #212121;
+  max-width: 300px;
+  top: 0px;
+  left: 1940px;
+}
+
+.fact9 {
+  color: black;
+  border: 1px solid black;
+  max-width: 435px;
+  top: 370px;
+  left: 1780px;
+}
+
+.fact10 {
+  color: white;
+  background-color: #e88fb2;
+  max-width: 375px;
+  top: 115px;
+  left: 2280px;
 }

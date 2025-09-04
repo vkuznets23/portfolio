@@ -6,18 +6,21 @@ type AboutMeProps = {
   header: string
   facts: string[]
 }
+
 export default function AboutMe({ description, header, facts }: AboutMeProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect() // activates once
+          observer.disconnect()
         }
       },
-      { threshold: 0.5 } // when 20% of the element is visible
+      { threshold: 0.5 }
     )
 
     if (ref.current) {
@@ -26,57 +29,52 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
 
     return () => observer.disconnect()
   }, [])
+
+  // Горизонтальный скролл
+  useEffect(() => {
+    const wrapper = containerRef.current
+    if (!wrapper) return
+
+    const scrollSection = wrapper.parentElement as HTMLElement
+    if (!scrollSection) return
+
+    const maxScroll = wrapper.scrollWidth - window.innerWidth
+    const multiplier = 2
+    scrollSection.style.height = `${wrapper.scrollWidth * multiplier}px`
+
+    const handleScroll = () => {
+      const rect = scrollSection.getBoundingClientRect()
+      const scrollTop = -rect.top
+      const maxY = scrollSection.offsetHeight - window.innerHeight
+
+      const progress = Math.min(Math.max(scrollTop / maxY, 0), 1)
+
+      wrapper.style.transform = `translateX(${-progress * maxScroll}px)`
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
-    <div className="experience-container">
+    <div className="experience-container" style={{ height: '400vh' }}>
       <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
         <h2 className="h2">{header}</h2>
         <div className="description-flex-container">
           <div className="description">{description}</div>
         </div>
       </div>
-      {/* <div className="facts">
-        <div className="fact1">
-          <p>{facts[0]}</p>
-        </div>
-        <div className="fact2">
-          <p>{facts[1]}</p>
-        </div>
-      </div> */}
-      <div className="container">
-        <div className="fact fact1">
-          <p>
-            <b>Fact #1</b> {facts[0]}
-          </p>
-        </div>
-        <div className="fact fact2">
-          <p>
-            <b>Fact #2</b> {facts[1]}
-          </p>
-        </div>
-        <div className="fact fact3">
-          <p>
-            <b>Fact #3</b> {facts[2]}
-          </p>
-        </div>
-        <div className="fact fact4">
-          <p>
-            <b>Fact #4</b> {facts[3]}
-          </p>
-        </div>
-        <div className="fact fact5">
-          <p>
-            <b>Fact #5</b> {facts[4]}
-          </p>
-        </div>
-        <div className="fact fact6">
-          <p>
-            <b>Fact #6</b> {facts[5]}
-          </p>
+      <div className="scroll-section">
+        <div className="container" ref={containerRef}>
+          {facts.map((fact, i) => (
+            <div key={i} className={`fact fact${i + 1}`}>
+              <p>
+                <b>Fact #{i + 1}</b> {fact}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
-      {/* {facts.map((fact, i) => (
-        <p key={i}>{fact}</p>
-      ))} */}
     </div>
   )
 }
