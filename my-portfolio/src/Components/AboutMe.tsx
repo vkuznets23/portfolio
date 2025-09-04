@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import '../css/facts.css'
 
 type AboutMeProps = {
   description: string
@@ -33,9 +34,34 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
           <div className="description">{description}</div>
         </div>
       </div>
-      {facts.map((fact, i) => (
+      {/* <div className="facts">
+        <div className="fact1">
+          <p>{facts[0]}</p>
+        </div>
+        <div className="fact2">
+          <p>{facts[1]}</p>
+        </div>
+      </div> */}
+      <div className="container">
+        <div className="fact fact1">
+          <p>
+            <b>Fact #1</b> {facts[0]}
+          </p>
+        </div>
+        <div className="fact fact2">
+          <p>
+            <b>Fact #2</b> {facts[1]}
+          </p>
+        </div>
+        <div className="fact fact3">
+          <p>
+            <b>Fact #3</b> {facts[2]}
+          </p>
+        </div>
+      </div>
+      {/* {facts.map((fact, i) => (
         <p key={i}>{fact}</p>
-      ))}
+      ))} */}
     </div>
   )
 }
