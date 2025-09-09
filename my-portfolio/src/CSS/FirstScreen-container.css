@@ -1,8 +1,8 @@
 .description-absolute-container {
-  margin: 0px;
+  margin: 0 auto;
   padding: 0px;
   position: absolute;
-  top: 360px;
+  top: 22.5rem;
   font-family: "Montserrat";
   font-weight: 300;
 }
@@ -10,23 +10,23 @@
 .description-flex-container {
   display: flex;
   margin: auto;
-  width: 1180px;
+  width: 73.75rem;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 60px;
+  margin-bottom: 3.75rem;
 }
 
 .description {
-  width: 860px;
+  width: 53.75rem;
   font-family: "Montserrat";
   font-weight: 200;
-  font-size: 28px;
-  text-indent: 295px;
+  font-size: 1.75rem;
+  text-indent: 18.44rem;
 }
 
 .photo {
-  width: 106px;
-  height: 106px;
+  width: 6.625rem;
+  height: 6.625rem;
   border-radius: 50%;
   object-fit: cover;
   opacity: 1;
@@ -36,8 +36,8 @@
 
 .circle-photo-wrapper {
   position: relative;
-  width: 160px;
-  height: 160px;
+  width: 10rem;
+  height: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,7 +55,7 @@
 
 .emoji-hand {
   position: absolute;
-  font-size: 54px;
+  font-size: 3.375rem;
   opacity: 0;
   z-index: 3;
   transition: opacity 0.3s ease;
@@ -119,5 +119,42 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .description-absolute-container {
+    top: 12.5rem; /* 200px / 16 */
+    padding: 0 1.25rem; /* 20px / 16 */
+  }
+
+  .description-flex-container {
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 2.5rem; /* 40px / 16 */
+    align-items: center;
+    justify-content: center;
+  }
+
+  .description {
+    width: 100%;
+    font-size: 1.25rem; /* 20px / 16 */
+    text-indent: 0;
+    text-align: center;
+    margin-bottom: 1.25rem; /* 20px / 16 */
+  }
+
+  .circle-photo-wrapper {
+    width: 7.5rem; /* 120px / 16 */
+    height: 7.5rem;
+  }
+
+  .photo {
+    width: 5rem; /* 80px / 16 */
+    height: 5rem;
+  }
+
+  .emoji-hand {
+    font-size: 2.25rem; /* 36px / 16 */
   }
 }

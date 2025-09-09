@@ -1,14 +1,18 @@
 .hero {
-  font-size: 120px;
+  /* font-size: 120px; */
+  font-size: 7.5rem;
   font-family: "Montserrat";
   font-weight: 500;
   justify-content: flex-end;
   position: absolute;
   margin: 0px;
   padding: 0px;
-  padding-left: 295px;
-  top: 80px;
-  line-height: 130px;
+  /* padding-left: 295px; */
+  padding-left: 18.44rem;
+  /* top: 80px; */
+  top: 5rem;
+  /* line-height: 130px; */
+  line-height: 8.125rem;
 }
 
 .line1-fixed {
@@ -18,4 +22,27 @@
 .hero-typewriter {
   display: inline;
   white-space: pre-wrap;
+}
+
+@media screen and (max-width: 700px) {
+  .hero {
+    position: static; /* убираем absolute */
+    font-size: 4.75rem; /* 60px / 16 */
+    line-height: 4rem; /* 64px / 16 */
+    padding-left: 0; /* убираем большой отступ */
+    padding-top: 3rem;
+    top: auto;
+    text-align: center; /* центрируем текст горизонтально */
+    justify-content: center;
+    margin: 0 auto; /* центрируем блок */
+  }
+
+  /* Если нужно вертикальное центрирование */
+  .hero-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* по вертикали */
+    align-items: center; /* по горизонтали */
+    min-height: 100vh; /* занимаем весь экран */
+  }
 }
