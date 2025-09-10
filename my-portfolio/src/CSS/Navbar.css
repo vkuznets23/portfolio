@@ -45,6 +45,7 @@
 
 .nav-buttons {
   display: flex;
+  color: var(--text-color);
   align-items: center;
   margin: 0px;
   padding: 0px;
@@ -61,4 +62,52 @@
   font-size: 24px;
   font-weight: 300;
   font-family: "Montserrat";
+}
+
+@media screen and (max-width: 1024px) {
+  .navbar {
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .Links {
+    gap: 20px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .Links a {
+    font-size: 20px;
+  }
+
+  .nav-buttons {
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navbar {
+    margin-top: 15px;
+  }
+
+  .Links {
+    gap: 10px;
+  }
+
+  .Links a {
+    font-size: 18px;
+  }
+
+  .nav-buttons {
+    gap: 10px;
+  }
+
+  .nav-buttons button {
+    font-size: 18px;
+  }
 }

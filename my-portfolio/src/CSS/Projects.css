@@ -44,6 +44,7 @@
   max-width: 1180px;
   width: 100%;
   margin: auto;
+  padding: 0 20px;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 60px;
@@ -334,4 +335,32 @@
 }
 .toggleCard:hover {
   transform: scale(1.01);
+}
+
+@media screen and (max-width: 1020px) {
+  .emoji-pointer {
+    font-size: 45px;
+  }
+
+  .scrolldown-wrapper {
+    width: 8.5rem;
+    height: 8.5rem;
+  }
+
+  .toggleAll {
+    width: 75%;
+    align-self: center;
+  }
+
+  .projectsContainer {
+    max-width: 1020px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .projects {
+    row-gap: 40px;
+  }
 }

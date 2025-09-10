@@ -75,6 +75,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
   // === Анимация появления шапки (один раз) ===
   useEffect(() => {
     if (!headerRef.current) return
+
     const io = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -82,9 +83,14 @@ export default function Projects({ projects, description }: ProjectsProps) {
           io.disconnect()
         }
       },
-      { threshold: 0.5 } // когда ~50% шапки видно
+      {
+        threshold: 0, // ловим когда 10% блока видно
+        rootMargin: '0px 0px -100px 0px', // старт чуть раньше
+      }
     )
+
     io.observe(headerRef.current)
+
     return () => io.disconnect()
   }, [])
 
