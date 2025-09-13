@@ -63,9 +63,12 @@ type ContentType = [
 ]
 
 export default function App() {
-  // const { language, theme } = useGlobal()
-  const { language } = useGlobal()
+  const { language, theme } = useGlobal()
   const [content, setContent] = useState<ContentType | null>(null)
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme)
+  }, [theme])
 
   useEffect(() => {
     async function fetchData() {

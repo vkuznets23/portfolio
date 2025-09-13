@@ -3,6 +3,7 @@
 @use './SCSS/toggle.scss'; 
 @use './SCSS/projects.scss'; 
 @use './SCSS/aboutme.scss'; 
+@use './SCSS/navbar.scss'; 
 
 $font-family: "Montserrat";
 $font-weight: 300;
@@ -21,6 +22,16 @@ $font-weight: 300;
     --accent-color: #656565;
 }
 
+[data-theme='dark'] {
+  --bg-color: #212121;
+  --text-color: #dedede;
+  --project-desc: #7d7d7d;
+  --bg-toggle-color: #232323;
+  --bg-switch-color: #3f3f3f;
+  --bg-nav-color: rgba(30, 30, 30, 0.592);
+  --bg-nav-color-switch: #3f3f3f7f;
+}
+
 body {
     display: flex;
     justify-content: center;
@@ -30,24 +41,6 @@ body {
     color: var(--text-color);
     overflow-x: hidden;
     transition: background-color 0.3s ease;
-  
-    &.projects-bg {
-      background-color: var(--bg-switch-color);
-  
-      .navbar-container.scrolled {
-        background-color: var(--bg-nav-color-switch);
-      }
-    }
-  
-    &.dark {
-      --bg-color: #212121;
-      --text-color: #dedede;
-      --project-desc: #7d7d7d;
-      --bg-toggle-color: #232323;
-      --bg-switch-color: #3f3f3f;
-      --bg-nav-color: rgba(30, 30, 30, 0.592);
-      --bg-nav-color-switch: #3f3f3f7f;
-    }
   }
 
 
