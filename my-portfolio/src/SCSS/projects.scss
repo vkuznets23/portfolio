@@ -210,7 +210,7 @@
         font-size: 24px;
         padding-left: 105px;
         padding-right: 30px;
-        text-indent: 0rem;
+        text-indent: 3rem;
       }
       .scrolldown-wrapper {
         width: 120px;
@@ -319,6 +319,38 @@
       }
     }
   }
+
+  @media screen and (max-width: 700px) {
+    .projects-container .projects {
+      grid-template-columns: 1fr; 
+      row-gap: 60px; 
+      margin-left: 0px;
+      margin-right: 0px;
+    }
+  
+    .projects-container .project-wrapper {
+    max-width: 700px;
+    margin-left: 340px;
+    margin-right: 370px;
+    }
+
+    .projects-container .projects .project-wrapper .projectHeader {
+        font-size: 26px;
+    }
+    .projects-container .projects .project-wrapper .projectDescription {
+        font-size: 18px;
+    }
+
+    .projects-container .projects .project-wrapper .tags .tag {
+        font-size: 16px;
+        border-radius: 20px;
+        padding: 10px 20px;
+    }
+
+    .projects-container .projects .project-wrapper .project-image-wrapper {
+        border-radius: 30px;
+    }
+  }
   
   @media screen and (max-width: 500px) {
     .projects-container .slide-up h2.h2 {
@@ -338,6 +370,34 @@
         display: none;
       }
     }
+
+    @media screen and (max-width: 500px) {
+        .projects-container .projects {
+          grid-template-columns: 1fr; 
+          row-gap: 60px; 
+          margin-left: 0px;
+          margin-right: 0px;
+        }
+      
+        .projects-container .project-wrapper {
+        max-width: 450px;
+        margin-left: 400px;
+        margin-right: 420px;
+        }
+    
+        .projects-container .projects .project-wrapper .projectHeader {
+            font-size: 24px;
+        }
+        .projects-container .projects .project-wrapper .projectDescription {
+            font-size: 16px;
+        }
+    
+        .projects-container .projects .project-wrapper .tags .tag {
+            font-size: 16px;
+            border-radius: 20px;
+            padding: 10px 20px;
+        }
+      }
   }
   
   // === Анимации ===

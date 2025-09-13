@@ -47,7 +47,6 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
       const maxY = scrollSection.offsetHeight - window.innerHeight
 
       const progress = Math.min(Math.max(scrollTop / maxY, 0), 1)
-
       wrapper.style.transform = `translateX(${-progress * maxScroll}px)`
     }
 
