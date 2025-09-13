@@ -1,0 +1,161 @@
+.experience-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .slide-up {
+    width: 100%;
+    max-width: 1180px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    h2.h2 {
+      font-size: 74px;
+      margin-left: 300px;
+      margin-bottom: 10px;
+    }
+
+    .description-flex-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 100px;
+      flex-wrap: wrap;
+      width: 100%;
+
+      .description {
+        flex: 1 1 auto;
+        font-size: 28px;
+        text-indent: 19rem;
+        flex: 1;
+      }
+
+      .scrolldown-wrapper {
+        position: relative;
+        width: 140px;
+        height: 140px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .circular-text {
+          animation: rotate-clockwise 60s linear infinite;
+          transform-origin: center;
+        }
+
+        .emoji-pointer {
+          position: absolute;
+          font-size: 44px;
+          animation: bounce 1.5s ease-in-out infinite alternate;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .experience-container .slide-up h2.h2 {
+    font-size: 60px;
+    margin-left: 0;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+
+  .slide-up {
+    gap: 10px;
+  }
+
+  .experience-container .slide-up .description-flex-container {
+    .description {
+      font-size: 24px;
+      padding-left: 130px;
+      text-indent: 0rem;
+    }
+
+    .scrolldown-wrapper {
+      width: 120px;
+      height: 120px;
+      margin-right: 130px;
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .experience-container .slide-up h2.h2 {
+    font-size: 48px;
+  }
+
+  .experience-container .slide-up .description-flex-container {
+    align-items: center;
+    gap: 20px;
+
+    .description {
+      font-size: 20px;
+      padding-left: 230px;
+      padding-right: 30px;
+    }
+
+    .scrolldown-wrapper {
+      width: 120px;
+      height: 120px;
+      margin-right: 230px;
+
+      .emoji-pointer {
+        font-size: 35px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .experience-container .slide-up h2.h2 {
+    font-size: 36px;
+  }
+
+  .experience-container .slide-up .description-flex-container {
+    flex-direction: column;
+
+    .description {
+      font-size: 20px;
+      padding-left: 30%;
+      padding-right: 30%;
+    }
+
+    .scrolldown-wrapper {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .experience-container .slide-up h2.h2 {
+    font-size: 36px;
+  }
+
+  .experience-container .slide-up .description-flex-container {
+    flex-direction: column;
+
+    .description {
+      font-size: 18px;
+      padding-left: 35%;
+      padding-right: 35%;
+    }
+
+    .scrolldown-wrapper {
+      display: none;
+    }
+  }
+}
+
+/* Анимации */
+@keyframes rotate-clockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+  from { transform: translateY(5px) rotate(-90deg); }
+  to { transform: translateY(-5px) rotate(-90deg); }
+}

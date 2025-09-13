@@ -1,0 +1,300 @@
+.projects-container {
+    width: 100%;
+    max-width: 1180px;
+    margin: 100px auto 0;
+    padding: 0 20px;
+  
+    // === Header / slide-up ===
+    .slide-up {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+  
+      h2.h2 {
+        font-size: 74px;
+        margin-left: 300px;
+        margin-bottom: 10px;
+      }
+  
+      .description-flex-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 100px;
+        flex-wrap: nowrap;
+        width: 100%;
+  
+        .description {
+          flex: 1 1 auto;
+          font-size: 28px;
+          text-indent: 18rem; 
+        }
+  
+        .scrolldown-wrapper {
+          position: relative;
+          width: 140px;
+          height: 140px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+  
+          .circular-text {
+            animation: rotate-clockwise 60s linear infinite;
+            transform-origin: center;
+          }
+  
+          .emoji-pointer {
+            position: absolute;
+            font-size: 44px;
+            animation: bounce 1.5s ease-in-out infinite alternate;
+          }
+        }
+      }
+    }
+  
+    // === Projects Grid ===
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
+      row-gap: 60px;
+      margin-top: 50px;
+  
+      .project-wrapper {
+        &.hidden {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+  
+        &.fade-in {
+          opacity: 1;
+          transform: translateY(0);
+          transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+  
+        .project-image-wrapper {
+          position: relative;
+          border-radius: 40px;
+          overflow: hidden;
+          width: 100%;
+          height: auto;
+  
+          .project-img {
+            width: 100%;
+            object-fit: cover;
+            border-radius: inherit;
+            display: block;
+          }
+  
+          .overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(30, 30, 30, 0.592);
+            border-radius: inherit;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            backdrop-filter: blur(6px);
+          }
+  
+          &:hover .overlay {
+            opacity: 1;
+          }
+  
+          .overlayBtnDeploy {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            color: black;
+            background-color: #b4fb6d;
+  
+            &:hover {
+              background-color: #99e255;
+            }
+          }
+  
+          .overlayBtnGit {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 500;
+            color: white;
+            background-color: #e06998;
+  
+            &:hover {
+              background-color: #d85e8f;
+            }
+          }
+        }
+  
+        .projectHeader {
+          font-weight: 300;
+          font-size: 36px;
+          margin: 20px 0 10px 0;
+        }
+  
+        .projectDescription {
+          font-size: 20px;
+          color: var(--project-desc);
+          margin-bottom: 20px;
+        }
+  
+        .tags {
+          display: flex;
+          gap: 10px;
+          flex-wrap: wrap;
+  
+          .tag {
+            padding: 10px 30px;
+            font-size: 20px;
+            border-radius: 30px;
+            white-space: nowrap;
+            text-align: center;
+  
+            &.category1 { background-color: #e06998; color: white; }
+            &.category2 { background-color: #d9d9d9; color: black; }
+            &.category3 { background-color: #ffffff; color: black; }
+          }
+        }
+      }
+    }
+  
+    .allProjectsButton {
+      cursor: pointer;
+      width: 100%;
+      max-width: 1180px;
+      margin: 90px auto 120px auto;
+      padding: 20px;
+      font-size: 22px;
+      font-weight: 300;
+      border: 1px solid var(--text-color);
+      color: var(--text-color);
+      background-color: transparent;
+      border-radius: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease-in-out;
+  
+      &:hover {
+        background-color: #e06998;
+        border: none;
+        color: white;
+      }
+    }
+  }
+  
+  // ===== Адаптивы =====
+  @media screen and (max-width: 1180px) {
+    .projects-container .slide-up h2.h2 {
+      font-size: 60px;
+      margin-left: 0;
+      text-align: center;
+      margin-bottom: 5px;
+    }
+  
+    .projects-container .slide-up .description-flex-container {
+      gap: 20px;
+      .description {
+        font-size: 24px;
+        padding-left: 105px;
+        padding-right: 30px;
+        text-indent: 0rem;
+      }
+      .scrolldown-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-right: 145px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 900px) {
+    .projects-container .slide-up h2.h2 {
+      font-size: 48px;
+    }
+  
+    .projects-container .slide-up .description-flex-container {
+      gap: 20px;
+      align-items: center;
+  
+      .description {
+        font-size: 20px;
+        padding-left: 220px;
+        padding-right: 30px;
+      }
+  
+      .scrolldown-wrapper {
+        width: 120px;
+        height: 120px;
+        margin-right: 250px;
+  
+        .emoji-pointer {
+          font-size: 35px;
+        }
+      }
+    }
+  }
+  
+  @media screen and (max-width: 700px) {
+    .projects-container .slide-up h2.h2 {
+      font-size: 36px;
+    }
+  
+    .projects-container .slide-up .description-flex-container {
+      flex-direction: column;
+  
+      .description {
+        font-size: 20px;
+        padding-left: 29%;
+        padding-right: 29%;
+      }
+  
+      .scrolldown-wrapper {
+        display: none;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 500px) {
+    .projects-container .slide-up h2.h2 {
+      font-size: 36px;
+    }
+  
+    .projects-container .slide-up .description-flex-container {
+      flex-direction: column;
+  
+      .description {
+        font-size: 18px;
+        padding-left: 34%;
+        padding-right: 35%;
+      }
+  
+      .scrolldown-wrapper {
+        display: none;
+      }
+    }
+  }
+  
+  // === Анимации ===
+  @keyframes rotate-clockwise {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @keyframes bounce {
+    from { transform: translateY(5px) rotate(-90deg); }
+    to { transform: translateY(-5px) rotate(-90deg); }
+  }
+  

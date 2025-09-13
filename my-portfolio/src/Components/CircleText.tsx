@@ -13,7 +13,12 @@ export default function CircularText({
   const size = radius * 2 + fontSize * 2 // добавляем отступ по краям
 
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      className="circular-text"
+    >
       <defs>
         <path
           id={circleId}

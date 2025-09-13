@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import '../css/facts.css'
 
 type AboutMeProps = {
   description: string

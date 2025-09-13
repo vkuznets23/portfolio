@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import type { ExperienceType } from './Experience'
-import '../CSS/Toggle.css'
 
 export default function ExperienceObj({
   date,

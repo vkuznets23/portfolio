@@ -1,5 +1,4 @@
 import { Typewriter as TypewriterDef } from 'react-simple-typewriter'
-import '../CSS/Typewriter.css'
 
 type TypewriterProps = {
   line1: string

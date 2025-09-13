@@ -1,5 +1,3 @@
-import '../CSS/Marquee.css'
-
 type StripeProps = {
   style?: string
   text: string

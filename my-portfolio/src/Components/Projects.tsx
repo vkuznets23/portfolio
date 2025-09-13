@@ -1,6 +1,5 @@
 import type { Project as ProjectType } from '../App'
 import CircularText from './CircleText'
-import '../CSS/Projects.css'
 import { useEffect, useRef, useState } from 'react'
 import Project from './Project'
 import { useGlobal } from '../context/useGlobal'
@@ -49,28 +48,6 @@ export default function Projects({ projects, description }: ProjectsProps) {
       document.body.classList.remove('projects-bg')
     }
   }, [])
-  // useEffect(() => {
-  //   if (!containerRef.current) return
-  //   const io = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         document.body.classList.add('projects-bg')
-  //       } else {
-  //         document.body.classList.remove('projects-bg')
-  //       }
-  //     },
-  //     {
-  //       threshold: 0,
-  //       rootMargin: '-400px 0px -500px 0px',
-  //     }
-  //   )
-  //   io.observe(containerRef.current)
-
-  //   return () => {
-  //     io.disconnect()
-  //     document.body.style.backgroundColor = ''
-  //   }
-  // }, [])
 
   // === Анимация появления шапки (один раз) ===
   useEffect(() => {
@@ -118,7 +95,7 @@ export default function Projects({ projects, description }: ProjectsProps) {
   }, [projects])
 
   return (
-    <div ref={containerRef} className="projectsContainer">
+    <div ref={containerRef} className="projects-container">
       <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
         <div className="description-flex-container">
           <div className="description">{description}</div>

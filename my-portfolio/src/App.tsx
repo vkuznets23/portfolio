@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
-import FirstScreen from './Components/FirstScreen'
-import './App.css'
+// import FirstScreen from './Components/FirstScreen'
+import './App.scss'
 import Marquee from './Components/Marquee'
 import Projects from './Components/Projects'
 import type { ExperienceType } from './Components/Experience'
@@ -63,7 +63,8 @@ type ContentType = [
 ]
 
 export default function App() {
-  const { language, theme } = useGlobal()
+  // const { language, theme } = useGlobal()
+  const { language } = useGlobal()
   const [content, setContent] = useState<ContentType | null>(null)
 
   useEffect(() => {
@@ -79,20 +80,20 @@ export default function App() {
     fetchData()
   }, [language])
 
-  useEffect(() => {
-    document.body.classList.remove('light', 'dark')
-    document.body.classList.add(theme)
-  }, [theme])
+  // useEffect(() => {
+  //   document.body.classList.remove('light', 'dark')
+  //   document.body.classList.add(theme)
+  // }, [theme])
 
-  const firstLine = useTypografCombined(
-    content?.[0]?.header?.line1 || '',
-    language
-  )
-  const options = Object.values(content?.[0]?.header?.options || {})
-  const description = useTypografCombined(
-    content?.[0]?.description || '',
-    language
-  )
+  // const firstLine = useTypografCombined(
+  //   content?.[0]?.header?.line1 || '',
+  //   language
+  // )
+  // const options = Object.values(content?.[0]?.header?.options || {})
+  // const description = useTypografCombined(
+  //   content?.[0]?.description || '',
+  //   language
+  // )
 
   const header = useTypografCombined(content?.[1]?.header || '', language)
   const description3 = useTypografCombined(
@@ -125,13 +126,13 @@ export default function App() {
   return (
     <div className="main-container">
       <Navbar />
-      <div className="first-wrapper">
+      {/* <div className="first-wrapper">
         <FirstScreen
           firstLine={firstLine}
           options={options}
           description={description}
         />
-      </div>
+      </div> */}
       <div className="content-wrapper">
         <Marquee
           text={

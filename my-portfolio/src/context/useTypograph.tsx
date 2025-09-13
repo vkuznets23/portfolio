@@ -18,6 +18,10 @@ const englishPrepositions = [
   'of',
   'from',
   'as',
+  'C',
+  'I',
+  'is',
+  'my',
 ]
 
 function applyEnglishHangingPrepositions(text: string) {

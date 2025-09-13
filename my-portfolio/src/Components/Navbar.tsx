@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import '../CSS/Navbar.css'
 import { IoMdMoon } from 'react-icons/io'
 import { IoSunnyOutline } from 'react-icons/io5'
 

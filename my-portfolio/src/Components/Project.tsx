@@ -1,5 +1,4 @@
 import type { Project as ProjectType } from '../App'
-import '../CSS/Projects.css'
 
 type ProjectProps = {
   project: ProjectType

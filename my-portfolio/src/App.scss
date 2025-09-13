@@ -1,0 +1,104 @@
+@use './SCSS/marquee.scss'; 
+@use './SCSS/experience.scss'; 
+@use './SCSS/toggle.scss'; 
+@use './SCSS/projects.scss'; 
+
+$font-family: "Montserrat";
+$font-weight: 300;
+
+:root {
+    font-weight: $font-weight;
+    font-family: $font-family;
+
+    --bg-color: #ffffff;
+    --bg-accent-color: #ffffff;
+    --bg-switch-color: #b4fb6d;
+    --text-color: #000000;
+    --project-desc: #4f4f4f;
+    --bg-nav-color: rgba(255, 255, 255, 0.592);
+    --bg-nav-color-switch: #b4fb6d9a;
+    --accent-color: #656565;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    overflow-x: hidden;
+    transition: background-color 0.3s ease;
+  
+    &.projects-bg {
+      background-color: var(--bg-switch-color);
+  
+      .navbar-container.scrolled {
+        background-color: var(--bg-nav-color-switch);
+      }
+    }
+  
+    &.dark {
+      --bg-color: #212121;
+      --text-color: #dedede;
+      --project-desc: #7d7d7d;
+      --bg-toggle-color: #232323;
+      --bg-switch-color: #3f3f3f;
+      --bg-nav-color: rgba(30, 30, 30, 0.592);
+      --bg-nav-color-switch: #3f3f3f7f;
+    }
+  }
+
+
+  
+  .content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    section {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;   
+        padding: 0 16px;  
+      }
+
+      .marquee {
+        width: 100%;
+      }
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  section {
+    scroll-margin-top: 120px;
+  }
+
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-Regular.woff2") format("woff2"),
+      url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-Medium.woff2") format("woff2"),
+      url("/fonts/Montserrat/Montserrat-Medium.woff") format("woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: "Montserrat";
+    src: url("/fonts/Montserrat/Montserrat-SemiBold.woff2") format("woff2"),
+      url("/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
