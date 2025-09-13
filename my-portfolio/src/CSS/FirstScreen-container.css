@@ -122,7 +122,7 @@
   }
 }
 
-@media screen and (max-width: 1020px) {
+@media screen and (max-width: 1180px) {
   .description-flex-container {
     flex-direction: row;
     align-items: center;
@@ -148,5 +148,24 @@
     width: 5.625rem;
     height: 5.625rem;
     border-radius: 50%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .description-flex-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  .description {
+    width: 50%;
+    font-size: 1.5rem;
+    text-align: left;
+    text-indent: 0;
+    margin-bottom: 0.25rem;
   }
 }

@@ -59,6 +59,7 @@ export default function Experience({
           </div>
         </div>
       </div>
+
       <div className="toggleAll">
         {experience.map((obj, i) => (
           <ExperienceObj key={i} {...obj} />
