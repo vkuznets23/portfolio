@@ -43,7 +43,14 @@ body {
     transition: background-color 0.3s ease;
   }
 
+  body.projects-bg {
+    background-color: var(--bg-switch-color);
+    transition: background-color 0.3s ease;
+  }
 
+  body.projects-bg .navbar-container.scrolled {
+    background-color: var(--bg-nav-color-switch);
+  }
   
   .content-wrapper {
     display: flex;
