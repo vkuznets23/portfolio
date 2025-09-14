@@ -50,7 +50,7 @@ export default function Navbar() {
   )
 
   return (
-    <div className={`navbar-container ${visible ? 'visible' : 'hidden'}`}>
+    <div className={`navbar-container ${visible ? 'visible' : 'hidden'} `}>
       <div className="navbar">
         <div>LOGO</div>
         <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>

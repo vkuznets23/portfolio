@@ -29,7 +29,7 @@ body.projects-bg {
   background-color: var(--bg-switch-color);
 }
 
-body.projects-bg .navbar-container.scrolled {
+body.projects-bg .navbar-container.visible {
   background-color: var(--bg-nav-color-switch);
 }
 
