@@ -50,10 +50,6 @@
   row-gap: 60px;
 }
 
-/* .projects > div:nth-child(2n) {
-  margin-top: 60px;
-} */
-
 .project-img {
   width: 100%;
   object-fit: cover;
