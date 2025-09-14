@@ -214,8 +214,6 @@
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
-  padding: 40px;
 }
 
 .h2 {
@@ -237,6 +235,12 @@
   .h2 {
     font-size: 64px;
   }
+
+  .experience-container {
+    box-sizing: border-box;
+    padding: 40px;
+  }
+
   .emoji-pointer {
     font-size: 45px;
   }
@@ -276,10 +280,6 @@
 
   .projects {
     max-width: 730px;
-  }
-
-  .projectHeader {
-    font-size: 30px;
   }
 
   .tag {
