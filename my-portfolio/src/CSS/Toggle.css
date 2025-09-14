@@ -1,25 +1,22 @@
-/* Контейнер всех карточек */
 .toggleAll {
   display: flex;
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  margin-top: 50px;
   margin-bottom: 120px;
 }
 
-/* Отдельная карточка */
 .toggleCard {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
   transition: all 0.3s ease-in-out;
 }
 
-/* Внутренний контейнер карточки */
 .toggle {
   width: 100%;
   box-sizing: border-box;
-  flex: 1 1 100%;
   border: 1px solid var(--accent-color);
   border-radius: 30px;
   padding: 30px 45px;
@@ -29,7 +26,6 @@
   transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-/* Эффект при активной карточке */
 .toggle.active {
   transform: scale(1.01);
 }
@@ -47,28 +43,33 @@
   z-index: 0;
 }
 
-/* Чтобы элементы внутри были поверх градиента */
 .toggle * {
   position: relative;
   z-index: 1;
 }
 
-/* Верхний ряд с датой и кнопкой */
 .toggleVisibleRow {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
 
-/* Дата */
+.toggleVisibleRow > div {
+  flex: 1 1 auto;
+  min-width: 200px;
+}
+
 .date {
   color: #666666;
   font-size: 22px;
   margin: 0;
 }
 
-/* Кнопка открытия/закрытия */
+.h4 {
+  font-size: 28px;
+  margin: 10px 0 0 0;
+}
+
 .toggleButton {
   position: relative;
   width: 35px;
@@ -108,85 +109,133 @@
   transform: translate(-50%, -50%) rotate(-45deg);
 }
 
-/* Список описания */
 .experienceDesc {
   font-size: 1.2rem;
   padding-left: 1.2rem;
   margin-top: 15px;
   line-height: 1.5;
   word-break: break-word;
-}
-
-/* Плавное раскрытие/скрытие списка */
-.experienceDesc {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease;
 }
 
-.toggle.active .experienceDesc {
-  max-height: 500px; /* достаточно для списка */
+.experienceDesc li {
+  margin-bottom: 8px;
 }
 
-/* Ховер эффект */
+.toggle.active .experienceDesc {
+  max-height: 500px;
+}
+
 .toggleCard:hover {
   transform: scale(1.01);
 }
 
-/* Адаптивность */
 @media screen and (max-width: 1180px) {
   .toggleCard {
-    width: 75%;
+    width: 83%;
+    margin: 0 auto;
   }
-
-  .toggle.active {
-    transform: scale(1);
+  .toggleAll {
+    margin-top: 10px;
+    margin-bottom: 40px;
   }
 
   .toggle {
     padding: 25px 30px;
   }
+
+  .toggle.active {
+    width: 80%;
+    margin: 0 auto;
+  }
 }
 
-@media screen and (max-width: 768px) {
-  .toggleVisibleRow {
-    flex-direction: column;
-    align-items: flex-start;
+@media screen and (max-width: 900px) {
+  .toggleAll {
+    gap: 10px;
   }
 
-  .toggleButton {
-    margin-top: 10px;
+  .toggleCard {
+    width: 70%;
+    margin: 0 auto;
   }
 
-  .experienceDesc {
-    font-size: 1rem;
-    padding-left: 1rem;
+  .toggle.active {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .toggle {
+    padding: 25px 30px;
+  }
+
+  .date {
+    font-size: 20px;
   }
 
   .h4 {
-    font-size: 1.1rem;
+    font-size: 24px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .toggleAll {
+    margin-top: 0px;
+    gap: 10px;
+  }
+
+  .toggleCard {
+    width: 45%;
+    margin: 0 auto;
+  }
+
+  .toggle.active {
+    width: 45%;
+    margin: 0 auto;
+  }
+
+  .toggle {
+    padding: 25px 30px;
+    border-radius: 20px;
   }
 
   .date {
     font-size: 18px;
   }
+
+  .h4 {
+    font-size: 22px;
+  }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 500px) {
+  .toggleCard {
+    width: 35%;
+    margin: 0 auto;
+  }
+
+  .toggle.active {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .toggle {
+    padding: 20px;
+    border-radius: 20px;
+  }
+
   .experienceDesc {
     font-size: 0.95rem;
     padding-left: 0.8rem;
   }
 
   .h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .date {
     font-size: 16px;
-  }
-
-  .toggle {
-    padding: 20px;
   }
 }

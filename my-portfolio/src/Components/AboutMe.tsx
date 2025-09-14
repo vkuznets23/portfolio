@@ -68,7 +68,7 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
         <div className="container" ref={containerRef}>
           <img src="/photos/dogphoto.png" alt="photo" className="img1" />
           <img src="/photos/fugler.png" alt="fugler" className="img2" />
-          <img src="/photos/mirrorPic.png" alt="fugler" className="img3" />
+          <img src="/photos/circle.gif" alt="fugler" className="img3" />
           <img src="/photos/mug.png" alt="fugler" className="img4" />
           <img src="/photos/knitting.png" alt="fugler" className="img5" />
           <img src="/photos/office.gif" alt="office" className="img6" />

@@ -56,12 +56,20 @@
           "tags": ["React", "TypeScript", "Tailwind CSS", "Jest", "Hive project"]
         },
         "project3": {
-          "img": "/photos/portfolio.png",
+          "img": "/photos/portfolio.gif",
           "deployUrl": "",
           "githubUrl": "https://github.com/vkuznets23/portfolio",
           "header": "portfolio website",
           "description": "Designed and developed the website with a focus on animations and smooth user experience. Implemented mobile responsiveness, accessibility features for visually impaired users (adjustable font sizes and screen reader support), dark mode, and multi-language support.",
           "tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
+        },
+        "project4": {
+          "img": "/photos/portfolio.png",
+          "deployUrl": "",
+          "githubUrl": "https://github.com/vkuznets23/fractol",
+          "header": "fract-ol",
+          "description": "Fractol is a graphical application that renders intricate and beautiful fractals, providing an interactive experience to explore these mathematical patterns. This project utilizes the MiniLibX library to display various fractal sets and offers features such as zooming, color customization, and real-time parameter adjustments.",
+          "tags": ["C", "Hive project"]
         }
       }
     },

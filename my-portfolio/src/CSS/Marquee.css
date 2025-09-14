@@ -1,38 +1,59 @@
 .marquee {
   position: relative;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  font-size: 24px;
+  font-size: 28px;
   color: black;
   background-color: #b4fb6d;
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 10px 0;
   margin-bottom: 105px;
 }
 
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee 100s linear infinite;
+  animation: marquee-scroll 900s linear infinite;
 }
 
 .marquee-content {
   display: flex;
-  padding-top: 8px;
-  padding-bottom: 8px;
+  padding: 0 5px;
 }
 
 .marquee-content span {
+  flex-shrink: 0;
   display: inline-block;
-  padding: 0.2rem;
 }
 
-@keyframes marquee {
+@keyframes marquee-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 1180px) {
+  .marquee {
+    font-size: 24px;
+    padding: 8px 0;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .marquee {
+    font-size: 20px;
+    padding: 6px 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .marquee {
+    font-size: 18px;
   }
 }

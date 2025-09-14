@@ -23,9 +23,6 @@
   opacity: 1;
   transform: rotate(-90deg);
   transition: transform 0.3s ease;
-}
-
-.emoji-pointer:hover {
   animation: bounce 0.6s infinite alternate ease-in-out;
 }
 
@@ -49,10 +46,6 @@
   column-gap: 20px;
   row-gap: 60px;
 }
-
-/* .projects > div:nth-child(2n) {
-  margin-top: 60px;
-} */
 
 .project-img {
   width: 100%;
@@ -216,11 +209,11 @@
 }
 
 .experience-container {
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin: auto;
-  width: 100%;
-  max-width: 1180px;
 }
 
 .h2 {
@@ -239,6 +232,15 @@
 }
 
 @media screen and (max-width: 1180px) {
+  .h2 {
+    font-size: 64px;
+  }
+
+  .experience-container {
+    box-sizing: border-box;
+    padding: 40px;
+  }
+
   .emoji-pointer {
     font-size: 45px;
   }
@@ -257,8 +259,97 @@
   }
 
   .projects {
-    max-width: 900px;
+    max-width: 930px;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 40px;
+  }
+
+  .allProjectsButton {
+    width: 85%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .projectsContainer {
+    max-width: 1180px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  .projects {
+    max-width: 730px;
+  }
+
+  .tag {
+    padding: 8px 16px;
+    font-size: 18px;
+  }
+
+  .allProjectsButton {
+    width: 65%;
+    font-size: 22px;
+    margin-top: 70px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .h2 {
+    font-size: 44px;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
+  .projects {
+    max-width: 500px;
+  }
+
+  .project-image-wrapper {
+    border-radius: 30px;
+  }
+
+  .projectHeader {
+    font-size: 26px;
+  }
+
+  .projectDescription {
+    font-size: 18px;
+  }
+
+  .tag {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+
+  .allProjectsButton {
+    width: 45%;
+    font-size: 18px;
+    margin-top: 40px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .h2 {
+    font-size: 34px;
+    width: 40%;
+    padding-left: 33%;
+    margin-bottom: 20px;
+  }
+
+  .projects {
+    max-width: 380px;
+  }
+
+  .projectHeader {
+    font-size: 24px;
+  }
+
+  .projectDescription {
+    font-size: 18px;
+  }
+
+  .allProjectsButton {
+    width: 35%;
   }
 }
