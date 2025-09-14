@@ -234,6 +234,9 @@
 }
 
 @media screen and (max-width: 1180px) {
+  .h2 {
+    font-size: 64px;
+  }
   .emoji-pointer {
     font-size: 45px;
   }
@@ -292,6 +295,12 @@
 }
 
 @media screen and (max-width: 700px) {
+  .h2 {
+    font-size: 44px;
+    width: 50%;
+    margin-bottom: 20px;
+  }
+
   .projects {
     max-width: 500px;
   }
@@ -321,6 +330,13 @@
 }
 
 @media screen and (max-width: 500px) {
+  .h2 {
+    font-size: 34px;
+    width: 40%;
+    padding-left: 33%;
+    margin-bottom: 20px;
+  }
+
   .projects {
     max-width: 380px;
   }

@@ -137,6 +137,10 @@
     width: 83%;
     margin: 0 auto;
   }
+  .toggleAll {
+    margin-top: 10px;
+    margin-bottom: 40px;
+  }
 
   .toggle {
     padding: 25px 30px;
@@ -150,7 +154,6 @@
 
 @media screen and (max-width: 900px) {
   .toggleAll {
-    margin-top: 30px;
     gap: 10px;
   }
 
@@ -179,17 +182,17 @@
 
 @media screen and (max-width: 700px) {
   .toggleAll {
-    margin-top: 30px;
+    margin-top: 0px;
     gap: 10px;
   }
 
   .toggleCard {
-    width: 40%;
+    width: 45%;
     margin: 0 auto;
   }
 
   .toggle.active {
-    width: 40%;
+    width: 45%;
     margin: 0 auto;
   }
 
@@ -209,7 +212,7 @@
 
 @media screen and (max-width: 500px) {
   .toggleCard {
-    width: 30%;
+    width: 35%;
     margin: 0 auto;
   }
 
@@ -229,7 +232,7 @@
   }
 
   .h4 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
   .date {

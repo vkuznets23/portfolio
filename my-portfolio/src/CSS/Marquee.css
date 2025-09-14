@@ -41,6 +41,7 @@
   .marquee {
     font-size: 24px;
     padding: 8px 0;
+    margin-bottom: 30px;
   }
 }
 
@@ -53,11 +54,6 @@
 
 @media screen and (max-width: 480px) {
   .marquee {
-    font-size: 16px;
-    padding: 4px 0;
-  }
-
-  .marquee-content span {
-    padding: 0 0.5rem;
+    font-size: 18px;
   }
 }
