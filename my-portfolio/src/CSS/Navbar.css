@@ -4,110 +4,160 @@
   left: 0;
   width: 100%;
   z-index: 999;
-  padding-bottom: 20px;
-  transition: all 0.3s ease;
-}
-
-.navbar-container.default {
-  opacity: 0;
-}
-
-.navbar-container.scrolled {
-  transition: backgroun-color 0.3s ease;
+  transition: transform 0.3s ease;
   background: var(--bg-nav-color);
   backdrop-filter: blur(12px);
 }
 
+.navbar-container.visible {
+  transform: translateY(0);
+}
+
+.navbar-container.hidden {
+  transform: translateY(-100%);
+}
+
 .navbar {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   max-width: 1180px;
   width: 100%;
   margin: 0 auto;
-  margin-top: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0 20px;
 }
 
-.Links {
+.navbar .Links {
   display: flex;
-  gap: 40px;
   flex: 1;
   justify-content: center;
+  gap: 40px;
 }
 
-.Links a {
+.navbar .Links a {
   all: unset;
   cursor: pointer;
   font-size: 24px;
   color: inherit;
+  transition: color 0.2s ease;
 }
 
-.nav-buttons {
+.navbar .Links a:hover {
+  color: var(--accent-color);
+}
+
+.navbar .Links.open {
   display: flex;
-  color: var(--text-color);
+  flex-direction: column;
+  gap: 15px;
+}
+
+.navbar .nav-buttons {
+  display: flex;
   align-items: center;
-  margin: 0px;
-  padding: 0px;
   gap: 30px;
 }
 
-.nav-buttons button {
-  background-color: transparent;
-  color: var(--text-color);
-  cursor: pointer;
+.navbar .nav-buttons button {
+  background: transparent;
   border: none;
-  margin: 0px;
-  padding: 0px;
+  cursor: pointer;
   font-size: 24px;
   font-weight: 300;
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
+  color: var(--text-color);
+  transition: color 0.2s ease;
 }
 
-@media screen and (max-width: 1180px) {
+.navbar .nav-buttons button:hover {
+  color: var(--accent-color);
+}
+
+.navbar .menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.navbar .nav-buttons.desktop-only {
+  display: flex;
+}
+
+/* ------------------------ */
+/* Responsive ------------------------ */
+
+@media (max-width: 1185px) {
   .navbar {
-    align-items: flex-start;
-    gap: 10px;
+    max-width: 1180px;
+    width: 90%;
+    align-self: center;
     margin-top: 20px;
   }
 
-  .Links {
-    gap: 20px;
-    width: 100%;
-    justify-content: center;
-  }
-
-  .Links a {
+  .navbar .Links a {
     font-size: 20px;
   }
 
-  .nav-buttons {
-    gap: 10px;
-  }
-
-  .nav-buttons button {
+  .navbar .nav-buttons button {
     font-size: 20px;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .navbar {
-    margin-top: 15px;
+@media (max-width: 850px) {
+  .navbar .Links {
+    gap: 20px;
   }
 
-  .Links {
-    gap: 10px;
-  }
-
-  .Links a {
+  .navbar .Links a {
     font-size: 18px;
   }
+}
 
-  .nav-buttons {
-    gap: 10px;
+@media (max-width: 767px) {
+  .navbar .menu-toggle {
+    display: block;
+    position: fixed;
+    top: 15px;
+    right: 25px;
+    font-size: 32px;
+    z-index: 10000;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
   }
 
-  .nav-buttons button {
-    font-size: 18px;
+  .navbar .Links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--bg-color);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    z-index: 9999;
+  }
+
+  .navbar .Links.open {
+    display: flex;
+  }
+
+  .navbar .nav-buttons.desktop-only {
+    display: none;
+  }
+
+  .Links.open .nav-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
   }
 }
