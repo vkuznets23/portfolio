@@ -169,9 +169,9 @@ export default function App() {
             facts={facts}
           />
         </section>
-        <section id="Contacts">
+        <footer id="Contacts">
           <Footer />
-        </section>
+        </footer>
       </div>
     </div>
   )

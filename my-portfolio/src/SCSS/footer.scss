@@ -1,0 +1,124 @@
+.footer-container {
+    width: 100%;
+    background-color: #212121;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 48px;
+    padding: 40px 20px;
+    
+    .footer {
+        max-width: 1180px;
+        width: 100%;
+        margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+  
+      .getInTouch {
+        max-width: 600px;
+  
+        a {
+          color: #b4fb6d;
+          text-decoration: underline;
+          margin: 0;
+  
+          &:hover {
+            color: #e88fb2;
+          }
+        }
+      }
+  
+      .footer-links {
+        display: flex;
+        gap: 10px;
+  
+        a {
+          color: #212121;
+          background-color: #b4fb6d;
+          padding: 10px 30px;
+          border-radius: 25px;
+          text-decoration: none;
+          font-size: 20px;
+          transition: all 0.3s ease;
+  
+          &:hover {
+            background-color: #e88fb2;
+            color: white;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 1180px) {    
+        .footer-container .footer {
+            max-width: 1000px;
+            width: 100%;
+        }
+      }
+  
+    @media (max-width: 1024px) {
+      align-self: center;
+  
+      .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 5px;
+  
+        .footer-links {
+          flex-wrap: wrap;
+          justify-content: center;
+  
+          a {
+            font-size: 18px;
+            padding: 8px 24px;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      font-size: 28px;
+  
+      .footer {
+        .getInTouch {
+          max-width: 40%;
+        }
+  
+        .footer-links {
+          gap: 8px;
+  
+          a {
+            font-size: 16px;
+            padding: 8px 20px;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 480px) {
+      font-size: 22px;
+      padding: 30px 15px;
+  
+      .footer {
+        gap: 20px;
+
+        .getInTouch {
+            max-width: 30%;
+          }
+  
+        .footer-links {
+          flex-direction: column;
+          align-items: center;
+  
+          a {
+            width: 100%;
+            max-width: 250px;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+  

@@ -38,17 +38,6 @@ export default function Navbar() {
     </div>
   )
 
-  // const renderNavbar = (isFixed = false) => (
-  //   <div className={`navbar ${isFixed ? 'fixed' : ''}`}>
-  //     <div>LOGO</div>
-  //     <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-  //       {menuOpen ? '✖' : '☰'}
-  //     </button>
-  //     <div className={`Links ${menuOpen ? 'open' : ''}`}>{links}</div>
-  //     {buttons}
-  //   </div>
-  // )
-
   const renderNavbar = (isFixed = false) => (
     <div className={`navbar ${isFixed ? 'fixed' : ''}`}>
       <div>LOGO</div>
@@ -67,12 +56,10 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Фиксированное при скролле */}
       <div className={`navbar-container ${scrolled ? 'scrolled' : 'default'}`}>
         {renderNavbar(true)}
       </div>
 
-      {/* Статичное сверху */}
       {renderNavbar(false)}
     </>
   )
