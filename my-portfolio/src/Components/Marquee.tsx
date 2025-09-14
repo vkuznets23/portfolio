@@ -6,7 +6,7 @@ type StripeProps = {
 }
 
 export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
-  const items = Array(20).fill(text)
+  const items = Array(120).fill(text)
 
   return (
     <div className="marquee" style={{ rotate: style }}>

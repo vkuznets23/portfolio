@@ -15,7 +15,7 @@
 .marquee-track {
   display: flex;
   width: max-content;
-  animation: marquee-scroll 200s linear infinite;
+  animation: marquee-scroll 900s linear infinite;
 }
 
 .marquee-content {

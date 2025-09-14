@@ -134,7 +134,7 @@
 
 @media screen and (max-width: 1180px) {
   .toggleCard {
-    width: 80%;
+    width: 83%;
     margin: 0 auto;
   }
 
@@ -155,12 +155,12 @@
   }
 
   .toggleCard {
-    width: 61%;
+    width: 70%;
     margin: 0 auto;
   }
 
   .toggle.active {
-    width: 61%;
+    width: 70%;
     margin: 0 auto;
   }
 
