@@ -64,7 +64,7 @@
           "tags": ["React", "TypeScript", "Vanilla CSS", "Playwright", "Jest", "Pet project"]
         },
         "project4": {
-          "img": "/photos/portfolio.png",
+          "img": "/photos/fractol.png",
           "deployUrl": "",
           "githubUrl": "https://github.com/vkuznets23/fractol",
           "header": "fract-ol",
