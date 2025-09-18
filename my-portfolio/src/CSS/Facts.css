@@ -13,6 +13,19 @@
   /* width: 3900px; */
 }
 
+/* Адаптивная ширина для разных размеров экрана */
+@media (min-width: 1920px) {
+  .container {
+    width: 3500px;
+  }
+}
+
+@media (min-width: 2560px) {
+  .container {
+    width: 4000px;
+  }
+}
+
 .fact {
   position: absolute;
   padding: 20px;
