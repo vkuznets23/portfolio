@@ -10,6 +10,7 @@ type AboutMeProps = {
 export default function AboutMe({ description, header, facts }: AboutMeProps) {
   const ref = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
+  const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
@@ -38,26 +39,63 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
     const scrollSection = wrapper.parentElement as HTMLElement
     if (!scrollSection) return
 
-    const maxScroll = wrapper.scrollWidth - window.innerWidth
-    const multiplier = 2
-    scrollSection.style.height = `${wrapper.scrollWidth * multiplier}px`
+    const updateScroll = () => {
+      // Рассчитываем максимальный скролл на основе реальной ширины контента
+      const contentWidth = wrapper.scrollWidth
+      const viewportWidth = window.innerWidth
 
-    const handleScroll = () => {
-      const rect = scrollSection.getBoundingClientRect()
-      const scrollTop = -rect.top
-      const maxY = scrollSection.offsetHeight - window.innerHeight
+      // Увеличиваем максимальный скролл для больших экранов
+      // Это обеспечивает полный проход контента на любом размере экрана
+      const baseScroll = Math.max(contentWidth - viewportWidth, 0)
+      const maxScroll = Math.max(baseScroll, 1500) // Минимум 1500px скролла
 
-      const progress = Math.min(Math.max(scrollTop / maxY, 0), 1)
+      // Устанавливаем высоту секции для скролла
+      const multiplier = 2
+      const scrollHeight = contentWidth * multiplier
+      scrollSection.style.height = `${scrollHeight}px`
 
-      wrapper.style.transform = `translateX(${-progress * maxScroll}px)`
+      // Устанавливаем высоту основного контейнера для равномерного расстояния до футера
+      if (experienceContainerRef.current) {
+        experienceContainerRef.current.style.height = `${scrollHeight + 200}px` // +200px для отступов
+      }
+
+      const handleScroll = () => {
+        const rect = scrollSection.getBoundingClientRect()
+        const scrollTop = -rect.top
+        const maxY = scrollSection.offsetHeight - window.innerHeight
+
+        const progress = Math.min(Math.max(scrollTop / maxY, 0), 1)
+
+        wrapper.style.transform = `translateX(${-progress * maxScroll}px)`
+      }
+
+      return handleScroll
     }
 
+    const handleScroll = updateScroll()
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+
+    // Обновляем при изменении размера окна
+    const handleResize = () => {
+      window.removeEventListener('scroll', handleScroll)
+      const newHandleScroll = updateScroll()
+      window.addEventListener('scroll', newHandleScroll)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   return (
-    <div className="experience-container" style={{ height: '400vh' }}>
+    <div
+      className="experience-container"
+      ref={experienceContainerRef}
+      style={{ height: '400vh' }}
+    >
       <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
         <h2 className="h2">{header}</h2>
         <div className="description-flex-container">

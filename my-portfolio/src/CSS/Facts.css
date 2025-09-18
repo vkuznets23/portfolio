@@ -10,7 +10,27 @@
   top: 0px;
   height: 100vh;
   width: 2950px;
-  /* width: 3900px; */
+}
+
+@media (min-width: 1920px) {
+  .container {
+    top: 20%;
+    height: 65vh;
+    width: 3500px;
+  }
+}
+
+@media (min-width: 900px) {
+  .scroll-section {
+    margin-left: 10%;
+  }
+
+  .container {
+    top: 20%;
+    left: 100%;
+    height: 65vh;
+    width: 2950px;
+  }
 }
 
 .fact {
