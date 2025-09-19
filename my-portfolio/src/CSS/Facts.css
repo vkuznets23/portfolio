@@ -12,7 +12,7 @@
   width: 2950px;
 }
 
-@media (min-width: 1920px) {
+/* @media (min-width: 1920px) {
   .container {
     top: 20%;
     height: 65vh;
@@ -31,7 +31,7 @@
     height: 65vh;
     width: 2950px;
   }
-}
+} */
 
 .fact {
   position: absolute;
