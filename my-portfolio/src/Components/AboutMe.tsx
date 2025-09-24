@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import '../css/facts.css'
+import CircularText from './CircleText'
+import { useGlobal } from '../context/useGlobal'
 
 type AboutMeProps = {
   description: string
@@ -9,6 +11,7 @@ type AboutMeProps = {
 
 export default function AboutMe({ description, header, facts }: AboutMeProps) {
   const ref = useRef<HTMLDivElement>(null)
+  const { language } = useGlobal()
   const containerRef = useRef<HTMLDivElement>(null)
   const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
@@ -100,6 +103,17 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
         <h2 className="h2">{header}</h2>
         <div className="description-flex-container">
           <div className="description">{description}</div>
+          <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
+            <CircularText
+              text={
+                language === 'en'
+                  ? 'scroll down > scroll down > scroll down >'
+                  : 'ещё вниз >> ещё вниз >> ещё вниз >>'
+              }
+              radius={62}
+            />
+            <span className="emoji-pointer">👈</span>
+          </div>
         </div>
       </div>
       <div className="scroll-section">
