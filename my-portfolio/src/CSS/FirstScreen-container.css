@@ -264,6 +264,20 @@
 }
 
 @media screen and (max-width: 900px) {
+  .description-absolute-container {
+    top: 280px;
+  }
+
+  .circle-photo-wrapper {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .photo {
+    width: 7rem;
+    height: 7rem;
+  }
+
   .description-flex-container {
     position: relative;
     flex-direction: row;
