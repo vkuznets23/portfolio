@@ -309,7 +309,7 @@
 @media screen and (max-width: 700px) {
   .h2 {
     font-size: 44px;
-    width: 50%;
+    width: 100%;
     margin-bottom: 20px;
   }
 
@@ -342,14 +342,24 @@
 }
 
 @media screen and (max-width: 500px) {
+  .projectsContainer {
+    padding: 20px;
+  }
+
+  .experience-container {
+    padding: 20px;
+  }
+
   .h2 {
     font-size: 34px;
-    width: 40%;
+    width: 100%;
     margin-bottom: 20px;
   }
 
   .projects {
     max-width: 380px;
+    padding: 0px;
+    row-gap: 60px;
   }
 
   .projectHeader {
@@ -361,8 +371,8 @@
   }
 
   .allProjectsButton {
-    width: 35%;
-    margin-bottom: 0px;
+    width: 100%;
+    margin-bottom: 50px;
   }
 }
 

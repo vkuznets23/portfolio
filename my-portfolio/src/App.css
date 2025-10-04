@@ -103,8 +103,23 @@ section {
   font-display: swap;
 }
 
-/* Отключаем все анимации на мобильных устройствах */
+/* Отключаем все анимации и горизонтальный скролл на мобильных устройствах */
 @media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  html {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
+  .main-container {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+
   .slide-up,
   .hidden,
   .fade-in {
