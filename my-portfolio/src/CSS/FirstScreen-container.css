@@ -231,7 +231,7 @@
 @media screen and (max-width: 1180px) {
   .description-absolute-container {
     margin: 0 auto;
-    width: 93%;
+    width: 90%;
     left: 50%;
     transform: translateX(-50%);
   }
