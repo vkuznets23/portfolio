@@ -284,10 +284,6 @@
 }
 
 @media screen and (max-width: 700px) {
-  .firstWrapper {
-    height: 620px;
-  }
-
   .description-absolute-container {
     top: 200px;
   }
