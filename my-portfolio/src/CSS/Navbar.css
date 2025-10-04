@@ -118,7 +118,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 900px) {
   .navbar .menu-toggle {
     display: block;
     position: fixed;

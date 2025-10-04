@@ -368,8 +368,8 @@
   }
 }
 
-/* Отключаем анимации на мобильных устройствах */
-@media screen and (max-width: 768px) {
+/* Отключаем анимации на мобильных и планшетах */
+@media screen and (max-width: 900px) {
   /* Отключаем анимации для проектов на мобильных */
   .project-wrapper.hidden {
     opacity: 1 !important;

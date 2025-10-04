@@ -42,10 +42,10 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
     const scrollSection = wrapper.parentElement as HTMLElement
     if (!scrollSection) return
 
-    // Отключаем горизонтальный скролл на мобильных устройствах
-    const isMobile = window.innerWidth <= 768
-    if (isMobile) {
-      // На мобильных просто убираем все стили скролла
+    // Отключаем горизонтальный скролл на мобильных и планшетах (до 900px)
+    const isMobileOrTablet = window.innerWidth <= 900
+    if (isMobileOrTablet) {
+      // На мобильных и планшетах просто убираем все стили скролла
       scrollSection.style.height = 'auto'
       if (experienceContainerRef.current) {
         experienceContainerRef.current.style.height = 'auto'
@@ -94,9 +94,9 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
     const handleResize = () => {
       window.removeEventListener('scroll', handleScroll)
 
-      // Проверяем, нужно ли отключить скролл на мобильных
-      const newIsMobile = window.innerWidth <= 768
-      if (newIsMobile) {
+      // Проверяем, нужно ли отключить скролл на мобильных и планшетах (до 900px)
+      const newIsMobileOrTablet = window.innerWidth <= 900
+      if (newIsMobileOrTablet) {
         scrollSection.style.height = 'auto'
         if (experienceContainerRef.current) {
           experienceContainerRef.current.style.height = 'auto'
