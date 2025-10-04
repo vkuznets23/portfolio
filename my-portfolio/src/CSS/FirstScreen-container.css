@@ -231,7 +231,7 @@
 @media screen and (max-width: 1180px) {
   .description-absolute-container {
     margin: 0 auto;
-    width: 93%;
+    width: 90%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -264,6 +264,20 @@
 }
 
 @media screen and (max-width: 900px) {
+  .description-absolute-container {
+    top: 280px;
+  }
+
+  .circle-photo-wrapper {
+    width: 15rem;
+    height: 15rem;
+  }
+
+  .photo {
+    width: 7rem;
+    height: 7rem;
+  }
+
   .description-flex-container {
     position: relative;
     flex-direction: row;
@@ -275,7 +289,7 @@
   }
 
   .description {
-    width: 55%;
+    width: 100%;
     font-size: 1.5rem;
     text-align: left;
     text-indent: 0;
@@ -298,7 +312,6 @@
   }
 
   .description {
-    width: 55%;
     font-size: 1.2rem;
     text-align: left;
     text-indent: 0;

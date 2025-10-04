@@ -103,21 +103,43 @@ section {
   font-display: swap;
 }
 
-/* Отключаем все анимации и горизонтальный скролл на мобильных устройствах */
-@media screen and (max-width: 768px) {
-  body {
-    overflow-x: hidden !important;
+/* Отключаем все анимации и горизонтальный скролл на мобильных и планшетах */
+@media screen and (max-width: 900px) {
+  * {
     max-width: 100vw !important;
+    box-sizing: border-box !important;
   }
 
   html {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .main-container {
     overflow-x: hidden !important;
     max-width: 100vw !important;
+    width: 100% !important;
+  }
+
+  .first-wrapper {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
+  }
+
+  .content-wrapper {
+    max-width: 100vw !important;
+    width: 100% !important;
+    overflow-x: hidden !important;
   }
 
   .slide-up,

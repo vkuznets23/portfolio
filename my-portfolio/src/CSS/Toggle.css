@@ -158,12 +158,12 @@
   }
 
   .toggleCard {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .toggle.active {
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -187,12 +187,12 @@
   }
 
   .toggleCard {
-    width: 45%;
+    width: 100%;
     margin: 0 auto;
   }
 
   .toggle.active {
-    width: 45%;
+    width: 100%;
     margin: 0 auto;
   }
 
@@ -237,5 +237,20 @@
 
   .date {
     font-size: 16px;
+  }
+}
+
+/* Отключаем анимации на мобильных и планшетах */
+@media screen and (max-width: 900px) {
+  .slide-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+  }
+
+  .hidden {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
   }
 }
