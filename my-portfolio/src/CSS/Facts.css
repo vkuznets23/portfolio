@@ -294,9 +294,15 @@
     max-width: 300px !important;
   }
 
+  .fact9 {
+    width: 290px !important;
+    height: 290px !important;
+    max-width: 300px !important;
+  }
+
   .fact10 {
-    width: 330px !important;
-    height: 330px !important;
+    width: 350px !important;
+    height: 350px !important;
     max-width: 400px !important;
   }
 
@@ -304,7 +310,14 @@
     text-align: center !important;
     margin: 0 !important;
     padding: 0 !important;
+    padding-top: 10px !important;
     font-size: 18px !important;
+  }
+
+  /* Специальные стили для 7-го факта с увеличенным padding */
+  .fact7 p {
+    padding: 0px 30px !important;
+    padding-top: 10px !important;
   }
 
   /* Стили для изображений на мобильных */
@@ -326,7 +339,7 @@
 
   /* Позиционирование изображений относительно фактов */
   .img1 {
-    top: 920px !important;
+    top: 980px !important;
     left: 25% !important;
     width: 110px !important;
     height: 110px !important;
@@ -342,7 +355,7 @@
   }
 
   .img3 {
-    top: 560px !important;
+    top: 600px !important;
     left: 80% !important;
     width: 120px !important;
     height: 120px !important;
@@ -350,13 +363,13 @@
   }
 
   .img4 {
-    top: 1180px !important;
+    top: 1230px !important;
     left: 80% !important;
     transform: translateX(-50%) !important;
   }
 
   .img5 {
-    top: 1580px !important;
+    top: 1700px !important;
     left: 20% !important;
     width: 140px !important;
     height: 140px !important;
@@ -364,7 +377,7 @@
   }
 
   .img6 {
-    top: 2190px !important;
+    top: 2300px !important;
     left: 70% !important;
     width: 180px !important;
     height: 80px !important;
@@ -373,7 +386,7 @@
   }
 
   .img7 {
-    top: 2880px !important;
+    top: 2990px !important;
     left: 75% !important;
     width: 120px !important;
     height: 120px !important;

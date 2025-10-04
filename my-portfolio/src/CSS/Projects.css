@@ -403,4 +403,20 @@
     transform: translateY(0) !important;
     transition: none !important;
   }
+
+  /* Предотвращаем горизонтальный скролл в проектах */
+  .projectsContainer {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .projects {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  .project-wrapper {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
 }
