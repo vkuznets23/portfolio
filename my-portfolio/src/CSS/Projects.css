@@ -359,6 +359,7 @@
   .projects {
     max-width: 380px;
     padding: 0px;
+    row-gap: 60px;
   }
 
   .projectHeader {
@@ -371,7 +372,7 @@
 
   .allProjectsButton {
     width: 100%;
-    margin-bottom: 0px;
+    margin-bottom: 50px;
   }
 }
 
