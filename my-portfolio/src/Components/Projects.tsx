@@ -74,25 +74,49 @@ export default function Projects({ projects, description }: ProjectsProps) {
 
   // === Появление карточек проектов по мере прокрутки ===
   useEffect(() => {
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = Number(entry.target.getAttribute('data-index'))
-          if (entry.isIntersecting) {
-            setVisibleProjects((prev) => {
-              const next = [...prev]
-              next[index] = true
-              return next
-            })
-            io.unobserve(entry.target)
-          }
-        })
-      },
-      { threshold: 0.2 }
-    )
+    const handleProjectsVisibility = () => {
+      // На мобильных устройствах (≤900px) сразу показываем все проекты
+      const isMobile = window.innerWidth <= 900
+      if (isMobile) {
+        setVisibleProjects(new Array(projects.length).fill(true))
+        return null
+      }
 
-    projectRefs.current.forEach((el) => el && io.observe(el))
-    return () => io.disconnect()
+      const io = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            const index = Number(entry.target.getAttribute('data-index'))
+            if (entry.isIntersecting) {
+              setVisibleProjects((prev) => {
+                const next = [...prev]
+                next[index] = true
+                return next
+              })
+              io.unobserve(entry.target)
+            }
+          })
+        },
+        { threshold: 0.2 }
+      )
+
+      projectRefs.current.forEach((el) => el && io.observe(el))
+      return io
+    }
+
+    const io = handleProjectsVisibility()
+
+    // Обработчик изменения размера окна
+    const handleResize = () => {
+      if (io) io.disconnect()
+      handleProjectsVisibility()
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      if (io) io.disconnect()
+      window.removeEventListener('resize', handleResize)
+    }
   }, [projects])
 
   return (
