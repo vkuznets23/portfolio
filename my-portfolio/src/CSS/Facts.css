@@ -376,32 +376,32 @@
   }
   .img2 {
     top: 44vw !important;
-    left: clamp(20%, 20%, 30%) !important;
+    left: 20% !important;
     transform: translateX(-50%) !important;
   }
   .img3 {
     top: 30vw !important;
-    left: clamp(70%, 85%, 90%) !important;
+    left: 85% !important;
     transform: translateX(-50%) !important;
   }
   .img4 {
     top: 140vw !important;
-    left: clamp(20%, 60%, 80%) !important;
+    left: 60% !important;
     transform: translateX(-50%) !important;
   }
   .img5 {
     top: 200vw !important;
-    left: clamp(20%, 60%, 80%) !important;
+    left: 60% !important;
     transform: translateX(-50%) !important;
   }
   .img6 {
     top: 265vw !important;
-    left: clamp(20%, 40%, 60%) !important;
+    left: 40% !important;
     transform: translateX(-50%) !important;
   }
   .img7 {
     top: 350vw !important;
-    left: clamp(20%, 50%, 80%) !important;
+    left: 50% !important;
     transform: translateX(-50%) !important;
   }
 }
