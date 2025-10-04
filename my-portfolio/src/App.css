@@ -114,6 +114,8 @@ section {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   body {
@@ -122,23 +124,41 @@ section {
     width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+    position: relative !important;
   }
 
   .main-container {
     overflow-x: hidden !important;
     max-width: 100vw !important;
     width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .first-wrapper {
     max-width: 100vw !important;
     width: 100% !important;
     overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .content-wrapper {
     max-width: 100vw !important;
     width: 100% !important;
+    overflow-x: hidden !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Дополнительная защита от горизонтального скролла */
+  div,
+  section,
+  article,
+  main,
+  header,
+  footer {
+    max-width: 100vw !important;
     overflow-x: hidden !important;
   }
 
