@@ -60,7 +60,7 @@ body.dark {
 
 @media screen and (max-width: 900px) {
   .first-wrapper {
-    height: 600px;
+    height: 630px;
   }
 }
 
@@ -149,5 +149,11 @@ section {
     transform: translateY(0) !important;
     animation: none !important;
     transition: none !important;
+  }
+
+  @media screen and (max-width: 700px) {
+    .first-wrapper {
+      height: 700px;
+    }
   }
 }

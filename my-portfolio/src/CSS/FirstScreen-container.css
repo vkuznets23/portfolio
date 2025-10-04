@@ -299,7 +299,17 @@
 
 @media screen and (max-width: 700px) {
   .description-absolute-container {
-    top: 200px;
+    top: 250px;
+  }
+
+  .circle-photo-wrapper {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .photo {
+    width: 7rem;
+    height: 7rem;
   }
 
   .description-flex-container {
