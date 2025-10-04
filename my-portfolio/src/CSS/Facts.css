@@ -289,14 +289,13 @@
     align-self: flex-end !important;
     width: 100% !important;
     max-width: 40vw !important;
-    margin-top: -5vw !important;
+    margin-top: -9vw !important;
   }
 
   .fact3 {
     align-self: flex-start !important;
     width: 100% !important;
     max-width: 55vw !important;
-    margin-top: -5vw !important;
   }
 
   .fact4 {
@@ -346,9 +345,66 @@
     max-width: 42vw !important;
     margin-top: -8vw !important;
   }
+
+  .img1,
+  .img2,
+  .img3,
+  .img4,
+  .img5,
+  .img6,
+  .img7 {
+    display: block !important;
+    position: absolute !important;
+    width: 20vw !important;
+    height: 20vw !important;
+    min-width: 50px !important;
+    min-height: 50px !important;
+    max-width: 300px !important;
+    max-height: 300px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    z-index: 10 !important;
+  }
+
+  /* Адаптивное позиционирование изображений */
+  .img1 {
+    top: 86vw !important;
+    left: 60% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img2 {
+    top: 44vw !important;
+    left: 20% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img3 {
+    top: 30vw !important;
+    left: 85% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img4 {
+    top: 140vw !important;
+    left: 60% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img5 {
+    top: 200vw !important;
+    left: 60% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img6 {
+    top: 265vw !important;
+    left: 40% !important;
+    transform: translateX(-50%) !important;
+  }
+  .img7 {
+    top: 350vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+  }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 700px) {
   .experience-container {
     height: auto !important;
     display: flex !important;
