@@ -265,6 +265,7 @@
 
 @media screen and (max-width: 900px) {
   .description-flex-container {
+    position: relative;
     flex-direction: row;
     align-items: center;
     justify-content: center;
@@ -283,8 +284,12 @@
 }
 
 @media screen and (max-width: 700px) {
+  .firstWrapper {
+    height: 620px;
+  }
+
   .description-absolute-container {
-    top: 18rem;
+    top: 200px;
   }
 
   .description-flex-container {
@@ -292,7 +297,7 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    width: 83%;
+    width: 100%;
     margin-bottom: 2.5rem;
   }
 
@@ -302,6 +307,10 @@
     text-align: left;
     text-indent: 0;
     margin-bottom: 0.25rem;
+  }
+
+  .hero {
+    padding-top: 4rem;
   }
 }
 
