@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import '../css/facts.css'
+import '../CSS/Facts.css'
 import CircularText from './CircleText'
 import { useGlobal } from '../context/useGlobal'
 
