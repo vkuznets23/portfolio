@@ -42,6 +42,18 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
     const scrollSection = wrapper.parentElement as HTMLElement
     if (!scrollSection) return
 
+    // Отключаем горизонтальный скролл на мобильных устройствах
+    const isMobile = window.innerWidth <= 768
+    if (isMobile) {
+      // На мобильных просто убираем все стили скролла
+      scrollSection.style.height = 'auto'
+      if (experienceContainerRef.current) {
+        experienceContainerRef.current.style.height = 'auto'
+      }
+      wrapper.style.transform = 'none'
+      return
+    }
+
     const updateScroll = () => {
       // Рассчитываем максимальный скролл на основе реальной ширины контента
       const contentWidth = wrapper.scrollWidth
@@ -81,6 +93,18 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
     // Обновляем при изменении размера окна
     const handleResize = () => {
       window.removeEventListener('scroll', handleScroll)
+
+      // Проверяем, нужно ли отключить скролл на мобильных
+      const newIsMobile = window.innerWidth <= 768
+      if (newIsMobile) {
+        scrollSection.style.height = 'auto'
+        if (experienceContainerRef.current) {
+          experienceContainerRef.current.style.height = 'auto'
+        }
+        wrapper.style.transform = 'none'
+        return
+      }
+
       const newHandleScroll = updateScroll()
       window.addEventListener('scroll', newHandleScroll)
     }
