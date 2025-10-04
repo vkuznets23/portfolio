@@ -254,8 +254,8 @@
   }
 
   .scrolldown-wrapper {
-    width: 8.5rem;
-    height: 8.5rem;
+    width: 14rem;
+    height: 10rem;
   }
 
   .projectsContainer {
@@ -271,15 +271,12 @@
     grid-template-columns: repeat(1, 1fr);
     row-gap: 40px;
   }
-
-  .allProjectsButton {
-    width: 85%;
-  }
 }
 
 @media screen and (max-width: 900px) {
   .h2 {
-    width: 65%;
+    width: 100%;
+    font-size: 54px;
   }
 
   .projectsContainer {
@@ -292,6 +289,7 @@
 
   .projects {
     max-width: 730px;
+    padding: 0px;
   }
 
   .tag {
@@ -300,9 +298,9 @@
   }
 
   .allProjectsButton {
-    width: 70%;
     font-size: 22px;
     margin-top: 70px;
+    margin-bottom: 50px;
   }
 }
 
@@ -311,10 +309,6 @@
     font-size: 44px;
     width: 100%;
     margin-bottom: 20px;
-  }
-
-  .projects {
-    max-width: 500px;
   }
 
   .project-image-wrapper {
@@ -335,7 +329,6 @@
   }
 
   .allProjectsButton {
-    width: 45%;
     font-size: 18px;
     margin-top: 40px;
   }
@@ -371,7 +364,6 @@
   }
 
   .allProjectsButton {
-    width: 100%;
     margin-bottom: 50px;
   }
 }
