@@ -197,7 +197,8 @@
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-
+}
+@media screen and (max-width: 430px) {
   .experience-container {
     height: auto !important;
     display: flex !important;

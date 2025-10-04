@@ -378,6 +378,7 @@
 
 /* Отключаем анимации на мобильных устройствах */
 @media screen and (max-width: 768px) {
+  /* Отключаем анимации для проектов на мобильных */
   .project-wrapper.hidden {
     opacity: 1 !important;
     transform: translateY(0) !important;
@@ -385,6 +386,19 @@
   }
 
   .project-wrapper.fade-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+
+  /* Отключаем анимации для заголовка проектов */
+  .slide-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+  }
+
+  .hidden {
     opacity: 1 !important;
     transform: translateY(0) !important;
     transition: none !important;

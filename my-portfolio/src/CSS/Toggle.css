@@ -239,3 +239,18 @@
     font-size: 16px;
   }
 }
+
+/* Отключаем анимации на мобильных устройствах */
+@media screen and (max-width: 768px) {
+  .slide-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+  }
+
+  .hidden {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+}
