@@ -125,13 +125,13 @@ export default function App() {
   return (
     <div className="main-container">
       <Navbar />
-      <div className="first-wrapper">
+      {/* <div className="first-wrapper">
         <FirstScreen
           firstLine={firstLine}
           options={options}
           description={description}
         />
-      </div>
+      </div> */}
       <div className="content-wrapper">
         <Marquee
           text={
