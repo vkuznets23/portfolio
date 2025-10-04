@@ -49,28 +49,6 @@ export default function Projects({ projects, description }: ProjectsProps) {
       document.body.classList.remove('projects-bg')
     }
   }, [])
-  // useEffect(() => {
-  //   if (!containerRef.current) return
-  //   const io = new IntersectionObserver(
-  //     ([entry]) => {
-  //       if (entry.isIntersecting) {
-  //         document.body.classList.add('projects-bg')
-  //       } else {
-  //         document.body.classList.remove('projects-bg')
-  //       }
-  //     },
-  //     {
-  //       threshold: 0,
-  //       rootMargin: '-400px 0px -500px 0px',
-  //     }
-  //   )
-  //   io.observe(containerRef.current)
-
-  //   return () => {
-  //     io.disconnect()
-  //     document.body.style.backgroundColor = ''
-  //   }
-  // }, [])
 
   // === Анимация появления шапки (один раз) ===
   useEffect(() => {
