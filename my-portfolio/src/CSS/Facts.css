@@ -197,8 +197,7 @@
     overflow-x: hidden !important;
     max-width: 100vw !important;
   }
-}
-@media screen and (max-width: 870px) {
+
   .experience-container {
     height: auto !important;
     display: flex !important;
@@ -261,7 +260,12 @@
     font-size: 18px !important;
   }
 }
-@media screen and (max-width: 430px) {
+@media screen and (max-width: 700px) {
+  .fact p {
+    font-size: 16px !important;
+  }
+}
+@media screen and (max-width: 650px) {
   .experience-container {
     height: auto !important;
     display: flex !important;
@@ -333,6 +337,7 @@
   }
 
   /* Специальные размеры для второго факта */
+
   .fact2 {
     width: 250px !important;
     height: 250px !important;
