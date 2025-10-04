@@ -331,12 +331,12 @@
     align-items: center;
     justify-content: center;
     gap: 2rem;
-    width: 83%;
+    width: 100%;
     margin-bottom: 2.5rem;
   }
 
   .description {
-    width: 42%;
+    width: 100%;
     font-size: 1.2rem;
     text-align: left;
     text-indent: 0;
