@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import '../CSS/Facts.css'
-import CircularText from './CircleText'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 import { useFactsTypograf } from '../hooks/useTypograph'
+import TextCircle from './TextCircle'
 
 export default function AboutMe() {
   const { language } = useGlobal()
@@ -26,6 +26,7 @@ export default function AboutMe() {
   const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
+  // visibility animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -138,17 +139,11 @@ export default function AboutMe() {
           <h2 className="h2">{header}</h2>
           <div className="description-flex-container">
             <div className="description">{description}</div>
-            <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-              <CircularText
-                text={
-                  language === 'en'
-                    ? 'scroll down > scroll down > scroll down >'
-                    : 'ещё вниз >> ещё вниз >> ещё вниз >>'
-                }
-                radius={62}
-              />
-              <span className="emoji-pointer">👈</span>
-            </div>
+            <TextCircle
+              textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
+              textEn="scroll down > scroll down > scroll down >"
+              radius={62}
+            />
           </div>
         </div>
         <div className="scroll-section">
