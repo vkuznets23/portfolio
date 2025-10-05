@@ -46,9 +46,7 @@ export default function App() {
               : ' * обо мне >> обо мне || обо мне * обо мне && обо мне >> обо мне '
           }
         />
-        <section id="Resume">
-          <Experience />
-        </section>
+        <Experience />
         <Marquee
           text={
             language === 'en'
@@ -57,15 +55,9 @@ export default function App() {
           }
           style="1.95deg"
         />
-        <section id="Projects">
-          <Projects />
-        </section>
-        <section id="About">
-          <AboutMe />
-        </section>
-        <section id="Contacts">
-          <Footer />
-        </section>
+        <Projects />
+        <AboutMe />
+        <Footer />
       </div>
     </main>
   )

@@ -99,44 +99,46 @@ export default function Projects() {
   }, [projects])
 
   return (
-    <div ref={containerRef} className="projectsContainer">
-      <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
-        <div className="description-flex-container">
-          <div className="description">{description}</div>
-          <TextCircle
-            radius={62}
-            textEn="scroll down > scroll down > scroll down >"
-            textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
-          />
-        </div>
-      </div>
-
-      <div className="projects">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            data-index={index}
-            ref={(el) => {
-              projectRefs.current[index] = el
-            }}
-            className={`project-wrapper ${
-              visibleProjects![index] ? 'fade-in' : 'hidden'
-            }`}
-          >
-            <Project project={project} />
+    <section id="Projects">
+      <div ref={containerRef} className="projectsContainer">
+        <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+          <div className="description-flex-container">
+            <div className="description">{description}</div>
+            <TextCircle
+              radius={62}
+              textEn="scroll down > scroll down > scroll down >"
+              textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
+            />
           </div>
-        ))}
-      </div>
+        </div>
 
-      <button
-        type="button"
-        className="allProjectsButton"
-        onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
-      >
-        {language === 'en'
-          ? 'Check out all projects at GitHub'
-          : 'Посмотри все проекты на GitHub'}
-      </button>
-    </div>
+        <div className="projects">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              data-index={index}
+              ref={(el) => {
+                projectRefs.current[index] = el
+              }}
+              className={`project-wrapper ${
+                visibleProjects![index] ? 'fade-in' : 'hidden'
+              }`}
+            >
+              <Project project={project} />
+            </div>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className="allProjectsButton"
+          onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
+        >
+          {language === 'en'
+            ? 'Check out all projects at GitHub'
+            : 'Посмотри все проекты на GitHub'}
+        </button>
+      </div>
+    </section>
   )
 }

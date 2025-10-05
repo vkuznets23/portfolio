@@ -44,24 +44,26 @@ export default function Experience() {
   }, [])
 
   return (
-    <div className="experience-container">
-      <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
-        <h2 className="h2">{header}</h2>
-        <div className="description-flex-container">
-          <div className="description">{description}</div>
-          <TextCircle
-            radius={62}
-            textEn="click * click * click ** click * click * click **"
-            textRu="клик ** клик ** клик ** клик ** клик ***"
-          />
+    <section id="Resume">
+      <div className="experience-container">
+        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 className="h2">{header}</h2>
+          <div className="description-flex-container">
+            <div className="description">{description}</div>
+            <TextCircle
+              radius={62}
+              textEn="click * click * click ** click * click * click **"
+              textRu="клик ** клик ** клик ** клик ** клик ***"
+            />
+          </div>
+        </div>
+
+        <div className="toggleAll">
+          {experience.map((obj, i) => (
+            <ExperienceObj key={i} {...obj} />
+          ))}
         </div>
       </div>
-
-      <div className="toggleAll">
-        {experience.map((obj, i) => (
-          <ExperienceObj key={i} {...obj} />
-        ))}
-      </div>
-    </div>
+    </section>
   )
 }

@@ -128,56 +128,58 @@ export default function AboutMe() {
   }, [])
 
   return (
-    <div
-      className="experience-container"
-      ref={experienceContainerRef}
-      style={{ height: '400vh' }}
-    >
-      <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
-        <h2 className="h2">{header}</h2>
-        <div className="description-flex-container">
-          <div className="description">{description}</div>
-          <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-            <CircularText
-              text={
-                language === 'en'
-                  ? 'scroll down > scroll down > scroll down >'
-                  : 'ещё вниз >> ещё вниз >> ещё вниз >>'
-              }
-              radius={62}
-            />
-            <span className="emoji-pointer">👈</span>
+    <section id="About">
+      <div
+        className="experience-container"
+        ref={experienceContainerRef}
+        style={{ height: '400vh' }}
+      >
+        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 className="h2">{header}</h2>
+          <div className="description-flex-container">
+            <div className="description">{description}</div>
+            <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
+              <CircularText
+                text={
+                  language === 'en'
+                    ? 'scroll down > scroll down > scroll down >'
+                    : 'ещё вниз >> ещё вниз >> ещё вниз >>'
+                }
+                radius={62}
+              />
+              <span className="emoji-pointer">👈</span>
+            </div>
+          </div>
+        </div>
+        <div className="scroll-section">
+          <div className="container" ref={containerRef}>
+            <img src="/photos/dogphoto.png" alt="photo" className="img1" />
+            <img src="/photos/fugler.png" alt="fugler" className="img2" />
+            <img src="/photos/circle.gif" alt="fugler" className="img3" />
+            <img src="/photos/mug.png" alt="fugler" className="img4" />
+            <img src="/photos/knitting.png" alt="fugler" className="img5" />
+            <img src="/photos/office.gif" alt="office" className="img6" />
+            <img src="/photos/cuteme.png" alt="me" className="img7" />
+
+            {facts.map((fact, i) => (
+              <div key={i} className={`fact fact${i + 1}`}>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  <p>
+                    <b>Fact #{i + 1}</b>
+                  </p>
+                  <p>{fact}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="scroll-section">
-        <div className="container" ref={containerRef}>
-          <img src="/photos/dogphoto.png" alt="photo" className="img1" />
-          <img src="/photos/fugler.png" alt="fugler" className="img2" />
-          <img src="/photos/circle.gif" alt="fugler" className="img3" />
-          <img src="/photos/mug.png" alt="fugler" className="img4" />
-          <img src="/photos/knitting.png" alt="fugler" className="img5" />
-          <img src="/photos/office.gif" alt="office" className="img6" />
-          <img src="/photos/cuteme.png" alt="me" className="img7" />
-
-          {facts.map((fact, i) => (
-            <div key={i} className={`fact fact${i + 1}`}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <p>
-                  <b>Fact #{i + 1}</b>
-                </p>
-                <p>{fact}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </section>
   )
 }
