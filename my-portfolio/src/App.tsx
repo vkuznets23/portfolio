@@ -1,14 +1,17 @@
 import { useEffect } from 'react'
-import FirstScreen from './Components/FirstScreen'
-import './App.css'
-import Marquee from './Components/Marquee'
-import Projects from './Components/Projects'
-import Experience from './Components/Experience'
-import Footer from './Components/Footer'
-import Navbar from './Components/Navbar'
 import { useGlobal } from './hooks/useGlobal'
-import AboutMe from './Components/AboutMe'
 import { useAppData } from './hooks/useAppData'
+import {
+  FirstScreen,
+  Marquee,
+  Projects,
+  Experience,
+  Footer,
+  Navbar,
+  AboutMe,
+} from './Components'
+import './App.css'
+import './CSS/Loader.css'
 
 export default function App() {
   const { language, theme } = useGlobal()
@@ -22,16 +25,7 @@ export default function App() {
   if (loading) {
     return (
       <main className="main-container">
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
-          <div>Loading...</div>
-        </div>
+        <span className="loader"></span>
       </main>
     )
   }
