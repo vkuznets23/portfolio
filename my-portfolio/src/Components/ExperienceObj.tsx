@@ -25,7 +25,7 @@ export default function ExperienceObj({ date, name, description }: Experience) {
           <button
             onClick={() => setToggle(!toggle)}
             className={`toggleButton ${toggle ? 'active' : ''}`}
-          ></button>
+          />
         </div>
         {toggle && (
           <ul className="experienceDesc">

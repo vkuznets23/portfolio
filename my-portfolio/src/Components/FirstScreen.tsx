@@ -1,9 +1,7 @@
 import Typewriter from './Typewriter'
 import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
-import { useGlobal } from '../hooks/useGlobal'
-import { useAppData } from '../hooks/useAppData'
-import { useTypografCombined } from '../hooks/useTypograph'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 
 export default function FirstScreen() {
   const { language } = useGlobal()
@@ -38,11 +36,7 @@ export default function FirstScreen() {
               }
               radius={71}
             />
-            <img
-              src="/photos/img038.jpg"
-              alt="my_photo"
-              className="photo"
-            ></img>
+            <img src="/photos/img038.jpg" alt="my_photo" className="photo" />
             <span className="emoji-hand">👋</span>
           </div>
         </div>

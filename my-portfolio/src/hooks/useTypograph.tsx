@@ -27,7 +27,10 @@ function applyEnglishHangingPrepositions(text: string) {
   )
 }
 
-export function typografCombined(text: string, lang: 'ru' | 'en' = 'ru') {
+export default function typografCombined(
+  text: string,
+  lang: 'ru' | 'en' = 'ru'
+) {
   if (lang === 'ru') {
     return tp.execute(text)
   } else {

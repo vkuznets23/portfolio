@@ -1,6 +1,4 @@
-import { useEffect } from 'react'
-import { useGlobal } from './hooks/useGlobal'
-import { useAppData } from './hooks/useAppData'
+import { useGlobal, useAppData } from './hooks'
 import {
   FirstScreen,
   Marquee,
@@ -9,6 +7,7 @@ import {
   Footer,
   Navbar,
   AboutMe,
+  ErrorComponent,
 } from './Components'
 import './App.css'
 import './CSS/Loader.css'
@@ -25,36 +24,10 @@ export default function App() {
     )
   }
 
-  if (error) {
+  if (error || !data) {
     return (
       <main className="main-container">
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
-          <div>Error: {error}</div>
-        </div>
-      </main>
-    )
-  }
-
-  if (!data) {
-    return (
-      <main className="main-container">
-        <div
-          style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100vh',
-          }}
-        >
-          <div>No data available</div>
-        </div>
+        <ErrorComponent error={error} data={data} />
       </main>
     )
   }

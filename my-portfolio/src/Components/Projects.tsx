@@ -3,9 +3,7 @@ import CircularText from './CircleText'
 import '../CSS/Projects.css'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Project from './Project'
-import { useGlobal } from '../hooks/useGlobal'
-import { useTypografCombined } from '../hooks/useTypograph'
-import { useAppData } from '../hooks/useAppData'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 
 export default function Projects() {
   const { language } = useGlobal()

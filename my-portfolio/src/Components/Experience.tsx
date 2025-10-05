@@ -1,13 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import CircularText from './CircleText'
-import ExperienceObj from './ExperienceObj'
-import { useGlobal } from '../hooks/useGlobal'
+import { ExperienceObj, TextCircle } from '../Components'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import { useExperienceTypograf } from '../hooks/useTypograph'
 import { type ExperienceType } from '../types/experience'
-import { useAppData } from '../hooks/useAppData'
-import {
-  useExperienceTypograf,
-  useTypografCombined,
-} from '../hooks/useTypograph'
 
 export default function Experience() {
   const { language } = useGlobal()
@@ -26,17 +21,19 @@ export default function Experience() {
     language
   )
 
-  const ref = useRef<HTMLDivElement>(null)
+  // scroll animation
   const [visible, setVisible] = useState(false)
+  const ref = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          observer.disconnect() // activates once
+          observer.disconnect()
         }
       },
-      { threshold: 0.5 } // when 20% of the element is visible
+      { threshold: 0.5 }
     )
 
     if (ref.current) {
@@ -45,23 +42,18 @@ export default function Experience() {
 
     return () => observer.disconnect()
   }, [])
+
   return (
     <div className="experience-container">
       <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
         <h2 className="h2">{header}</h2>
         <div className="description-flex-container">
           <div className="description">{description}</div>
-          <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-            <CircularText
-              text={
-                language == 'en'
-                  ? 'click * click * click ** click * click * click **'
-                  : 'клик ** клик ** клик ** клик ** клик ***'
-              }
-              radius={62}
-            />
-            <span className="emoji-pointer">👈</span>
-          </div>
+          <TextCircle
+            radius={62}
+            textEn="click * click * click ** click * click * click **"
+            textRu="клик ** клик ** клик ** клик ** клик ***"
+          />
         </div>
       </div>
 

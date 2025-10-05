@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import '../CSS/Facts.css'
 import CircularText from './CircleText'
-import { useGlobal } from '../hooks/useGlobal'
-import { useAppData } from '../hooks/useAppData'
-import { useFactsTypograf, useTypografCombined } from '../hooks/useTypograph'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import { useFactsTypograf } from '../hooks/useTypograph'
 
 export default function AboutMe() {
   const { language } = useGlobal()

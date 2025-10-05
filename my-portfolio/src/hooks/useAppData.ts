@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getData, type AppData, type Language } from '../data'
 
-export const useAppData = (language: Language) => {
+export default function useAppData(language: Language) {
   const [data, setData] = useState<AppData | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
