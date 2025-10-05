@@ -6,19 +6,14 @@ type StripeProps = {
 }
 
 export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
-  const items = Array(120).fill(text)
+  const items = Array(60).fill(text)
 
   return (
     <div className="marquee" style={{ rotate: style }}>
       <div className="marquee-track">
         <div className="marquee-content">
           {items.map((t, i) => (
-            <span key={`first-${i}`}>{t}</span>
-          ))}
-        </div>
-        <div className="marquee-content">
-          {items.map((t, i) => (
-            <span key={`second-${i}`}>{t}</span>
+            <span key={i}>{t}</span>
           ))}
         </div>
       </div>

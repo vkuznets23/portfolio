@@ -26,6 +26,7 @@
 .marquee-content span {
   flex-shrink: 0;
   display: inline-block;
+  margin-right: 15px;
 }
 
 @keyframes marquee-scroll {
@@ -33,7 +34,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -55,5 +56,17 @@
 @media screen and (max-width: 480px) {
   .marquee {
     font-size: 18px;
+  }
+}
+
+/* Убеждаемся, что анимация Marquee работает на всех мобильных устройствах */
+@media screen and (max-width: 900px) {
+  .marquee-track {
+    animation: marquee-scroll 60s linear infinite !important;
+  }
+
+  /* Дополнительная защита от всех возможных отключений анимации */
+  .marquee .marquee-track {
+    animation: marquee-scroll 60s linear infinite !important;
   }
 }
