@@ -2,6 +2,7 @@
   font-weight: 300;
   font-family: "Montserrat";
   --bg-color: #ffffff;
+  --bg-circle-color: #b4fb6d;
   --bg-accent-color: #ffffff;
   --bg-switch-color: #b4fb6d;
   --text-color: #000000;
@@ -35,6 +36,7 @@ body.projects-bg .navbar-container.visible {
 
 body.dark {
   --bg-color: #212121;
+  --bg-circle-color: #6f9b42de;
   --text-color: #dedede;
   --project-desc: #7d7d7d;
   --bg-toggle-color: #232323;
