@@ -26,7 +26,8 @@
 .marquee-content span {
   flex-shrink: 0;
   display: inline-block;
-  margin-right: 15px;
+  margin-right: 20px;
+  white-space: nowrap;
 }
 
 @keyframes marquee-scroll {
@@ -62,9 +63,6 @@
 @media screen and (max-width: 900px) {
   .marquee {
     margin-top: 10px;
-  }
-  .marquee-content span {
-    margin-right: 60px;
   }
   .marquee-track {
     animation: marquee-scroll 60s linear infinite !important;
