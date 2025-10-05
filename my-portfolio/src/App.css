@@ -60,7 +60,7 @@ body.dark {
 
 @media screen and (max-width: 900px) {
   .first-wrapper {
-    height: 630px;
+    height: 560px;
   }
 }
 
@@ -157,7 +157,13 @@ section {
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 530px) {
+    .first-wrapper {
+      height: 630px;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
     .first-wrapper {
       height: 700px;
     }
