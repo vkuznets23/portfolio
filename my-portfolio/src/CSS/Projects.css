@@ -277,9 +277,6 @@
   .h2 {
     width: 100%;
     font-size: 54px;
-    padding-left: 0 !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
   }
 
   .projectsContainer {
@@ -312,9 +309,6 @@
     font-size: 44px;
     width: 100%;
     margin-bottom: 20px;
-    padding-left: 0 !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
   }
 
   .project-image-wrapper {
@@ -353,9 +347,6 @@
     font-size: 34px;
     width: 100%;
     margin-bottom: 20px;
-    padding-left: 0 !important;
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
   }
 
   .projects {
