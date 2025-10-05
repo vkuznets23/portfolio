@@ -1,20 +1,23 @@
 import Typewriter from './Typewriter'
 import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
-import { useGlobal } from '../hooks/useGlobal'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 
-type FirstScreenProps = {
-  firstLine: string
-  options: string[]
-  description: string
-}
-
-export default function FirstScreen({
-  firstLine,
-  options,
-  description,
-}: FirstScreenProps) {
+export default function FirstScreen() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+
+  const firstLine: string = useTypografCombined(
+    data?.firstScreen?.header?.line1 || '',
+    language
+  )
+  const options: string[] = data?.firstScreen?.header?.options
+    ? Object.values(data.firstScreen.header.options)
+    : []
+  const description: string = useTypografCombined(
+    data?.firstScreen?.description || '',
+    language
+  )
 
   return (
     <div className="firstScreen-container, slide-up">
@@ -33,11 +36,7 @@ export default function FirstScreen({
               }
               radius={71}
             />
-            <img
-              src="/photos/img038.jpg"
-              alt="my_photo"
-              className="photo"
-            ></img>
+            <img src="/photos/img038.jpg" alt="my_photo" className="photo" />
             <span className="emoji-hand">👋</span>
           </div>
         </div>

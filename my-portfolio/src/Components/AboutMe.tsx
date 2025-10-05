@@ -1,21 +1,32 @@
 import { useEffect, useRef, useState } from 'react'
 import '../CSS/Facts.css'
-import CircularText from './CircleText'
-import { useGlobal } from '../hooks/useGlobal'
+import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import { useFactsTypograf } from '../hooks/useTypograph'
+import TextCircle from './TextCircle'
 
-type AboutMeProps = {
-  description: string
-  header: string
-  facts: string[]
-}
-
-export default function AboutMe({ description, header, facts }: AboutMeProps) {
-  const ref = useRef<HTMLDivElement>(null)
+export default function AboutMe() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+  const header: string = useTypografCombined(
+    data?.aboutMe?.header || '',
+    language
+  )
+  const description: string = useTypografCombined(
+    data?.aboutMe?.description || '',
+    language
+  )
+
+  const facts: string[] = useFactsTypograf(
+    data?.aboutMe?.facts?.map((fact) => fact.fact) || [],
+    language
+  )
+
+  const ref = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
+  // visibility animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -118,56 +129,52 @@ export default function AboutMe({ description, header, facts }: AboutMeProps) {
   }, [])
 
   return (
-    <div
-      className="experience-container"
-      ref={experienceContainerRef}
-      style={{ height: '400vh' }}
-    >
-      <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
-        <h2 className="h2">{header}</h2>
-        <div className="description-flex-container">
-          <div className="description">{description}</div>
-          <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-            <CircularText
-              text={
-                language === 'en'
-                  ? 'scroll down > scroll down > scroll down >'
-                  : 'ещё вниз >> ещё вниз >> ещё вниз >>'
-              }
+    <section id="About">
+      <div
+        className="experience-container"
+        ref={experienceContainerRef}
+        style={{ height: '400vh' }}
+      >
+        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 className="h2">{header}</h2>
+          <div className="description-flex-container">
+            <div className="description">{description}</div>
+            <TextCircle
+              textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
+              textEn="scroll down > scroll down > scroll down >"
               radius={62}
             />
-            <span className="emoji-pointer">👈</span>
+          </div>
+        </div>
+        <div className="scroll-section">
+          <div className="container" ref={containerRef}>
+            <img src="/photos/dogphoto.png" alt="photo" className="img1" />
+            <img src="/photos/fugler.png" alt="fugler" className="img2" />
+            <img src="/photos/circle.gif" alt="fugler" className="img3" />
+            <img src="/photos/mug.png" alt="fugler" className="img4" />
+            <img src="/photos/knitting.png" alt="fugler" className="img5" />
+            <img src="/photos/office.gif" alt="office" className="img6" />
+            <img src="/photos/cuteme.png" alt="me" className="img7" />
+
+            {facts.map((fact, i) => (
+              <div key={i} className={`fact fact${i + 1}`}>
+                <div
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                  }}
+                >
+                  <p>
+                    <b>Fact #{i + 1}</b>
+                  </p>
+                  <p>{fact}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
-      <div className="scroll-section">
-        <div className="container" ref={containerRef}>
-          <img src="/photos/dogphoto.png" alt="photo" className="img1" />
-          <img src="/photos/fugler.png" alt="fugler" className="img2" />
-          <img src="/photos/circle.gif" alt="fugler" className="img3" />
-          <img src="/photos/mug.png" alt="fugler" className="img4" />
-          <img src="/photos/knitting.png" alt="fugler" className="img5" />
-          <img src="/photos/office.gif" alt="office" className="img6" />
-          <img src="/photos/cuteme.png" alt="me" className="img7" />
-
-          {facts.map((fact, i) => (
-            <div key={i} className={`fact fact${i + 1}`}>
-              <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                }}
-              >
-                <p>
-                  <b>Fact #{i + 1}</b>
-                </p>
-                <p>{fact}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    </section>
   )
 }

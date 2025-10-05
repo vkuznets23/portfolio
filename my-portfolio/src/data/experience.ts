@@ -14,7 +14,7 @@ export const experienceData = {
   en: {
     header: 'Bio & Experience',
     description:
-      "I didn't grow up as a computer geek and never imagined I'd work in tech. My background combines Journalism and Design, and later I transitioned into software development through Hive Helsinki  — a peer-to-peer project-based school, where ownership, curiosity, and collaboration drive progress.  My strongest expertise is in TypeScript and React.",
+      'I didn’t grow up as a computer geek and never imagined working in tech. My journey blends Journalism and Design, before I transitioned into software development through Hive Helsinki — a peer-to-peer, project-based school where curiosity, ownership, and collaboration drive growth.',
     experience: [
       {
         date: 'Sep 2018 - Jun 2021',
@@ -45,7 +45,7 @@ export const experienceData = {
   ru: {
     header: 'Биография и опыт',
     description:
-      'Я никогда не была компьютерным гиком и не мечатала работать в IT. Я работала и журналистом и дизайнером, а сейчас решила попробовать себя в роли разработчика, поступив в Hive Helsinki — школу с peer-to-peer подоходом, где прогресс движется любопытством и коллаборацией.',
+      'Я никогда не была компьютерным гиком и не мечатала работать в IT. Моя кареьера начиналась в журналистике и дизайне, а сейчас решила попробовать себя в роли разработчика, поступив в Hive Helsinki — школу с peer-to-peer подоходом, где прогресс движется любопытством и коллаборацией.',
     experience: [
       {
         date: 'Сентябрь 2018 - Июнь 2021',

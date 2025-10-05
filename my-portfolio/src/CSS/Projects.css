@@ -143,17 +143,17 @@
 }
 
 .tag.category1 {
-  background-color: #e06998;
+  background-color: var(--tag1-color);
   color: white;
 }
 
 .tag.category2 {
-  background-color: #d9d9d9;
+  background-color: var(--tag2-color);
   color: black;
 }
 
 .tag.category3 {
-  background-color: #ffffff;
+  background-color: var(--tag3-color);
   color: black;
 }
 

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useGlobal } from '../hooks/useGlobal'
+import { useGlobal } from '../hooks'
 import { IoSunnyOutline } from 'react-icons/io5'
 import { IoMdMoon } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'
@@ -29,12 +29,22 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScroll])
 
+  const handleNavClick = () => setMenuOpen(false)
+
   const links = (
     <>
-      <a href="#Resume">{language === 'en' ? 'Resume' : 'Резюме'}</a>
-      <a href="#Projects">{language === 'en' ? 'Projects' : 'Проекты'}</a>
-      <a href="#About">{language === 'en' ? 'About me' : 'Обо мне'}</a>
-      <a href="#Contacts">{language === 'en' ? 'Contacts' : 'Контакты'}</a>
+      <a href="#Resume" onClick={handleNavClick}>
+        {language === 'en' ? 'Resume' : 'Резюме'}
+      </a>
+      <a href="#Projects" onClick={handleNavClick}>
+        {language === 'en' ? 'Projects' : 'Проекты'}
+      </a>
+      <a href="#About" onClick={handleNavClick}>
+        {language === 'en' ? 'About me' : 'Обо мне'}
+      </a>
+      <a href="#Contacts" onClick={handleNavClick}>
+        {language === 'en' ? 'Contacts' : 'Контакты'}
+      </a>
     </>
   )
 

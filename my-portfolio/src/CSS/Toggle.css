@@ -36,6 +36,7 @@
 
 .toggle.active {
   transform: scale(1.01);
+  cursor: pointer;
 }
 
 .toggle.active::before {
@@ -45,7 +46,11 @@
   right: -130px;
   width: 420px;
   height: 440px;
-  background: radial-gradient(circle, #b4fb6d 0%, rgba(180, 251, 109, 0) 70%);
+  background: radial-gradient(
+    circle,
+    var(--bg-circle-color) 0%,
+    rgba(180, 251, 109, 0) 70%
+  );
   border-radius: 50%;
   filter: blur(50px);
   z-index: 0;
@@ -142,7 +147,7 @@
 
 @media screen and (max-width: 1180px) {
   .toggleCard {
-    width: 83%;
+    width: 100%;
     margin: 0 auto;
   }
   .toggleAll {
@@ -155,7 +160,7 @@
   }
 
   .toggle.active {
-    width: 80%;
+    width: 100%;
     margin: 0 auto;
   }
 }

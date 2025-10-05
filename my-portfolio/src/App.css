@@ -2,6 +2,7 @@
   font-weight: 300;
   font-family: "Montserrat";
   --bg-color: #ffffff;
+  --bg-circle-color: #b4fb6d;
   --bg-accent-color: #ffffff;
   --bg-switch-color: #b4fb6d;
   --text-color: #000000;
@@ -9,6 +10,10 @@
   --bg-nav-color: rgba(255, 255, 255, 0.592);
   --bg-nav-color-switch: #b4fb6d9a;
   --accent-color: #656565;
+  --tag1-color: #e06998;
+  --tag2-color: #d9d9d9;
+  --tag3-color: #ffffff;
+  --bg-footer-color: #212121;
 }
 
 body {
@@ -35,12 +40,17 @@ body.projects-bg .navbar-container.visible {
 
 body.dark {
   --bg-color: #212121;
-  --text-color: #dedede;
-  --project-desc: #7d7d7d;
+  --bg-circle-color: #4d6139de;
+  --text-color: #e2e2e2;
+  --project-desc: #cdcdcde7;
   --bg-toggle-color: #232323;
-  --bg-switch-color: #3f3f3f;
+  --bg-switch-color: #3f502fde;
   --bg-nav-color: rgba(30, 30, 30, 0.592);
-  --bg-nav-color-switch: #3f3f3f7f;
+  --bg-nav-color-switch: #4d6139de;
+  --tag1-color: #c04677f0;
+  --tag2-color: #a4a4a4d1;
+  --tag3-color: #e0e0e0ec;
+  --bg-footer-color: #1c1c1c;
 }
 
 .main-container {
@@ -60,7 +70,7 @@ body.dark {
 
 @media screen and (max-width: 900px) {
   .first-wrapper {
-    height: 630px;
+    height: 560px;
   }
 }
 
@@ -157,7 +167,13 @@ section {
     }
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 530px) {
+    .first-wrapper {
+      height: 630px;
+    }
+  }
+
+  @media screen and (max-width: 440px) {
     .first-wrapper {
       height: 700px;
     }
