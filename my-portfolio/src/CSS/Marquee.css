@@ -26,6 +26,8 @@
 .marquee-content span {
   flex-shrink: 0;
   display: inline-block;
+  margin-right: 20px;
+  white-space: nowrap;
 }
 
 @keyframes marquee-scroll {
@@ -33,7 +35,7 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
@@ -55,5 +57,14 @@
 @media screen and (max-width: 480px) {
   .marquee {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .marquee {
+    margin-top: 10px;
+  }
+  .marquee-track {
+    animation: marquee-scroll 60s linear infinite !important;
   }
 }
