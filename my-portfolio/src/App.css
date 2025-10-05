@@ -20,6 +20,29 @@
   max-width: 100vw;
 }
 
+/* Агрессивное предотвращение горизонтального скролла */
+html,
+body {
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100% !important;
+}
+
+/* Для мобильных устройств */
+@media screen and (max-width: 900px) {
+  * {
+    max-width: 100vw !important;
+    overflow-x: hidden !important;
+  }
+
+  html,
+  body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+    width: 100% !important;
+  }
+}
+
 body {
   display: flex;
   justify-content: center;
