@@ -299,7 +299,7 @@
 
 @media screen and (max-width: 700px) {
   .description-absolute-container {
-    top: 200px;
+    top: 280px;
   }
 
   .circle-photo-wrapper {
@@ -327,10 +327,6 @@
     text-indent: 0;
     margin-bottom: 0.25rem;
   }
-
-  .hero {
-    padding-top: 4rem;
-  }
 }
 
 /* Отключаем анимации на мобильных устройствах */
@@ -348,6 +344,11 @@
   }
 }
 
+@media screen and (max-width: 540px) {
+  .description-absolute-container {
+    top: 230px;
+  }
+}
 @media screen and (max-width: 500px) {
   .description-flex-container {
     flex-direction: column;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useGlobal } from '../context/useGlobal'
+import { useGlobal } from '../hooks/useGlobal'
 import { IoSunnyOutline } from 'react-icons/io5'
 import { IoMdMoon } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'

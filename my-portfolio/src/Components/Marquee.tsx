@@ -1,3 +1,5 @@
+import MarqueeComponent from 'react-fast-marquee'
+import { motion } from 'framer-motion'
 import '../CSS/Marquee.css'
 
 type StripeProps = {
@@ -6,17 +8,24 @@ type StripeProps = {
 }
 
 export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
-  const items = Array(5).fill(text)
-
   return (
-    <div className="marquee" style={{ rotate: style }}>
-      <div className="marquee-track">
-        <div className="marquee-content">
-          {items.map((t, i) => (
-            <span key={i}>{t}</span>
-          ))}
-        </div>
-      </div>
-    </div>
+    <motion.div
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      className="marquee"
+      style={{ rotate: style }}
+    >
+      <MarqueeComponent
+        className="overflow-y-hidden"
+        speed={50}
+        gradient={false}
+        pauseOnHover={false}
+      >
+        <p className="marquee-text">
+          {text}&nbsp;{text}&nbsp;{text}&nbsp;{text}&nbsp;{text}&nbsp;
+        </p>
+      </MarqueeComponent>
+    </motion.div>
   )
 }

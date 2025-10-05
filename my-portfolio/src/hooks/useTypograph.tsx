@@ -1,6 +1,6 @@
 import { useMemo } from 'react'
 import Typograf from 'typograf'
-import type { ExperienceType } from '../Components/Experience'
+import type { Experience } from '../data/Experience'
 
 const tp = new Typograf({ locale: ['ru'] })
 tp.enableRule('common/nbsp/afterShortWord')
@@ -40,7 +40,7 @@ export function useTypografCombined(text: string, lang: 'ru' | 'en' = 'ru') {
 }
 
 export function useExperienceTypograf(
-  experience: ExperienceType[],
+  experience: Experience[],
   lang: 'ru' | 'en'
 ) {
   return useMemo(
