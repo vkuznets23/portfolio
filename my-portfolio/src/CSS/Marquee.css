@@ -1,70 +1,30 @@
 .marquee {
-  position: relative;
-  font-family: "Montserrat", sans-serif;
   font-weight: 300;
-  font-size: 28px;
+  font-size: 24px;
   color: black;
   background-color: #b4fb6d;
-  width: 100%;
-  overflow: hidden;
-  white-space: nowrap;
   padding: 10px 0;
   margin-bottom: 105px;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 900s linear infinite;
-}
-
-.marquee-content {
-  display: flex;
-  padding: 0 5px;
-}
-
-.marquee-content span {
-  flex-shrink: 0;
-  display: inline-block;
-  margin-right: 20px;
   white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-@keyframes marquee-scroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-@media screen and (max-width: 1180px) {
-  .marquee {
-    font-size: 24px;
-    padding: 8px 0;
-    margin-bottom: 30px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .marquee {
-    font-size: 20px;
-    padding: 6px 0;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .marquee {
-    font-size: 18px;
-  }
+.marquee-text {
+  margin: 0px;
+  padding: 0 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 @media screen and (max-width: 900px) {
   .marquee {
-    margin-top: 10px;
-  }
-  .marquee-track {
-    animation: marquee-scroll 60s linear infinite !important;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    padding: 5px 0px;
+    font-size: 18px;
+    width: 100%;
   }
 }
