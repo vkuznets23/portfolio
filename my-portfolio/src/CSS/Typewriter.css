@@ -50,6 +50,12 @@
   }
 }
 
+@media screen and (max-width: 580px) {
+  .hero {
+    font-size: 4.25rem;
+    line-height: 4.5rem;
+  }
+}
 @media screen and (max-width: 545px) {
   .hero {
     font-size: 3rem;
