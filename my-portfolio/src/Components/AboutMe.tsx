@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import '../CSS/Facts.css'
 import CircularText from './CircleText'
-import { useGlobal } from '../context/useGlobal'
+import { useGlobal } from '../hooks/useGlobal'
 
 type AboutMeProps = {
   description: string

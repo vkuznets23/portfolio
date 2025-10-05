@@ -1,83 +1,23 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import FirstScreen from './Components/FirstScreen'
 import './App.css'
 import Marquee from './Components/Marquee'
 import Projects from './Components/Projects'
-import type { ExperienceType } from './Components/Experience'
 import Experience from './Components/Experience'
 import Footer from './Components/Footer'
 import Navbar from './Components/Navbar'
-import { useGlobal } from './context/useGlobal'
+import { useGlobal } from './hooks/useGlobal'
 import AboutMe from './Components/AboutMe'
 import {
   useExperienceTypograf,
   useFactsTypograf,
   useTypografCombined,
-} from './context/useTypograph'
-
-export type Project = {
-  img: string
-  header: string
-  description: string
-  tags: string[]
-  deployUrl?: string
-  githubUrl: string
-}
-
-type ProjectsSection = {
-  description: string
-  projects?: Record<string, Project>
-}
-
-type ExperienceSection = {
-  header: string
-  description: string
-  experience: ExperienceType[]
-}
-
-type FirstScreenHeaderOptions = {
-  option1: string
-  option2: string
-  option3: string
-}
-
-type FirstScreenSection = {
-  header: {
-    line1: string
-    options: FirstScreenHeaderOptions
-  }
-  description: string
-}
-
-type AboutMeSection = {
-  header: string
-  description: string
-  facts: { fact: string }[]
-}
-
-type ContentType = [
-  FirstScreenSection,
-  ExperienceSection,
-  ProjectsSection,
-  AboutMeSection
-]
+} from './hooks/useTypograph'
+import { useAppData } from './hooks/useAppData'
 
 export default function App() {
   const { language, theme } = useGlobal()
-  const [content, setContent] = useState<ContentType | null>(null)
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const res = await fetch(`/content.${language}.json`)
-        const data = await res.json()
-        setContent(data)
-      } catch (err) {
-        console.error('Error fetching data', err)
-      }
-    }
-    fetchData()
-  }, [language])
+  const { data, loading, error } = useAppData(language)
 
   useEffect(() => {
     document.body.classList.remove('light', 'dark')
@@ -85,45 +25,97 @@ export default function App() {
   }, [theme])
 
   const firstLine = useTypografCombined(
-    content?.[0]?.header?.line1 || '',
+    data?.firstScreen?.header?.line1 || '',
     language
   )
-  const options = Object.values(content?.[0]?.header?.options || {})
+  const options = data?.firstScreen?.header?.options
+    ? Object.values(data.firstScreen.header.options)
+    : []
   const description = useTypografCombined(
-    content?.[0]?.description || '',
+    data?.firstScreen?.description || '',
     language
   )
 
-  const header = useTypografCombined(content?.[1]?.header || '', language)
+  const header = useTypografCombined(data?.experience?.header || '', language)
   const description3 = useTypografCombined(
-    content?.[1]?.description || '',
+    data?.experience?.description || '',
     language
   )
-
   const experience = useExperienceTypograf(
-    content?.[1]?.experience || [],
+    data?.experience?.experience || [],
     language
   )
 
   const description2 = useTypografCombined(
-    content?.[2]?.description || '',
+    data?.projects?.description || '',
     language
   )
-  const projectsArray = Object.values(content?.[2]?.projects || {})
+  const projectsArray = data?.projects?.projects || []
 
-  const headerAbout = useTypografCombined(content?.[3]?.header || '', language)
+  const headerAbout = useTypografCombined(data?.aboutMe?.header || '', language)
   const description4 = useTypografCombined(
-    content?.[3]?.description || '',
+    data?.aboutMe?.description || '',
     language
   )
 
   const facts = useFactsTypograf(
-    (content?.[3]?.facts || []).map((f) => f.fact),
+    data?.aboutMe?.facts?.map((fact) => fact.fact) || [],
     language
   )
 
+  if (loading) {
+    return (
+      <main className="main-container">
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <div>Loading...</div>
+        </div>
+      </main>
+    )
+  }
+
+  if (error) {
+    return (
+      <main className="main-container">
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <div>Error: {error}</div>
+        </div>
+      </main>
+    )
+  }
+
+  if (!data) {
+    return (
+      <main className="main-container">
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+          }}
+        >
+          <div>No data available</div>
+        </div>
+      </main>
+    )
+  }
+
   return (
-    <div className="main-container">
+    <main className="main-container">
       <Navbar />
       <div className="first-wrapper">
         <FirstScreen
@@ -169,6 +161,6 @@ export default function App() {
           <Footer />
         </section>
       </div>
-    </div>
+    </main>
   )
 }

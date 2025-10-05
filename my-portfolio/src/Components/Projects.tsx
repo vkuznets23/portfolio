@@ -1,9 +1,9 @@
-import type { Project as ProjectType } from '../App'
+import type { Project as ProjectType } from '../data/projects'
 import CircularText from './CircleText'
 import '../CSS/Projects.css'
 import { useEffect, useRef, useState } from 'react'
 import Project from './Project'
-import { useGlobal } from '../context/useGlobal'
+import { useGlobal } from '../hooks/useGlobal'
 
 type ProjectsProps = {
   description: string

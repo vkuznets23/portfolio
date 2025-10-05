@@ -1,4 +1,4 @@
-import type { Project as ProjectType } from '../App'
+import type { Project as ProjectType } from '../data/projects'
 import '../CSS/Projects.css'
 
 type ProjectProps = {
@@ -9,13 +9,13 @@ export default function Project({ project }: ProjectProps) {
   return (
     <div className="project-card">
       <div className="project-image-wrapper">
-        <img src={project.img} alt={project.header} className="project-img" />
+        <img src={project.image} alt={project.name} className="project-img" />
         <div className="overlay">
-          {project.deployUrl && (
+          {project.live && (
             <button
               type="button"
               className="overlayBtnDeploy"
-              onClick={() => window.open(project.deployUrl, '_blank')}
+              onClick={() => window.open(project.live, '_blank')}
             >
               Deploy
             </button>
@@ -23,23 +23,23 @@ export default function Project({ project }: ProjectProps) {
           <button
             type="button"
             className="overlayBtnGit"
-            onClick={() => window.open(project.githubUrl, '_blank')}
+            onClick={() => window.open(project.github, '_blank')}
           >
             GitHub
           </button>
         </div>
       </div>
 
-      <h2 className="projectHeader">{project.header}</h2>
+      <h2 className="projectHeader">{project.name}</h2>
       <p className="projectDescription">{project.description}</p>
       <div className="tags">
-        {project.tags.map((tag, index) => {
+        {project.technologies.map((tech, index) => {
           let categoryClass = ''
 
           const testingTags = ['Jest', 'Playwright', 'Vite']
-          if (testingTags.includes(tag)) {
+          if (testingTags.includes(tech)) {
             categoryClass = 'category1'
-          } else if (tag === 'Hive project' || tag === 'Pet project') {
+          } else if (tech === 'Hive project' || tech === 'Pet project') {
             categoryClass = 'category2'
           } else {
             categoryClass = 'category3'
@@ -47,7 +47,7 @@ export default function Project({ project }: ProjectProps) {
 
           return (
             <span key={index} className={`tag ${categoryClass}`}>
-              {tag}
+              {tech}
             </span>
           )
         })}

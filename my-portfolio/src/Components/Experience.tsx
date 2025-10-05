@@ -1,13 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
 import CircularText from './CircleText'
 import ExperienceObj from './ExperienceObj'
-import { useGlobal } from '../context/useGlobal'
-
-export type ExperienceType = {
-  date: string
-  name: string
-  description: string
-}
+import { useGlobal } from '../hooks/useGlobal'
+import { type ExperienceType } from '../types/experience'
 
 type ExperienceProps = {
   header: string
