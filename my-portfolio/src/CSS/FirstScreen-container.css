@@ -299,7 +299,7 @@
 
 @media screen and (max-width: 700px) {
   .description-absolute-container {
-    top: 250px;
+    top: 200px;
   }
 
   .circle-photo-wrapper {
