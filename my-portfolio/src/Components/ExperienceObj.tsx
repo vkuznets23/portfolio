@@ -15,7 +15,6 @@ export default function ExperienceObj({ date, name, description }: Experience) {
       <div
         className={toggle ? 'toggle active' : 'toggle'}
         onClick={() => setToggle(!toggle)}
-        style={{ cursor: 'pointer' }}
       >
         <div className="toggleVisibleRow">
           <div>

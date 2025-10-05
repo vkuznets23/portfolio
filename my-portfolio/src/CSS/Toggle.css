@@ -36,6 +36,7 @@
 
 .toggle.active {
   transform: scale(1.01);
+  cursor: pointer;
 }
 
 .toggle.active::before {
