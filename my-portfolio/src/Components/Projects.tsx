@@ -1,17 +1,24 @@
 import type { Project as ProjectType } from '../data/projects'
 import CircularText from './CircleText'
 import '../CSS/Projects.css'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import Project from './Project'
 import { useGlobal } from '../hooks/useGlobal'
+import { useTypografCombined } from '../hooks/useTypograph'
+import { useAppData } from '../hooks/useAppData'
 
-type ProjectsProps = {
-  description: string
-  projects: ProjectType[]
-}
-
-export default function Projects({ projects, description }: ProjectsProps) {
+export default function Projects() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+
+  const description: string = useTypografCombined(
+    data?.projects?.description || '',
+    language
+  )
+  const projects: ProjectType[] = useMemo(
+    () => data?.projects?.projects || [],
+    [data]
+  )
 
   // 🔹 ref на ВЕСЬ блок секции (для смены фона body)
   const containerRef = useRef<HTMLDivElement>(null)

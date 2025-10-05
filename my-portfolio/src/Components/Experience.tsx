@@ -3,18 +3,28 @@ import CircularText from './CircleText'
 import ExperienceObj from './ExperienceObj'
 import { useGlobal } from '../hooks/useGlobal'
 import { type ExperienceType } from '../types/experience'
+import { useAppData } from '../hooks/useAppData'
+import {
+  useExperienceTypograf,
+  useTypografCombined,
+} from '../hooks/useTypograph'
 
-type ExperienceProps = {
-  header: string
-  description: string
-  experience: ExperienceType[]
-}
-export default function Experience({
-  header,
-  description,
-  experience,
-}: ExperienceProps) {
+export default function Experience() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+
+  const header: string = useTypografCombined(
+    data?.experience?.header || '',
+    language
+  )
+  const description: string = useTypografCombined(
+    data?.experience?.description || '',
+    language
+  )
+  const experience: ExperienceType[] = useExperienceTypograf(
+    data?.experience?.experience || [],
+    language
+  )
 
   const ref = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)

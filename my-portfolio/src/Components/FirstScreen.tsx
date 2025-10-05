@@ -2,19 +2,24 @@ import Typewriter from './Typewriter'
 import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
 import { useGlobal } from '../hooks/useGlobal'
+import { useAppData } from '../hooks/useAppData'
+import { useTypografCombined } from '../hooks/useTypograph'
 
-type FirstScreenProps = {
-  firstLine: string
-  options: string[]
-  description: string
-}
-
-export default function FirstScreen({
-  firstLine,
-  options,
-  description,
-}: FirstScreenProps) {
+export default function FirstScreen() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+
+  const firstLine: string = useTypografCombined(
+    data?.firstScreen?.header?.line1 || '',
+    language
+  )
+  const options: string[] = data?.firstScreen?.header?.options
+    ? Object.values(data.firstScreen.header.options)
+    : []
+  const description: string = useTypografCombined(
+    data?.firstScreen?.description || '',
+    language
+  )
 
   return (
     <div className="firstScreen-container, slide-up">

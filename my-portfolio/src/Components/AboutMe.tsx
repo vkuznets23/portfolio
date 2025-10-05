@@ -2,16 +2,27 @@ import { useEffect, useRef, useState } from 'react'
 import '../CSS/Facts.css'
 import CircularText from './CircleText'
 import { useGlobal } from '../hooks/useGlobal'
+import { useAppData } from '../hooks/useAppData'
+import { useFactsTypograf, useTypografCombined } from '../hooks/useTypograph'
 
-type AboutMeProps = {
-  description: string
-  header: string
-  facts: string[]
-}
-
-export default function AboutMe({ description, header, facts }: AboutMeProps) {
-  const ref = useRef<HTMLDivElement>(null)
+export default function AboutMe() {
   const { language } = useGlobal()
+  const { data } = useAppData(language)
+  const header: string = useTypografCombined(
+    data?.aboutMe?.header || '',
+    language
+  )
+  const description: string = useTypografCombined(
+    data?.aboutMe?.description || '',
+    language
+  )
+
+  const facts: string[] = useFactsTypograf(
+    data?.aboutMe?.facts?.map((fact) => fact.fact) || [],
+    language
+  )
+
+  const ref = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
