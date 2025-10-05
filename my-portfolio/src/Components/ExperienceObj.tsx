@@ -26,7 +26,10 @@ export default function ExperienceObj({
             <span className="date">{date}</span>
             <h4 className="h4">{name}</h4>
           </div>
-          <div className={`toggleButton ${toggle ? 'active' : ''}`}></div>
+          <button
+            onClick={() => setToggle(!toggle)}
+            className={`toggleButton ${toggle ? 'active' : ''}`}
+          ></button>
         </div>
         {toggle && (
           <ul className="experienceDesc">

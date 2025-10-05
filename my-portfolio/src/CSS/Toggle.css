@@ -60,7 +60,6 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
 }
 
 .toggleVisibleRow > div {
@@ -85,8 +84,8 @@
   height: 35px;
   background: transparent;
   border: none;
+  cursor: pointer;
   padding: 0;
-  flex-shrink: 0;
 }
 
 .toggleButton::before,
