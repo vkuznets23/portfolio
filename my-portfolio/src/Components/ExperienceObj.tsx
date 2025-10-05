@@ -16,16 +16,17 @@ export default function ExperienceObj({
 
   return (
     <div className={!toggle ? 'toggleCard' : ''}>
-      <div className={toggle ? 'toggle active' : 'toggle'}>
+      <div
+        className={toggle ? 'toggle active' : 'toggle'}
+        onClick={() => setToggle(!toggle)}
+        style={{ cursor: 'pointer' }}
+      >
         <div className="toggleVisibleRow">
           <div>
             <span className="date">{date}</span>
             <h4 className="h4">{name}</h4>
           </div>
-          <button
-            onClick={() => setToggle(!toggle)}
-            className={`toggleButton ${toggle ? 'active' : ''}`}
-          ></button>
+          <div className={`toggleButton ${toggle ? 'active' : ''}`}></div>
         </div>
         {toggle && (
           <ul className="experienceDesc">
