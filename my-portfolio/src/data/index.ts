@@ -14,28 +14,13 @@ export interface AppData {
   contacts: ContactsData
 }
 
-export const loadAppData = async (language: Language): Promise<AppData> => {
-  const loadData = async <T>(data: T): Promise<T> => {
-    return new Promise((resolve) => {
-      setTimeout(() => resolve(data), 100)
-    })
-  }
-
-  const [firstScreen, experience, aboutMe, projects, contacts] =
-    await Promise.all([
-      loadData(firstScreenData[language]),
-      loadData(experienceData[language]),
-      loadData(aboutMeData[language]),
-      loadData(projectsData[language]),
-      loadData(contactsData[language]),
-    ])
-
+export function getData(language: Language) {
   return {
-    firstScreen,
-    experience,
-    projects,
-    aboutMe,
-    contacts,
+    firstScreen: firstScreenData[language],
+    experience: experienceData[language],
+    aboutMe: aboutMeData[language],
+    projects: projectsData[language],
+    contacts: contactsData[language],
   }
 }
 
