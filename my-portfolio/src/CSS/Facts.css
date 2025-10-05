@@ -549,7 +549,7 @@
 
   /* Адаптивное позиционирование изображений */
   .img1 {
-    top: 210vw !important;
+    top: 200vw !important;
     left: 20% !important;
     transform: translateX(-50%) !important;
   }
@@ -559,13 +559,13 @@
     transform: translateX(-50%) !important;
   }
   .img3 {
-    top: 135vw !important;
+    top: 130vw !important;
     left: 70% !important;
     transform: translateX(-50%) !important;
   }
   .img4 {
-    top: 270vw !important;
-    left: 70% !important;
+    top: 260vw !important;
+    left: 75% !important;
     transform: translateX(-50%) !important;
   }
   .img5 {
