@@ -21,18 +21,18 @@ export const firstScreenData = {
       },
     },
     description:
-      'I started in UX/UI, but one day decided to dive into software development. I love learning by doing, exploring new tools, and building high-quality projects. For me, code is about clarity, joy, and creating something others can build upon',
+      'I’m a full-stack developer with a background in UX/UI design. I love writing clean, easy-to-read, and maintainable code. I learn by doing, exploring new tools, and creating high-quality projects.',
   },
   ru: {
     header: {
       line1: 'Я —',
       options: {
-        option1: 'софт-разработчик',
+        option1: 'ПО\nразработчик',
         option2: 'бывший\nдизайнер',
         option3: 'студент\nшколы Hive',
       },
     },
     description:
-      'Я начинала в UX/UI, но однажды решила погрузиться в разработку ПО. Я люблю учиться на практике, изучать новые инструменты и создавать качественные проекты. Для меня код это про читаемость и удовольствие',
+      'Я full-stack разработчик с опытом в UX/UI дизайне. Мне нравится писать чистый, понятный и поддерживаемый код, учиться на практике, изучать новые инструменты и создавать качественные проекты.',
   },
 }

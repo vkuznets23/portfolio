@@ -1,6 +1,5 @@
 import { firstScreenData, type FirstScreenData } from './firstScreen'
 import { projectsData, type ProjectsData } from './projects'
-import { contactsData, type ContactsData } from './contacts'
 import { experienceData, type ExperienceData } from './experience'
 import { aboutMeData, type AboutMeData } from './aboutMe'
 
@@ -11,7 +10,6 @@ export interface AppData {
   experience: ExperienceData
   projects: ProjectsData
   aboutMe: AboutMeData
-  contacts: ContactsData
 }
 
 export function getData(language: Language) {
@@ -20,9 +18,8 @@ export function getData(language: Language) {
     experience: experienceData[language],
     aboutMe: aboutMeData[language],
     projects: projectsData[language],
-    contacts: contactsData[language],
   }
 }
 
-export { firstScreenData, aboutMeData, projectsData, contactsData }
-export type { FirstScreenData, AboutMeData, ProjectsData, ContactsData }
+export { firstScreenData, aboutMeData, projectsData }
+export type { FirstScreenData, AboutMeData, ProjectsData }
