@@ -59,14 +59,14 @@
   }
 }
 
-/* Убеждаемся, что анимация Marquee работает на всех мобильных устройствах */
 @media screen and (max-width: 900px) {
-  .marquee-track {
-    animation: marquee-scroll 60s linear infinite !important;
+  .marquee {
+    margin-top: 10px;
   }
-
-  /* Дополнительная защита от всех возможных отключений анимации */
-  .marquee .marquee-track {
+  .marquee-content span {
+    margin-right: 60px;
+  }
+  .marquee-track {
     animation: marquee-scroll 60s linear infinite !important;
   }
 }
