@@ -14,13 +14,8 @@ import './App.css'
 import './CSS/Loader.css'
 
 export default function App() {
-  const { language, theme } = useGlobal()
+  const { language } = useGlobal()
   const { data, loading, error } = useAppData(language)
-
-  useEffect(() => {
-    document.body.classList.remove('light', 'dark')
-    document.body.classList.add(theme)
-  }, [theme])
 
   if (loading) {
     return (
