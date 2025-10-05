@@ -16,7 +16,11 @@ export default function ExperienceObj({
 
   return (
     <div className={!toggle ? 'toggleCard' : ''}>
-      <div className={toggle ? 'toggle active' : 'toggle'}>
+      <div
+        className={toggle ? 'toggle active' : 'toggle'}
+        onClick={() => setToggle(!toggle)}
+        style={{ cursor: 'pointer' }}
+      >
         <div className="toggleVisibleRow">
           <div>
             <span className="date">{date}</span>
