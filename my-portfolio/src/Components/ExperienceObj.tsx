@@ -1,18 +1,14 @@
 import { useState } from 'react'
-import type { ExperienceType } from './Experience'
+import type { Experience } from '../data/experience'
 import '../CSS/Toggle.css'
 
-export default function ExperienceObj({
-  date,
-  name,
-  description,
-}: ExperienceType) {
+export default function ExperienceObj({ date, name, description }: Experience) {
   const [toggle, setToggle] = useState(false)
 
   const bulletPoints = description
     .split('.')
-    .map((s) => s.trim())
-    .filter((s) => s.length > 0)
+    .map((s: string) => s.trim())
+    .filter((s: string) => s.length > 0)
 
   return (
     <div className={!toggle ? 'toggleCard' : ''}>
@@ -33,7 +29,7 @@ export default function ExperienceObj({
         </div>
         {toggle && (
           <ul className="experienceDesc">
-            {bulletPoints.map((point, i) => (
+            {bulletPoints.map((point: string, i: number) => (
               <li key={i}>{point}.</li>
             ))}
           </ul>

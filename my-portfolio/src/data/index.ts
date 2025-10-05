@@ -1,7 +1,7 @@
 import { firstScreenData, type FirstScreenData } from './firstScreen'
 import { projectsData, type ProjectsData } from './projects'
 import { contactsData, type ContactsData } from './contacts'
-import { experienceData, type ExperienceData } from './Experience'
+import { experienceData, type ExperienceData } from './experience'
 import { aboutMeData, type AboutMeData } from './aboutMe'
 
 export type Language = 'en' | 'ru'
