@@ -1,9 +1,8 @@
-import type { Project as ProjectType } from '../data/projects'
-import CircularText from './CircleText'
-import '../CSS/Projects.css'
 import { useEffect, useMemo, useRef, useState } from 'react'
-import Project from './Project'
+import type { Project as ProjectType } from '../data/projects'
+import { Project, TextCircle } from '../Components'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import '../CSS/Projects.css'
 
 export default function Projects() {
   const { language } = useGlobal()
@@ -18,110 +17,85 @@ export default function Projects() {
     [data]
   )
 
-  // 🔹 ref на ВЕСЬ блок секции (для смены фона body)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  // 🔹 отдельный ref на шапку (для анимации появления)
   const headerRef = useRef<HTMLDivElement>(null)
-  const [visible, setVisible] = useState(false)
-
+  const containerRef = useRef<HTMLDivElement>(null)
   const projectRefs = useRef<(HTMLDivElement | null)[]>([])
-  const [visibleProjects, setVisibleProjects] = useState<boolean[]>(
-    Array(projects.length).fill(false)
-  )
 
-  // === Фон body зелёный, пока ЛЮБАЯ часть секции Projects видна ===
+  const [visible, setVisible] = useState(false) // header visibility
+  const [visibleProjects, setVisibleProjects] = useState<boolean[]>([])
+
+  // sync visibility array with projects length
   useEffect(() => {
-    const handleScroll = () => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
+    setVisibleProjects(new Array(projects.length).fill(false))
+  }, [projects])
 
-      const offsetTop = 500 // включаем фон чуть раньше верхней границы
-      const offsetBottom = 300 // выключаем фон чуть позже нижней границы
-
-      if (rect.top <= offsetTop && rect.bottom >= offsetBottom) {
-        document.body.classList.add('projects-bg')
-      } else {
-        document.body.classList.remove('projects-bg')
-      }
-    }
-
-    window.addEventListener('scroll', handleScroll)
-    handleScroll() // проверка при загрузке
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll)
-      document.body.classList.remove('projects-bg')
-    }
-  }, [])
-
-  // === Анимация появления шапки (один раз) ===
+  //animation of header
   useEffect(() => {
-    if (!headerRef.current) return
-
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           setVisible(true)
-          io.disconnect()
+          observer.disconnect()
         }
       },
-      {
-        threshold: 0, // ловим когда 10% блока видно
-        rootMargin: '0px 0px -100px 0px', // старт чуть раньше
-      }
+      { threshold: 0.5 }
     )
 
-    io.observe(headerRef.current)
+    if (headerRef.current) {
+      observer.observe(headerRef.current)
+    }
 
-    return () => io.disconnect()
+    return () => observer.disconnect()
   }, [])
 
-  // === Появление карточек проектов по мере прокрутки ===
+  // color of body
   useEffect(() => {
-    const handleProjectsVisibility = () => {
-      // На мобильных устройствах (≤900px) сразу показываем все проекты
-      const isMobile = window.innerWidth <= 900
-      if (isMobile) {
-        setVisibleProjects(new Array(projects.length).fill(true))
-        return null
-      }
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          document.body.classList.add('projects-bg')
+        } else {
+          document.body.classList.remove('projects-bg')
+        }
+      },
+      { threshold: 0.3 }
+    )
 
-      const io = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            const index = Number(entry.target.getAttribute('data-index'))
-            if (entry.isIntersecting) {
+    if (containerRef.current) {
+      observer.observe(containerRef.current)
+    }
+
+    return () => observer.disconnect()
+  }, [])
+
+  // projects visibility
+  useEffect(() => {
+    if (projectRefs.current.length === 0) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const index = Number(entry.target.getAttribute('data-index'))
+          if (entry.isIntersecting) {
+            setTimeout(() => {
               setVisibleProjects((prev) => {
                 const next = [...prev]
                 next[index] = true
                 return next
               })
-              io.unobserve(entry.target)
-            }
-          })
-        },
-        { threshold: 0.2 }
-      )
+            }, index * 200)
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.3 }
+    )
 
-      projectRefs.current.forEach((el) => el && io.observe(el))
-      return io
-    }
+    projectRefs.current.forEach((el) => {
+      if (el) observer.observe(el)
+    })
 
-    const io = handleProjectsVisibility()
-
-    // Обработчик изменения размера окна
-    const handleResize = () => {
-      if (io) io.disconnect()
-      handleProjectsVisibility()
-    }
-
-    window.addEventListener('resize', handleResize)
-
-    return () => {
-      if (io) io.disconnect()
-      window.removeEventListener('resize', handleResize)
-    }
+    return () => observer.disconnect()
   }, [projects])
 
   return (
@@ -129,17 +103,11 @@ export default function Projects() {
       <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
         <div className="description-flex-container">
           <div className="description">{description}</div>
-          <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-            <CircularText
-              text={
-                language === 'en'
-                  ? 'scroll down > scroll down > scroll down >'
-                  : 'ещё вниз >> ещё вниз >> ещё вниз >>'
-              }
-              radius={62}
-            />
-            <span className="emoji-pointer">👈</span>
-          </div>
+          <TextCircle
+            radius={62}
+            textEn="scroll down > scroll down > scroll down >"
+            textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
+          />
         </div>
       </div>
 
@@ -152,7 +120,7 @@ export default function Projects() {
               projectRefs.current[index] = el
             }}
             className={`project-wrapper ${
-              visibleProjects[index] ? 'fade-in' : 'hidden'
+              visibleProjects![index] ? 'fade-in' : 'hidden'
             }`}
           >
             <Project project={project} />

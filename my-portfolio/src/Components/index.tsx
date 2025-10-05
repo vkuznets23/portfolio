@@ -1,6 +1,7 @@
 import FirstScreen from './FirstScreen'
 import Marquee from './Marquee'
 import Projects from './Projects'
+import Project from './Project'
 import Experience from './Experience'
 import ExperienceObj from './ExperienceObj'
 import Footer from './Footer'
@@ -14,6 +15,7 @@ export {
   Marquee,
   Projects,
   Experience,
+  Project,
   ExperienceObj,
   Footer,
   Navbar,
