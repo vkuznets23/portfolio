@@ -192,6 +192,17 @@
   left: 2280px;
 }
 
+.img1,
+.img2,
+.img3,
+.img4,
+.img5,
+.img6,
+.img7 {
+  max-width: 100vw !important;
+  left: min(left, 100vw - elementWidth) !important;
+}
+
 @media screen and (max-width: 1150px) {
   body {
     overflow-x: hidden !important;
