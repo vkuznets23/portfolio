@@ -2,21 +2,21 @@ import '../CSS/Footer.css'
 
 export default function Footer() {
   return (
-    <section id="Contacts">
-      <div className="footer-container">
+    <section id="Contacts" aria-labelledby="contacts-title">
+      <footer className="footer-container" role="contentinfo">
         <div className="footer">
-          <p className="getInTouch">
+          <p id="contacts-title" className="getInTouch">
             I’m open to professional challenges.{' '}
             <a href="mailto:youremail@example.com">Get in touch!</a>
           </p>
-          <div className="footer-links">
+          <nav className="footer-links" aria-label="Footer links">
             <a href="https://github.com/vkuznets23">GitHub</a>
             <a href="https://www.linkedin.com/in/viktoriia-kuznetsova/">
               Linkedin
             </a>
-          </div>
+          </nav>
         </div>
-      </div>
+      </footer>
     </section>
   )
 }
