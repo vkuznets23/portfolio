@@ -18,7 +18,6 @@ export default function Navbar() {
       const currentScroll = window.scrollY
       const projectsSection = document.getElementById('Projects')
 
-      // Проверяем, находимся ли мы в секции проектов
       const isInProjectsSection =
         projectsSection &&
         currentScroll >= projectsSection.offsetTop - 200 &&
@@ -30,10 +29,8 @@ export default function Navbar() {
         currentScroll > 100 &&
         !isInProjectsSection
       ) {
-        // Скролл вниз — прячем (кроме секции проектов)
         setVisible(false)
       } else {
-        // Скролл вверх или в секции проектов — показываем
         setVisible(true)
       }
       setLastScroll(currentScroll)

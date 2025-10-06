@@ -47,7 +47,7 @@ export default function Project({ project }: ProjectProps) {
               onClick={handleDeployClick}
               aria-label={`View live demo of ${project.name}`}
             >
-              {language === 'en' ? 'Deploy' : 'Демо'}
+              {language === 'en' ? 'Deploy' : 'Сайт'}
             </button>
           )}
           <button
