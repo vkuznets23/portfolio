@@ -192,14 +192,14 @@
   left: 2280px;
 }
 
-@media (min-width: 1150px) and (max-width: 1195px) {
+@media (min-width: 1160px) and (max-width: 1195px) {
   .scroll-section {
     height: auto !important;
     overflow-x: auto;
     overflow-y: visible;
     padding-top: 120px;
     padding-bottom: 80px;
-    padding-right: 240px; /* запас справа, чтобы не обрезалось */
+    padding-right: 45px;
     -webkit-overflow-scrolling: touch;
   }
 
