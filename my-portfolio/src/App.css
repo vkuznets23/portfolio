@@ -91,6 +91,13 @@ body.dark {
   height: 650px;
 }
 
+@media screen and (max-width: 1195px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
 @media screen and (max-width: 900px) {
   .first-wrapper {
     height: 560px;
