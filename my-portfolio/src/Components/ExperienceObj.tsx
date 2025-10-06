@@ -1,9 +1,12 @@
-import { useState } from 'react'
+import { useId, useState } from 'react'
+// useId helps you generate unique, stable IDs for accessibility attributes and form elements
 import type { Experience } from '../data/experience'
 import '../CSS/Toggle.css'
 
 export default function ExperienceObj({ date, name, description }: Experience) {
   const [toggle, setToggle] = useState(false)
+  const headingId = useId()
+  const contentId = useId()
 
   const bulletPoints = description
     .split('.')
@@ -15,19 +18,30 @@ export default function ExperienceObj({ date, name, description }: Experience) {
       <div
         className={toggle ? 'toggle active' : 'toggle'}
         onClick={() => setToggle(!toggle)}
+        aria-labelledby={headingId}
       >
         <div className="toggleVisibleRow">
           <div>
             <span className="date">{date}</span>
-            <h4 className="h4">{name}</h4>
+            <h4 id={headingId} className="h4">
+              {name}
+            </h4>
           </div>
           <button
+            type="button"
             onClick={() => setToggle(!toggle)}
             className={`toggleButton ${toggle ? 'active' : ''}`}
+            aria-expanded={toggle}
+            aria-controls={contentId}
+            aria-label={`${toggle ? 'Hide' : 'Show'} details for ${name}`}
           />
         </div>
         {toggle && (
-          <ul className="experienceDesc">
+          <ul
+            className="experienceDesc"
+            id={contentId}
+            aria-labelledby={headingId}
+          >
             {bulletPoints.map((point: string, i: number) => (
               <li key={i}>{point}.</li>
             ))}

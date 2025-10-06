@@ -11,7 +11,13 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
     <div className="hero">
       <div className="line1-container">
         <span className="line1-fixed">{line1}</span>{' '}
-        <span className="hero-typewriter">
+        <span
+          className="hero-typewriter"
+          role="status"
+          aria-live="polite"
+          aria-atomic="true"
+          aria-label={`${line1} — dynamic options`}
+        >
           <TypewriterDef
             words={options}
             loop={true}

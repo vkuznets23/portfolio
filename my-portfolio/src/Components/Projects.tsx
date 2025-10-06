@@ -1,7 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Project as ProjectType } from '../data/projects'
 import { Project, TextCircle } from '../Components'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import {
+  useGlobal,
+  useAppData,
+  useTypografCombined,
+  useProjectsTypograf,
+} from '../hooks'
 import '../CSS/Projects.css'
 
 export default function Projects() {
@@ -12,30 +17,34 @@ export default function Projects() {
     data?.projects?.description || '',
     language
   )
-  const projects: ProjectType[] = useMemo(
-    () => data?.projects?.projects || [],
-    [data]
+  const projects: ProjectType[] = useProjectsTypograf(
+    data?.projects?.projects || [],
+    language
   )
 
   const headerRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([])
+  const projectRefs = useRef<(HTMLElement | null)[]>([])
 
   const [visible, setVisible] = useState(false) // header visibility
   const [visibleProjects, setVisibleProjects] = useState<boolean[]>([])
 
-  // sync visibility array with projects length
+  // sync visibility array with projects length, preserve already visible items
   useEffect(() => {
-    if (projects.length > 0) {
-      setVisibleProjects(new Array(projects.length).fill(false))
-    }
-  }, [projects])
+    setVisibleProjects((prev) => {
+      const next = new Array(projects.length).fill(false)
+      for (let i = 0; i < next.length; i++) {
+        next[i] = Boolean(prev[i])
+      }
+      return next
+    })
+  }, [projects.length])
 
   //animation of header
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !visible) {
+        if (entry.isIntersecting) {
           setVisible(true)
         }
       },
@@ -47,7 +56,7 @@ export default function Projects() {
     }
 
     return () => observer.disconnect()
-  }, [visible])
+  }, [])
 
   // color of body
   useEffect(() => {
@@ -84,11 +93,12 @@ export default function Projects() {
                 next[index] = true
                 return next
               })
-            }, index * 200)
+            }, index * 120)
+            observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.01, rootMargin: '0px 0px -10% 0px' }
     )
 
     projectRefs.current.forEach((el) => {
@@ -99,9 +109,12 @@ export default function Projects() {
   }, [projects, visibleProjects])
 
   return (
-    <section id="Projects">
+    <section id="Projects" aria-labelledby="projects-title">
       <div ref={containerRef} className="projectsContainer">
-        <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+        <header ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 id="projects-title" className="sr-only">
+            {language === 'en' ? 'Projects' : 'Проекты'}
+          </h2>
           <div className="description-flex-container">
             <div className="description">{description}</div>
             <TextCircle
@@ -110,22 +123,30 @@ export default function Projects() {
               textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
             />
           </div>
-        </div>
+        </header>
 
-        <div className="projects">
+        <div
+          className="projects"
+          role="list"
+          aria-label={language === 'en' ? 'Project list' : 'Список проектов'}
+        >
           {projects.map((project, index) => (
-            <div
+            <article
               key={index}
               data-index={index}
               ref={(el) => {
                 projectRefs.current[index] = el
               }}
               className={`project-wrapper ${
-                visibleProjects[index] ? 'fade-in' : 'hidden'
+                visibleProjects![index] ? 'fade-in' : 'hidden'
               }`}
+              role="listitem"
+              aria-label={`${language === 'en' ? 'Project' : 'Проект'} ${
+                index + 1
+              }: ${project.name}`}
             >
               <Project project={project} />
-            </div>
+            </article>
           ))}
         </div>
 
@@ -133,6 +154,7 @@ export default function Projects() {
           type="button"
           className="allProjectsButton"
           onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
+          aria-describedby="projects-title"
         >
           {language === 'en'
             ? 'Check out all projects at GitHub'

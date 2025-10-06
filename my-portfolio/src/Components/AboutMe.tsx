@@ -30,8 +30,9 @@ export default function AboutMe() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !visible) {
+        if (entry.isIntersecting) {
           setVisible(true)
+          observer.disconnect()
         }
       },
       { threshold: 0.5 }
@@ -42,7 +43,7 @@ export default function AboutMe() {
     }
 
     return () => observer.disconnect()
-  }, [visible])
+  }, [])
 
   // Горизонтальный скролл
   useEffect(() => {

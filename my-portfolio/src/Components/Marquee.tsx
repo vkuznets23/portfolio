@@ -15,6 +15,9 @@ export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
       transition={{ duration: 0.8 }}
       className="marquee"
       style={{ rotate: style }}
+      role="region"
+      aria-roledescription="marquee"
+      aria-label={text}
     >
       <MarqueeComponent
         className="overflow-y-hidden"

@@ -13,16 +13,12 @@ export default function TextCircle({
   const { language } = useGlobal()
 
   return (
-    <div className="scrolldown-wrapper" style={{ fontWeight: 300 }}>
-      <CircularText
-        text={
-          language == 'en' ? textEn : textRu
-          // ? 'click * click * click ** click * click * click **'
-          // : 'клик ** клик ** клик ** клик ** клик ***'
-        }
-        // radius={62}
-        radius={radius}
-      />
+    <div
+      className="scrolldown-wrapper"
+      role="img"
+      aria-label={language === 'en' ? textEn : textRu}
+    >
+      <CircularText text={language == 'en' ? textEn : textRu} radius={radius} />
       <span className="emoji-pointer">👈</span>
     </div>
   )
