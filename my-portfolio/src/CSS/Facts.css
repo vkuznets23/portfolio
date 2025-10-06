@@ -110,8 +110,8 @@
 }
 
 .fact1 {
-  background-color: #b4fb6d;
-  color: black;
+  background-color: var(--bg-fact-color3);
+  color: var(--text-color);
   max-width: 415px;
 }
 
@@ -125,7 +125,7 @@
 }
 
 .fact3 {
-  background: #ffffff;
+  background: var(--bg-fact-color);
   border: 1px solid black;
   color: black;
   max-width: 435px;
@@ -143,7 +143,7 @@
 }
 
 .fact5 {
-  background: #ffffff;
+  background: var(--bg-fact-color);
   color: black;
   border: 1px solid black;
   max-width: 435px;
@@ -153,14 +153,14 @@
 
 .fact6 {
   color: white;
-  background-color: #e88fb2;
+  background-color: var(--bg-fact-color2);
   max-width: 280px;
   top: 470px;
   left: 1340px;
 }
 .fact7 {
-  color: black;
-  background-color: #b4fb6d;
+  background-color: var(--bg-fact-color3);
+  color: var(--text-color);
   max-width: 505px;
   top: -80px;
   left: 1370px;
@@ -176,7 +176,7 @@
 }
 
 .fact9 {
-  background: #ffffff;
+  background: var(--bg-fact-color);
   color: black;
   border: 1px solid black;
   max-width: 435px;
@@ -186,7 +186,7 @@
 
 .fact10 {
   color: white;
-  background-color: #e88fb2;
+  background-color: var(--bg-fact-color2);
   max-width: 375px;
   top: 115px;
   left: 2280px;
