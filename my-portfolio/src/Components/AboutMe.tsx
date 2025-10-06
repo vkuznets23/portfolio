@@ -52,7 +52,8 @@ export default function AboutMe() {
 
     if (!container || !scrollSection) return
 
-    const isMobile = window.innerWidth <= 900
+    // const isMobile = window.innerWidth <= 900
+    const isMobile = window.innerWidth <= 1195
     if (isMobile) {
       scrollSection.style.height = 'auto'
       container.style.transform = 'none'
