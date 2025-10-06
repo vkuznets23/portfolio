@@ -20,7 +20,7 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
             typeSpeed={80}
             deleteSpeed={40}
             delaySpeed={1500}
-            cursorColor="#B4FB6D"
+            cursorColor="var(--bg-switch-color)"
           />
         </span>
       </div>
