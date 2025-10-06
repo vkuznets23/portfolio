@@ -22,8 +22,6 @@ export default function AboutMe() {
   )
 
   const ref = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const experienceContainerRef = useRef<HTMLDivElement>(null)
   const [visible, setVisible] = useState(false)
 
   // visibility animation
@@ -45,96 +43,44 @@ export default function AboutMe() {
     return () => observer.disconnect()
   }, [])
 
-  // Горизонтальный скролл
+  // horizontal scroll
+  const containerRef = useRef<HTMLDivElement>(null)
+
   useEffect(() => {
-    const wrapper = containerRef.current
-    if (!wrapper) return
+    const container = containerRef.current
+    const scrollSection = container?.parentElement
 
-    const scrollSection = wrapper.parentElement as HTMLElement
-    if (!scrollSection) return
+    if (!container || !scrollSection) return
 
-    // Отключаем горизонтальный скролл на мобильных и планшетах (до 900px)
-    const isMobileOrTablet = window.innerWidth <= 900
-    if (isMobileOrTablet) {
-      // На мобильных и планшетах просто убираем все стили скролла
+    const isMobile = window.innerWidth <= 900
+    if (isMobile) {
       scrollSection.style.height = 'auto'
-      if (experienceContainerRef.current) {
-        experienceContainerRef.current.style.height = 'auto'
-      }
-      wrapper.style.transform = 'none'
+      container.style.transform = 'none'
       return
     }
 
-    const updateScroll = () => {
-      // Рассчитываем максимальный скролл на основе реальной ширины контента
-      const contentWidth = wrapper.scrollWidth
-      const viewportWidth = window.innerWidth
-
-      // Увеличиваем максимальный скролл для больших экранов
-      // Это обеспечивает полный проход контента на любом размере экрана
-      const baseScroll = Math.max(contentWidth - viewportWidth, 0)
-      const maxScroll = Math.max(baseScroll, 1500) // Минимум 1500px скролла
-
-      // Устанавливаем высоту секции для скролла
-      const multiplier = 2
-      const scrollHeight = contentWidth * multiplier
-      scrollSection.style.height = `${scrollHeight}px`
-
-      // Устанавливаем высоту основного контейнера для равномерного расстояния до футера
-      if (experienceContainerRef.current) {
-        experienceContainerRef.current.style.height = `${scrollHeight + 200}px` // +200px для отступов
-      }
-
-      const handleScroll = () => {
-        const rect = scrollSection.getBoundingClientRect()
-        const scrollTop = -rect.top
-        const maxY = scrollSection.offsetHeight - window.innerHeight
-
-        const progress = Math.min(Math.max(scrollTop / maxY, 0), 1)
-
-        wrapper.style.transform = `translateX(${-progress * maxScroll}px)`
-      }
-
-      return handleScroll
+    const handleScroll = () => {
+      const rect = scrollSection.getBoundingClientRect()
+      const scrollTop = -rect.top
+      const maxScroll = container.scrollWidth - window.innerWidth
+      const scrollHeight = scrollSection.offsetHeight - window.innerHeight
+      const progress = Math.min(Math.max(scrollTop / scrollHeight, 0), 1)
+      container.style.transform = `translateX(${-progress * maxScroll}px)`
     }
+    scrollSection.style.height = `${container.scrollWidth}px`
 
-    const handleScroll = updateScroll()
     window.addEventListener('scroll', handleScroll)
-
-    // Обновляем при изменении размера окна
-    const handleResize = () => {
-      window.removeEventListener('scroll', handleScroll)
-
-      // Проверяем, нужно ли отключить скролл на мобильных и планшетах (до 900px)
-      const newIsMobileOrTablet = window.innerWidth <= 900
-      if (newIsMobileOrTablet) {
-        scrollSection.style.height = 'auto'
-        if (experienceContainerRef.current) {
-          experienceContainerRef.current.style.height = 'auto'
-        }
-        wrapper.style.transform = 'none'
-        return
-      }
-
-      const newHandleScroll = updateScroll()
-      window.addEventListener('scroll', newHandleScroll)
-    }
-
-    window.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleScroll)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('resize', handleScroll)
     }
   }, [])
 
   return (
     <section id="About">
-      <div
-        className="experience-container"
-        ref={experienceContainerRef}
-        style={{ height: '400vh' }}
-      >
+      <div className="experience-container">
         <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
           <h2 className="h2">{header}</h2>
           <div className="description-flex-container">
