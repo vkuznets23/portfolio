@@ -4,10 +4,7 @@
   color: white;
   font-size: 48px;
   padding: 40px 20px;
-  /* Make footer background span full viewport width even inside centered containers */
   width: 100vw;
-  margin-left: calc(50% - 50vw);
-  margin-right: calc(50% - 50vw);
   border: 1px solid red;
 }
 
