@@ -94,8 +94,8 @@ export default function AboutMe() {
           <div className="description-flex-container">
             <div className="description">{description}</div>
             <TextCircle
-              textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
-              textEn="scroll down > scroll down > scroll down >"
+              textRu="скрол >> скрол >> скрол >> скрол >>"
+              textEn="scroll scroll * scroll scroll * scroll scroll *"
               radius={62}
             />
           </div>
