@@ -26,16 +26,17 @@ export default function Projects() {
 
   // sync visibility array with projects length
   useEffect(() => {
-    setVisibleProjects(new Array(projects.length).fill(false))
+    if (projects.length > 0) {
+      setVisibleProjects(new Array(projects.length).fill(false))
+    }
   }, [projects])
 
   //animation of header
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !visible) {
           setVisible(true)
-          observer.disconnect()
         }
       },
       { threshold: 0.5 }
@@ -46,7 +47,7 @@ export default function Projects() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [visible])
 
   // color of body
   useEffect(() => {
@@ -76,7 +77,7 @@ export default function Projects() {
       (entries) => {
         entries.forEach((entry) => {
           const index = Number(entry.target.getAttribute('data-index'))
-          if (entry.isIntersecting) {
+          if (entry.isIntersecting && !visibleProjects[index]) {
             setTimeout(() => {
               setVisibleProjects((prev) => {
                 const next = [...prev]
@@ -84,7 +85,6 @@ export default function Projects() {
                 return next
               })
             }, index * 200)
-            observer.unobserve(entry.target)
           }
         })
       },
@@ -96,7 +96,7 @@ export default function Projects() {
     })
 
     return () => observer.disconnect()
-  }, [projects])
+  }, [projects, visibleProjects])
 
   return (
     <section id="Projects">
@@ -121,7 +121,7 @@ export default function Projects() {
                 projectRefs.current[index] = el
               }}
               className={`project-wrapper ${
-                visibleProjects![index] ? 'fade-in' : 'hidden'
+                visibleProjects[index] ? 'fade-in' : 'hidden'
               }`}
             >
               <Project project={project} />

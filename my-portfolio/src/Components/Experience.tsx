@@ -28,9 +28,8 @@ export default function Experience() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && !visible) {
           setVisible(true)
-          observer.disconnect()
         }
       },
       { threshold: 0.5 }
@@ -41,7 +40,7 @@ export default function Experience() {
     }
 
     return () => observer.disconnect()
-  }, [])
+  }, [visible])
 
   return (
     <section id="Resume">
