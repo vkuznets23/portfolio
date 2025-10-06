@@ -55,16 +55,41 @@
   color: white;
 }
 
-/* === Адаптивы футера === */
-
-/* ≤1180px */
-@media screen and (max-width: 1180px) {
+/* 1180–1195: сохраняем full‑bleed, без margin:auto */
+@media (min-width: 1180px) and (max-width: 1195px) {
   .footer-container {
+    /* full-bleed без артефактов на iPad */
+    width: 100dvw;
+    margin-left: calc(50% - 50dvw);
+    margin-right: calc(50% - 50dvw);
+
     font-size: 42px;
-    padding: 35px 20px;
-    margin: 0 auto;
+    overflow-x: hidden;
   }
 
+  .footer {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 30px;
+    justify-content: space-around;
+    gap: 15px;
+  }
+
+  .getInTouch {
+    max-width: 50%;
+    text-align: left;
+  }
+  .footer-links {
+    justify-content: flex-end;
+    gap: 10px;
+  }
+  .footer-links a {
+    padding: 9px 25px;
+    font-size: 19px;
+  }
+}
+
+@media screen and (max-width: 1180px) {
   .footer {
     justify-content: space-around;
     gap: 15px;
