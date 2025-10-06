@@ -15,11 +15,24 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY
-      if (currentScroll > lastScroll && currentScroll > 100) {
-        // Скролл вниз — прячем
+      const projectsSection = document.getElementById('Projects')
+
+      // Проверяем, находимся ли мы в секции проектов
+      const isInProjectsSection =
+        projectsSection &&
+        currentScroll >= projectsSection.offsetTop - 200 &&
+        currentScroll <=
+          projectsSection.offsetTop + projectsSection.offsetHeight
+
+      if (
+        currentScroll > lastScroll &&
+        currentScroll > 100 &&
+        !isInProjectsSection
+      ) {
+        // Скролл вниз — прячем (кроме секции проектов)
         setVisible(false)
       } else {
-        // Скролл вверх — показываем
+        // Скролл вверх или в секции проектов — показываем
         setVisible(true)
       }
       setLastScroll(currentScroll)
