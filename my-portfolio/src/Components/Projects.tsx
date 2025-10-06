@@ -29,16 +29,22 @@ export default function Projects() {
   const [visible, setVisible] = useState(false) // header visibility
   const [visibleProjects, setVisibleProjects] = useState<boolean[]>([])
 
-  // sync visibility array with projects length
+  // sync visibility array with projects length, preserve already visible items
   useEffect(() => {
-    setVisibleProjects(new Array(projects.length).fill(false))
-  }, [projects])
+    setVisibleProjects((prev) => {
+      const next = new Array(projects.length).fill(false)
+      for (let i = 0; i < next.length; i++) {
+        next[i] = Boolean(prev[i])
+      }
+      return next
+    })
+  }, [projects.length])
 
   //animation of header
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting && !visible) {
+        if (entry.isIntersecting) {
           setVisible(true)
         }
       },
@@ -50,7 +56,7 @@ export default function Projects() {
     }
 
     return () => observer.disconnect()
-  }, [visible])
+  }, [])
 
   // color of body
   useEffect(() => {
@@ -87,12 +93,12 @@ export default function Projects() {
                 next[index] = true
                 return next
               })
-            }, index * 200)
+            }, index * 120)
             observer.unobserve(entry.target)
           }
         })
       },
-      { threshold: 0.1 }
+      { threshold: 0.01, rootMargin: '0px 0px -10% 0px' }
     )
 
     projectRefs.current.forEach((el) => {
