@@ -24,7 +24,7 @@ export default function Projects() {
 
   const headerRef = useRef<HTMLDivElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
-  const projectRefs = useRef<(HTMLDivElement | null)[]>([])
+  const projectRefs = useRef<(HTMLElement | null)[]>([])
 
   const [visible, setVisible] = useState(false) // header visibility
   const [visibleProjects, setVisibleProjects] = useState<boolean[]>([])
@@ -109,9 +109,12 @@ export default function Projects() {
   }, [projects, visibleProjects])
 
   return (
-    <section id="Projects">
+    <section id="Projects" aria-labelledby="projects-title">
       <div ref={containerRef} className="projectsContainer">
-        <div ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+        <header ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 id="projects-title" className="sr-only">
+            {language === 'en' ? 'Projects' : 'Проекты'}
+          </h2>
           <div className="description-flex-container">
             <div className="description">{description}</div>
             <TextCircle
@@ -120,11 +123,15 @@ export default function Projects() {
               textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
             />
           </div>
-        </div>
+        </header>
 
-        <div className="projects">
+        <div
+          className="projects"
+          role="list"
+          aria-label={language === 'en' ? 'Project list' : 'Список проектов'}
+        >
           {projects.map((project, index) => (
-            <div
+            <article
               key={index}
               data-index={index}
               ref={(el) => {
@@ -133,9 +140,13 @@ export default function Projects() {
               className={`project-wrapper ${
                 visibleProjects![index] ? 'fade-in' : 'hidden'
               }`}
+              role="listitem"
+              aria-label={`${language === 'en' ? 'Project' : 'Проект'} ${
+                index + 1
+              }: ${project.name}`}
             >
               <Project project={project} />
-            </div>
+            </article>
           ))}
         </div>
 
@@ -143,6 +154,7 @@ export default function Projects() {
           type="button"
           className="allProjectsButton"
           onClick={() => window.open('https://github.com/vkuznets23', '_blank')}
+          aria-describedby="projects-title"
         >
           {language === 'en'
             ? 'Check out all projects at GitHub'
