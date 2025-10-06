@@ -26,9 +26,7 @@ export default function Projects() {
 
   // sync visibility array with projects length
   useEffect(() => {
-    if (projects.length > 0) {
-      setVisibleProjects(new Array(projects.length).fill(false))
-    }
+    setVisibleProjects(new Array(projects.length).fill(false))
   }, [projects])
 
   //animation of header
@@ -85,6 +83,7 @@ export default function Projects() {
                 return next
               })
             }, index * 200)
+            observer.unobserve(entry.target)
           }
         })
       },
@@ -96,7 +95,7 @@ export default function Projects() {
     })
 
     return () => observer.disconnect()
-  }, [projects, visibleProjects])
+  }, [projects])
 
   return (
     <section id="Projects">
@@ -121,7 +120,7 @@ export default function Projects() {
                 projectRefs.current[index] = el
               }}
               className={`project-wrapper ${
-                visibleProjects[index] ? 'fade-in' : 'hidden'
+                visibleProjects![index] ? 'fade-in' : 'hidden'
               }`}
             >
               <Project project={project} />
