@@ -1,3 +1,5 @@
+import { useId } from 'react'
+
 type CircularTextProps = {
   text: string
   radius?: number
@@ -9,11 +11,18 @@ export default function CircularText({
   radius = 100,
   fontSize = 20,
 }: CircularTextProps) {
-  const circleId = `circlePath-${Math.random().toString(36).substr(2, 9)}`
-  const size = radius * 2 + fontSize * 2 // добавляем отступ по краям
+  const reactId = useId()
+  const circleId = `circlePath-${reactId}`
+  const size = radius * 2 + fontSize * 2 // add padding to the edges
 
   return (
-    <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`}>
+    <svg
+      width={size}
+      height={size}
+      viewBox={`0 0 ${size} ${size}`}
+      aria-hidden="true"
+      focusable="false"
+    >
       <defs>
         <path
           id={circleId}

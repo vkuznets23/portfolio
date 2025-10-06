@@ -44,10 +44,12 @@ export default function Experience() {
   }, [])
 
   return (
-    <section id="Resume">
+    <section id="Resume" aria-labelledby="experience-title">
       <div className="experience-container">
-        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
-          <h2 className="h2">{header}</h2>
+        <header ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 id="experience-title" className="h2">
+            {header}
+          </h2>
           <div className="description-flex-container">
             <div className="description">{description}</div>
             <TextCircle
@@ -56,11 +58,25 @@ export default function Experience() {
               textRu="клик ** клик ** клик ** клик ** клик ***"
             />
           </div>
-        </div>
+        </header>
 
-        <div className="toggleAll">
+        <div
+          className="toggleAll"
+          role="list"
+          aria-label={
+            language === 'en' ? 'Experience timeline' : 'Временная шкала опыта'
+          }
+        >
           {experience.map((obj, i) => (
-            <ExperienceObj key={i} {...obj} />
+            <div
+              key={i}
+              role="listitem"
+              aria-label={`${
+                language === 'en' ? 'Experience item' : 'Элемент опыта'
+              } ${i + 1}: ${obj.name}`}
+            >
+              <ExperienceObj {...obj} />
+            </div>
           ))}
         </div>
       </div>

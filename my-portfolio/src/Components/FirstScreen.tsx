@@ -20,12 +20,19 @@ export default function FirstScreen() {
   )
 
   return (
-    <div className="firstScreen-container, slide-up">
+    <div
+      className="firstScreen-container, slide-up"
+      role="banner"
+      aria-labelledby="intro-title"
+    >
       {options && options.length > 0 && (
         <Typewriter line1={firstLine} options={options} />
       )}
       <div className="description-absolute-container">
         <div className="description-flex-container">
+          <h1 id="intro-title" className="sr-only">
+            {firstLine}
+          </h1>
           <p className="description">{description}</p>
           <div className="circle-photo-wrapper">
             <CircularText
@@ -36,8 +43,14 @@ export default function FirstScreen() {
               }
               radius={71}
             />
-            <img src="/photos/img038.jpg" alt="my_photo" className="photo" />
-            <span className="emoji-hand">👋</span>
+            <img
+              src="/photos/img038.jpg"
+              alt={language === 'en' ? 'My photo' : 'Моё фото'}
+              className="photo"
+            />
+            <span className="emoji-hand" aria-hidden="true">
+              👋
+            </span>
           </div>
         </div>
       </div>
