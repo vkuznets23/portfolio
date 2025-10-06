@@ -192,15 +192,60 @@
   left: 2280px;
 }
 
-.img1,
-.img2,
-.img3,
-.img4,
-.img5,
-.img6,
-.img7 {
-  max-width: 100vw !important;
-  left: min(left, 100vw - elementWidth) !important;
+@media (min-width: 1150px) and (max-width: 1195px) {
+  .scroll-section {
+    height: auto !important;
+    overflow-x: auto;
+    overflow-y: visible;
+    padding-top: 120px;
+    padding-bottom: 80px;
+    padding-right: 240px; /* запас справа, чтобы не обрезалось */
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .scroll-section .container {
+    position: relative;
+    transform: none !important;
+    width: max-content;
+    height: 720px;
+  }
+
+  .scroll-section .fact {
+    aspect-ratio: 1/1;
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  .fact1 {
+    width: 415px;
+  }
+  .fact2 {
+    width: 310px;
+  }
+  .fact3 {
+    width: 435px;
+  }
+  .fact4 {
+    width: 310px;
+  }
+  .fact5 {
+    width: 435px;
+  }
+  .fact6 {
+    width: 280px;
+  }
+  .fact7 {
+    width: 505px;
+  }
+  .fact8 {
+    width: 300px;
+  }
+  .fact9 {
+    width: 435px;
+  }
+  .fact10 {
+    width: 375px;
+  }
 }
 
 @media screen and (max-width: 1150px) {
