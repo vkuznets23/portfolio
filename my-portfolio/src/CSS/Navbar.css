@@ -91,7 +91,12 @@
 /* ------------------------ */
 /* Responsive ------------------------ */
 
-@media (max-width: 1185px) {
+@media (max-width: 1195px) {
+  .navbar-container {
+    width: 100%;
+    max-width: 1185px;
+  }
+
   .navbar {
     max-width: 1180px;
     width: 90%;
