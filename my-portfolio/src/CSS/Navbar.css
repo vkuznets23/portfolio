@@ -93,8 +93,7 @@
 
 @media (max-width: 1195px) {
   .navbar-container {
-    width: 100%;
-    max-width: 1185px;
+    width: 100dvw;
   }
 
   .navbar {

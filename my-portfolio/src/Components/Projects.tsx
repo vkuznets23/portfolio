@@ -119,8 +119,8 @@ export default function Projects() {
             <div className="description">{description}</div>
             <TextCircle
               radius={62}
-              textEn="scroll down > scroll down > scroll down >"
-              textRu="ещё вниз >> ещё вниз >> ещё вниз >>"
+              textRu="скрол >> скрол >> скрол >> скрол >>"
+              textEn="scroll scroll * scroll scroll * scroll scroll *"
             />
           </div>
         </header>
