@@ -1,7 +1,12 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import type { Project as ProjectType } from '../data/projects'
 import { Project, TextCircle } from '../Components'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import {
+  useGlobal,
+  useAppData,
+  useTypografCombined,
+  useProjectsTypograf,
+} from '../hooks'
 import '../CSS/Projects.css'
 
 export default function Projects() {
@@ -12,9 +17,9 @@ export default function Projects() {
     data?.projects?.description || '',
     language
   )
-  const projects: ProjectType[] = useMemo(
-    () => data?.projects?.projects || [],
-    [data]
+  const projects: ProjectType[] = useProjectsTypograf(
+    data?.projects?.projects || [],
+    language
   )
 
   const headerRef = useRef<HTMLDivElement>(null)
@@ -95,7 +100,7 @@ export default function Projects() {
     })
 
     return () => observer.disconnect()
-  }, [projects])
+  }, [projects, visibleProjects])
 
   return (
     <section id="Projects">

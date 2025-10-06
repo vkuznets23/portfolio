@@ -1,12 +1,14 @@
 import { useMemo } from 'react'
 import Typograf from 'typograf'
 import type { Experience } from '../data/experience'
+import type { Project } from '../data/projects'
 
 const tp = new Typograf({ locale: ['ru'] })
 tp.enableRule('common/nbsp/afterShortWord')
 
 const englishPrepositions = [
   'in',
+  'I',
   'on',
   'at',
   'by',
@@ -14,8 +16,10 @@ const englishPrepositions = [
   'with',
   'about',
   'to',
-  'and',
   'of',
+  'C',
+  'a',
+  'my',
   'from',
   'as',
 ]
@@ -65,4 +69,16 @@ export function useFactsTypograf(
     if (!facts) return []
     return facts.map((text) => typografCombined(text, lang))
   }, [facts, lang])
+}
+
+export function useProjectsTypograf(projects: Project[], lang: 'ru' | 'en') {
+  return useMemo(
+    () =>
+      projects.map((project) => ({
+        ...project,
+        name: typografCombined(project.name, lang),
+        description: typografCombined(project.description, lang),
+      })),
+    [projects, lang]
+  )
 }
