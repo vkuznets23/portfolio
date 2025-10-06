@@ -199,6 +199,7 @@
     overflow-y: visible;
     padding-top: 120px;
     padding-bottom: 80px;
+    padding-right: 240px; /* запас справа, чтобы не обрезалось */
     -webkit-overflow-scrolling: touch;
   }
 
@@ -212,6 +213,7 @@
   .scroll-section .fact {
     aspect-ratio: 1/1;
     height: auto;
+    flex: 0 0 auto;
   }
 
   .fact1 {
