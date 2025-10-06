@@ -1,19 +1,30 @@
 :root {
   font-weight: 300;
   font-family: "Montserrat";
+
+  /* Background colors */
   --bg-color: #ffffff;
-  --bg-circle-color: #b4fb6d;
   --bg-accent-color: #ffffff;
   --bg-switch-color: #b4fb6d;
+  --bg-circle-color: #b4fb6d;
+  --bg-footer-color: #212121;
+  --bg-fact-color: #ffffff;
+  --bg-fact-color2: #e06998;
+  --bg-fact-color3: #b4fb6d;
+
+  /* Text colors */
   --text-color: #000000;
   --project-desc: #4f4f4f;
+  --accent-color: #656565;
+
+  /* Navigation colors */
   --bg-nav-color: rgba(255, 255, 255, 0.592);
   --bg-nav-color-switch: #b4fb6d9a;
-  --accent-color: #656565;
+
+  /* Tag colors */
   --tag1-color: #e06998;
   --tag2-color: #d9d9d9;
   --tag3-color: #ffffff;
-  --bg-footer-color: #212121;
 }
 
 body {
@@ -39,18 +50,30 @@ body.projects-bg .navbar-container.visible {
 }
 
 body.dark {
+  /* Background colors */
   --bg-color: #212121;
-  --bg-circle-color: #4d6139de;
+  --bg-accent-color: #212121;
+  --bg-switch-color: #4b7521;
+  --bg-circle-color: #4b7521cd;
+  --bg-footer-color: #1c1c1c;
+  --bg-fact-color: #c8c8c8;
+  --bg-fact-color2: #cf5083f0;
+  --bg-fact-color3: #4b7521;
+  --bg-toggle-color: #232323;
+
+  /* Text colors */
   --text-color: #e2e2e2;
   --project-desc: #cdcdcde7;
-  --bg-toggle-color: #232323;
-  --bg-switch-color: #3f502fde;
+  --accent-color: #656565;
+
+  /* Navigation colors */
   --bg-nav-color: rgba(30, 30, 30, 0.592);
-  --bg-nav-color-switch: #4d6139de;
-  --tag1-color: #c04677f0;
+  --bg-nav-color-switch: #4b7521b8;
+
+  /* Tag colors */
+  --tag1-color: #cf5083f0;
   --tag2-color: #a4a4a4d1;
   --tag3-color: #e0e0e0ec;
-  --bg-footer-color: #1c1c1c;
 }
 
 .main-container {

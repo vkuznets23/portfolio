@@ -4,7 +4,7 @@ export interface Project {
   description: string
   technologies: string[]
   github: string
-  live: string
+  live?: string
   image: string
 }
 
@@ -27,32 +27,38 @@ export const projectsData = {
           'Next.js',
           'TypeScript',
           'Vanilla CSS',
+          'WebSocket',
           'Playwright',
           'Jest',
           'Pet project',
         ],
-        github: 'https://github.com/yourusername/portfolio',
-        live: 'https://yourportfolio.com',
+        github: 'https://github.com/vkuznets23/camagru',
+        live: 'https://camagru-tau.vercel.app/',
         image: '/photos/camagru.gif',
       },
       {
         id: 2,
         name: 'Portfolio Website',
         description:
-          'A modern, responsive portfolio website built with React, TypeScript, and CSS. Features include dynamic content loading, smooth animations, and mobile-first design.',
-        technologies: ['React', 'TypeScript', 'CSS'],
-        github: 'https://github.com/yourusername/portfolio',
-        live: 'https://yourportfolio.com',
+          'A fully responsive portfolio website showcasing my development skills with smooth scroll animations and interactive elements. Built with modern React patterns, TypeScript for type safety, and custom CSS animations. Features include a mobile-first design, dark/light theme toggle, multi-language support, and optimized performance.',
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
+        github: 'https://github.com/vkuznets23/portfolio',
         image: '/photos/portfolio.png',
       },
       {
         id: 3,
-        name: 'E-commerce Platform',
+        name: 'ft_transcendence | pong game',
         description:
-          'Full-stack e-commerce solution with user authentication, payment processing, and admin dashboard. Built with modern web technologies.',
-        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+          "A multiplayer Pong game built as part of 42 school's project. Features user authentication, matchmaking system, tournament mode as well as 1:1 mode, game cusomization and AI opponent. Built with modern web technologies including WebSocket for real-time communication, secure authentication, and responsive design.",
+        technologies: [
+          'React',
+          'Node.js',
+          'WebSocket',
+          'TypeScript',
+          'Tailwind CSS',
+          'Hive project',
+        ],
         github: 'https://github.com/yourusername/ecommerce',
-        live: 'https://yourecommerce.com',
         image: '/photos/pong.gif',
       },
     ],
@@ -63,23 +69,46 @@ export const projectsData = {
     projects: [
       {
         id: 1,
-        name: 'Сайт-портфолио',
+        name: 'Camagru | клон Instagram',
         description:
-          'Современный, адаптивный сайт-портфолио, созданный с помощью React, TypeScript и CSS. Включает динамическую загрузку контента, плавные анимации и mobile-first дизайн.',
-        technologies: ['React', 'TypeScript', 'CSS', 'Framer Motion'],
-        github: 'https://github.com/yourusername/portfolio',
-        live: 'https://yourportfolio.com',
-        image: '/photos/portfolio.png',
+          'Создан с нуля с безопасной аутентификацией через email, загрузкой фото/снимков с вебкамеры, лайками, комментариями, закладками, редактированием постов, управлением профилем, QR-кодами, поиском пользователей, темной темой и live chat.',
+        technologies: [
+          'Next.js',
+          'TypeScript',
+          'Vanilla CSS',
+          'WebSocket',
+          'Playwright',
+          'Jest',
+          'Pet project',
+        ],
+        github: 'https://github.com/vkuznets23/camagru',
+        live: 'https://camagru-tau.vercel.app/',
+        image: '/photos/camagru.gif',
       },
       {
         id: 2,
-        name: 'E-commerce платформа',
+        name: 'Сайт-портфолио',
         description:
-          'Full-stack решение для электронной коммерции с аутентификацией пользователей, обработкой платежей и админ-панелью. Создано с использованием современных веб-технологий.',
-        technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
+          'Сайт-портфолио, который демонстрирует мои навыки в разработке с плавными анимациями и интерактивными элементами. Создан с использованием современных React-паттернов, TypeScript для безопасности типов и собственных анимаций CSS. Функциональные возможности включают адаптивную верстку, переключатель темной/светлой темы, поддержку нескольких языков и оптимизированную производительность.',
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
+        github: 'https://github.com/vkuznets23/portfolio',
+        image: '/photos/portfolio.png',
+      },
+      {
+        id: 3,
+        name: 'ft_transcendence | понг игра',
+        description:
+          'Мультиплеерная понг-игра, созданная в рамках проекта школы 42. Функции включают аутентификацию пользователей, систему матчей, турнирный режим, а также режим 1:1, настройку игры (размер ракетки, уровень сложности) и ИИ-противника. Создана с использованием современных веб-технологий, включая WebSocket для чата в реальном времени, безопасную аутентификацию и адаптивную верстку.',
+        technologies: [
+          'React',
+          'Node.js',
+          'WebSocket',
+          'TypeScript',
+          'Tailwind CSS',
+          'Hive project',
+        ],
         github: 'https://github.com/yourusername/ecommerce',
-        live: 'https://yourecommerce.com',
-        image: '/photos/ecommerce.png',
+        image: '/photos/pong.gif',
       },
     ],
   },

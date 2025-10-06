@@ -154,6 +154,7 @@
 
 .tag.category3 {
   background-color: var(--tag3-color);
+  border: 1px solid var(--text-color);
   color: black;
 }
 
@@ -204,7 +205,7 @@
 }
 
 .allProjectsButton:hover {
-  background-color: #e06998;
+  background-color: var(--tag1-color);
   border: none;
   color: white;
 }

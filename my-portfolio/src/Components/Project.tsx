@@ -37,6 +37,7 @@ export default function Project({ project }: ProjectProps) {
           let categoryClass = ''
 
           const testingTags = ['Jest', 'Playwright', 'Vite']
+
           if (testingTags.includes(tech)) {
             categoryClass = 'category1'
           } else if (tech === 'Hive project' || tech === 'Pet project') {

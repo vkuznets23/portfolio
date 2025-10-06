@@ -2,8 +2,6 @@
 .footer-container {
   background-color: var(--bg-footer-color);
   color: white;
-  font-family: "Montserrat";
-  font-weight: 300;
   font-size: 48px;
   padding: 40px 20px;
   /* Make footer background span full viewport width even inside centered containers */
@@ -27,13 +25,13 @@
 }
 
 .getInTouch a {
-  color: #b4fb6d;
+  color: var(--bg-switch-color);
   text-decoration: underline;
   margin: 0;
 }
 
 .getInTouch a:hover {
-  color: #e88fb2;
+  color: var(--tag1-color);
 }
 
 .footer-links {
@@ -43,8 +41,8 @@
 }
 
 .footer-links a {
-  color: #212121;
-  background-color: #b4fb6d;
+  color: var(--text-color);
+  background-color: var(--bg-switch-color);
   padding: 10px 30px;
   border-radius: 25px;
   text-decoration: none;
@@ -53,7 +51,7 @@
 }
 
 .footer-links a:hover {
-  background-color: #e88fb2;
+  background-color: var(--tag1-color);
   color: white;
 }
 
@@ -98,211 +96,11 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 10px;
-  }
-
-  .getInTouch {
-    width: 70%;
-  }
-
-  .footer-links {
-    justify-content: center;
-    gap: 8px;
-  }
-
-  .footer-links a {
-    padding: 8px 20px;
-    font-size: 18px;
-  }
-}
-
-/* ≤700px */
-/* === Базовые стили футера === */
-.footer-container {
-  color: white;
-  font-family: "Montserrat";
-  font-weight: 300;
-  font-size: 48px;
-  padding: 40px 20px;
-}
-
-.footer {
-  max-width: 1180px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.getInTouch {
-  max-width: 600px;
-}
-
-.getInTouch a {
-  color: #b4fb6d;
-  text-decoration: underline;
-  margin: 0;
-}
-
-.getInTouch a:hover {
-  color: #e88fb2;
-}
-
-.footer-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #212121;
-  background-color: #b4fb6d;
-  padding: 10px 30px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 20px;
-  transition: 0.3s ease;
-}
-
-.footer-links a:hover {
-  background-color: #e88fb2;
-  color: white;
-}
-
-/* === Адаптивы футера === */
-
-/* ≤1180px */
-@media screen and (max-width: 1180px) {
-  .footer-container {
-    font-size: 42px;
-    padding: 35px 20px;
-  }
-
-  .footer {
-    justify-content: space-around;
     gap: 15px;
   }
 
   .getInTouch {
-    max-width: 50%;
-    text-align: left;
-  }
-
-  .footer-links {
-    justify-content: flex-end;
-    gap: 10px;
-  }
-
-  .footer-links a {
-    padding: 9px 25px;
-    font-size: 19px;
-  }
-}
-
-/* ≤1020px */
-/* === Базовые стили футера === */
-.footer-container {
-  color: white;
-  font-family: "Montserrat";
-  font-weight: 300;
-  font-size: 48px;
-  padding: 40px 20px;
-}
-
-.footer {
-  max-width: 1180px;
-  margin: auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.getInTouch {
-  max-width: 600px; /* Максимальная ширина текста */
-  text-align: left;
-}
-
-.getInTouch a {
-  color: #b4fb6d;
-  text-decoration: underline;
-  margin: 0;
-}
-
-.getInTouch a:hover {
-  color: #e88fb2;
-}
-
-.footer-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.footer-links a {
-  color: #212121;
-  background-color: #b4fb6d;
-  padding: 10px 30px;
-  border-radius: 25px;
-  text-decoration: none;
-  font-size: 20px;
-  transition: 0.3s ease;
-}
-
-.footer-links a:hover {
-  background-color: #e88fb2;
-  color: white;
-}
-
-/* === Адаптивы футера === */
-
-/* ≤1180px */
-@media screen and (max-width: 1180px) {
-  .footer-container {
-    font-size: 42px;
-    padding: 35px 20px;
-  }
-
-  .footer {
-    justify-content: space-around;
-    gap: 15px;
-  }
-
-  .getInTouch {
-    max-width: 700px;
-    text-align: left;
-  }
-
-  .footer-links {
-    justify-content: flex-end;
-    gap: 10px;
-  }
-
-  .footer-links a {
-    padding: 9px 25px;
-    font-size: 19px;
-  }
-}
-
-/* ≤1020px */
-@media screen and (max-width: 1020px) {
-  .footer-container {
-    font-size: 36px;
-    padding: 30px 20px;
-  }
-
-  .footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-  }
-
-  .getInTouch {
-    max-width: 600px; /* текст не растягивается */
+    max-width: 600px;
     width: 100%;
     text-align: center;
   }
