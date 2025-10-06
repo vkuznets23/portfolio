@@ -58,7 +58,7 @@ export default function Projects() {
           document.body.classList.remove('projects-bg')
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     )
 
     if (containerRef.current) {
@@ -88,7 +88,7 @@ export default function Projects() {
           }
         })
       },
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     )
 
     projectRefs.current.forEach((el) => {
