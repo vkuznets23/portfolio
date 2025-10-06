@@ -62,12 +62,19 @@ export default function AboutMe() {
     const handleScroll = () => {
       const rect = scrollSection.getBoundingClientRect()
       const scrollTop = -rect.top
-      const maxScroll = container.scrollWidth - window.innerWidth
+      const containerWidth = Math.min(1180, window.innerWidth)
+      const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
       const scrollHeight = scrollSection.offsetHeight - window.innerHeight
       const progress = Math.min(Math.max(scrollTop / scrollHeight, 0), 1)
-      container.style.transform = `translateX(${-progress * maxScroll}px)`
+      const translateX = -progress * maxScroll
+      // clamp to edges
+      const clamped = Math.min(0, Math.max(-maxScroll, translateX))
+      container.style.transform = `translateX(${clamped}px)`
     }
-    scrollSection.style.height = `${container.scrollWidth}px`
+    // section height equals horizontal travel distance
+    const containerWidth = Math.min(1180, window.innerWidth)
+    const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
+    scrollSection.style.height = `${maxScroll + window.innerHeight}px`
 
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleScroll)
