@@ -25,14 +25,14 @@ export default function useAppData(language: Language) {
         setData(appData)
 
         const factImages = [
-          '/photos/dogphoto.png',
-          '/photos/img038',
-          '/photos/fugler.png',
+          '/photos/dogphoto.webp',
+          '/photos/img038.webp',
+          '/photos/fugler.webp',
           '/photos/circle.gif',
-          '/photos/mug.png',
+          '/photos/mug.webp',
           '/photos/knitting.png',
           '/photos/office.gif',
-          '/photos/cuteme.png',
+          '/photos/cuteme.webp',
         ]
 
         preloadImages([...factImages], preloadedRef.current)

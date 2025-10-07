@@ -44,7 +44,7 @@ export default function FirstScreen() {
                 radius={71}
               />
               <img
-                src="/photos/img038.jpg"
+                src="/photos/img038.webp"
                 alt={language === 'en' ? 'My photo' : 'Моё фото'}
                 className="photo"
               />
