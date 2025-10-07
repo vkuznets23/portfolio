@@ -52,13 +52,14 @@ export default function AboutMe() {
 
     if (!container || !scrollSection) return
 
-    // const isMobile = window.innerWidth <= 900
     const isMobile = window.innerWidth <= 1195
     if (isMobile) {
       scrollSection.style.height = 'auto'
       container.style.transform = 'none'
       return
     }
+
+    const speed = 0.2
 
     const handleScroll = () => {
       const rect = scrollSection.getBoundingClientRect()
@@ -75,7 +76,8 @@ export default function AboutMe() {
     // section height equals horizontal travel distance
     const containerWidth = Math.min(1180, window.innerWidth)
     const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
-    scrollSection.style.height = `${maxScroll + window.innerHeight}px`
+    // Increase section height inversely to speed so full track is reachable
+    scrollSection.style.height = `${maxScroll / speed + window.innerHeight}px`
 
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleScroll)
