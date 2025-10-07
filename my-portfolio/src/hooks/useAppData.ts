@@ -24,11 +24,9 @@ export default function useAppData(language: Language) {
         const appData = getData(language)
         setData(appData)
 
-        const projectsImages =
-          appData?.projects.projects.map((p) => p.image).filter(Boolean) ?? []
-
         const factImages = [
           '/photos/dogphoto.png',
+          '/photos/img038',
           '/photos/fugler.png',
           '/photos/circle.gif',
           '/photos/mug.png',
@@ -37,7 +35,7 @@ export default function useAppData(language: Language) {
           '/photos/cuteme.png',
         ]
 
-        preloadImages([...factImages, ...projectsImages], preloadedRef.current)
+        preloadImages([...factImages], preloadedRef.current)
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Failed to load data')
       } finally {
