@@ -1,3 +1,7 @@
+@import "./CSS/Toggle.css";
+@import "./CSS/Loader.css";
+@import "./CSS/Error.css";
+
 :root {
   font-weight: 300;
   font-family: "Montserrat";
