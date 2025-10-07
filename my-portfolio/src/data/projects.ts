@@ -34,7 +34,7 @@ export const projectsData = {
         ],
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
-        image: '',
+        image: '/photos/camagru.mov',
       },
       {
         id: 2,
@@ -83,7 +83,7 @@ export const projectsData = {
         ],
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
-        image: '',
+        image: '/photos/camagru.mov',
       },
       {
         id: 2,
@@ -92,7 +92,7 @@ export const projectsData = {
           'Сайт-портфолио, который демонстрирует мои навыки в разработке с плавными анимациями и интерактивными элементами. Создан с использованием современных React-паттернов, TypeScript для безопасности типов и собственных анимаций CSS. Функциональные возможности включают адаптивную верстку, переключатель темной/светлой темы, поддержку нескольких языков и оптимизированную производительность.',
         technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
         github: 'https://github.com/vkuznets23/portfolio',
-        image: '',
+        image: '/photos/portfolio.mov',
       },
       {
         id: 3,

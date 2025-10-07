@@ -34,11 +34,6 @@ export default function Project({ project }: ProjectProps) {
   return (
     <article className="project-card">
       <div className="project-image-wrapper">
-        {/* <img
-          src={project.image}
-          alt={`${project.name} project screenshot`}
-          className="project-img"
-        /> */}
         <video
           src={project.image}
           className="project-img"
