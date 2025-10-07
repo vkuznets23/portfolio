@@ -1,6 +1,8 @@
 @import "./CSS/Toggle.css";
 @import "./CSS/Loader.css";
 @import "./CSS/Error.css";
+@import "./CSS/Projects.css";
+@import "./CSS/Facts.css";
 
 :root {
   font-weight: 300;
