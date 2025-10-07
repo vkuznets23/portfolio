@@ -4,7 +4,7 @@ export const Logo = () => {
   const { theme } = useGlobal()
 
   const mainColor = theme === 'dark' ? '#fff' : '#000'
-  const accentColor = theme === 'dark' ? '#4CAF50' : '#B4FB6D'
+  const accentColor = theme === 'dark' ? '#4CAF50' : '#E88FB2'
 
   return (
     <svg
