@@ -52,7 +52,6 @@ export default function AboutMe() {
 
     if (!container || !scrollSection) return
 
-    // const isMobile = window.innerWidth <= 900
     const isMobile = window.innerWidth <= 1195
     if (isMobile) {
       scrollSection.style.height = 'auto'
@@ -60,9 +59,7 @@ export default function AboutMe() {
       return
     }
 
-    // Lower value => slower horizontal movement
     const speed = 0.2
-    // const speed = 1
 
     const handleScroll = () => {
       const rect = scrollSection.getBoundingClientRect()
