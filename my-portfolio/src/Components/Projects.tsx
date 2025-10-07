@@ -31,17 +31,22 @@ export default function Projects() {
 
   // sync visibility array with projects length, preserve already visible items
   useEffect(() => {
-    setVisibleProjects((prev) => {
-      const next = new Array(projects.length).fill(false)
-      for (let i = 0; i < next.length; i++) {
-        next[i] = Boolean(prev[i])
-      }
-      return next
-    })
+    if (window.innerWidth <= 900) {
+      setVisibleProjects(new Array(projects.length).fill(true))
+    } else {
+      setVisibleProjects((prev) => {
+        const next = new Array(projects.length).fill(false)
+        for (let i = 0; i < next.length; i++) {
+          next[i] = Boolean(prev[i])
+        }
+        return next
+      })
+    }
   }, [projects.length])
 
   //animation of header
   useEffect(() => {
+    if (window.innerWidth <= 900) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -60,6 +65,7 @@ export default function Projects() {
 
   // color of body
   useEffect(() => {
+    if (window.innerWidth <= 900) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -80,6 +86,7 @@ export default function Projects() {
 
   // projects visibility
   useEffect(() => {
+    if (window.innerWidth <= 900) return
     if (projectRefs.current.length === 0) return
 
     const observer = new IntersectionObserver(
