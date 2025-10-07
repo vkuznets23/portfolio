@@ -5,6 +5,7 @@ import { IoMdMoon } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { VscClose } from 'react-icons/vsc'
 import '../CSS/Navbar.css'
+import { Logo } from './logo'
 
 export default function Navbar() {
   const { language, setLanguage, theme, setTheme } = useGlobal()
@@ -59,6 +60,12 @@ export default function Navbar() {
     </>
   )
 
+  const logo = (
+    <a href="#FirstScreen">
+      <Logo />
+    </a>
+  )
+
   const buttons = (
     <div className="nav-buttons">
       <button
@@ -104,7 +111,7 @@ export default function Navbar() {
       aria-label={language === 'en' ? 'Main navigation' : 'Основная навигация'}
     >
       <div className="navbar">
-        <div>LOGO</div>
+        <div>{logo}</div>
         <button
           type="button"
           className="menu-toggle"

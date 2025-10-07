@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 import AboutMe from './AboutMe'
 import ErrorComponent from './Error'
 import TextCircle from './TextCircle'
+import { Logo } from './logo'
 
 export {
   FirstScreen,
@@ -22,4 +23,5 @@ export {
   AboutMe,
   ErrorComponent,
   TextCircle,
+  Logo,
 }

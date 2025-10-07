@@ -20,40 +20,42 @@ export default function FirstScreen() {
   )
 
   return (
-    <div
-      className="firstScreen-container, slide-up"
-      role="banner"
-      aria-labelledby="intro-title"
-    >
-      {options && options.length > 0 && (
-        <Typewriter line1={firstLine} options={options} />
-      )}
-      <div className="description-absolute-container">
-        <div className="description-flex-container">
-          <h1 id="intro-title" className="sr-only">
-            {firstLine}
-          </h1>
-          <p className="description">{description}</p>
-          <div className="circle-photo-wrapper">
-            <CircularText
-              text={
-                language === 'en'
-                  ? 'Hello! My name is Viktoriia! But call me Vika.'
-                  : 'Хэй! Меня зовут Виктория, но лучше Вика.'
-              }
-              radius={71}
-            />
-            <img
-              src="/photos/img038.jpg"
-              alt={language === 'en' ? 'My photo' : 'Моё фото'}
-              className="photo"
-            />
-            <span className="emoji-hand" aria-hidden="true">
-              👋
-            </span>
+    <section id="FirstScreen" aria-labelledby="experience-title">
+      <div
+        className="firstScreen-container, slide-up"
+        role="banner"
+        aria-labelledby="intro-title"
+      >
+        {options && options.length > 0 && (
+          <Typewriter line1={firstLine} options={options} />
+        )}
+        <div className="description-absolute-container">
+          <div className="description-flex-container">
+            <h1 id="intro-title" className="sr-only">
+              {firstLine}
+            </h1>
+            <p className="description">{description}</p>
+            <div className="circle-photo-wrapper">
+              <CircularText
+                text={
+                  language === 'en'
+                    ? 'Hello! My name is Viktoriia! But call me Vika.'
+                    : 'Хэй! Меня зовут Виктория, но лучше Вика.'
+                }
+                radius={71}
+              />
+              <img
+                src="/photos/img038.jpg"
+                alt={language === 'en' ? 'My photo' : 'Моё фото'}
+                className="photo"
+              />
+              <span className="emoji-hand" aria-hidden="true">
+                👋
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
