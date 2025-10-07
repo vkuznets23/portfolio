@@ -65,7 +65,6 @@ export default function Projects() {
 
   // color of body
   useEffect(() => {
-    if (window.innerWidth <= 900) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

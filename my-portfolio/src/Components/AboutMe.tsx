@@ -26,6 +26,8 @@ export default function AboutMe() {
 
   // visibility animation
   useEffect(() => {
+    if (window.innerWidth <= 900) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
