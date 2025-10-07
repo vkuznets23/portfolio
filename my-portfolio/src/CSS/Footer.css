@@ -68,6 +68,7 @@
 @media screen and (max-width: 1180px) {
   .footer {
     justify-content: space-around;
+    font-size: 40px;
     gap: 15px;
   }
 
