@@ -34,10 +34,18 @@ export default function Project({ project }: ProjectProps) {
   return (
     <article className="project-card">
       <div className="project-image-wrapper">
-        <img
+        {/* <img
           src={project.image}
           alt={`${project.name} project screenshot`}
           className="project-img"
+        /> */}
+        <video
+          src={project.image}
+          className="project-img"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
         <div className="overlay" role="group" aria-label="Project actions">
           {project.live && (

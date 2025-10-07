@@ -34,7 +34,7 @@ export const projectsData = {
         ],
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
-        image: '/photos/camagru.gif',
+        image: '',
       },
       {
         id: 2,
@@ -43,7 +43,7 @@ export const projectsData = {
           'A fully responsive portfolio website showcasing my development skills with smooth scroll animations and interactive elements. Built with modern React patterns, TypeScript for type safety, and custom CSS animations. Features include a mobile-first design, dark/light theme toggle, multi-language support, and optimized performance.',
         technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
         github: 'https://github.com/vkuznets23/portfolio',
-        image: '/photos/portfolio.gif',
+        image: '/photos/portfolio.mov',
       },
       {
         id: 3,
@@ -59,7 +59,7 @@ export const projectsData = {
           'Hive project',
         ],
         github: 'https://github.com/yourusername/ecommerce',
-        image: '/photos/pong.gif',
+        image: '',
       },
     ],
   },
@@ -83,7 +83,7 @@ export const projectsData = {
         ],
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
-        image: '/photos/camagru.gif',
+        image: '',
       },
       {
         id: 2,
@@ -92,7 +92,7 @@ export const projectsData = {
           'Сайт-портфолио, который демонстрирует мои навыки в разработке с плавными анимациями и интерактивными элементами. Создан с использованием современных React-паттернов, TypeScript для безопасности типов и собственных анимаций CSS. Функциональные возможности включают адаптивную верстку, переключатель темной/светлой темы, поддержку нескольких языков и оптимизированную производительность.',
         technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
         github: 'https://github.com/vkuznets23/portfolio',
-        image: '/photos/portfolio.gif',
+        image: '',
       },
       {
         id: 3,
@@ -108,7 +108,7 @@ export const projectsData = {
           'Hive project',
         ],
         github: 'https://github.com/yourusername/ecommerce',
-        image: '/photos/pong.gif',
+        image: '',
       },
     ],
   },
