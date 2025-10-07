@@ -133,7 +133,7 @@ export default function AboutMe() {
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
-              src="/photos/knitting.png"
+              src="/photos/knitting.webp"
               alt="fugler"
               className="img5"
               style={{ aspectRatio: '1 / 1' }}

@@ -29,7 +29,7 @@ export default function useAppData(language: Language) {
           '/photos/img038.webp',
           '/photos/fugler.webp',
           '/photos/mug.webp',
-          '/photos/knitting.png',
+          '/photos/knitting.webp',
           '/photos/cuteme.webp',
         ]
 
