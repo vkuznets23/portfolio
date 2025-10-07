@@ -26,6 +26,7 @@ export default function Experience() {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+    if (window.innerWidth <= 900) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
