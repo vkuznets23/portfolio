@@ -23,8 +23,7 @@
 
   /* Tag colors */
   --tag1-color: #e06998;
-  --tag2-color: #d9d9d9;
-  --tag3-color: #ffffff;
+  --tag2-color: #ffffff;
 }
 
 body {
@@ -72,8 +71,7 @@ body.dark {
 
   /* Tag colors */
   --tag1-color: #cf5083f0;
-  --tag2-color: #a4a4a4d1;
-  --tag3-color: #e0e0e0ec;
+  --tag2-color: #e0e0e0ec;
 }
 
 .main-container {

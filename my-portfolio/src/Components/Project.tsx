@@ -11,10 +11,8 @@ const getTagCategory = (tech: string): string => {
 
   if (testingTags.includes(tech)) {
     return 'category1'
-  } else if (tech === 'Hive project' || tech === 'Pet project') {
-    return 'category2'
   } else {
-    return 'category3'
+    return 'category2'
   }
 }
 
