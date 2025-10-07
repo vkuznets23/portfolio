@@ -106,13 +106,48 @@ export default function AboutMe() {
         </div>
         <div className="scroll-section">
           <div className="container" ref={containerRef}>
-            <img src="/photos/dogphoto.png" alt="photo" className="img1" />
-            <img src="/photos/fugler.png" alt="fugler" className="img2" />
-            <img src="/photos/circle.gif" alt="fugler" className="img3" />
-            <img src="/photos/mug.png" alt="fugler" className="img4" />
-            <img src="/photos/knitting.png" alt="fugler" className="img5" />
-            <img src="/photos/office.gif" alt="office" className="img6" />
-            <img src="/photos/cuteme.png" alt="me" className="img7" />
+            <img
+              src="/photos/dogphoto.png"
+              alt="photo"
+              className="img1"
+              style={{ aspectRatio: '1 / 1' }}
+            />
+            <img
+              src="/photos/fugler.png"
+              alt="fugler"
+              className="img2"
+              style={{ aspectRatio: '1 / 1' }}
+            />
+            <img
+              src="/photos/circle.gif"
+              alt="fugler"
+              className="img3"
+              style={{ aspectRatio: '1 / 1' }}
+            />
+            <img
+              src="/photos/mug.png"
+              alt="fugler"
+              className="img4"
+              style={{ aspectRatio: '1 / 1' }}
+            />
+            <img
+              src="/photos/knitting.png"
+              alt="fugler"
+              className="img5"
+              style={{ aspectRatio: '1 / 1' }}
+            />
+            <img
+              src="/photos/office.gif"
+              alt="office"
+              className="img6"
+              style={{ aspectRatio: '2/ 1' }}
+            />
+            <img
+              src="/photos/cuteme.png"
+              alt="me"
+              className="img7"
+              style={{ aspectRatio: '1 / 1' }}
+            />
 
             {facts.map((fact, i) => (
               <div key={i} className={`fact fact${i + 1}`}>
