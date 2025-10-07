@@ -1,5 +1,3 @@
-import '../CSS/Footer.css'
-
 export default function Footer() {
   return (
     <section id="Contacts" aria-labelledby="contacts-title">

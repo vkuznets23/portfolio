@@ -1,5 +1,4 @@
 import Typewriter from './Typewriter'
-import '../CSS/FirstScreen-container.css'
 import CircularText from './CircleText'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 

@@ -1,6 +1,5 @@
 import MarqueeComponent from 'react-fast-marquee'
 import { motion } from 'framer-motion'
-import '../CSS/Marquee.css'
 
 type StripeProps = {
   style?: string

@@ -1,5 +1,4 @@
 import { useEffect, useRef, useState } from 'react'
-import '../CSS/Facts.css'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 import { useFactsTypograf } from '../hooks/useTypograph'
 import TextCircle from './TextCircle'
