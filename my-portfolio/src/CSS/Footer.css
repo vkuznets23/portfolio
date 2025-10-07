@@ -66,6 +66,9 @@
 }
 
 @media screen and (max-width: 1180px) {
+  .footer-container {
+    font-size: 40px;
+  }
   .footer {
     justify-content: space-around;
     gap: 15px;
@@ -103,7 +106,7 @@
 
   .getInTouch {
     max-width: 600px;
-    width: 100%;
+    width: 80%;
     text-align: center;
   }
 
@@ -128,7 +131,7 @@
 
   .getInTouch {
     max-width: 500px;
-    width: 100%;
+    width: 90%;
   }
 
   .footer-links {
