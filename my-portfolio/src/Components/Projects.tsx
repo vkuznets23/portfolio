@@ -7,7 +7,6 @@ import {
   useTypografCombined,
   useProjectsTypograf,
 } from '../hooks'
-import '../CSS/Projects.css'
 
 export default function Projects() {
   const { language } = useGlobal()

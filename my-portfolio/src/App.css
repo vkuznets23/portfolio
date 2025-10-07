@@ -1,3 +1,15 @@
+@import "./CSS/Toggle.css";
+@import "./CSS/Loader.css";
+@import "./CSS/Error.css";
+@import "./CSS/Projects.css";
+@import "./CSS/Facts.css";
+@import "./CSS/Marquee.css";
+/* ??? */
+@import "./CSS/Footer.css";
+@import "./CSS/FirstScreen-container.css";
+@import "./CSS/Typewriter.css";
+@import "./CSS/Navbar.css";
+
 :root {
   font-weight: 300;
   font-family: "Montserrat";

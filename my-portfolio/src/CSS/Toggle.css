@@ -166,6 +166,18 @@
 }
 
 @media screen and (max-width: 900px) {
+  .slide-up {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    animation: none !important;
+  }
+
+  .hidden {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    transition: none !important;
+  }
+
   .toggleAll {
     gap: 10px;
   }
@@ -173,15 +185,6 @@
   .toggleCard {
     width: 100%;
     margin: 0 auto;
-  }
-
-  .toggle.active {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .toggle {
-    padding: 25px 30px;
   }
 
   .date {
@@ -196,17 +199,6 @@
 @media screen and (max-width: 700px) {
   .toggleAll {
     margin-top: 0px;
-    gap: 10px;
-  }
-
-  .toggleCard {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .toggle.active {
-    width: 100%;
-    margin: 0 auto;
   }
 
   .toggle {
@@ -224,19 +216,8 @@
 }
 
 @media screen and (max-width: 500px) {
-  .toggleCard {
-    width: 100%;
-    margin: 0 auto;
-  }
-
-  .toggle.active {
-    width: 100%;
-    margin: 0 auto;
-  }
-
   .toggle {
     padding: 20px;
-    border-radius: 20px;
   }
 
   .experienceDesc {
@@ -250,20 +231,5 @@
 
   .date {
     font-size: 16px;
-  }
-}
-
-/* Отключаем анимации на мобильных и планшетах */
-@media screen and (max-width: 900px) {
-  .slide-up {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    animation: none !important;
-  }
-
-  .hidden {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: none !important;
   }
 }

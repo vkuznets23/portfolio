@@ -1,6 +1,5 @@
 import { useGlobal } from '../hooks'
 import type { Project as ProjectType } from '../data/projects'
-import '../CSS/Projects.css'
 
 type ProjectProps = {
   project: ProjectType

@@ -10,7 +10,6 @@ import { useGlobal, useAppData } from './hooks'
 //   ErrorComponent,
 // } from './Components'
 import './App.css'
-import './CSS/Loader.css'
 import React, { Suspense } from 'react'
 import ErrorComponent from './Components/Error'
 
