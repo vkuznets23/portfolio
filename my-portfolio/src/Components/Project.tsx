@@ -32,14 +32,16 @@ export default function Project({ project }: ProjectProps) {
   return (
     <article className="project-card">
       <div className="project-image-wrapper">
-        <video
-          src={project.image}
-          className="project-img"
-          autoPlay
-          loop
-          muted
-          playsInline
-        />
+        {project.image && (
+          <video
+            src={project.image}
+            className="project-img"
+            autoPlay
+            loop
+            muted
+            playsInline
+          />
+        )}
         <div className="overlay" role="group" aria-label="Project actions">
           {project.live && (
             <button
