@@ -42,9 +42,9 @@ body {
 }
 
 body.projects-bg {
+  will-change: background-color;
   background-color: var(--bg-switch-color);
 }
-
 body.projects-bg .navbar-container.visible {
   background-color: var(--bg-nav-color-switch);
 }
