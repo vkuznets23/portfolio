@@ -106,13 +106,13 @@ export default function AboutMe() {
         <div className="scroll-section">
           <div className="container" ref={containerRef}>
             <img
-              src="/photos/dogphoto.png"
+              src="/photos/dogphoto.webp"
               alt="photo"
               className="img1"
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
-              src="/photos/fugler.png"
+              src="/photos/fugler.webp"
               alt="fugler"
               className="img2"
               style={{ aspectRatio: '1 / 1' }}
@@ -124,7 +124,7 @@ export default function AboutMe() {
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
-              src="/photos/mug.png"
+              src="/photos/mug.webp"
               alt="fugler"
               className="img4"
               style={{ aspectRatio: '1 / 1' }}
@@ -142,7 +142,7 @@ export default function AboutMe() {
               style={{ aspectRatio: '2/ 1' }}
             />
             <img
-              src="/photos/cuteme.png"
+              src="/photos/cuteme.webp"
               alt="me"
               className="img7"
               style={{ aspectRatio: '1 / 1' }}
