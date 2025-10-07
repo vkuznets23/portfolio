@@ -293,17 +293,14 @@
     padding: 40px;
     box-sizing: border-box;
   }
+}
 
+@media screen and (max-width: 1050px) {
   .projects {
     max-width: 930px;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 40px;
   }
-}
-
-@media screen and (max-width: 1195px) {
-}
-@media screen and (max-width: 900px) {
   .h2 {
     width: 100%;
     font-size: 54px;
@@ -312,7 +309,6 @@
   .projectsContainer {
     max-width: 1180px;
     width: 100%;
-    margin: 0 auto;
     padding: 40px;
     box-sizing: border-box;
   }
