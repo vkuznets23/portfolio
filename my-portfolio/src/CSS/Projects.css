@@ -340,32 +340,6 @@
     margin-top: 70px;
     margin-bottom: 50px;
   }
-
-  .projectsContainer {
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    margin: 0 auto !important;
-    overflow-x: hidden !important;
-  }
-}
-
-@media screen and (max-width: 900px) {
-  .projectsContainer {
-    height: auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    width: 100% !important;
-    max-width: 100vw !important;
-    margin: 0 auto !important;
-    overflow-x: hidden !important;
-  }
 }
 
 @media screen and (max-width: 700px) {
@@ -429,50 +403,5 @@
 
   .allProjectsButton {
     margin-bottom: 50px;
-  }
-}
-
-/* Отключаем анимации на мобильных и планшетах */
-@media screen and (max-width: 900px) {
-  /* Отключаем анимации для проектов на мобильных */
-  .project-wrapper.hidden {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: none !important;
-  }
-
-  .project-wrapper.fade-in {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: none !important;
-  }
-
-  /* Отключаем анимации для заголовка проектов */
-  .slide-up {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    animation: none !important;
-  }
-
-  .hidden {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
-    transition: none !important;
-  }
-
-  /* Предотвращаем горизонтальный скролл в проектах */
-  .projectsContainer {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  .projects {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
-  }
-
-  .project-wrapper {
-    max-width: 100vw !important;
-    overflow-x: hidden !important;
   }
 }
