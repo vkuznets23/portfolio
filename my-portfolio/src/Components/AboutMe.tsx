@@ -60,6 +60,10 @@ export default function AboutMe() {
       return
     }
 
+    // Lower value => slower horizontal movement
+    const speed = 0.2
+    // const speed = 1
+
     const handleScroll = () => {
       const rect = scrollSection.getBoundingClientRect()
       const scrollTop = -rect.top
@@ -75,7 +79,8 @@ export default function AboutMe() {
     // section height equals horizontal travel distance
     const containerWidth = Math.min(1180, window.innerWidth)
     const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
-    scrollSection.style.height = `${maxScroll + window.innerHeight}px`
+    // Increase section height inversely to speed so full track is reachable
+    scrollSection.style.height = `${maxScroll / speed + window.innerHeight}px`
 
     window.addEventListener('scroll', handleScroll)
     window.addEventListener('resize', handleScroll)
