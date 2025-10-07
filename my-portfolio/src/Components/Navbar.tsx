@@ -84,6 +84,19 @@ export default function Navbar() {
     </div>
   )
 
+  // Toggle CSS scroll lock class when mobile menu is open
+  useEffect(() => {
+    const root = document.documentElement
+    const body = document.body
+    if (menuOpen) {
+      root.classList.add('no-scroll')
+      body.classList.add('no-scroll')
+    } else {
+      root.classList.remove('no-scroll')
+      body.classList.remove('no-scroll')
+    }
+  }, [menuOpen])
+
   return (
     <nav
       className={`navbar-container ${visible ? 'visible' : 'hidden'}`}

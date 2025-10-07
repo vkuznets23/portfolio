@@ -21,3 +21,10 @@ h2,
 p {
   font-family: "Montserrat";
 }
+
+/* Prevent background scroll when menu is open */
+html.no-scroll,
+body.no-scroll {
+  overflow: hidden !important;
+  touch-action: none;
+}

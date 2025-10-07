@@ -11,10 +11,8 @@ const getTagCategory = (tech: string): string => {
 
   if (testingTags.includes(tech)) {
     return 'category1'
-  } else if (tech === 'Hive project' || tech === 'Pet project') {
-    return 'category2'
   } else {
-    return 'category3'
+    return 'category2'
   }
 }
 
@@ -34,11 +32,6 @@ export default function Project({ project }: ProjectProps) {
   return (
     <article className="project-card">
       <div className="project-image-wrapper">
-        {/* <img
-          src={project.image}
-          alt={`${project.name} project screenshot`}
-          className="project-img"
-        /> */}
         <video
           src={project.image}
           className="project-img"
