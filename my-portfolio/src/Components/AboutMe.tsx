@@ -117,10 +117,13 @@ export default function AboutMe() {
               className="img2"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <img
-              src="/photos/circle.gif"
-              alt="fugler"
+            <video
+              src="/photos/circle.mp4"
               className="img3"
+              autoPlay
+              loop
+              muted
+              playsInline
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
@@ -135,11 +138,14 @@ export default function AboutMe() {
               className="img5"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <img
-              src="/photos/office.gif"
-              alt="office"
+            <video
+              src="/photos/office.mp4"
               className="img6"
-              style={{ aspectRatio: '2/ 1' }}
+              autoPlay
+              loop
+              muted
+              playsInline
+              style={{ aspectRatio: '2 / 1' }}
             />
             <img
               src="/photos/cuteme.webp"

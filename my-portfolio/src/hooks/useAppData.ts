@@ -28,10 +28,8 @@ export default function useAppData(language: Language) {
           '/photos/dogphoto.webp',
           '/photos/img038.webp',
           '/photos/fugler.webp',
-          '/photos/circle.gif',
           '/photos/mug.webp',
           '/photos/knitting.png',
-          '/photos/office.gif',
           '/photos/cuteme.webp',
         ]
 
