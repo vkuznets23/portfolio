@@ -58,6 +58,7 @@
   grid-template-columns: repeat(2, 1fr);
   column-gap: 20px;
   row-gap: 60px;
+  border: 1px solid red;
 }
 
 .project-img {
@@ -287,17 +288,24 @@
   }
 
   .projectsContainer {
-    max-width: 1180px;
+    max-width: 1080px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0px 20px;
     padding: 40px;
     box-sizing: border-box;
+  }
+  .projects {
+    padding: 0px;
+  }
+
+  .allProjectsButton {
+    margin-top: 40px;
   }
 }
 
 @media screen and (max-width: 1050px) {
   .projects {
-    max-width: 930px;
+    max-width: 970px;
     grid-template-columns: repeat(1, 1fr);
     row-gap: 40px;
   }
@@ -307,15 +315,10 @@
   }
 
   .projectsContainer {
-    max-width: 1180px;
+    max-width: 1050px;
     width: 100%;
     padding: 40px;
     box-sizing: border-box;
-  }
-
-  .projects {
-    max-width: 730px;
-    padding: 0px;
   }
 
   .tag {
@@ -360,6 +363,19 @@
   }
 }
 
+@media screen and (max-width: 900px) {
+  .projectsContainer {
+    height: auto !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    margin: 0 auto !important;
+    overflow-x: hidden !important;
+  }
+}
 @media screen and (max-width: 500px) {
   .projectsContainer {
     padding: 20px;

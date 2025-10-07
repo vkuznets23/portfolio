@@ -5,6 +5,7 @@
   font-size: 48px;
   padding: 40px 20px;
   width: 100vw;
+  border: 1px solid red;
 }
 
 .footer {
