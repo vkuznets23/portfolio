@@ -30,6 +30,7 @@
   --text-color: #000000;
   --project-desc: #4f4f4f;
   --accent-color: #656565;
+  --toggle-date-color: #666666;
 
   /* Navigation colors */
   --bg-nav-color: rgba(255, 255, 255, 0.592);
@@ -75,9 +76,10 @@ body.dark {
   --bg-toggle-color: #232323;
 
   /* Text colors */
-  --text-color: #e2e2e2;
+  --text-color: #efefef;
   --project-desc: #cdcdcde7;
   --accent-color: #656565;
+  --toggle-date-color: #a8a8a8;
 
   /* Navigation colors */
   --bg-nav-color: rgba(30, 30, 30, 0.592);

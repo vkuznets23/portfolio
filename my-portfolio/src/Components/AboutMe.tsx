@@ -93,7 +93,11 @@ export default function AboutMe() {
   return (
     <section id="About">
       <div className="experience-container">
-        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+        <div
+          ref={ref}
+          className={visible ? 'slide-up' : 'hidden'}
+          aria-hidden={!visible}
+        >
           <h2 className="h2">{header}</h2>
           <div className="description-flex-container">
             <div className="description">{description}</div>

@@ -47,7 +47,11 @@ export default function Experience() {
   return (
     <section id="Resume" aria-labelledby="experience-title">
       <div className="experience-container">
-        <header ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+        <header
+          ref={ref}
+          className={visible ? 'slide-up' : 'hidden'}
+          aria-hidden={!visible}
+        >
           <h2 id="experience-title" className="h2">
             {header}
           </h2>
