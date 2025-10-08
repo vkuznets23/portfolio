@@ -131,15 +131,35 @@ section {
   scroll-margin-top: 120px;
 }
 
-/* Fallback шрифт с метриками, близкими к Montserrat */
+/* Fallback шрифты с метриками, близкими к Montserrat */
 @font-face {
   font-family: "Montserrat-fallback";
   src: local("Arial");
   font-weight: 300;
-  ascent-override: 103%;
-  descent-override: 27%;
+  ascent-override: 105%;
+  descent-override: 28%;
   line-gap-override: 0%;
-  size-adjust: 95%;
+  size-adjust: 97%;
+}
+
+@font-face {
+  font-family: "Montserrat-fallback";
+  src: local("Arial");
+  font-weight: 400;
+  ascent-override: 105%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+  size-adjust: 97%;
+}
+
+@font-face {
+  font-family: "Montserrat-fallback";
+  src: local("Arial");
+  font-weight: 500;
+  ascent-override: 105%;
+  descent-override: 28%;
+  line-gap-override: 0%;
+  size-adjust: 97%;
 }
 
 @font-face {
@@ -148,7 +168,7 @@ section {
     url("/fonts/Montserrat/Montserrat-Regular.woff") format("woff");
   font-weight: 300;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 @font-face {
   font-family: "Montserrat";
@@ -156,7 +176,7 @@ section {
     url("/fonts/Montserrat/Montserrat-Medium.woff") format("woff");
   font-weight: 400;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 @font-face {
@@ -165,7 +185,7 @@ section {
     url("/fonts/Montserrat/Montserrat-SemiBold.woff") format("woff");
   font-weight: 500;
   font-style: normal;
-  font-display: optional;
+  font-display: block;
 }
 
 /* Отключаем все анимации и горизонтальный скролл на мобильных и планшетах */
