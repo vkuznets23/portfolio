@@ -39,6 +39,9 @@
   /* Tag colors */
   --tag1-color: #e06998;
   --tag2-color: #ffffff;
+
+  /* Cursor colors - stable to prevent CLS */
+  --cursor-color: #b4fb6d;
 }
 
 body {
@@ -88,6 +91,9 @@ body.dark {
   /* Tag colors */
   --tag1-color: #bb4273f0;
   --tag2-color: #e0e0e0ec;
+
+  /* Cursor colors - stable to prevent CLS */
+  --cursor-color: #4b7521;
 }
 
 .main-container {
