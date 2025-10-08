@@ -8,7 +8,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Разделяем vendor библиотеки
           'react-vendor': ['react', 'react-dom'],
           'marquee-vendor': ['react-fast-marquee'],
           'typewriter-vendor': ['react-simple-typewriter'],
@@ -16,14 +15,8 @@ export default defineConfig({
         },
       },
     },
-    // Минификация и tree-shaking
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true, // Удаляем console.log в production
-        drop_debugger: true,
-      },
-    },
+    // Минификация через esbuild (быстрее и встроен в Vite)
+    minify: 'esbuild',
     // Оптимизация chunk size
     chunkSizeWarningLimit: 1000,
   },
