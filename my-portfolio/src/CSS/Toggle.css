@@ -39,9 +39,9 @@
 }
 
 .toggle:focus-visible {
-  outline: 3px solid var(--bg-switch-color);
+  outline: 3px solid var(--focus-color);
   outline-offset: 4px;
-  border-color: var(--bg-switch-color);
+  border-color: var(--focus-color);
 }
 
 .toggle.active {
