@@ -39,7 +39,7 @@ export default function LazyVideo({
         })
       },
       {
-        rootMargin: '200px',
+        rootMargin: '60%',
         threshold: 0.1,
       }
     )
