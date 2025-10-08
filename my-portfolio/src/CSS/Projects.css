@@ -241,6 +241,14 @@
   transition: 0.3s ease-in-out;
 }
 
+.allProjectsButton:focus-visible {
+  outline: 3px solid var(--focus-color);
+  background-color: var(--tag1-color);
+  border: none;
+  color: white;
+  outline-offset: 2px;
+}
+
 .allProjectsButton:hover {
   background-color: var(--tag1-color);
   border: none;

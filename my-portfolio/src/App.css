@@ -97,7 +97,7 @@ body.dark {
   /* Cursor colors - stable to prevent CLS */
   --cursor-color: #4b7521;
 
-  --focus-color: #4b7521;
+  --focus-color: #bb4273f0;
 }
 
 .main-container {
