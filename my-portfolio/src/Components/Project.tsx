@@ -42,6 +42,7 @@ export default function Project({ project }: ProjectProps) {
             loop
             muted
             playsInline
+            poster={project.poster}
           />
         )}
         <div className="overlay" role="group" aria-label="Project actions">

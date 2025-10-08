@@ -8,6 +8,7 @@ interface LazyVideoProps {
   loop?: boolean
   muted?: boolean
   playsInline?: boolean
+  poster?: string
 }
 
 export default function LazyVideo({
@@ -18,6 +19,7 @@ export default function LazyVideo({
   loop = true,
   muted = true,
   playsInline = true,
+  poster,
 }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const [isInView, setIsInView] = useState(false)
@@ -39,7 +41,7 @@ export default function LazyVideo({
         })
       },
       {
-        rootMargin: '200px',
+        rootMargin: '60%',
         threshold: 0.1,
       }
     )
@@ -58,9 +60,13 @@ export default function LazyVideo({
       loop={loop}
       muted={muted}
       playsInline={playsInline}
+      disablePictureInPicture
+      disableRemotePlayback
       preload="none"
       role="presentation"
       aria-hidden="true"
+      poster={poster}
+      webkit-playsinline="true"
     />
   )
 }

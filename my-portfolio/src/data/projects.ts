@@ -6,6 +6,7 @@ export interface Project {
   github: string
   live?: string
   image: string
+  poster: string
 }
 
 export interface ProjectsData {
@@ -33,6 +34,7 @@ export const projectsData = {
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
         image: '/photos/camagru.mov',
+        poster: '/photos/camagru_poster.webp',
       },
       {
         id: 2,
@@ -42,6 +44,7 @@ export const projectsData = {
         technologies: ['React', 'TypeScript', 'Vanilla CSS'],
         github: 'https://github.com/vkuznets23/portfolio',
         image: '/photos/portfolio.mov',
+        poster: '/photos/poster_portfolio.webp',
       },
       {
         id: 3,
@@ -51,6 +54,7 @@ export const projectsData = {
         technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Jest'],
         github: 'https://github.com/yourusername/ecommerce',
         image: '',
+        poster: '/photos/poster_portfolio.webp',
       },
     ],
   },
@@ -73,6 +77,7 @@ export const projectsData = {
         github: 'https://github.com/vkuznets23/camagru',
         live: 'https://camagru-tau.vercel.app/',
         image: '/photos/camagru.mov',
+        poster: '/photos/poster_portfolio.webp',
       },
       {
         id: 2,
@@ -82,6 +87,7 @@ export const projectsData = {
         technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
         github: 'https://github.com/vkuznets23/portfolio',
         image: '/photos/portfolio.mov',
+        poster: '/photos/poster_portfolio.webp',
       },
       {
         id: 3,
@@ -91,6 +97,7 @@ export const projectsData = {
         technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Jest'],
         github: 'https://github.com/yourusername/ecommerce',
         image: '',
+        poster: '/photos/poster_portfolio.webp',
       },
     ],
   },
