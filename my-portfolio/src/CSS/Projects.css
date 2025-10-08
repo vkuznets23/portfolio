@@ -60,6 +60,21 @@
   row-gap: 60px;
 }
 
+.project-card {
+  border-radius: 30px;
+  border: 3px solid transparent;
+  transition: border-color 0.3s ease;
+  padding: 4px;
+}
+
+.project-card:focus-within {
+  border-color: var(--focus-color);
+}
+
+.project-card:focus-within .overlay {
+  opacity: 1;
+}
+
 .project-img {
   width: 100%;
   max-height: 300px;
@@ -117,11 +132,26 @@
   background-color: #e06998;
 }
 
-.overlayBtnDeploy:hover {
+.overlayBtnDeploy:hover,
+.overlayBtnDeploy:focus {
   background-color: #99e255;
+  outline: none;
 }
-.overlayBtnGit:hover {
+
+.overlayBtnDeploy:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+.overlayBtnGit:hover,
+.overlayBtnGit:focus {
   background-color: #d85e8f;
+  outline: none;
+}
+
+.overlayBtnGit:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
 }
 
 .projectHeader {
@@ -241,6 +271,10 @@
 }
 
 @media (min-width: 1150px) and (max-width: 1200px) {
+  .project-card {
+    padding: 0px;
+  }
+
   .projectsContainer {
     max-width: 1180px;
     width: 100%;

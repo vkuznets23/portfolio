@@ -19,13 +19,15 @@ const getTagCategory = (tech: string): string => {
 export default function Project({ project }: ProjectProps) {
   const { language } = useGlobal()
 
-  const handleDeployClick = () => {
+  const handleDeployClick = (e?: React.MouseEvent | React.KeyboardEvent) => {
+    e?.stopPropagation()
     if (project.live) {
       window.open(project.live, '_blank', 'noopener,noreferrer')
     }
   }
 
-  const handleGitHubClick = () => {
+  const handleGitHubClick = (e?: React.MouseEvent | React.KeyboardEvent) => {
+    e?.stopPropagation()
     window.open(project.github, '_blank', 'noopener,noreferrer')
   }
 
