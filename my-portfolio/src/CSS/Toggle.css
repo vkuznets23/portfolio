@@ -34,6 +34,16 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
+.toggle:focus {
+  outline: none;
+}
+
+.toggle:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 4px;
+  border-color: var(--focus-color);
+}
+
 .toggle.active {
   transform: scale(1.01);
   cursor: pointer;

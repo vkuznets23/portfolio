@@ -12,11 +12,25 @@ export default function ExperienceObj({ date, name, description }: Experience) {
     .map((s: string) => s.trim())
     .filter((s: string) => s.length > 0)
 
+  const handleToggle = () => setToggle(!toggle)
+
+  const handleKeyDown = (e: React.KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault()
+      handleToggle()
+    }
+  }
+
   return (
     <div className={!toggle ? 'toggleCard' : ''}>
       <div
         className={toggle ? 'toggle active' : 'toggle'}
-        onClick={() => setToggle(!toggle)}
+        onClick={handleToggle}
+        onKeyDown={handleKeyDown}
+        tabIndex={0}
+        role="button"
+        aria-expanded={toggle}
+        aria-controls={contentId}
         aria-labelledby={headingId}
       >
         <div className="toggleVisibleRow">
@@ -26,13 +40,9 @@ export default function ExperienceObj({ date, name, description }: Experience) {
               {name}
             </h3>
           </div>
-          <button
-            type="button"
-            onClick={() => setToggle(!toggle)}
+          <span
             className={`toggleButton ${toggle ? 'active' : ''}`}
-            aria-expanded={toggle}
-            aria-controls={contentId}
-            aria-label={`${toggle ? 'Hide' : 'Show'} details for ${name}`}
+            aria-hidden="true"
           />
         </div>
         {toggle && (
