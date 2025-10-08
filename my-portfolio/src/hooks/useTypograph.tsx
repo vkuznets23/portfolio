@@ -2,29 +2,8 @@ import { useMemo } from 'react'
 import type { Experience } from '../data/experience'
 import type { Project } from '../data/projects'
 
-const russianPrepositions = [
-  'в',
-  'на',
-  'по',
-  'для',
-  'от',
-  'как',
-  'до',
-  'за',
-  'во',
-  'у',
-  'с',
-  'к',
-  'о',
-  'об',
-  'из',
-  'со',
-  'ко',
-]
-
 const englishPrepositions = [
   'in',
-  'I',
   'on',
   'at',
   'by',
@@ -33,71 +12,88 @@ const englishPrepositions = [
   'about',
   'to',
   'of',
-  'C',
-  'a',
-  'my',
   'from',
   'as',
+  'a',
+  'an',
+  'the',
+  'and',
+  'I',
+  'or',
+  'my',
 ]
 
-function applyEnglishHangingPrepositions(text: string) {
-  const escapedPrepositions = englishPrepositions.map((prep) =>
-    prep.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  )
+const russianShortWords = [
+  'в',
+  'к',
+  'с',
+  'на',
+  'по',
+  'от',
+  'за',
+  'для',
+  'о',
+  'у',
+  'и',
+  'а',
+  'но',
+  'или',
+  'об',
+]
 
-  return text.replace(
-    new RegExp(`(^|\\s)(${escapedPrepositions.join('|')})\\s+`, 'gi'),
-    '$1$2\u00A0'
-  )
-}
+function applyEnglishTypography(text: string) {
+  if (!text) return ''
 
-function applyingRussianHangingPrepositions(text: string) {
-  const escapedPrepositions = russianPrepositions.map((prep) =>
-    prep.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-  )
+  // Убираем лишние пробелы
+  let result = text.replace(/\s+/g, ' ').trim()
 
-  let result = text
+  // Тире вместо дефиса
+  result = result.replace(/--/g, '—')
+  // Среднее тире для диапазонов, только когда числа по бокам
+  result = result.replace(/(\d)\s*-\s*(\d)/g, '$1–$2')
 
-  result = result.replace(/(^|\s)в\s+/gi, '$1в\u00A0')
+  // Висячие предлоги — добавляем неразрывный пробел
+  const pattern = new RegExp(`\\b(${englishPrepositions.join('|')})\\s+`, 'gi')
+  result = result.replace(pattern, (_, p1) => `${p1}\u00A0`)
 
-  result = result.replace(
-    new RegExp(
-      `(^|\\s)(${escapedPrepositions.filter((p) => p !== 'в').join('|')})\\s+`,
-      'gi'
-    ),
-    '$1$2\u00A0'
-  )
+  // умные кавычки
+  result = result.replace(/"([^"]+)"/g, '“$1”')
+
+  // апострофы
+  result = result.replace(/(\w)'(\w)/g, '$1’$2')
+
+  // многоточие
+  result = result.replace(/\.{3}/g, '…')
 
   return result
 }
 
 function applyRussianTypography(text: string) {
-  let result = text
+  if (!text) return ''
 
-  result = applyingRussianHangingPrepositions(result)
+  let result = text.replace(/\s+/g, ' ').trim()
 
-  result = result.replace(/(\d+)\s*-\s*(\d+)/g, '$1–$2')
+  // Длинное тире вместо двойного дефиса
+  result = result.replace(/--/g, '—')
+  // Среднее тире для диапазонов чисел: 10-20 → 10–20
+  result = result.replace(/(\d)\s*-\s*(\d)/g, '$1–$2')
 
-  result = result.replace(/"([^"]*)"/g, '«$1»')
-  result = result.replace(/'([^']*)'/g, '«$1»')
+  // Висячие предлоги
+  const shortWordsPattern = new RegExp(
+    `(^|\\s)(${russianShortWords.join('|')})(\\s+)`,
+    'gi'
+  )
 
-  result = result.replace(/\s+([,.!?;:])/g, '$1')
+  result = result.replace(
+    shortWordsPattern,
+    (_, before, word) => `${before}${word}\u00A0`
+  )
 
-  result = result.replace(/([,.!?;:])([^\s])/g, '$1 $2')
+  // Умные кавычки
+  result = result.replace(/"([^"]+)"/g, '«$1»')
 
-  return result
-}
-
-function applyEnglishTypography(text: string) {
-  let result = text
-
-  result = applyEnglishHangingPrepositions(result)
-
-  result = result.replace(/(\d+)\s*-\s*(\d+)/g, '$1–$2')
-
-  result = result.replace(/\s+([,.!?;:])/g, '$1')
-
-  result = result.replace(/([,.!?;:])([^\s])/g, '$1 $2')
+  // Многоточие
+  result = result.replace(/\.{3}/g, '…')
 
   return result
 }
@@ -106,6 +102,8 @@ export default function typografCombined(
   text: string,
   lang: 'ru' | 'en' = 'ru'
 ) {
+  if (!text) return ''
+
   if (lang === 'ru') {
     return applyRussianTypography(text)
   } else {
