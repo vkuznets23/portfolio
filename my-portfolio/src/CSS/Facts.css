@@ -293,6 +293,7 @@
     box-sizing: border-box !important;
     overflow-x: hidden !important;
   }
+
   .fact {
     position: static !important;
     width: 60% !important;
@@ -594,7 +595,7 @@
     top: auto !important;
     left: auto !important;
     transform: none !important;
-    margin: 0 auto !important;
+    margin: 0px auto !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
@@ -615,10 +616,9 @@
     position: static !important;
     top: auto !important;
     left: auto !important;
-    margin: 0 auto !important;
+    margin: 0 auto 15px auto !important;
   }
 
-  /* Адаптивные размеры для разных фактов */
   .fact1 {
     width: 80vw !important;
     height: 80vw !important;
@@ -702,7 +702,7 @@
 
   /* Адаптивное позиционирование изображений */
   .img1 {
-    top: 200vw !important;
+    top: 205vw !important;
     left: 20% !important;
     transform: translateX(-50%) !important;
   }
