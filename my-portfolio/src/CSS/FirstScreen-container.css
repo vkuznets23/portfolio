@@ -244,7 +244,7 @@
 @media screen and (max-width: 1180px) {
   .description-absolute-container {
     margin: 0 auto;
-    width: 90%;
+    width: 93%;
     left: 50%;
     transform: translateX(-50%);
   }
@@ -276,7 +276,23 @@
   }
 }
 
+@media screen and (max-width: 1140px) {
+  .description-absolute-container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .description-absolute-container {
+    width: 88%;
+  }
+}
+
 @media screen and (max-width: 900px) {
+  .description-absolute-container {
+    width: 90%;
+  }
+
   .description-absolute-container {
     top: 280px;
   }
