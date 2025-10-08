@@ -107,6 +107,7 @@ export default function AboutMe() {
           <div className="container" ref={containerRef}>
             <img
               src="/photos/dogphoto.webp"
+              srcSet="/photos/dogphoto-200.webp 200w, /photos/dogphoto-300.webp 300w, /photos/dogphoto-400.webp 400w"
               loading="lazy"
               alt="photo"
               className="img1"
@@ -130,6 +131,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/mug.webp"
+              srcSet="/photos/mug-200.webp 200w, /photos/mug-300.webp 300w, /photos/mug-400.webp 400w"
               loading="lazy"
               alt="fugler"
               className="img4"
@@ -137,6 +139,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/knitting.webp"
+              srcSet="/photos/knitting-200.webp 200w, /photos/knitting-300.webp 300w, /photos/knitting-400.webp 400w"
               loading="lazy"
               alt="fugler"
               className="img5"
@@ -153,6 +156,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/cuteme.webp"
+              srcSet="/photos/cuteme-200.webp 200w, /photos/cuteme-300.webp 300w, /photos/cuteme-400.webp 400w"
               loading="lazy"
               alt="me"
               className="img7"
