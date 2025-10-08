@@ -17,9 +17,9 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
             cursor
             cursorStyle="|"
             cursorBlinking={false}
-            typeSpeed={80}
-            deleteSpeed={40}
-            delaySpeed={1500}
+            typeSpeed={60}
+            deleteSpeed={30}
+            delaySpeed={1000}
             cursorColor="var(--bg-switch-color)"
           />
         </span>
