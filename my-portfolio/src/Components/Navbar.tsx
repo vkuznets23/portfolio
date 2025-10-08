@@ -45,23 +45,65 @@ export default function Navbar() {
 
   const links = (
     <>
-      <a href="#Resume" onClick={handleNavClick}>
+      <a
+        href="#Resume"
+        onClick={handleNavClick}
+        role="menuitem"
+        aria-label={
+          language === 'en'
+            ? 'Go to Resume section'
+            : 'Перейти к разделу Резюме'
+        }
+      >
         {language === 'en' ? 'Resume' : 'Резюме'}
       </a>
-      <a href="#Projects" onClick={handleNavClick}>
+      <a
+        href="#Projects"
+        onClick={handleNavClick}
+        role="menuitem"
+        aria-label={
+          language === 'en'
+            ? 'Go to Projects section'
+            : 'Перейти к разделу Проекты'
+        }
+      >
         {language === 'en' ? 'Projects' : 'Проекты'}
       </a>
-      <a href="#About" onClick={handleNavClick}>
+      <a
+        href="#About"
+        onClick={handleNavClick}
+        role="menuitem"
+        aria-label={
+          language === 'en'
+            ? 'Go to About me section'
+            : 'Перейти к разделу Обо мне'
+        }
+      >
         {language === 'en' ? 'About me' : 'Обо мне'}
       </a>
-      <a href="#Contacts" onClick={handleNavClick}>
+      <a
+        href="#Contacts"
+        onClick={handleNavClick}
+        role="menuitem"
+        aria-label={
+          language === 'en'
+            ? 'Go to Contacts section'
+            : 'Перейти к разделу Контакты'
+        }
+      >
         {language === 'en' ? 'Contacts' : 'Контакты'}
       </a>
     </>
   )
 
   const logo = (
-    <a href="#FirstScreen">
+    <a
+      href="#FirstScreen"
+      role="menuitem"
+      aria-label={
+        language === 'en' ? 'Go to top of page' : 'Перейти к началу страницы'
+      }
+    >
       <Logo />
     </a>
   )

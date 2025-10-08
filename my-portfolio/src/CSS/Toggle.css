@@ -78,7 +78,7 @@
   margin: 0;
 }
 
-.h4 {
+.h5 {
   font-size: 28px;
   margin: 10px 0 0 0;
 }
@@ -191,7 +191,7 @@
     font-size: 20px;
   }
 
-  .h4 {
+  .h5 {
     font-size: 24px;
   }
 }
@@ -210,8 +210,8 @@
     font-size: 18px;
   }
 
-  .h4 {
-    font-size: 22px;
+  .h5 {
+    font-size: 20px;
   }
 }
 
@@ -225,8 +225,8 @@
     padding-left: 0.8rem;
   }
 
-  .h4 {
-    font-size: 1.2rem;
+  .h5 {
+    font-size: 18px;
   }
 
   .date {
