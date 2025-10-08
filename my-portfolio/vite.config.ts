@@ -8,9 +8,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          // Критические библиотеки
           'react-vendor': ['react', 'react-dom'],
-          // Некритические библиотеки
           'marquee-vendor': ['react-fast-marquee'],
           'typewriter-vendor': ['react-simple-typewriter'],
         },
@@ -18,9 +16,7 @@ export default defineConfig({
     },
     minify: 'esbuild',
     chunkSizeWarningLimit: 1000,
-    // Оптимизация CSS
     cssCodeSplit: true,
-    // Увеличиваем лимит для CSS
     assetsInlineLimit: 4096,
   },
 })
