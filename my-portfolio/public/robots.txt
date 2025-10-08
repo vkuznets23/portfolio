@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://portfolio-swart-three-66.vercel.app/sitemap.xml
+
