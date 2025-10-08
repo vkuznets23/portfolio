@@ -15,9 +15,7 @@ export default defineConfig({
         },
       },
     },
-    // Минификация через esbuild (быстрее и встроен в Vite)
     minify: 'esbuild',
-    // Оптимизация chunk size
     chunkSizeWarningLimit: 1000,
   },
 })
