@@ -16,7 +16,8 @@
 
 .hero-typewriter {
   display: inline;
-  white-space: pre-wrap;
+  white-space: normal;
+  min-height: 2.5rem;
 }
 
 @media screen and (max-width: 1180px) {

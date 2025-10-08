@@ -15,7 +15,7 @@ export const firstScreenData = {
     header: {
       line1: "I'm a",
       options: {
-        option1: 'Software\nDeveloper',
+        option1: 'Web\nDeveloper',
         option2: 'Career\nChanger',
         option3: 'Student\nat Hive',
       },

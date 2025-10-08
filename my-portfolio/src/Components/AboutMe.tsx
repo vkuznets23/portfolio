@@ -107,12 +107,14 @@ export default function AboutMe() {
           <div className="container" ref={containerRef}>
             <img
               src="/photos/dogphoto.webp"
+              loading="lazy"
               alt="photo"
               className="img1"
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
               src="/photos/fugler.webp"
+              loading="lazy"
               alt="fugler"
               className="img2"
               style={{ aspectRatio: '1 / 1' }}
@@ -128,12 +130,14 @@ export default function AboutMe() {
             />
             <img
               src="/photos/mug.webp"
+              loading="lazy"
               alt="fugler"
               className="img4"
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
               src="/photos/knitting.webp"
+              loading="lazy"
               alt="fugler"
               className="img5"
               style={{ aspectRatio: '1 / 1' }}
@@ -149,6 +153,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/cuteme.webp"
+              loading="lazy"
               alt="me"
               className="img7"
               style={{ aspectRatio: '1 / 1' }}
