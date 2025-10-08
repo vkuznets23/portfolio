@@ -99,7 +99,6 @@ export default function Navbar() {
   const logo = (
     <a
       href="#FirstScreen"
-      role="menuitem"
       aria-label={
         language === 'en' ? 'Go to top of page' : 'Перейти к началу страницы'
       }
