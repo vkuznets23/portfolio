@@ -1,5 +1,6 @@
 import { useGlobal } from '../hooks'
 import type { Project as ProjectType } from '../data/projects'
+import LazyVideo from './LazyVideo'
 
 type ProjectProps = {
   project: ProjectType
@@ -32,7 +33,7 @@ export default function Project({ project }: ProjectProps) {
     <article className="project-card">
       <div className="project-image-wrapper">
         {project.image && (
-          <video
+          <LazyVideo
             src={project.image}
             className="project-img"
             autoPlay
