@@ -71,7 +71,7 @@ body.dark {
   --bg-circle-color: #4b7521cd;
   --bg-footer-color: #1c1c1c;
   --bg-fact-color: #c8c8c8;
-  --bg-fact-color2: #cf5083f0;
+  --bg-fact-color2: #bb4273f0;
   --bg-fact-color3: #4b7521;
   --bg-toggle-color: #232323;
 
@@ -86,7 +86,7 @@ body.dark {
   --bg-nav-color-switch: #4b7521b8;
 
   /* Tag colors */
-  --tag1-color: #cf5083f0;
+  --tag1-color: #bb4273f0;
   --tag2-color: #e0e0e0ec;
 }
 
