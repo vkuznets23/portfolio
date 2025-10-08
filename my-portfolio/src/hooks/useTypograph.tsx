@@ -1,10 +1,26 @@
 import { useMemo } from 'react'
-import Typograf from 'typograf'
 import type { Experience } from '../data/experience'
 import type { Project } from '../data/projects'
 
-const tp = new Typograf({ locale: ['ru'] })
-tp.enableRule('common/nbsp/afterShortWord')
+const russianPrepositions = [
+  'в',
+  'на',
+  'по',
+  'для',
+  'от',
+  'как',
+  'до',
+  'за',
+  'во',
+  'у',
+  'с',
+  'к',
+  'о',
+  'об',
+  'из',
+  'со',
+  'ко',
+]
 
 const englishPrepositions = [
   'in',
@@ -25,10 +41,65 @@ const englishPrepositions = [
 ]
 
 function applyEnglishHangingPrepositions(text: string) {
-  return text.replace(
-    new RegExp(`\\b(${englishPrepositions.join('|')})\\s`, 'gi'),
-    '$1\u00A0'
+  const escapedPrepositions = englishPrepositions.map((prep) =>
+    prep.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
   )
+
+  return text.replace(
+    new RegExp(`(^|\\s)(${escapedPrepositions.join('|')})\\s+`, 'gi'),
+    '$1$2\u00A0'
+  )
+}
+
+function applyingRussianHangingPrepositions(text: string) {
+  const escapedPrepositions = russianPrepositions.map((prep) =>
+    prep.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  )
+
+  let result = text
+
+  result = result.replace(/(^|\s)в\s+/gi, '$1в\u00A0')
+
+  result = result.replace(
+    new RegExp(
+      `(^|\\s)(${escapedPrepositions.filter((p) => p !== 'в').join('|')})\\s+`,
+      'gi'
+    ),
+    '$1$2\u00A0'
+  )
+
+  return result
+}
+
+function applyRussianTypography(text: string) {
+  let result = text
+
+  result = applyingRussianHangingPrepositions(result)
+
+  result = result.replace(/(\d+)\s*-\s*(\d+)/g, '$1–$2')
+
+  result = result.replace(/"([^"]*)"/g, '«$1»')
+  result = result.replace(/'([^']*)'/g, '«$1»')
+
+  result = result.replace(/\s+([,.!?;:])/g, '$1')
+
+  result = result.replace(/([,.!?;:])([^\s])/g, '$1 $2')
+
+  return result
+}
+
+function applyEnglishTypography(text: string) {
+  let result = text
+
+  result = applyEnglishHangingPrepositions(result)
+
+  result = result.replace(/(\d+)\s*-\s*(\d+)/g, '$1–$2')
+
+  result = result.replace(/\s+([,.!?;:])/g, '$1')
+
+  result = result.replace(/([,.!?;:])([^\s])/g, '$1 $2')
+
+  return result
 }
 
 export default function typografCombined(
@@ -36,9 +107,9 @@ export default function typografCombined(
   lang: 'ru' | 'en' = 'ru'
 ) {
   if (lang === 'ru') {
-    return tp.execute(text)
+    return applyRussianTypography(text)
   } else {
-    return applyEnglishHangingPrepositions(text)
+    return applyEnglishTypography(text)
   }
 }
 
