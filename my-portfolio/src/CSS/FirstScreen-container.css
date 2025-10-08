@@ -252,7 +252,7 @@
   .description-flex-container {
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     gap: 7rem;
     width: 100%;
     margin-bottom: 2.5rem;
