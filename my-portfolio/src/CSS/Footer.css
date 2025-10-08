@@ -31,6 +31,13 @@
   color: var(--tag1-color);
 }
 
+.getInTouch a:focus-visible {
+  outline: 2px solid var(--focus-color);
+  color: var(--tag1-color);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
 .footer-links {
   display: flex;
   gap: 10px;
@@ -51,7 +58,12 @@
   background-color: var(--tag1-color);
   color: white;
 }
-
+.footer-links a:focus-visible {
+  background-color: var(--tag1-color);
+  color: white;
+  outline: 2px solid var(--focus-color);
+  outline-offset: 4px;
+}
 @media (min-width: 1180px) and (max-width: 1195px) {
   .footer-container {
     box-sizing: border-box;
