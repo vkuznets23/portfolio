@@ -10,16 +10,10 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
     <div className="hero">
       <div className="line1-container">
         <span className="line1-fixed">{line1}</span>{' '}
-        <span
-          className="hero-typewriter"
-          role="status"
-          aria-live="polite"
-          aria-atomic="true"
-          aria-label={`${line1} — dynamic options`}
-        >
+        <span className="hero-typewriter">
           <TypewriterDef
             words={options}
-            loop={true}
+            loop
             cursor
             cursorStyle="|"
             typeSpeed={80}
