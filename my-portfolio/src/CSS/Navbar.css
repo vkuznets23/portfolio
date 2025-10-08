@@ -88,9 +88,6 @@
   display: flex;
 }
 
-/* ------------------------ */
-/* Responsive ------------------------ */
-
 @media (max-width: 1195px) {
   .navbar-container {
     width: 100dvw;

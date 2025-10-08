@@ -8,19 +8,62 @@
     <meta name="description" content="Frontend developer portfolio — React, TypeScript, animation, UI/UX design. Projects, experience, and contacts.">
     <meta name="keywords" content="Frontend, React, TypeScript, Portfolio, Web Developer, Viktoriia Kuznetsova">
   
-    <!-- ✅ Preconnect -->
-    <link rel="preconnect" href="https://portfolio-swart-three-66.vercel.app" crossorigin>
-  
-    <!-- ✅ Preload -->
-    <!-- <link rel="preload" href="/assets/index-BqSyPE5S.js" as="script">
-    <link rel="preload" href="/assets/index-Brywn2pi.css" as="style"> -->
-  
-    <!-- ✅ Fonts -->
-    <link rel="preload" href="/fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Montserrat/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin>
-    <link rel="preload" href="/fonts/Montserrat/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin>
-  
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ✅ Critical inline CSS для предотвращения FOUT -->
+  <style>
+    @font-face {
+      font-family: "Montserrat-fallback";
+      src: local("Arial");
+      font-weight: 300;
+      ascent-override: 105%;
+      descent-override: 28%;
+      line-gap-override: 0%;
+      size-adjust: 97%;
+    }
+    @font-face {
+      font-family: "Montserrat-fallback";
+      src: local("Arial");
+      font-weight: 400;
+      ascent-override: 105%;
+      descent-override: 28%;
+      line-gap-override: 0%;
+      size-adjust: 97%;
+    }
+    @font-face {
+      font-family: "Montserrat-fallback";
+      src: local("Arial");
+      font-weight: 500;
+      ascent-override: 105%;
+      descent-override: 28%;
+      line-gap-override: 0%;
+      size-adjust: 97%;
+    }
+    body {
+      font-family: "Montserrat", "Montserrat-fallback", Arial, sans-serif;
+      margin: 0;
+    }
+  </style>
+
+  <!-- ✅ Critical Resources -->
+  <link rel="preload" href="/fonts/Montserrat/Montserrat-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Montserrat/Montserrat-Medium.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/fonts/Montserrat/Montserrat-SemiBold.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+  <link rel="preload" href="/photos/img038.webp" as="image" type="image/webp" fetchpriority="high">
+
+  <!-- Принудительная загрузка шрифтов -->
+  <script>
+    if ('fonts' in document) {
+      Promise.all([
+        document.fonts.load('300 1em Montserrat'),
+        document.fonts.load('400 1em Montserrat'),
+        document.fonts.load('500 1em Montserrat')
+      ]).then(() => {
+        document.documentElement.classList.add('fonts-loaded');
+      });
+    }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
   </head>
   
   <body>

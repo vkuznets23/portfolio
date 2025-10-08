@@ -26,7 +26,6 @@ export default function useAppData(language: Language) {
 
         const factImages = [
           '/photos/dogphoto.webp',
-          '/photos/img038.webp',
           '/photos/fugler.webp',
           '/photos/mug.webp',
           '/photos/knitting.webp',
