@@ -13,7 +13,6 @@ export default defineConfig({
           // Некритические библиотеки
           'marquee-vendor': ['react-fast-marquee'],
           'typewriter-vendor': ['react-simple-typewriter'],
-          'utils-vendor': ['typograf'],
         },
       },
     },

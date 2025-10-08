@@ -16,7 +16,7 @@
 
 .hero-typewriter {
   display: inline;
-  white-space: normal;
+  white-space: pre-wrap;
   min-height: 2.5rem;
 }
 
