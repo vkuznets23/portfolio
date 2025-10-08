@@ -21,18 +21,34 @@ export const GlobalProvider = ({ children }: ProviderProps) => {
   const [language, setLanguage] = useState<Language>('en')
   const [theme, setTheme] = useState<Theme>('light')
 
+  // Load settings from localStorage on mount
   useEffect(() => {
-    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
-    setTheme(isDarkMode ? 'dark' : 'light')
-
-    // update theme when system theme changes
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-    const handleChange = () => {
-      setTheme(mediaQuery.matches ? 'dark' : 'light')
+    const savedTheme = localStorage.getItem('theme') as Theme
+    if (savedTheme) {
+      setTheme(savedTheme)
+    } else {
+      const isDarkMode = window.matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches
+      setTheme(isDarkMode ? 'dark' : 'light')
     }
-    mediaQuery.addEventListener('change', handleChange)
-    return () => mediaQuery.removeEventListener('change', handleChange)
+
+    // Load language
+    const savedLanguage = localStorage.getItem('language') as Language
+    if (savedLanguage) {
+      setLanguage(savedLanguage)
+    }
   }, [])
+
+  // Save theme to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
+  // Save language to localStorage when it changes
+  useEffect(() => {
+    localStorage.setItem('language', language)
+  }, [language])
 
   useEffect(() => {
     document.body.classList.remove('light', 'dark')
