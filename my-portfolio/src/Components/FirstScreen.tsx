@@ -46,6 +46,7 @@ export default function FirstScreen() {
               <img
                 src="/photos/img038.webp"
                 srcSet="/photos/img038-200.webp 200w, /photos/img038-300.webp 300w, /photos/img038-400.webp 400w"
+                sizes="(max-width: 600px) 180px, (max-width: 900px) 300px, 400px"
                 loading="eager"
                 fetchPriority="high"
                 alt={language === 'en' ? 'My photo' : 'Моё фото'}
