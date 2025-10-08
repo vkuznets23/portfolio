@@ -8,7 +8,7 @@ interface LazyVideoProps {
   loop?: boolean
   muted?: boolean
   playsInline?: boolean
-  poster: string
+  poster?: string
 }
 
 export default function LazyVideo({
