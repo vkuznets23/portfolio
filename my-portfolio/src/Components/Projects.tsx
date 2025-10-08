@@ -153,7 +153,6 @@ export default function Projects() {
               aria-label={`${language === 'en' ? 'Project' : 'Проект'} ${
                 index + 1
               }: ${project.name}`}
-              aria-hidden={!visibleProjects![index]}
             >
               <Project project={project} />
             </article>

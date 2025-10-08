@@ -59,6 +59,8 @@ export default function LazyVideo({
       muted={muted}
       playsInline={playsInline}
       preload="none"
+      role="presentation"
+      aria-hidden="true"
     />
   )
 }

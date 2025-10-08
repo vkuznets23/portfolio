@@ -151,7 +151,6 @@ export default function Navbar() {
       className={`navbar-container ${visible ? 'visible' : 'hidden'}`}
       role="navigation"
       aria-label={language === 'en' ? 'Main navigation' : 'Основная навигация'}
-      aria-hidden={!visible}
     >
       <div className="navbar">
         <div>{logo}</div>
