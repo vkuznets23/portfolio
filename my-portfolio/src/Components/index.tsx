@@ -9,6 +9,7 @@ import Navbar from './Navbar'
 import AboutMe from './AboutMe'
 import ErrorComponent from './Error'
 import TextCircle from './TextCircle'
+import LazyVideo from './LazyVideo'
 import { Logo } from './logo'
 
 export {
@@ -23,5 +24,6 @@ export {
   AboutMe,
   ErrorComponent,
   TextCircle,
+  LazyVideo,
   Logo,
 }

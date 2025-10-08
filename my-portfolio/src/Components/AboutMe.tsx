@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 import { useFactsTypograf } from '../hooks/useTypograph'
 import TextCircle from './TextCircle'
+import LazyVideo from './LazyVideo'
 
 export default function AboutMe() {
   const { language } = useGlobal()
@@ -120,13 +121,9 @@ export default function AboutMe() {
               className="img2"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <video
+            <LazyVideo
               src="/photos/circle.mp4"
               className="img3"
-              autoPlay
-              loop
-              muted
-              playsInline
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
@@ -145,13 +142,9 @@ export default function AboutMe() {
               className="img5"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <video
+            <LazyVideo
               src="/photos/office.mp4"
               className="img6"
-              autoPlay
-              loop
-              muted
-              playsInline
               style={{ aspectRatio: '2 / 1' }}
             />
             <img
