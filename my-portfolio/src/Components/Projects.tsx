@@ -116,7 +116,11 @@ export default function Projects() {
   return (
     <section id="Projects" aria-labelledby="projects-title">
       <div ref={containerRef} className="projectsContainer">
-        <header ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
+        <header
+          ref={headerRef}
+          className={visible ? 'slide-up' : 'hidden'}
+          aria-hidden={!visible}
+        >
           <h2 id="projects-title" className="sr-only">
             {language === 'en' ? 'Projects' : 'Проекты'}
           </h2>
@@ -149,6 +153,7 @@ export default function Projects() {
               aria-label={`${language === 'en' ? 'Project' : 'Проект'} ${
                 index + 1
               }: ${project.name}`}
+              aria-hidden={!visibleProjects![index]}
             >
               <Project project={project} />
             </article>

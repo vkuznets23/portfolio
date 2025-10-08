@@ -73,7 +73,7 @@
 }
 
 .date {
-  color: #666666;
+  color: var(--toggle-date-color);
   font-size: 22px;
   margin: 0;
 }
