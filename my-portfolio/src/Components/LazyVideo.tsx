@@ -31,7 +31,6 @@ export default function LazyVideo({
         entries.forEach((entry) => {
           if (entry.isIntersecting && !isInView) {
             setIsInView(true)
-            // Загружаем видео только когда оно в зоне видимости
             if (video.src !== src) {
               video.src = src
               video.load()
@@ -40,7 +39,7 @@ export default function LazyVideo({
         })
       },
       {
-        rootMargin: '50px', // Начинаем загрузку за 50px до появления
+        rootMargin: '200px',
         threshold: 0.1,
       }
     )
