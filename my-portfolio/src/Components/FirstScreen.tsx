@@ -45,6 +45,7 @@ export default function FirstScreen() {
               />
               <img
                 src="/photos/img038.webp"
+                loading="lazy"
                 alt={language === 'en' ? 'My photo' : 'Моё фото'}
                 className="photo"
               />
