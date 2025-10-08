@@ -12,7 +12,18 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [visible, setVisible] = useState(true)
   const [lastScroll, setLastScroll] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
   const menuId = useId()
+
+  // Detect mobile screen size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 900)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,12 +54,16 @@ export default function Navbar() {
 
   const handleNavClick = () => setMenuOpen(false)
 
+  // Determine if links should be focusable
+  const linksTabIndex = isMobile ? (menuOpen ? 0 : -1) : visible ? 0 : -1
+
   const links = (
     <>
       <a
         href="#Resume"
         onClick={handleNavClick}
         role="menuitem"
+        tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
             ? 'Go to Resume section'
@@ -61,6 +76,7 @@ export default function Navbar() {
         href="#Projects"
         onClick={handleNavClick}
         role="menuitem"
+        tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
             ? 'Go to Projects section'
@@ -73,6 +89,7 @@ export default function Navbar() {
         href="#About"
         onClick={handleNavClick}
         role="menuitem"
+        tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
             ? 'Go to About me section'
@@ -85,6 +102,7 @@ export default function Navbar() {
         href="#Contacts"
         onClick={handleNavClick}
         role="menuitem"
+        tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
             ? 'Go to Contacts section'
@@ -99,6 +117,7 @@ export default function Navbar() {
   const logo = (
     <a
       href="#FirstScreen"
+      tabIndex={visible ? 0 : -1}
       aria-label={
         language === 'en' ? 'Go to top of page' : 'Перейти к началу страницы'
       }
@@ -107,30 +126,38 @@ export default function Navbar() {
     </a>
   )
 
-  const buttons = (
-    <div className="nav-buttons">
-      <button
-        type="button"
-        onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}
-        aria-label={
-          language === 'en' ? 'Switch to Russian' : 'Переключить на английский'
-        }
-      >
-        {language === 'en' ? 'rus' : 'eng'}
-      </button>
-      <button
-        type="button"
-        onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-        aria-label={
-          theme === 'dark'
-            ? 'Switch to light theme'
-            : 'Переключить на тёмную тему'
-        }
-      >
-        {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
-      </button>
-    </div>
-  )
+  const buttons = (isDesktop: boolean) => {
+    const buttonsTabIndex = isDesktop ? (visible ? 0 : -1) : menuOpen ? 0 : -1
+
+    return (
+      <div className="nav-buttons">
+        <button
+          type="button"
+          tabIndex={buttonsTabIndex}
+          onClick={() => setLanguage(language === 'en' ? 'ru' : 'en')}
+          aria-label={
+            language === 'en'
+              ? 'Switch to Russian'
+              : 'Переключить на английский'
+          }
+        >
+          {language === 'en' ? 'rus' : 'eng'}
+        </button>
+        <button
+          type="button"
+          tabIndex={buttonsTabIndex}
+          onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
+          aria-label={
+            theme === 'dark'
+              ? 'Switch to light theme'
+              : 'Переключить на тёмную тему'
+          }
+        >
+          {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
+        </button>
+      </div>
+    )
+  }
 
   // Toggle CSS scroll lock class when mobile menu is open
   useEffect(() => {
@@ -156,6 +183,7 @@ export default function Navbar() {
         <button
           type="button"
           className="menu-toggle"
+          tabIndex={visible ? 0 : -1}
           onClick={() => setMenuOpen(!menuOpen)}
           aria-expanded={menuOpen}
           aria-controls={menuId}
@@ -179,10 +207,10 @@ export default function Navbar() {
           aria-label={language === 'en' ? 'Navigation menu' : 'Меню навигации'}
         >
           {links}
-          {menuOpen && <div className="nav-buttons">{buttons}</div>}
+          {menuOpen && buttons(false)}
         </div>
 
-        <div className="nav-buttons desktop-only">{buttons}</div>
+        <div className="nav-buttons desktop-only">{buttons(true)}</div>
       </div>
     </nav>
   )
