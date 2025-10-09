@@ -29,7 +29,7 @@ export const experienceData = {
           'Built apps and websites in an Agile-like environment using no-code tools. Applied custom CSS and JavaScript to enhance functionality and design. Managed database setup. Handled app store publishing and deployment',
       },
       {
-        date: 'Apr 2024 - present',
+        date: 'Apr 2024 - October 2025',
         name: 'Hive Helsinki 🇫🇮',
         description:
           'Developed solo and group projects in C, programmed from scratch or using minimal libraries. Gained foundational knowledge in C++ basics. Completed a web development project, applying front-end and back-end concepts. Participated in a mentorship program, collaborating with a mentor to build Camagru, deepening understanding of front-end development, API integration, state management, and building production-ready projects',
@@ -60,7 +60,7 @@ export const experienceData = {
           'Создавала приложения и сайты в среде, похожей на Agile, используя no-code инструменты. Применяла кастомный CSS и JavaScript для улучшения функциональности и дизайна. Настраивала базы данных. Отвечала за публикацию и деплой приложений в App Store.',
       },
       {
-        date: 'Апрель 2024 - настоящее время',
+        date: 'Апрель 2024 - Октябрь 2025',
         name: 'Hive Helsinki 🇫🇮',
         description:
           'Разрабатывала проекты самостоятельно и в группах на C, писала программы с нуля или с минимальными библиотеками. Получила базовые знания C++. Реализовала веб-проект, применяя фронтенд и бэкенд концепции. Участвовала в менторской программе, сотрудничая с наставником над Camagru, углубляя понимание фронтенда, интеграции API, управления состоянием и создания проектов готовых к продакшну.',
