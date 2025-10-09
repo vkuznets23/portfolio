@@ -5,7 +5,7 @@ export default function Footer() {
         <div className="footer">
           <p id="contacts-title" className="getInTouch">
             I’m open to professional challenges.{' '}
-            <a href="mailto:youremail@example.com">Get in touch!</a>
+            <a href="mailto:victoria.cuzneczowa23@gmail.com">Get in touch!</a>
           </p>
           <nav className="footer-links" aria-label="Footer links">
             <a href="https://github.com/vkuznets23">GitHub</a>
