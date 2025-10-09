@@ -188,6 +188,10 @@
     transition: none !important;
   }
 
+  .experienceDesc {
+    padding-left: 20px;
+  }
+
   .toggleAll {
     gap: 10px;
   }

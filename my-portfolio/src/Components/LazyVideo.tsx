@@ -22,34 +22,40 @@ export default function LazyVideo({
   poster,
 }: LazyVideoProps) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [isInView, setIsInView] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
 
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isInView) {
-            setIsInView(true)
-            if (video.src !== src) {
+      async (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            if (!isLoaded) {
               video.src = src
-              video.load()
+              video.preload = 'auto'
+              try {
+                await video.play()
+                setIsLoaded(true)
+              } catch (err) {
+                console.warn('Autoplay blocked:', err)
+              }
             }
+          } else if (isLoaded && entry.intersectionRatio === 0) {
+            video.pause()
           }
-        })
+        }
       },
       {
-        rootMargin: '60%',
-        threshold: 0.1,
+        rootMargin: '150%',
+        threshold: 0.01,
       }
     )
 
     observer.observe(video)
-
     return () => observer.disconnect()
-  }, [src, isInView])
+  }, [src, isLoaded])
 
   return (
     <video
@@ -60,12 +66,12 @@ export default function LazyVideo({
       loop={loop}
       muted={muted}
       playsInline={playsInline}
+      preload="metadata"
+      poster={poster}
       disablePictureInPicture
       disableRemotePlayback
-      preload="none"
       role="presentation"
       aria-hidden="true"
-      poster={poster}
       webkit-playsinline="true"
     />
   )
