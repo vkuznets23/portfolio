@@ -62,13 +62,6 @@
 
 .project-card {
   border-radius: 30px;
-  border: 3px solid transparent;
-  transition: border-color 0.3s ease;
-  padding: 4px;
-}
-
-.project-card:focus-within {
-  border-color: var(--focus-color);
 }
 
 .project-card:focus-within .overlay {

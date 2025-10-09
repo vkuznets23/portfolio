@@ -129,6 +129,7 @@ export default function AboutMe() {
               src="/photos/circle.mp4"
               className="img3"
               style={{ aspectRatio: '1 / 1' }}
+              poster="/photos/circle_poster.webp"
             />
             <img
               src="/photos/mug.webp"
@@ -150,6 +151,7 @@ export default function AboutMe() {
               src="/photos/office.mp4"
               className="img6"
               style={{ aspectRatio: '2 / 1' }}
+              poster="/photos/office_poster.webp"
             />
             <img
               src="/photos/cuteme.webp"
