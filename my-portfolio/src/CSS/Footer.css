@@ -139,6 +139,7 @@
   .footer-container {
     font-size: 32px;
     padding: 25px 15px;
+    margin-top: -60px;
   }
 
   .getInTouch {
