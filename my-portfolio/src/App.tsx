@@ -11,14 +11,34 @@ import {
 } from './Components'
 import './App.css'
 
+const validPaths = [
+  '/',
+  '/#FirstScreen',
+  '/#Resume',
+  '/#Projects',
+  '/#AboutMe',
+  '/#Contacts',
+]
+
 export default function App() {
   const { language } = useGlobal()
   const { data, loading, error } = useAppData(language)
+
+  const path = window.location.pathname + window.location.hash
+  const isValid = validPaths.includes(path)
 
   if (loading) {
     return (
       <main className="main-container">
         <span className="loader"></span>
+      </main>
+    )
+  }
+
+  if (!isValid) {
+    return (
+      <main className="main-container">
+        <ErrorComponent error="Page not found" data={data} />
       </main>
     )
   }
