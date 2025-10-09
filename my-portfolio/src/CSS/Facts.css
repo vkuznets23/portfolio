@@ -496,7 +496,7 @@
   .fact6 {
     align-self: flex-end !important;
     width: 100% !important;
-    max-width: 40vw !important;
+    max-width: 35vw !important;
     margin-top: -5vw !important;
   }
 
@@ -571,7 +571,7 @@
   }
   .img5 {
     top: 200vw !important;
-    left: 50% !important;
+    left: 55% !important;
     transform: translateX(-50%) !important;
   }
   .img6 {
