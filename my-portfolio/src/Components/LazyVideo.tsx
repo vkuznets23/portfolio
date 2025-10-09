@@ -28,6 +28,14 @@ export default function LazyVideo({
     const video = videoRef.current
     if (!video) return
 
+    const tryPlay = async () => {
+      try {
+        await video.play()
+      } catch (err) {
+        console.warn('Autoplay blocked:', err)
+      }
+    }
+
     const observer = new IntersectionObserver(
       async (entries) => {
         for (const entry of entries) {
@@ -35,12 +43,10 @@ export default function LazyVideo({
             if (!isLoaded) {
               video.src = src
               video.preload = 'auto'
-              try {
-                await video.play()
-                setIsLoaded(true)
-              } catch (err) {
-                console.warn('Autoplay blocked:', err)
-              }
+              requestAnimationFrame(() => tryPlay())
+              setIsLoaded(true)
+            } else {
+              tryPlay()
             }
           } else if (isLoaded && entry.intersectionRatio === 0) {
             video.pause()
@@ -54,7 +60,20 @@ export default function LazyVideo({
     )
 
     observer.observe(video)
-    return () => observer.disconnect()
+
+    const resumePlayback = () => {
+      if (video.paused) {
+        tryPlay()
+      }
+    }
+    window.addEventListener('touchstart', resumePlayback, { once: true })
+    window.addEventListener('scroll', resumePlayback, { once: true })
+
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('touchstart', resumePlayback)
+      window.removeEventListener('scroll', resumePlayback)
+    }
   }, [src, isLoaded])
 
   return (
