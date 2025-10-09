@@ -152,6 +152,11 @@ export default function Navbar() {
               ? 'Switch to light theme'
               : 'Переключить на тёмную тему'
           }
+          style={{
+            display: 'flex',
+            justifySelf: 'center',
+            alignItems: 'center',
+          }}
         >
           {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
         </button>
