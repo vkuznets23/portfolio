@@ -39,6 +39,7 @@ const russianShortWords = [
   'но',
   'или',
   'об',
+  'я',
 ]
 
 function applyEnglishTypography(text: string) {

@@ -84,7 +84,13 @@ export const projectsData = {
         name: 'Сайт-портфолио',
         description:
           'Сайт-портфолио, который демонстрирует мои навыки в разработке с плавными анимациями и интерактивными элементами. Создан с использованием современных React-паттернов, TypeScript для безопасности типов и собственных анимаций CSS. Функциональные возможности включают адаптивную верстку, переключатель темной/светлой темы, поддержку нескольких языков и оптимизированную производительность.',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Pet project'],
+        technologies: [
+          'React',
+          'TypeScript',
+          'Vanilla CSS',
+          'Playwright',
+          'Jest',
+        ],
         github: 'https://github.com/vkuznets23/portfolio',
         image: '/photos/portfolio.mov',
         poster: '/photos/poster_portfolio.webp',
