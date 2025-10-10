@@ -1,6 +1,9 @@
 import { useEffect, useId, useState } from 'react'
 import { useGlobal } from '../hooks'
-import { SunIcon, MoonIcon, MenuIcon, CloseIcon } from './Icons'
+import { IoSunnyOutline } from 'react-icons/io5'
+import { IoMdMoon } from 'react-icons/io'
+import { RxHamburgerMenu } from 'react-icons/rx'
+import { VscClose } from 'react-icons/vsc'
 import '../CSS/Navbar.css'
 import { Logo } from './logo'
 
@@ -59,7 +62,6 @@ export default function Navbar() {
       <a
         href="#Resume"
         onClick={handleNavClick}
-        role="menuitem"
         tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
@@ -72,7 +74,6 @@ export default function Navbar() {
       <a
         href="#Projects"
         onClick={handleNavClick}
-        role="menuitem"
         tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
@@ -85,7 +86,6 @@ export default function Navbar() {
       <a
         href="#About"
         onClick={handleNavClick}
-        role="menuitem"
         tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
@@ -98,7 +98,6 @@ export default function Navbar() {
       <a
         href="#Contacts"
         onClick={handleNavClick}
-        role="menuitem"
         tabIndex={linksTabIndex}
         aria-label={
           language === 'en'
@@ -145,8 +144,12 @@ export default function Navbar() {
           tabIndex={buttonsTabIndex}
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
           aria-label={
-            theme === 'dark'
-              ? 'Switch to light theme'
+            language === 'en'
+              ? theme === 'dark'
+                ? 'Switch to light theme'
+                : 'Switch to dark theme'
+              : theme === 'dark'
+              ? 'Переключить на светлую тему'
               : 'Переключить на тёмную тему'
           }
           style={{
@@ -155,7 +158,7 @@ export default function Navbar() {
             alignItems: 'center',
           }}
         >
-          {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
         </button>
       </div>
     )
@@ -199,14 +202,15 @@ export default function Navbar() {
               : 'Открыть меню'
           }
         >
-          {menuOpen ? <CloseIcon /> : <MenuIcon />}
+          {menuOpen ? <VscClose /> : <RxHamburgerMenu />}
         </button>
 
         <div
           className={`Links ${menuOpen ? 'open' : ''}`}
           id={menuId}
-          role="menu"
-          aria-label={language === 'en' ? 'Navigation menu' : 'Меню навигации'}
+          aria-label={
+            language === 'en' ? 'Navigation links' : 'Навигационные ссылки'
+          }
         >
           {links}
           {menuOpen && buttons(false)}

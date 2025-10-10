@@ -6,9 +6,11 @@ type TypewriterProps = {
 }
 
 export default function Typewriter({ line1, options }: TypewriterProps) {
+  const fullText = `${line1} ${options.join(', ')}`
+
   return (
-    <div className="hero">
-      <div className="line1-container">
+    <div className="hero" role="heading" aria-level={1} aria-label={fullText}>
+      <div className="line1-container" aria-hidden="true">
         <span className="line1-fixed">{line1}</span>{' '}
         <span className="hero-typewriter">
           <TypewriterDef

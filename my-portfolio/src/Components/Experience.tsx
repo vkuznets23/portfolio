@@ -47,16 +47,12 @@ export default function Experience() {
   return (
     <section id="Resume" aria-labelledby="experience-title">
       <div className="experience-container">
-        <header
-          ref={ref}
-          className={visible ? 'slide-up' : 'hidden'}
-          aria-hidden={!visible}
-        >
+        <header ref={ref} className={visible ? 'slide-up' : 'hidden'}>
           <h2 id="experience-title" className="h2">
             {header}
           </h2>
           <div className="description-flex-container">
-            <div className="description">{description}</div>
+            <p className="description">{description}</p>
             <TextCircle
               radius={62}
               textEn="click * click * click ** click * click * click **"

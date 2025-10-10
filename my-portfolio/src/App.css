@@ -123,6 +123,11 @@ body.dark {
     overflow-x: hidden !important;
   }
 }
+@media screen and (max-width: 1110px) {
+  .first-wrapper {
+    height: 720px;
+  }
+}
 
 @media screen and (max-width: 900px) {
   .first-wrapper {

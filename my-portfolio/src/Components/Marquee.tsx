@@ -10,9 +10,7 @@ export default function Marquee({ text, style = '-1.95deg' }: StripeProps) {
     <div
       className="marquee marquee-fade-in"
       style={{ rotate: style }}
-      role="region"
-      aria-roledescription="marquee"
-      aria-label={text}
+      aria-hidden="true"
     >
       <MarqueeComponent
         className="overflow-y-hidden"
