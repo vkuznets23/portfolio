@@ -106,34 +106,51 @@ export default function AboutMe() {
             />
           </div>
         </div>
-        <div className="scroll-section">
+        <div
+          className="scroll-section"
+          aria-label={
+            language === 'en'
+              ? 'Fun facts and photos'
+              : 'Интересные факты и фотографии'
+          }
+        >
           <div className="container" ref={containerRef}>
             <img
               src="/photos/dogphoto.webp"
               srcSet="/photos/dogphoto-200.webp 200w, /photos/dogphoto-300.webp 300w, /photos/dogphoto-400.webp 400w"
               loading="lazy"
-              alt="photo"
+              alt={language === 'en' ? 'Dog photo' : 'Фото собаки'}
               className="img1"
               style={{ aspectRatio: '1 / 1' }}
             />
             <img
               src="/photos/fugler.webp"
               loading="lazy"
-              alt="fugler"
+              alt={language === 'en' ? 'Fugler art piece' : 'Арт-объект Фуглер'}
               className="img2"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <LazyVideo
-              src="/photos/circle.mp4"
+            <div
               className="img3"
               style={{ aspectRatio: '1 / 1' }}
-              poster="/photos/circle_poster.webp"
-            />
+              role="img"
+              aria-label={
+                language === 'en'
+                  ? 'Video: my pictures in circle mirrors'
+                  : 'Видео: мои фото в круглых зеркалах'
+              }
+            >
+              <LazyVideo
+                src="/photos/circle.mp4"
+                style={{ aspectRatio: '1 / 1' }}
+                poster="/photos/circle_poster.webp"
+              />
+            </div>
             <img
               src="/photos/mug.webp"
               srcSet="/photos/mug-200.webp 200w, /photos/mug-300.webp 300w, /photos/mug-400.webp 400w"
               loading="lazy"
-              alt="fugler"
+              alt={language === 'en' ? 'Coffee mug' : 'Кофейная кружка'}
               className="img4"
               style={{ aspectRatio: '1 / 1' }}
             />
@@ -141,27 +158,41 @@ export default function AboutMe() {
               src="/photos/knitting.webp"
               srcSet="/photos/knitting-200.webp 200w, /photos/knitting-300.webp 300w, /photos/knitting-400.webp 400w"
               loading="lazy"
-              alt="fugler"
+              alt={language === 'en' ? 'Knitting project' : 'Вязаный проект'}
               className="img5"
               style={{ aspectRatio: '1 / 1' }}
             />
-            <LazyVideo
-              src="/photos/office.mp4"
+            <div
               className="img6"
               style={{ aspectRatio: '2 / 1' }}
-              poster="/photos/office_poster.webp"
-            />
+              role="img"
+              aria-label={
+                language === 'en'
+                  ? 'Video: Michael from The Office'
+                  : 'Видео: Майкл из Офиса'
+              }
+            >
+              <LazyVideo
+                src="/photos/office.mp4"
+                style={{ aspectRatio: '2 / 1' }}
+                poster="/photos/office_poster.webp"
+              />
+            </div>
             <img
               src="/photos/cuteme.webp"
               srcSet="/photos/cuteme-200.webp 200w, /photos/cuteme-300.webp 300w, /photos/cuteme-400.webp 400w"
               loading="lazy"
-              alt="me"
+              alt={language === 'en' ? 'Portrait photo' : 'Портретное фото'}
               className="img7"
               style={{ aspectRatio: '1 / 1' }}
             />
 
             {facts.map((fact, i) => (
-              <div key={i} className={`fact fact${i + 1}`}>
+              <article
+                key={i}
+                className={`fact fact${i + 1}`}
+                aria-labelledby={`fact-title-${i}`}
+              >
                 <div
                   style={{
                     display: 'flex',
@@ -169,12 +200,12 @@ export default function AboutMe() {
                     alignItems: 'center',
                   }}
                 >
-                  <p>
+                  <p id={`fact-title-${i}`}>
                     <b>Fact #{i + 1}</b>
                   </p>
                   <p>{fact}</p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

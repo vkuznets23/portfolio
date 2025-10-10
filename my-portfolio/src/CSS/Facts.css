@@ -59,6 +59,14 @@
   aspect-ratio: 1 / 1;
   border-radius: 50%;
 }
+
+.img3 video,
+.img6 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+}
 .img4 {
   position: absolute;
   z-index: 1;
