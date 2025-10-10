@@ -8,27 +8,36 @@ import {
   Projects,
   AboutMe,
   Footer,
+  Loading,
 } from './Components'
 import './App.css'
+
+const validPaths = [
+  '/',
+  '/#FirstScreen',
+  '/#Resume',
+  '/#Projects',
+  '/#AboutMe',
+  '/#Contacts',
+]
 
 export default function App() {
   const { language } = useGlobal()
   const { data, loading, error } = useAppData(language)
 
+  const path = window.location.pathname + window.location.hash
+  const isValid = validPaths.includes(path)
+
   if (loading) {
-    return (
-      <main className="main-container">
-        <span className="loader"></span>
-      </main>
-    )
+    return <Loading />
+  }
+
+  if (!isValid) {
+    return <ErrorComponent data={data} />
   }
 
   if (error || !data) {
-    return (
-      <main className="main-container">
-        <ErrorComponent error={error} data={data} />
-      </main>
-    )
+    return <ErrorComponent error={error} data={data} />
   }
 
   return (

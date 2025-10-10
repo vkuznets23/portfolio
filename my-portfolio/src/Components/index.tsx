@@ -11,6 +11,7 @@ import ErrorComponent from './Error'
 import TextCircle from './TextCircle'
 import LazyVideo from './LazyVideo'
 import { Logo } from './logo'
+import Loading from './Loading'
 
 export {
   FirstScreen,
@@ -26,4 +27,5 @@ export {
   TextCircle,
   LazyVideo,
   Logo,
+  Loading,
 }

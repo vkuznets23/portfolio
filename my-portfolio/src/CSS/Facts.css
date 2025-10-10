@@ -397,37 +397,37 @@
   }
 
   .img1 {
-    top: 136vw !important;
+    top: 136dvw !important;
     left: clamp(20%, 43%, 80%) !important;
     transform: translateX(-50%) !important;
   }
   .img2 {
-    top: 46vw !important;
+    top: 46dvw !important;
     left: clamp(10%, 10%, 80%) !important;
   }
 
   .img3 {
-    top: 83vw !important;
+    top: 83dvw !important;
     left: clamp(10%, 60%, 80%) !important;
   }
 
   .img4 {
-    top: 173vw !important;
+    top: 173dvw !important;
     left: clamp(10%, 80%, 80%) !important;
   }
 
   .img5 {
-    top: 235vw !important;
+    top: 235dvw !important;
     left: clamp(10%, 60%, 80%) !important;
   }
 
   .img6 {
-    top: 285vw !important;
+    top: 290dvw !important;
     left: clamp(10%, 40%, 80%) !important;
   }
 
   .img7 {
-    top: 355vw !important;
+    top: 385dvw !important;
     left: clamp(10%, 50%, 80%) !important;
   }
 }
