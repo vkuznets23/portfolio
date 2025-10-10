@@ -19,22 +19,23 @@ export default function FirstScreen() {
   )
 
   return (
-    <section id="FirstScreen" aria-labelledby="experience-title">
-      <div
-        className="firstScreen-container, slide-up"
-        role="banner"
-        aria-labelledby="intro-title"
-      >
+    <section id="FirstScreen">
+      <div className="firstScreen-container, slide-up" role="banner">
         {options && options.length > 0 && (
           <Typewriter line1={firstLine} options={options} />
         )}
         <div className="description-absolute-container">
           <div className="description-flex-container">
-            <h1 id="intro-title" className="sr-only">
-              {firstLine}
-            </h1>
             <p className="description">{description}</p>
-            <div className="circle-photo-wrapper">
+            <div
+              className="circle-photo-wrapper"
+              role="img"
+              aria-label={
+                language === 'en'
+                  ? 'Profile photo of Viktoriia'
+                  : 'Фото Виктории'
+              }
+            >
               <CircularText
                 text={
                   language === 'en'
@@ -48,7 +49,7 @@ export default function FirstScreen() {
                 srcSet="/photos/img038-200.webp 200w, /photos/img038-300.webp 300w"
                 loading="eager"
                 fetchPriority="high"
-                alt={language === 'en' ? 'My photo' : 'Моё фото'}
+                alt=""
                 className="photo"
               />
               <span className="emoji-hand" aria-hidden="true">
