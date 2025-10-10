@@ -16,7 +16,10 @@ export default defineConfig({
     },
     minify: 'esbuild',
     chunkSizeWarningLimit: 1000,
-    cssCodeSplit: true,
+    cssCodeSplit: false, // Один CSS файл вместо множества - быстрее загрузка
     assetsInlineLimit: 4096,
+    modulePreload: {
+      polyfill: true, // Автоматический preload для модулей
+    },
   },
 })
