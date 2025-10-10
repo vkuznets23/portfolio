@@ -14,18 +14,19 @@ export default function ErrorComponent({
   if (!data) {
     return (
       <main className="main-container">
-        <div
-          className="error-container"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          aria-labelledby={errorTitleId}
-          aria-describedby={errorDescId}
-        >
-          <p id={errorTitleId}>No data available</p>
-          <p id={errorDescId}>
-            Please try reloading the page or check your connection.
-          </p>
+        <div className="error-container">
+          <div
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            aria-labelledby={errorTitleId}
+            aria-describedby={errorDescId}
+          >
+            <p id={errorTitleId}>No data available</p>
+            <p id={errorDescId}>
+              Please try reloading the page or check your connection.
+            </p>
+          </div>
         </div>
       </main>
     )
@@ -33,16 +34,17 @@ export default function ErrorComponent({
   if (error) {
     return (
       <main className="main-container">
-        <div
-          className="error-container"
-          role="alert"
-          aria-live="assertive"
-          aria-atomic="true"
-          aria-labelledby={errorTitleId}
-          aria-describedby={errorDescId}
-        >
-          <p id={errorTitleId}>Oops! Something went wrong!</p>
-          <p id={errorDescId}>{error}</p>
+        <div className="error-container">
+          <div
+            role="alert"
+            aria-live="assertive"
+            aria-atomic="true"
+            aria-labelledby={errorTitleId}
+            aria-describedby={errorDescId}
+          >
+            <p id={errorTitleId}>Oops! Something went wrong!</p>
+            <p id={errorDescId} dangerouslySetInnerHTML={{ __html: error }} />
+          </div>
         </div>
       </main>
     )
