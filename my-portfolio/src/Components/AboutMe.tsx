@@ -47,6 +47,16 @@ export default function AboutMe() {
 
   // horizontal scroll
   const containerRef = useRef<HTMLDivElement>(null)
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1195)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 1195)
+    }
+
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
 
   useEffect(() => {
     const container = containerRef.current
@@ -54,7 +64,6 @@ export default function AboutMe() {
 
     if (!container || !scrollSection) return
 
-    const isMobile = window.innerWidth <= 1195
     if (isMobile) {
       scrollSection.style.height = 'auto'
       container.style.transform = 'none'
@@ -75,20 +84,26 @@ export default function AboutMe() {
       const clamped = Math.min(0, Math.max(-maxScroll, translateX))
       container.style.transform = `translateX(${clamped}px)`
     }
-    // section height equals horizontal travel distance
-    const containerWidth = Math.min(1180, window.innerWidth)
-    const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
-    // Increase section height inversely to speed so full track is reachable
-    scrollSection.style.height = `${maxScroll / speed + window.innerHeight}px`
+
+    // Recalculate on resize
+    const handleResize = () => {
+      const containerWidth = Math.min(1180, window.innerWidth)
+      const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
+      scrollSection.style.height = `${maxScroll / speed + window.innerHeight}px`
+      handleScroll()
+    }
+
+    // Initial setup
+    handleResize()
 
     window.addEventListener('scroll', handleScroll)
-    window.addEventListener('resize', handleScroll)
+    window.addEventListener('resize', handleResize)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleScroll)
+      window.removeEventListener('resize', handleResize)
     }
-  }, [])
+  }, [isMobile])
 
   return (
     <section id="About" aria-labelledby="about-me-title">
