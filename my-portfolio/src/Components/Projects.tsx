@@ -116,16 +116,12 @@ export default function Projects() {
   return (
     <section id="Projects" aria-labelledby="projects-title">
       <div ref={containerRef} className="projectsContainer">
-        <header
-          ref={headerRef}
-          className={visible ? 'slide-up' : 'hidden'}
-          aria-hidden={!visible}
-        >
+        <header ref={headerRef} className={visible ? 'slide-up' : 'hidden'}>
           <h2 id="projects-title" className="sr-only">
             {language === 'en' ? 'Projects' : 'Проекты'}
           </h2>
           <div className="description-flex-container">
-            <div className="description">{description}</div>
+            <p className="description">{description}</p>
             <TextCircle
               radius={62}
               textRu="скрол >> скрол >> скрол >> скрол >>"
