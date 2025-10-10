@@ -10,6 +10,10 @@
   line-height: 8.125rem;
 }
 
+.line1-container {
+  max-height: 276px;
+}
+
 .line1-fixed {
   position: relative;
 }
