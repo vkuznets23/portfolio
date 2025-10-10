@@ -1,9 +1,6 @@
 import { useEffect, useId, useState } from 'react'
 import { useGlobal } from '../hooks'
-import { IoSunnyOutline } from 'react-icons/io5'
-import { IoMdMoon } from 'react-icons/io'
-import { RxHamburgerMenu } from 'react-icons/rx'
-import { VscClose } from 'react-icons/vsc'
+import { SunIcon, MoonIcon, MenuIcon, CloseIcon } from './Icons'
 import '../CSS/Navbar.css'
 import { Logo } from './logo'
 
@@ -158,7 +155,7 @@ export default function Navbar() {
             alignItems: 'center',
           }}
         >
-          {theme === 'dark' ? <IoSunnyOutline /> : <IoMdMoon />}
+          {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
         </button>
       </div>
     )
@@ -202,7 +199,7 @@ export default function Navbar() {
               : 'Открыть меню'
           }
         >
-          {menuOpen ? <VscClose /> : <RxHamburgerMenu />}
+          {menuOpen ? <CloseIcon /> : <MenuIcon />}
         </button>
 
         <div

@@ -12,6 +12,7 @@ import TextCircle from './TextCircle'
 import LazyVideo from './LazyVideo'
 import { Logo } from './logo'
 import Loading from './Loading'
+import { SunIcon, MoonIcon, MenuIcon, CloseIcon } from './Icons'
 
 export {
   FirstScreen,
@@ -28,4 +29,8 @@ export {
   LazyVideo,
   Logo,
   Loading,
+  SunIcon,
+  MoonIcon,
+  MenuIcon,
+  CloseIcon,
 }
