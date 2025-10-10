@@ -91,16 +91,14 @@ export default function AboutMe() {
   }, [])
 
   return (
-    <section id="About">
+    <section id="About" aria-labelledby="about-me-title">
       <div className="experience-container">
-        <div
-          ref={ref}
-          className={visible ? 'slide-up' : 'hidden'}
-          aria-hidden={!visible}
-        >
-          <h2 className="h2">{header}</h2>
+        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
+          <h2 id="about-me-title" className="h2">
+            {header}
+          </h2>
           <div className="description-flex-container">
-            <div className="description">{description}</div>
+            <p className="description">{description}</p>
             <TextCircle
               textRu="скрол >> скрол >> скрол >> скрол >>"
               textEn="scroll scroll * scroll scroll * scroll scroll *"
