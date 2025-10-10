@@ -117,6 +117,7 @@ export default function AboutMe() {
           <div className="container" ref={containerRef}>
             <img
               src="/photos/dogphoto.webp"
+              aria-hidden="true"
               srcSet="/photos/dogphoto-200.webp 200w, /photos/dogphoto-300.webp 300w, /photos/dogphoto-400.webp 400w"
               loading="lazy"
               alt={language === 'en' ? 'Dog photo' : 'Фото собаки'}
@@ -125,6 +126,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/fugler.webp"
+              aria-hidden="true"
               loading="lazy"
               alt={language === 'en' ? 'Fugler art piece' : 'Арт-объект Фуглер'}
               className="img2"
@@ -132,6 +134,7 @@ export default function AboutMe() {
             />
             <div
               className="img3"
+              aria-hidden="true"
               style={{ aspectRatio: '1 / 1' }}
               role="img"
               aria-label={
@@ -148,6 +151,7 @@ export default function AboutMe() {
             </div>
             <img
               src="/photos/mug.webp"
+              aria-hidden="true"
               srcSet="/photos/mug-200.webp 200w, /photos/mug-300.webp 300w, /photos/mug-400.webp 400w"
               loading="lazy"
               alt={language === 'en' ? 'Coffee mug' : 'Кофейная кружка'}
@@ -156,6 +160,7 @@ export default function AboutMe() {
             />
             <img
               src="/photos/knitting.webp"
+              aria-hidden="true"
               srcSet="/photos/knitting-200.webp 200w, /photos/knitting-300.webp 300w, /photos/knitting-400.webp 400w"
               loading="lazy"
               alt={language === 'en' ? 'Knitting project' : 'Вязаный проект'}
@@ -164,6 +169,7 @@ export default function AboutMe() {
             />
             <div
               className="img6"
+              aria-hidden="true"
               style={{ aspectRatio: '2 / 1' }}
               role="img"
               aria-label={
@@ -180,6 +186,7 @@ export default function AboutMe() {
             </div>
             <img
               src="/photos/cuteme.webp"
+              aria-hidden="true"
               srcSet="/photos/cuteme-200.webp 200w, /photos/cuteme-300.webp 300w, /photos/cuteme-400.webp 400w"
               loading="lazy"
               alt={language === 'en' ? 'Portrait photo' : 'Портретное фото'}
