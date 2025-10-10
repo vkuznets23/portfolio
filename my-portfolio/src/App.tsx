@@ -8,6 +8,7 @@ import {
   Projects,
   AboutMe,
   Footer,
+  Loading,
 } from './Components'
 import './App.css'
 
@@ -28,11 +29,7 @@ export default function App() {
   const isValid = validPaths.includes(path)
 
   if (loading) {
-    return (
-      <main className="main-container">
-        <span className="loader"></span>
-      </main>
-    )
+    return <Loading />
   }
 
   if (!isValid) {
