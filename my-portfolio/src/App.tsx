@@ -33,19 +33,11 @@ export default function App() {
   }
 
   if (!isValid) {
-    return (
-      <main className="main-container">
-        <ErrorComponent error="Page not found" data={data} />
-      </main>
-    )
+    return <ErrorComponent data={data} />
   }
 
   if (error || !data) {
-    return (
-      <main className="main-container">
-        <ErrorComponent error={error} data={data} />
-      </main>
-    )
+    return <ErrorComponent error={error} data={data} />
   }
 
   return (
