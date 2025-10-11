@@ -45,25 +45,25 @@ const russianShortWords = [
 function applyEnglishTypography(text: string) {
   if (!text) return ''
 
-  // Убираем лишние пробелы
   let result = text.replace(/\s+/g, ' ').trim()
 
-  // Тире вместо дефиса
   result = result.replace(/--/g, '—')
-  // Среднее тире для диапазонов, только когда числа по бокам
   result = result.replace(/(\d)\s*-\s*(\d)/g, '$1–$2')
 
-  // Висячие предлоги — добавляем неразрывный пробел
   const pattern = new RegExp(`\\b(${englishPrepositions.join('|')})\\s+`, 'gi')
-  result = result.replace(pattern, (_, p1) => `${p1}\u00A0`)
 
-  // умные кавычки
+  let prevResult = ''
+  let iterations = 0
+  const maxIterations = 10
+
+  while (prevResult !== result && iterations < maxIterations) {
+    prevResult = result
+    result = result.replace(pattern, (_, p1) => `${p1}\u00A0`)
+    iterations++
+  }
+
   result = result.replace(/"([^"]+)"/g, '“$1”')
-
-  // апострофы
   result = result.replace(/(\w)'(\w)/g, '$1’$2')
-
-  // многоточие
   result = result.replace(/\.{3}/g, '…')
 
   return result
@@ -74,26 +74,31 @@ function applyRussianTypography(text: string) {
 
   let result = text.replace(/\s+/g, ' ').trim()
 
-  // Длинное тире вместо двойного дефиса
   result = result.replace(/--/g, '—')
-  // Среднее тире для диапазонов чисел: 10-20 → 10–20
   result = result.replace(/(\d)\s*-\s*(\d)/g, '$1–$2')
 
-  // Висячие предлоги
   const shortWordsPattern = new RegExp(
-    `(^|\\s)(${russianShortWords.join('|')})(\\s+)`,
+    `(^|[ \\t\\r\\n\\f]|\\u00A0)(${russianShortWords.join(
+      '|'
+    )})([ \\t\\r\\n\\f]+)`,
     'gi'
   )
 
-  result = result.replace(
-    shortWordsPattern,
-    (_, before, word) => `${before}${word}\u00A0`
-  )
+  let prevResult = ''
+  let iterations = 0
+  const maxIterations = 10
 
-  // Умные кавычки
+  while (prevResult !== result && iterations < maxIterations) {
+    prevResult = result
+    result = result.replace(
+      shortWordsPattern,
+      (_, before, word) => `${before}${word}\u00A0`
+    )
+    iterations++
+  }
+
   result = result.replace(/"([^"]+)"/g, '«$1»')
 
-  // Многоточие
   result = result.replace(/\.{3}/g, '…')
 
   return result
