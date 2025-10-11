@@ -17,8 +17,8 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
             words={options}
             loop
             cursor
-            cursorStyle="*"
-            cursorBlinking={false}
+            cursorStyle="|"
+            cursorBlinking={true}
             typeSpeed={60}
             deleteSpeed={30}
             delaySpeed={1000}
