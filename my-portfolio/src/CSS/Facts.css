@@ -8,9 +8,8 @@
 
 .container {
   position: sticky;
-  top: -40px;
-  height: 100vh;
-  margin-bottom: 100px;
+  top: calc((100vh - 800px) / 2);
+  height: 800px;
 }
 
 .fact {

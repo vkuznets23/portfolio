@@ -75,6 +75,7 @@ export default function AboutMe() {
     const handleScroll = () => {
       const rect = scrollSection.getBoundingClientRect()
       const scrollTop = -rect.top
+
       const containerWidth = Math.min(1180, window.innerWidth)
       const maxScroll = Math.max(container.scrollWidth - containerWidth, 0)
       const scrollHeight = scrollSection.offsetHeight - window.innerHeight
