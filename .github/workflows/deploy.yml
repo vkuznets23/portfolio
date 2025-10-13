@@ -70,16 +70,14 @@ jobs:
 
       - name: 🚀 Deploy to Vercel (Production)
         if: github.ref == 'refs/heads/main'
-        run: vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
-        working-directory: ${{ env.WORKING_DIR }}
+        run: cd ${{ env.WORKING_DIR }} && vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: 🚀 Deploy to Vercel (Preview)
         if: github.ref != 'refs/heads/main'
-        run: vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --yes
-        working-directory: ${{ env.WORKING_DIR }}
+        run: cd ${{ env.WORKING_DIR }} && vercel deploy --token=${{ secrets.VERCEL_TOKEN }} --yes
         env:
           VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
           VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
