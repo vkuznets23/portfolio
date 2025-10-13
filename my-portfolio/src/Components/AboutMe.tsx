@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 import { useFactsTypograf } from '../hooks/useTypograph'
-import TextCircle from './TextCircle'
 import LazyVideo from './LazyVideo'
+import HeaderAndDescription from './HeaderAndDescription'
+import Fact from './Fact'
 
 export default function AboutMe() {
   const { language } = useGlobal()
@@ -109,19 +110,14 @@ export default function AboutMe() {
   return (
     <section id="About" aria-labelledby="about-me-title">
       <div className="experience-container">
-        <div ref={ref} className={visible ? 'slide-up' : 'hidden'}>
-          <h2 id="about-me-title" className="h2">
-            {header}
-          </h2>
-          <div className="description-flex-container">
-            <p className="description">{description}</p>
-            <TextCircle
-              textRu="скрол >> скрол >> скрол >> скрол >>"
-              textEn="scroll scroll * scroll scroll * scroll scroll *"
-              radius={62}
-            />
-          </div>
-        </div>
+        <HeaderAndDescription
+          ref={ref}
+          visible={visible}
+          header={header}
+          description={description}
+          id="about-me-title"
+          textCircle="scroll"
+        />
         <div
           className="scroll-section"
           aria-label={
@@ -211,24 +207,7 @@ export default function AboutMe() {
             />
 
             {facts.map((fact, i) => (
-              <article
-                key={i}
-                className={`fact fact${i + 1}`}
-                aria-labelledby={`fact-title-${i}`}
-              >
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    alignItems: 'center',
-                  }}
-                >
-                  <p id={`fact-title-${i}`}>
-                    <b>Fact #{i + 1}</b>
-                  </p>
-                  <p>{fact}</p>
-                </div>
-              </article>
+              <Fact fact={fact} i={i} />
             ))}
           </div>
         </div>
