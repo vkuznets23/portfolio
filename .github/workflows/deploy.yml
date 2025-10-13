@@ -1,0 +1,124 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+env:
+  NODE_VERSION: "20"
+  WORKING_DIR: "my-portfolio"
+
+jobs:
+  # Job 1: testing and build
+  test-and-build:
+    name: Test and Build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: "npm"
+          cache-dependency-path: "${{ env.WORKING_DIR }}/package-lock.json"
+
+      - name: 📦 Install dependencies
+        run: npm ci
+        working-directory: ${{ env.WORKING_DIR }}
+
+      - name: 🧪 Run tests
+        run: npm test -- --passWithNoTests
+        working-directory: ${{ env.WORKING_DIR }}
+
+      - name: 🔍 Run linter
+        run: npm run lint
+        working-directory: ${{ env.WORKING_DIR }}
+        continue-on-error: true # fail whole pipeline because of linter
+
+      - name: 🏗️ Build project
+        run: npm run build
+        working-directory: ${{ env.WORKING_DIR }}
+
+      - name: 📤 Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: ${{ env.WORKING_DIR }}/dist
+          retention-days: 7
+
+  # Job 2: Deploy to Vercel
+  deploy-vercel:
+    name: Deploy to Vercel
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    if: github.event_name == 'push'
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 🚀 Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: ${{ github.ref == 'refs/heads/main' && '--prod' || '' }}
+          working-directory: ${{ env.WORKING_DIR }}
+
+  # Job 3: Create release tag
+  create-release:
+    name: Create Release Tag
+    needs: deploy-vercel
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: 📥 Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 🏷️ Bump version and create tag
+        uses: anothrNick/github-tag-action@1.67.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BUMP: patch
+          WITH_V: true
+          RELEASE_BRANCHES: main
+          DRY_RUN: false
+
+  # Job 4: Notification in Discord
+  # notify:
+  #   name: Send Notification
+  #   needs: [test-and-build, deploy-vercel, create-release]
+  #   runs-on: ubuntu-latest
+  #   if: always()
+  #
+  #   steps:
+  #     - name: 💬 Send Discord notification
+  #       uses: sarisia/actions-status-discord@v1
+  #       if: always()
+  #       with:
+  #         webhook: ${{ secrets.DISCORD_WEBHOOK_URL }}
+  #         status: ${{ job.status }}
+  #         title: "Portfolio Deployment"
+  #         description: |
+  #           **Repository:** ${{ github.repository }}
+  #           **Branch:** ${{ github.ref_name }}
+  #           **Commit:** ${{ github.sha }}
+  #           **Author:** ${{ github.actor }}
+  #
+  #           **Test Result:** ${{ needs.test-and-build.result }}
+  #           **Deploy Result:** ${{ needs.deploy-vercel.result }}
+  #           **Release Result:** ${{ needs.create-release.result }}
+  #         color: 0x0099ff
+  #         username: GitHub Actions
