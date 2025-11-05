@@ -41,32 +41,34 @@ export default function App() {
   }
 
   return (
-    <main className="main-container">
-      <Navbar />
-      <div className="first-wrapper">
-        <FirstScreen />
-      </div>
-      <div className="content-wrapper">
-        <Marquee
-          text={
-            language === 'en'
-              ? ' && about me >> about me || about me * about me '
-              : ' * обо мне >> обо мне || обо мне * обо мне && обо мне >> обо мне '
-          }
-        />
-        <Experience />
-        <Marquee
-          text={
-            language === 'en'
-              ? ' projects && projects * projects >> projects && projects * projects >>'
-              : ' проекты && проекты * проекты >> проекты && проекты * проекты >>'
-          }
-          style="1.95deg"
-        />
-        <Projects />
-        <AboutMe />
-        <Footer />
-      </div>
-    </main>
+    <>
+      <main className="main-container">
+        <Navbar />
+        <div className="first-wrapper">
+          <FirstScreen />
+        </div>
+        <div className="content-wrapper">
+          <Marquee
+            text={
+              language === 'en'
+                ? ' && about me >> about me || about me * about me '
+                : ' * обо мне >> обо мне || обо мне * обо мне && обо мне >> обо мне '
+            }
+          />
+          <Experience />
+          <Marquee
+            text={
+              language === 'en'
+                ? ' projects && projects * projects >> projects && projects * projects >>'
+                : ' проекты && проекты * проекты >> проекты && проекты * проекты >>'
+            }
+            style="1.95deg"
+          />
+          <Projects />
+          <AboutMe />
+        </div>
+      </main>
+      <Footer />
+    </>
   )
 }
