@@ -146,11 +146,12 @@ export default function Projects() {
                 visibleProjects![index] ? 'fade-in' : 'hidden'
               }`}
               role="listitem"
+              aria-hidden={!visibleProjects![index]}
               aria-label={`${language === 'en' ? 'Project' : 'Проект'} ${
                 index + 1
               }: ${project.name}`}
             >
-              <Project project={project} />
+              <Project project={project} visible={visible} />
             </article>
           ))}
         </div>

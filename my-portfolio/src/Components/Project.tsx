@@ -4,6 +4,7 @@ import LazyVideo from './LazyVideo'
 
 type ProjectProps = {
   project: ProjectType
+  visible: boolean
 }
 
 const getTagCategory = (tech: string): string => {
@@ -16,7 +17,7 @@ const getTagCategory = (tech: string): string => {
   }
 }
 
-export default function Project({ project }: ProjectProps) {
+export default function Project({ project, visible }: ProjectProps) {
   const { language } = useGlobal()
 
   const handleDeployClick = (e?: React.MouseEvent | React.KeyboardEvent) => {
@@ -52,6 +53,7 @@ export default function Project({ project }: ProjectProps) {
               className="overlayBtnDeploy"
               onClick={handleDeployClick}
               aria-label={`View live demo of ${project.name}`}
+              tabIndex={visible ? 0 : -1}
             >
               {language === 'en' ? 'Deploy' : 'Сайт'}
             </button>
@@ -61,6 +63,7 @@ export default function Project({ project }: ProjectProps) {
             className="overlayBtnGit"
             onClick={handleGitHubClick}
             aria-label={`View ${project.name} source code on GitHub`}
+            tabIndex={visible ? 0 : -1}
           >
             GitHub
           </button>
