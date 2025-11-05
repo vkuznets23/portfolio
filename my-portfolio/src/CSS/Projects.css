@@ -180,7 +180,7 @@
 
 .tag.category1 {
   background-color: var(--tag1-color);
-  color: white;
+  color: var(--text-color);
 }
 
 .tag.category2 {

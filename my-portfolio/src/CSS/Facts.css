@@ -158,7 +158,7 @@
 }
 
 .fact6 {
-  color: white;
+  color: var(--text-color);
   background-color: var(--bg-fact-color2);
   max-width: 280px;
   top: 470px;
@@ -191,7 +191,7 @@
 }
 
 .fact10 {
-  color: white;
+  color: var(--text-color);
   background-color: var(--bg-fact-color2);
   max-width: 375px;
   top: 115px;

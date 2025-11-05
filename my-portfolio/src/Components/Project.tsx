@@ -68,7 +68,7 @@ export default function Project({ project }: ProjectProps) {
       </div>
 
       <header>
-        <h4 className="projectHeader">{project.name}</h4>
+        <h3 className="projectHeader">{project.name}</h3>
         <p className="projectDescription">{project.description}</p>
       </header>
 

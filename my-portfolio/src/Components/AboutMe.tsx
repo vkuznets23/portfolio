@@ -207,7 +207,7 @@ export default function AboutMe() {
             />
 
             {facts.map((fact, i) => (
-              <Fact fact={fact} i={i} />
+              <Fact key={i} fact={fact} i={i} />
             ))}
           </div>
         </div>

@@ -1,10 +1,10 @@
-/* Critical CSS - загружается первым (above-the-fold) */
+/* Critical CSS */
 @import "./CSS/Navbar.css";
 @import "./CSS/FirstScreen-container.css";
 @import "./CSS/Typewriter.css";
 @import "./CSS/Loader.css";
 
-/* Below-the-fold CSS - загружается после */
+/* Below-the-fold CSS */
 @import "./CSS/Marquee.css";
 @import "./CSS/Toggle.css";
 @import "./CSS/Projects.css";
@@ -23,7 +23,7 @@
   --bg-circle-color: #b4fb6d;
   --bg-footer-color: #212121;
   --bg-fact-color: #ffffff;
-  --bg-fact-color2: #e06998;
+  --bg-fact-color2: #e88fb2;
   --bg-fact-color3: #b4fb6d;
 
   /* Text colors */
@@ -37,7 +37,7 @@
   --bg-nav-color-switch: #b4fb6d9a;
 
   /* Tag colors */
-  --tag1-color: #e06998;
+  --tag1-color: #e88fb2;
   --tag2-color: #ffffff;
 
   /* Cursor colors - stable to prevent CLS */
