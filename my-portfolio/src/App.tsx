@@ -17,7 +17,7 @@ const validPaths = [
   '/#FirstScreen',
   '/#Resume',
   '/#Projects',
-  '/#AboutMe',
+  '/#About',
   '/#Contacts',
 ]
 

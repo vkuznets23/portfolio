@@ -10,16 +10,16 @@ export default function AboutMe() {
   const { data } = useAppData(language)
   const header: string = useTypografCombined(
     data?.aboutMe?.header || '',
-    language
+    language,
   )
   const description: string = useTypografCombined(
     data?.aboutMe?.description || '',
-    language
+    language,
   )
 
   const facts: string[] = useFactsTypograf(
     data?.aboutMe?.facts?.map((fact) => fact.fact) || [],
-    language
+    language,
   )
 
   const ref = useRef<HTMLDivElement>(null)
@@ -36,7 +36,7 @@ export default function AboutMe() {
           observer.disconnect()
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     )
 
     if (ref.current) {
