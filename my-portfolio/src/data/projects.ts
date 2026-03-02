@@ -46,6 +46,17 @@ export const projectsData = {
         image: '/photos/portfolio.mp4?v=2',
         poster: '/photos/poster_portfolio.webp',
       },
+      {
+        id: 3,
+        name: 'Taskly app [in progress]',
+        description:
+          'a flexible task management workspace with authorization, kanban and table views, powerful filters, search, and dark mode',
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Next.js'],
+        github: 'https://github.com/vkuznets23/taskle',
+        live: 'https://taskly-eosin-ten.vercel.app/',
+        image: '/photos/taskly.mp4',
+        poster: '/photos/taskly.webp',
+      },
     ],
   },
   ru: {
@@ -78,6 +89,17 @@ export const projectsData = {
         github: 'https://github.com/vkuznets23/portfolio',
         image: '/photos/portfolio.mp4?v=2',
         poster: '/photos/poster_portfolio.webp',
+      },
+      {
+        id: 3,
+        name: 'Taskly app [в процессе]',
+        description:
+          'рабочее пространство для управления задачами. Авторизация, канбан, таблицы, фильтры, поиск и тёмная тема',
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Next.js'],
+        github: 'https://github.com/vkuznets23/taskle',
+        live: 'https://taskly-eosin-ten.vercel.app/',
+        image: '/photos/taskly.mp4',
+        poster: '/photos/taskly.webp',
       },
     ],
   },
