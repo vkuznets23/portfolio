@@ -51,7 +51,7 @@ export const projectsData = {
         name: 'Taskly app [in progress]',
         description:
           'a flexible task management workspace with authorization, kanban and table views, powerful filters, search, and dark mode',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Next.js'],
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Node.js'],
         github: 'https://github.com/vkuznets23/taskle',
         live: 'https://taskly-eosin-ten.vercel.app/',
         image: '/photos/taskly.mp4',
@@ -95,7 +95,7 @@ export const projectsData = {
         name: 'Taskly app [в процессе]',
         description:
           'рабочее пространство для управления задачами. Авторизация, канбан, таблицы, фильтры, поиск и тёмная тема',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Next.js'],
+        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Node.js'],
         github: 'https://github.com/vkuznets23/taskle',
         live: 'https://taskly-eosin-ten.vercel.app/',
         image: '/photos/taskly.mp4',
