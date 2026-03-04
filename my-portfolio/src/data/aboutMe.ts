@@ -11,7 +11,7 @@ export const aboutMeData = {
       'Since it’s hard to sum myself up in only a few words, I thought I’d share some fun facts instead — they’ll give you a better idea of who I am',
     facts: [
       {
-        fact: 'I’m really into Japanese culture. I’ve been to Japan once, but I want to explore it more and more. Maybe one day I’ll even start learning Japanese.',
+        fact: 'I’m really into Japanese culture. I’ve been to Japan twice, but I want to explore it more and more. Maybe one day I’ll even start learning Japanese.',
       },
       {
         fact: 'I love taking round mirror selfies. If I see one, there’s no way I can just walk past it.',
@@ -48,7 +48,7 @@ export const aboutMeData = {
       'Мне трудно найти слова, чтобы описать себя в нескольких словах, поэтому я решила поделиться некоторыми забавными фактами, которые помогут познакомиться со мной поближе',
     facts: [
       {
-        fact: 'Я очень увлекаюсь японской культурой. Я была в Японии однажды, но хотела бы ездить туда ещё и ещё. Может однажды я даже начну учить японский.',
+        fact: 'Я очень увлекаюсь японской культурой. Я была в Японии дважды, но хотела бы ездить туда ещё и ещё. Может однажды я даже начну учить японский.',
       },
       {
         fact: 'Я люблю делать селфи в круглые зеркала и не могу пройти мимо если вижу одно.',
