@@ -6,13 +6,17 @@ export default function ExperienceObj({ date, name, description }: Experience) {
   const [toggle, setToggle] = useState(false)
   const headingId = useId()
   const contentId = useId()
+  const hasDescription = Boolean(description?.trim())
 
-  const bulletPoints = description
+  const bulletPoints = (description || '')
     .split('.')
     .map((s: string) => s.trim())
     .filter((s: string) => s.length > 0)
 
-  const handleToggle = () => setToggle(!toggle)
+  const handleToggle = () => {
+    if (!hasDescription) return
+    setToggle(!toggle)
+  }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === 'Enter' || e.key === ' ') {
@@ -27,10 +31,10 @@ export default function ExperienceObj({ date, name, description }: Experience) {
         className={toggle ? 'toggle active' : 'toggle'}
         onClick={handleToggle}
         onKeyDown={handleKeyDown}
-        tabIndex={0}
-        role="button"
-        aria-expanded={toggle}
-        aria-controls={contentId}
+        tabIndex={hasDescription ? 0 : -1}
+        role={hasDescription ? 'button' : undefined}
+        aria-expanded={hasDescription ? toggle : undefined}
+        aria-controls={hasDescription ? contentId : undefined}
         aria-labelledby={headingId}
       >
         <div className="toggleVisibleRow">
@@ -40,12 +44,14 @@ export default function ExperienceObj({ date, name, description }: Experience) {
               {name}
             </h3>
           </div>
-          <span
-            className={`toggleButton ${toggle ? 'active' : ''}`}
-            aria-hidden="true"
-          />
+          {hasDescription && (
+            <span
+              className={`toggleButton ${toggle ? 'active' : ''}`}
+              aria-hidden="true"
+            />
+          )}
         </div>
-        {toggle && (
+        {hasDescription && toggle && (
           <ul
             className="experienceDesc"
             id={contentId}

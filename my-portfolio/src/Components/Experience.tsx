@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { ExperienceObj } from '../Components'
 import { useGlobal, useAppData, useTypografCombined } from '../hooks'
 import { useExperienceTypograf } from '../hooks/useTypograph'
-import { type ExperienceType } from '../types/experience'
 import HeaderAndDescription from './HeaderAndDescription'
+import ExperienceObj from './ExperienceObj'
+import ExperienceToggle from './ExperienceToggle'
 
 export default function Experience() {
   const { language } = useGlobal()
@@ -11,15 +11,27 @@ export default function Experience() {
 
   const header: string = useTypografCombined(
     data?.experience?.header || '',
-    language
+    language,
   )
   const description: string = useTypografCombined(
     data?.experience?.description || '',
-    language
+    language,
   )
-  const experience: ExperienceType[] = useExperienceTypograf(
-    data?.experience?.experience || [],
-    language
+  const workHeader: string = useTypografCombined(
+    data?.experience?.workHeader || '',
+    language,
+  )
+  const educationHeader: string = useTypografCombined(
+    data?.experience?.educationHeader || '',
+    language,
+  )
+  const workExperience = useExperienceTypograf(
+    data?.experience?.workExperience || [],
+    language,
+  )
+  const educationAndCourses = useExperienceTypograf(
+    data?.experience?.educationAndCourses || [],
+    language,
   )
 
   // scroll animation
@@ -35,7 +47,7 @@ export default function Experience() {
           observer.disconnect()
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     )
 
     if (ref.current) {
@@ -56,22 +68,26 @@ export default function Experience() {
           id="experience-title"
           textCircle="scroll"
         />
+        <ExperienceToggle
+          header={educationHeader}
+          items={educationAndCourses}
+          language={language}
+        />
+        <h3 className="work-section-title">{workHeader}</h3>
         <div
-          className="toggleAll"
+          className="toggleAll work-toggle-list"
           role="list"
           aria-label={
-            language === 'en' ? 'Experience timeline' : 'Временная шкала опыта'
+            language === 'en' ? 'Work experience list' : 'Список опыта работы'
           }
         >
-          {experience.map((obj, i) => (
+          {workExperience.map((item, index) => (
             <div
-              key={i}
+              key={`${item.name}-${index}`}
               role="listitem"
-              aria-label={`${
-                language === 'en' ? 'Experience item' : 'Элемент опыта'
-              } ${i + 1}: ${obj.name}`}
+              aria-label={`${language === 'en' ? 'Work item' : 'Элемент работы'} ${index + 1}: ${item.name}`}
             >
-              <ExperienceObj {...obj} />
+              <ExperienceObj {...item} />
             </div>
           ))}
         </div>
