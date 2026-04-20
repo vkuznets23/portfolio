@@ -122,6 +122,12 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         organization: 'Business Collage',
         category: 'degree',
       },
+      {
+        date: '2025',
+        name: 'YKI тест, уровень B1',
+        organization: '',
+        category: 'certification',
+      },
     ],
   },
 }
