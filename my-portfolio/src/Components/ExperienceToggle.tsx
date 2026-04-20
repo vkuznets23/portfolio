@@ -22,6 +22,7 @@ export default function ExperienceToggle({
   header,
 }: ExperienceToggleProps) {
   const [activeCategory, setActiveCategory] = useState<EducationCategory>('all')
+  const [isExpanded, setIsExpanded] = useState(false)
 
   const categorizedItems: CategorizedExperience[] = useMemo(
     () =>
@@ -54,6 +55,13 @@ export default function ExperienceToggle({
       ),
     [activeCategory, categorizedItems],
   )
+
+  const visibleItems = useMemo(
+    () => (isExpanded ? filteredItems : filteredItems.slice(0, 4)),
+    [filteredItems, isExpanded],
+  )
+
+  const canShowMore = filteredItems.length > 4
 
   const labels: Record<EducationCategory, string> =
     language === 'en'
@@ -97,7 +105,10 @@ export default function ExperienceToggle({
               className={`education-filter-button ${
                 activeCategory === category ? 'active' : ''
               }`}
-              onClick={() => setActiveCategory(category)}
+              onClick={() => {
+                setActiveCategory(category)
+                setIsExpanded(false)
+              }}
             >
               {labels[category]} ({countByCategory[category]})
             </button>
@@ -105,24 +116,43 @@ export default function ExperienceToggle({
         </div>
       </div>
 
-      <div className="toggleAll" role="list">
-        {filteredItems.map((item, index) => (
-          <div
-            key={`${item.name}-${index}`}
-            className="education-card"
-            role="listitem"
-            aria-label={`${language === 'en' ? 'Education item' : 'Элемент образования'} ${index + 1}: ${item.name}`}
-          >
-            <div className="education-card-top">
-              <h4 className="education-card-title">{item.name}</h4>
-              <span className="education-card-date">{item.date}</span>
+      <div className="education-list-block">
+        <div className="toggleAll" role="list">
+          {visibleItems.map((item, index) => (
+            <div
+              key={`${item.name}-${index}`}
+              className="education-card"
+              role="listitem"
+              aria-label={`${language === 'en' ? 'Education item' : 'Элемент образования'} ${index + 1}: ${item.name}`}
+            >
+              <div className="education-card-top">
+                <h4 className="education-card-title">{item.name}</h4>
+                <span className="education-card-date">{item.date}</span>
+              </div>
+              {item.organization && (
+                <p className="education-card-subtitle">{item.organization}</p>
+              )}
+              <span className="education-card-chip">{labels[item.category]}</span>
             </div>
-            {item.organization && (
-              <p className="education-card-subtitle">{item.organization}</p>
-            )}
-            <span className="education-card-chip">{labels[item.category]}</span>
+          ))}
+        </div>
+        {canShowMore && (
+          <div className="education-more-row">
+            <button
+              type="button"
+              className="education-more-button"
+              onClick={() => setIsExpanded((prev) => !prev)}
+            >
+              {isExpanded
+                ? language === 'en'
+                  ? 'Show less'
+                  : 'Свернуть'
+                : language === 'en'
+                  ? 'Show more'
+                  : 'Показать еще'}
+            </button>
           </div>
-        ))}
+        )}
       </div>
     </>
   )

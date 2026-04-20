@@ -62,14 +62,49 @@
   gap: 20px;
   width: 100%;
   margin-top: 24px;
+  margin-bottom: 0;
+}
+
+.education-list-block {
   margin-bottom: 120px;
+}
+
+.education-more-row {
+  display: flex;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.education-more-button {
+  width: 100%;
+  border: 1px solid var(--accent-color);
+  border-radius: 999px;
+  background-color: var(--bg-switch-color);
+  color: var(--text-color);
+  font-family: "Montserrat", "Montserrat-fallback", sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.education-more-button:hover {
+  transform: translateY(-1px);
+}
+
+.education-more-button:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 3px;
 }
 
 .work-toggle-list {
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-  margin-bottom: 48px;
+  margin-bottom: 156px;
 }
 
 .education-card {
@@ -282,6 +317,15 @@
   .toggleAll {
     grid-template-columns: 1fr;
     margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .education-more-row {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+
+  .education-list-block {
     margin-bottom: 40px;
   }
 
@@ -337,6 +381,11 @@
   .toggleAll {
     grid-template-columns: 1fr;
     gap: 10px;
+  }
+
+  .education-more-button {
+    font-size: 18px;
+    padding: 9px 16px;
   }
 
   .education-card {
@@ -418,6 +467,11 @@
 
   .toggle {
     padding: 20px;
+  }
+
+  .education-more-button {
+    font-size: 16px;
+    padding: 8px 14px;
   }
 
   .education-card-title {
