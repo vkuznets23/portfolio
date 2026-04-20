@@ -119,21 +119,42 @@ export default function ExperienceToggle({
       <div className="education-list-block">
         <div className="toggleAll" role="list">
           {visibleItems.map((item, index) => (
-            <div
-              key={`${item.name}-${index}`}
-              className="education-card"
-              role="listitem"
-              aria-label={`${language === 'en' ? 'Education item' : 'Элемент образования'} ${index + 1}: ${item.name}`}
-            >
-              <div className="education-card-top">
-                <h4 className="education-card-title">{item.name}</h4>
-                <span className="education-card-date">{item.date}</span>
+            item.link ? (
+              <a
+                key={`${item.name}-${index}`}
+                className="education-card education-card-link"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                role="listitem"
+                aria-label={`${language === 'en' ? 'Education item' : 'Элемент образования'} ${index + 1}: ${item.name}`}
+              >
+                <div className="education-card-top">
+                  <h4 className="education-card-title">{item.name}</h4>
+                  <span className="education-card-date">{item.date}</span>
+                </div>
+                {item.organization && (
+                  <p className="education-card-subtitle">{item.organization}</p>
+                )}
+                <span className="education-card-chip">{labels[item.category]}</span>
+              </a>
+            ) : (
+              <div
+                key={`${item.name}-${index}`}
+                className="education-card"
+                role="listitem"
+                aria-label={`${language === 'en' ? 'Education item' : 'Элемент образования'} ${index + 1}: ${item.name}`}
+              >
+                <div className="education-card-top">
+                  <h4 className="education-card-title">{item.name}</h4>
+                  <span className="education-card-date">{item.date}</span>
+                </div>
+                {item.organization && (
+                  <p className="education-card-subtitle">{item.organization}</p>
+                )}
+                <span className="education-card-chip">{labels[item.category]}</span>
               </div>
-              {item.organization && (
-                <p className="education-card-subtitle">{item.organization}</p>
-              )}
-              <span className="education-card-chip">{labels[item.category]}</span>
-            </div>
+            )
           ))}
         </div>
         {canShowMore && (

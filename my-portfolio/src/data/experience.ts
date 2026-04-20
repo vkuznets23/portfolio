@@ -5,6 +5,7 @@ export interface Experience {
   name: string
   description?: string
   organization?: string
+  link?: string
   category?: EducationCategory
 }
 
@@ -49,6 +50,7 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         date: 'Nov 2024 - Mar 2025',
         name: 'Full Stack Open',
         organization: 'University of Helsinki',
+        link: 'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/ca86731fd79104cef394d97e62a6777c',
         category: 'course',
       },
       {
@@ -58,27 +60,31 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'degree',
       },
       {
-        date: '2025',
+        date: 'Jan 2025',
         name: 'Learning TypeScript',
         organization: 'Codecademy',
+        link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/56fb1e71303e37b643bb1905f31c8a09',
         category: 'course',
       },
       {
-        date: '2025',
+        date: 'Feb 2026',
         name: 'Learning Kotlin',
         organization: 'Codecademy',
+        link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/a549293c6e8d62a61ef1bec410b58162',
         category: 'course',
       },
       {
         date: '2025',
         name: 'Accessibility fundamentals',
         organization: 'Microsoft',
+        link: 'https://learn.microsoft.com/en-gb/users/ViktoriiaKuznetsova-8317/achievements/82AR57DW?ref=https%3a%2f%2fwww.linkedin.com%2f',
         category: 'course',
       },
       {
         date: '2025',
         name: 'YKI test B1 level',
         organization: '',
+        link: 'https://opintopolku.fi/koski/opinnot/32d456ac2f7a4dc5ba3bd56078208501',
         category: 'certification',
       },
     ],

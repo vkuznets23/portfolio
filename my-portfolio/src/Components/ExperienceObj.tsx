@@ -40,7 +40,7 @@ export default function ExperienceObj({ date, name, description }: Experience) {
         <div className="toggleVisibleRow">
           <div>
             <span className="date">{date}</span>
-            <h3 id={headingId} className="h4">
+            <h3 id={headingId} className="work-card-title">
               {name}
             </h3>
           </div>

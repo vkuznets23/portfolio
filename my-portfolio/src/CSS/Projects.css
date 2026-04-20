@@ -220,14 +220,15 @@
   margin: auto;
   margin-top: 90px;
   margin-bottom: 120px;
-  padding: 20px;
-  font-size: 22px;
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 1.2;
   font-family: "Montserrat";
   font-weight: 300;
   border: 1px solid var(--text-color);
   color: var(--text-color);
   background-color: transparent;
-  border-radius: 40px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -375,7 +376,7 @@
   }
 
   .allProjectsButton {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 70px;
     margin-bottom: 50px;
   }

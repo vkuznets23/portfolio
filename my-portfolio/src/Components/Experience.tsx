@@ -73,7 +73,7 @@ export default function Experience() {
           items={educationAndCourses}
           language={language}
         />
-        <h3 className="work-section-title">{workHeader}</h3>
+        <h2 className="work-section-title">{workHeader}</h2>
         <div
           className="toggleAll work-toggle-list"
           role="list"
