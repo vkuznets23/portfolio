@@ -36,16 +36,6 @@ export const projectsData = {
         image: '/photos/camagru.mp4?v=2',
         poster: '/photos/camagru_poster.webp',
       },
-      // {
-      //   id: 2,
-      //   name: 'IRC Server',
-      //   description:
-      //     'Implementation of an IRC (Internet Relay Chat) server written in C++. Supports multiple clients, channels, authentication and real-time messaging via TCP sockets following IRC protocol.',
-      //   technologies: ['C++', 'TCP/IP', 'IRC Protocol'],
-      //   github: 'https://github.com/vkuznets23/ft_irc',
-      //   image: '',
-      //   poster: '',
-      // },
       {
         id: 2,
         name: 'Wolt Frontend Assignment — Delivery Order Price Calculator',
@@ -66,7 +56,7 @@ export const projectsData = {
   },
   ru: {
     description:
-      'Большинство моих проектов в Hive были написаны на C и не связаны с фронтендом. Здесь вы увидите мои личные проекты, в которых я оттачивала навыки фронтенд-архитектуры, управления состоянием, работы с API и создания production-ready приложений с CI/CD.',
+      'Большинство моих проектов в Hive были написаны на C и не связаны с веб разработкой. Здесь вы увидите мои личные проекты, в которых я оттачивала навыки фронтенд и бэкенд-архитектуры, управления состоянием, работы с API и создания production-ready приложений с CI/CD.',
     projects: [
       {
         id: 1,
