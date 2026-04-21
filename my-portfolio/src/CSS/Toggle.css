@@ -19,7 +19,7 @@
 .education-filter {
   display: flex;
   flex-wrap: nowrap;
-  gap: 12px;
+  gap: 8px;
   margin-top: 0;
 }
 
@@ -116,6 +116,37 @@
   min-height: 170px;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.education-card::before {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  right: -100px;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(
+    circle,
+    var(--bg-circle-color) 0%,
+    rgba(180, 251, 109, 0) 70%
+  );
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  z-index: 0;
+}
+
+.education-card:hover::before,
+.education-card:focus-within::before {
+  opacity: 1;
 }
 
 .education-card-link {
@@ -369,7 +400,7 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 0px;
   }
 
   .education-section-title {
@@ -382,7 +413,7 @@
     flex-wrap: wrap;
     width: 100%;
     margin-top: 20px;
-    gap: 10px;
+    gap: 12px;
     justify-content: center;
   }
 
@@ -484,6 +515,7 @@
 
   .work-toggle-list {
     margin-top: 44px;
+    margin-bottom: 60px;
   }
 
   .work-card-title {
@@ -492,6 +524,15 @@
 }
 
 @media screen and (max-width: 700px) {
+  .work-section-title,
+  .education-section-title {
+    font-size: 36px;
+  }
+
+  .work-section-title {
+    margin-bottom: 20px;
+  }
+
   .toggleAll {
     margin-top: 0px;
   }

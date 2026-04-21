@@ -44,6 +44,7 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         date: 'Apr 2024 - Oct 2025',
         name: 'Programming studies',
         organization: 'Hive Helsinki',
+        link: 'https://certificates.hive.fi/e0fdab62-ed39-4871-98dd-e9cf3028d4c9',
         category: 'course',
       },
       {
@@ -74,14 +75,14 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'course',
       },
       {
-        date: '2025',
+        date: 'Nov 2025',
         name: 'Accessibility fundamentals',
         organization: 'Microsoft',
         link: 'https://learn.microsoft.com/en-gb/users/ViktoriiaKuznetsova-8317/achievements/82AR57DW?ref=https%3a%2f%2fwww.linkedin.com%2f',
         category: 'course',
       },
       {
-        date: '2025',
+        date: 'Nov 2025',
         name: 'YKI test B1 level',
         organization: '',
         link: 'https://opintopolku.fi/koski/opinnot/32d456ac2f7a4dc5ba3bd56078208501',
