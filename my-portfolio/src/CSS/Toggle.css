@@ -287,6 +287,26 @@
   align-items: center;
 }
 
+.toggleVisibleRowButton {
+  width: 100%;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.toggleVisibleRowButton:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 4px;
+  border-radius: 12px;
+}
+
 .toggleVisibleRow > div {
   flex: 1 1 auto;
   min-width: 200px;

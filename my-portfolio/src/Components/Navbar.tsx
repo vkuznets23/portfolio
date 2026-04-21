@@ -63,11 +63,6 @@ export default function Navbar() {
         href="#Resume"
         onClick={handleNavClick}
         tabIndex={linksTabIndex}
-        aria-label={
-          language === 'en'
-            ? 'Go to Resume section'
-            : 'Перейти к разделу Резюме'
-        }
       >
         {language === 'en' ? 'Resume' : 'Резюме'}
       </a>
@@ -75,11 +70,6 @@ export default function Navbar() {
         href="#Projects"
         onClick={handleNavClick}
         tabIndex={linksTabIndex}
-        aria-label={
-          language === 'en'
-            ? 'Go to Projects section'
-            : 'Перейти к разделу Проекты'
-        }
       >
         {language === 'en' ? 'Projects' : 'Проекты'}
       </a>
@@ -87,11 +77,6 @@ export default function Navbar() {
         href="#About"
         onClick={handleNavClick}
         tabIndex={linksTabIndex}
-        aria-label={
-          language === 'en'
-            ? 'Go to About me section'
-            : 'Перейти к разделу Обо мне'
-        }
       >
         {language === 'en' ? 'About me' : 'Обо мне'}
       </a>
@@ -99,11 +84,6 @@ export default function Navbar() {
         href="#Contacts"
         onClick={handleNavClick}
         tabIndex={linksTabIndex}
-        aria-label={
-          language === 'en'
-            ? 'Go to Contacts section'
-            : 'Перейти к разделу Контакты'
-        }
       >
         {language === 'en' ? 'Contacts' : 'Контакты'}
       </a>
@@ -180,7 +160,6 @@ export default function Navbar() {
   return (
     <nav
       className={`navbar-container ${visible ? 'visible' : 'hidden'}`}
-      role="navigation"
       aria-label={language === 'en' ? 'Main navigation' : 'Основная навигация'}
     >
       <div className="navbar">
@@ -208,9 +187,6 @@ export default function Navbar() {
         <div
           className={`Links ${menuOpen ? 'open' : ''}`}
           id={menuId}
-          aria-label={
-            language === 'en' ? 'Navigation links' : 'Навигационные ссылки'
-          }
         >
           {links}
           {menuOpen && buttons(false)}
