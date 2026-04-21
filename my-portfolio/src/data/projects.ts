@@ -17,7 +17,7 @@ export interface ProjectsData {
 export const projectsData = {
   en: {
     description:
-      'Most of my Hive projects are written in C and aren’t related to frontend development. Here, you’ll mainly find my pet projects, which helped me learn frontend architecture, state management, working with APIs, and building production-ready applications with CI/CD pipelines.',
+      'Most of my Hive projects are written in C and aren’t related to web development. Here you’ll find projects that helped me build practical skills in frontend and backend architecture, state management, API integration, and developing production-ready applications with CI/CD pipelines.',
     projects: [
       {
         id: 1,
