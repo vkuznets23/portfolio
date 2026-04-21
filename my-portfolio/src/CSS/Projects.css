@@ -100,6 +100,12 @@
   height: 300px;
 }
 
+@media screen and (max-width: 1070px) {
+  .project-image-wrapper {
+    height: 470px;
+  }
+}
+
 .project-image-wrapper:hover .overlay {
   opacity: 1;
 }
@@ -191,13 +197,17 @@
 .project-wrapper.hidden {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .project-wrapper.fade-in {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.5s ease, transform 0.5s ease;
+  transition:
+    opacity 0.5s ease,
+    transform 0.5s ease;
 }
 
 .project-wrapper.delay-0 {
