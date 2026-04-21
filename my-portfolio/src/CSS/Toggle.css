@@ -504,12 +504,17 @@
   }
 
   .education-card-title {
+    flex: 1 1 auto;
+    min-width: 0;
     font-size: 24px;
   }
 
   .education-card-date {
     order: 0;
     font-size: 18px;
+    white-space: normal;
+    text-align: right;
+    max-width: 45%;
   }
 
   .education-card-subtitle {
@@ -566,6 +571,10 @@
     font-size: 22px;
   }
 
+  .work-card-title {
+    font-size: 22px;
+  }
+
   .education-card-date {
     font-size: 17px;
   }
@@ -604,6 +613,10 @@
   }
 
   .education-card-title {
+    font-size: 20px;
+  }
+
+  .work-card-title {
     font-size: 20px;
   }
 
