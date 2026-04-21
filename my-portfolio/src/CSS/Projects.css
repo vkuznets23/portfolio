@@ -61,7 +61,7 @@
 }
 
 .project-card {
-  border-radius: 30px;
+  border-radius: 22px;
 }
 
 .project-card:focus-within .overlay {
@@ -70,7 +70,7 @@
 
 .project-img {
   width: 100%;
-  max-height: 300px;
+  height: 100%;
   object-fit: cover;
   border-radius: inherit;
   display: block;
@@ -94,10 +94,10 @@
 
 .project-image-wrapper {
   position: relative;
-  border-radius: 40px;
+  border-radius: 22px;
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 .project-image-wrapper:hover .overlay {
@@ -390,7 +390,7 @@
   }
 
   .project-image-wrapper {
-    border-radius: 30px;
+    border-radius: 22px;
   }
 
   .projectHeader {
