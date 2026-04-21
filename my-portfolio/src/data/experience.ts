@@ -78,7 +78,6 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         date: 'Nov 2025',
         name: 'YKI test B1 level',
         organization: '',
-        link: 'https://opintopolku.fi/koski/opinnot/32d456ac2f7a4dc5ba3bd56078208501',
         category: 'certification',
       },
       {
