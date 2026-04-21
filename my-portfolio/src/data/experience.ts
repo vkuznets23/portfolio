@@ -118,7 +118,7 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'course',
       },
       {
-        date: 'Нояб 2024 - н.в.',
+        date: 'Нояб 2024 - Март 2025',
         name: 'Full Stack Open',
         organization: 'Университет Хельсинки',
         category: 'course',
@@ -130,7 +130,28 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'degree',
       },
       {
-        date: '2025',
+        date: 'Янв 2025',
+        name: 'Learning TypeScript',
+        organization: 'Codecademy',
+        link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/56fb1e71303e37b643bb1905f31c8a09',
+        category: 'course',
+      },
+      {
+        date: 'Фев 2026',
+        name: 'Learning Kotlin',
+        organization: 'Codecademy',
+        link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/a549293c6e8d62a61ef1bec410b58162',
+        category: 'course',
+      },
+      {
+        date: 'Нояб 2025',
+        name: 'Accessibility fundamentals',
+        organization: 'Microsoft',
+        link: 'https://learn.microsoft.com/en-gb/users/ViktoriiaKuznetsova-8317/achievements/82AR57DW?ref=https%3a%2f%2fwww.linkedin.com%2f',
+        category: 'course',
+      },
+      {
+        date: 'Нояб 2025',
         name: 'YKI тест, уровень B1',
         organization: '',
         category: 'certification',

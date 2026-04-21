@@ -124,16 +124,12 @@ export default function ExperienceToggle({
                 key={`${item.name}-${index}`}
                 item={item}
                 chipLabel={labels[item.category]}
-                index={index}
-                language={language}
               />
             ) : (
               <EducationStaticCard
                 key={`${item.name}-${index}`}
                 item={item}
                 chipLabel={labels[item.category]}
-                index={index}
-                language={language}
               />
             ),
           )}

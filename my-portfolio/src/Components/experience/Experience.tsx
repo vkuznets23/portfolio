@@ -85,7 +85,6 @@ export default function Experience() {
             <div
               key={`${item.name}-${index}`}
               role="listitem"
-              aria-label={`${language === 'en' ? 'Work item' : 'Элемент работы'} ${index + 1}: ${item.name}`}
             >
               <ExperienceObj {...item} />
             </div>

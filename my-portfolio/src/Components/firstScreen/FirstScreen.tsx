@@ -20,7 +20,7 @@ export default function FirstScreen() {
 
   return (
     <section id="FirstScreen">
-      <div className="firstScreen-container, slide-up" role="banner">
+      <header className="firstScreen-container, slide-up">
         {options && options.length > 0 && (
           <Typewriter line1={firstLine} options={options} />
         )}
@@ -58,7 +58,7 @@ export default function FirstScreen() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </section>
   )
 }
