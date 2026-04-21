@@ -427,6 +427,10 @@
     padding: 20px;
   }
 
+  .project-image-wrapper {
+    height: 300px;
+  }
+
   .experience-container {
     padding: 20px;
   }
