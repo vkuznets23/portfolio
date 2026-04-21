@@ -238,14 +238,14 @@
 .allProjectsButton:focus-visible {
   outline: 3px solid var(--focus-color);
   background-color: var(--tag1-color);
-  border: none;
+  border-color: var(--tag1-color);
   color: white;
   outline-offset: 2px;
 }
 
 .allProjectsButton:hover {
   background-color: var(--tag1-color);
-  border: none;
+  border-color: var(--tag1-color);
   color: white;
 }
 
