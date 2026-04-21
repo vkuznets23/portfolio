@@ -1,4 +1,4 @@
-import { useGlobal } from '../hooks'
+import { useGlobal } from '../../hooks'
 
 export const Logo = () => {
   const { theme } = useGlobal()

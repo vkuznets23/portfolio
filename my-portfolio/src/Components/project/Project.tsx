@@ -1,5 +1,5 @@
-import { useGlobal } from '../hooks'
-import type { Project as ProjectType } from '../data/projects'
+import { useGlobal } from '../../hooks'
+import type { Project as ProjectType } from '../../data/projects'
 import LazyVideo from './LazyVideo'
 
 type ProjectProps = {

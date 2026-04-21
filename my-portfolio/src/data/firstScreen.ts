@@ -17,7 +17,7 @@ export const firstScreenData = {
       options: {
         option1: 'Web\nDeveloper',
         option2: 'Career\nChanger',
-        option3: 'Student\nat Hive',
+        option3: 'Hive\nAlumnus',
       },
     },
     description:
@@ -29,7 +29,7 @@ export const firstScreenData = {
       options: {
         option1: 'ПО\nразработчик',
         option2: 'бывший\nдизайнер',
-        option3: 'студент\nшколы Hive',
+        option3: 'Hive\nвыпускница',
       },
     },
     description:

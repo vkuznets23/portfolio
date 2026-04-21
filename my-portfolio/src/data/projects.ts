@@ -17,7 +17,7 @@ export interface ProjectsData {
 export const projectsData = {
   en: {
     description:
-      'Most of my Hive projects are written in C and aren’t related to frontend development. Here, you’ll mainly find my pet projects, which helped me learn frontend architecture, state management, working with APIs, and building production-ready applications with CI/CD pipelines.',
+      'Most of my Hive projects are written in C and aren’t related to web development. Here you’ll find projects that helped me build practical skills in frontend and backend architecture, state management, API integration, and developing production-ready applications with CI/CD pipelines.',
     projects: [
       {
         id: 1,
@@ -38,30 +38,25 @@ export const projectsData = {
       },
       {
         id: 2,
-        name: 'Portfolio Website',
+        name: 'Wolt Frontend Assignment — Delivery Order Price Calculator',
         description:
-          'Built a multilingual, accessible portfolio featuring smooth scroll animations, theme switching, and a user-friendly interface. Also developed a custom typography tool for the project. Deployed here.',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Jest'],
-        github: 'https://github.com/vkuznets23/portfolio',
-        image: '/photos/portfolio.mp4?v=2',
-        poster: '/photos/poster_portfolio.webp',
-      },
-      {
-        id: 3,
-        name: 'Taskly app [in progress]',
-        description:
-          'a flexible task management workspace with authorization, kanban and table views, powerful filters, search, and dark mode',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Node.js'],
-        github: 'https://github.com/vkuznets23/taskle',
-        live: 'https://taskly-eosin-ten.vercel.app/',
-        image: '/photos/taskly.mp4',
-        poster: '/photos/taskly.webp',
+          "A frontend take-home assignment built for Wolt's recruitment process. The task was to implement a delivery order price calculator — a form-based tool that computes the total delivery fee based on cart value, delivery distance, number of items, and time of order, following Wolt's specific pricing rules.",
+        technologies: [
+          'React',
+          'TypeScript',
+          'Vanilla CSS',
+          'Jest',
+          'Playwright',
+        ],
+        github: 'https://github.com/vkuznets23/woltFrontend2025',
+        image: '/photos/wolt_assignment2025.mp4',
+        poster: '/photos/wolt_assignment2025.webp',
       },
     ],
   },
   ru: {
     description:
-      'Большинство моих проектов в Hive были написаны на C и не связаны с фронтендом. Здесь вы увидите мои личные проекты, в которых я оттачивала навыки фронтенд-архитектуры, управления состоянием, работы с API и создания production-ready приложений с CI/CD.',
+      'Большинство моих проектов в Hive были написаны на C и не связаны с веб разработкой. Здесь вы увидите мои личные проекты, в которых я оттачивала навыки фронтенд и бэкенд-архитектуры, управления состоянием, работы с API и создания production-ready приложений с CI/CD.',
     projects: [
       {
         id: 1,
@@ -82,24 +77,19 @@ export const projectsData = {
       },
       {
         id: 2,
-        name: 'Сайт-портфолио',
+        name: 'Задание на Frontend — Калькулятор стоимости доставки',
         description:
-          'Создан мультиязычный, доступный портфолио вебсайт с плавными анимациями, переключением темы и удобным интерфейсом. Также разработан собственный инструмент для типографики для проекта.',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Jest'],
-        github: 'https://github.com/vkuznets23/portfolio',
-        image: '/photos/portfolio.mp4?v=2',
-        poster: '/photos/poster_portfolio.webp',
-      },
-      {
-        id: 3,
-        name: 'Taskly app [в процессе]',
-        description:
-          'рабочее пространство для управления задачами. Авторизация, канбан, таблицы, фильтры, поиск и тёмная тема',
-        technologies: ['React', 'TypeScript', 'Vanilla CSS', 'Node.js'],
-        github: 'https://github.com/vkuznets23/taskle',
-        live: 'https://taskly-eosin-ten.vercel.app/',
-        image: '/photos/taskly.mp4',
-        poster: '/photos/taskly.webp',
+          "Задание на Frontend для Wolt's recruitment process. Задача была реализовать калькулятор стоимости доставки — инструмент на основе формы, который вычисляет общую стоимость доставки на основе стоимости корзины, расстояния доставки, количества товаров и времени заказа, следуя специфическим правилам ценообразования Wolt's.",
+        technologies: [
+          'React',
+          'TypeScript',
+          'Vanilla CSS',
+          'Jest',
+          'Playwright',
+        ],
+        github: 'https://github.com/vkuznets23/woltFrontend2025',
+        image: '/photos/wolt_assignment2025.mp4',
+        poster: '/photos/wolt_assignment2025.webp',
       },
     ],
   },

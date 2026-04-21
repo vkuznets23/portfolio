@@ -61,7 +61,7 @@
 }
 
 .project-card {
-  border-radius: 30px;
+  border-radius: 22px;
 }
 
 .project-card:focus-within .overlay {
@@ -70,7 +70,7 @@
 
 .project-img {
   width: 100%;
-  max-height: 300px;
+  height: 100%;
   object-fit: cover;
   border-radius: inherit;
   display: block;
@@ -94,10 +94,10 @@
 
 .project-image-wrapper {
   position: relative;
-  border-radius: 40px;
+  border-radius: 22px;
   overflow: hidden;
   width: 100%;
-  height: auto;
+  height: 300px;
 }
 
 .project-image-wrapper:hover .overlay {
@@ -220,14 +220,15 @@
   margin: auto;
   margin-top: 90px;
   margin-bottom: 120px;
-  padding: 20px;
-  font-size: 22px;
+  padding: 12px 24px;
+  font-size: 18px;
+  line-height: 1.2;
   font-family: "Montserrat";
   font-weight: 300;
   border: 1px solid var(--text-color);
   color: var(--text-color);
   background-color: transparent;
-  border-radius: 40px;
+  border-radius: 999px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -237,14 +238,14 @@
 .allProjectsButton:focus-visible {
   outline: 3px solid var(--focus-color);
   background-color: var(--tag1-color);
-  border: none;
+  border-color: var(--tag1-color);
   color: white;
   outline-offset: 2px;
 }
 
 .allProjectsButton:hover {
   background-color: var(--tag1-color);
-  border: none;
+  border-color: var(--tag1-color);
   color: white;
 }
 
@@ -375,7 +376,7 @@
   }
 
   .allProjectsButton {
-    font-size: 22px;
+    font-size: 18px;
     margin-top: 70px;
     margin-bottom: 50px;
   }
@@ -389,7 +390,7 @@
   }
 
   .project-image-wrapper {
-    border-radius: 30px;
+    border-radius: 22px;
   }
 
   .projectHeader {

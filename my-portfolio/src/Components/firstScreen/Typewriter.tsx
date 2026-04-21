@@ -6,13 +6,11 @@ type TypewriterProps = {
 }
 
 export default function Typewriter({ line1, options }: TypewriterProps) {
-  const fullText = `${line1} ${options.join(', ')}`
-
   return (
-    <div className="hero" role="heading" aria-level={1} aria-label={fullText}>
-      <div className="line1-container" aria-hidden="true">
+    <h1 className="hero">
+      <span className="line1-container">
         <span className="line1-fixed">{line1}</span>{' '}
-        <p className="hero-typewriter">
+        <span className="hero-typewriter">
           <TypewriterDef
             words={options}
             loop
@@ -24,8 +22,8 @@ export default function Typewriter({ line1, options }: TypewriterProps) {
             delaySpeed={1000}
             cursorColor="var(--cursor-color)"
           />
-        </p>
-      </div>
-    </div>
+        </span>
+      </span>
+    </h1>
   )
 }

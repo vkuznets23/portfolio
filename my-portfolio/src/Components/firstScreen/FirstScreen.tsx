@@ -1,6 +1,6 @@
 import Typewriter from './Typewriter'
-import CircularText from './CircleText'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import CircularText from '../uiComponents/CircleText'
+import { useGlobal, useAppData, useTypografCombined } from '../../hooks'
 
 export default function FirstScreen() {
   const { language } = useGlobal()
@@ -8,19 +8,19 @@ export default function FirstScreen() {
 
   const firstLine: string = useTypografCombined(
     data?.firstScreen?.header?.line1 || '',
-    language
+    language,
   )
   const options: string[] = data?.firstScreen?.header?.options
     ? Object.values(data.firstScreen.header.options)
     : []
   const description: string = useTypografCombined(
     data?.firstScreen?.description || '',
-    language
+    language,
   )
 
   return (
     <section id="FirstScreen">
-      <div className="firstScreen-container, slide-up" role="banner">
+      <header className="firstScreen-container, slide-up">
         {options && options.length > 0 && (
           <Typewriter line1={firstLine} options={options} />
         )}
@@ -58,7 +58,7 @@ export default function FirstScreen() {
             </div>
           </div>
         </div>
-      </div>
+      </header>
     </section>
   )
 }

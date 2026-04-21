@@ -130,7 +130,8 @@ export function useExperienceTypograf(
       experience.map((item) => ({
         ...item,
         name: typografCombined(item.name, lang),
-        description: typografCombined(item.description, lang),
+        description: typografCombined(item.description || '', lang),
+        organization: typografCombined(item.organization || '', lang),
       })),
     [experience, lang]
   )
