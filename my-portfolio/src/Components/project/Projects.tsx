@@ -45,7 +45,10 @@ export default function Projects() {
 
   //animation of header
   useEffect(() => {
-    if (window.innerWidth <= 900) return () => setVisible(true)
+    if (window.innerWidth <= 900) {
+      setVisible(true)
+      return
+    }
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
