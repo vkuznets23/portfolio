@@ -5,7 +5,7 @@ import { IoMdMoon } from 'react-icons/io'
 import { RxHamburgerMenu } from 'react-icons/rx'
 import { VscClose } from 'react-icons/vsc'
 import '../CSS/Navbar.css'
-import { Logo } from './logo'
+import { Logo } from './uiComponents/logo'
 
 export default function Navbar() {
   const { language, setLanguage, theme, setTheme } = useGlobal()
@@ -149,8 +149,8 @@ export default function Navbar() {
                 ? 'Switch to light theme'
                 : 'Switch to dark theme'
               : theme === 'dark'
-              ? 'Переключить на светлую тему'
-              : 'Переключить на тёмную тему'
+                ? 'Переключить на светлую тему'
+                : 'Переключить на тёмную тему'
           }
           style={{
             display: 'flex',
@@ -198,8 +198,8 @@ export default function Navbar() {
                 ? 'Close menu'
                 : 'Закрыть меню'
               : language === 'en'
-              ? 'Open menu'
-              : 'Открыть меню'
+                ? 'Open menu'
+                : 'Открыть меню'
           }
         >
           {menuOpen ? <VscClose /> : <RxHamburgerMenu />}

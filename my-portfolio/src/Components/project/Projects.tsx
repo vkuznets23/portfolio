@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from 'react'
-import type { Project as ProjectType } from '../data/projects'
-import { Project, TextCircle } from '../Components'
+import type { Project as ProjectType } from '../../data/projects'
+import { Project, TextCircle } from '..'
 import {
   useGlobal,
   useAppData,
   useTypografCombined,
   useProjectsTypograf,
-} from '../hooks'
+} from '../../hooks'
 
 export default function Projects() {
   const { language } = useGlobal()
@@ -14,11 +14,11 @@ export default function Projects() {
 
   const description: string = useTypografCombined(
     data?.projects?.description || '',
-    language
+    language,
   )
   const projects: ProjectType[] = useProjectsTypograf(
     data?.projects?.projects || [],
-    language
+    language,
   )
 
   const headerRef = useRef<HTMLDivElement>(null)
@@ -52,7 +52,7 @@ export default function Projects() {
           setVisible(true)
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     )
 
     if (headerRef.current) {
@@ -72,7 +72,7 @@ export default function Projects() {
           document.body.classList.remove('projects-bg')
         }
       },
-      { threshold: 0.1 }
+      { threshold: 0.1 },
     )
 
     if (containerRef.current) {
@@ -103,7 +103,7 @@ export default function Projects() {
           }
         })
       },
-      { threshold: 0.01, rootMargin: '0px 0px -10% 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px -10% 0px' },
     )
 
     projectRefs.current.forEach((el) => {

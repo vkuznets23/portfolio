@@ -1,6 +1,6 @@
 import Typewriter from './Typewriter'
-import CircularText from './CircleText'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
+import CircularText from '../uiComponents/CircleText'
+import { useGlobal, useAppData, useTypografCombined } from '../../hooks'
 
 export default function FirstScreen() {
   const { language } = useGlobal()
@@ -8,14 +8,14 @@ export default function FirstScreen() {
 
   const firstLine: string = useTypografCombined(
     data?.firstScreen?.header?.line1 || '',
-    language
+    language,
   )
   const options: string[] = data?.firstScreen?.header?.options
     ? Object.values(data.firstScreen.header.options)
     : []
   const description: string = useTypografCombined(
     data?.firstScreen?.description || '',
-    language
+    language,
   )
 
   return (

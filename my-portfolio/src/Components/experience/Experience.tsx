@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
-import { useExperienceTypograf } from '../hooks/useTypograph'
-import HeaderAndDescription from './HeaderAndDescription'
+import { useGlobal, useAppData, useTypografCombined } from '../../hooks'
+import { useExperienceTypograf } from '../../hooks/useTypograph'
 import ExperienceObj from './ExperienceObj'
 import ExperienceToggle from './ExperienceToggle'
+import HeaderAndDescription from '../uiComponents/HeaderAndDescription'
 
 export default function Experience() {
   const { language } = useGlobal()

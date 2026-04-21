@@ -1,6 +1,6 @@
 import { useId, useState } from 'react'
 // useId helps you generate unique, stable IDs for accessibility attributes and form elements
-import type { Experience } from '../data/experience'
+import type { Experience } from '../../data/experience'
 
 export default function ExperienceObj({ date, name, description }: Experience) {
   const [toggle, setToggle] = useState(false)

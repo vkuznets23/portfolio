@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { useGlobal, useAppData, useTypografCombined } from '../hooks'
-import { useFactsTypograf } from '../hooks/useTypograph'
-import LazyVideo from './LazyVideo'
-import HeaderAndDescription from './HeaderAndDescription'
+import { useGlobal, useAppData, useTypografCombined } from '../../hooks'
+import { useFactsTypograf } from '../../hooks/useTypograph'
+import LazyVideo from '../project/LazyVideo'
+import HeaderAndDescription from '../uiComponents/HeaderAndDescription'
 import Fact from './Fact'
 
 export default function AboutMe() {

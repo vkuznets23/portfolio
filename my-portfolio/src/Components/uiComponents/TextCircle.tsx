@@ -1,4 +1,4 @@
-import { useGlobal } from '../hooks'
+import { useGlobal } from '../../hooks'
 import CircularText from './CircleText'
 
 export default function TextCircle({
