@@ -198,6 +198,7 @@
   color: var(--toggle-date-color);
 }
 
+
 .education-card-subtitle {
   margin: 6px 0 0 0;
   font-size: 22px;
@@ -516,6 +517,7 @@
     text-align: right;
     max-width: 45%;
   }
+
 
   .education-card-subtitle {
     font-size: 18px;

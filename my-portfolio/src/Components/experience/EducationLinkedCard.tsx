@@ -31,9 +31,7 @@ export default function EducationLinkedCard({
         <span className="education-card-date">
           {hasRangeDate ? (
             <>
-              {firstDatePart}
-              <br />
-              {secondDatePart}
+              {firstDatePart} - {secondDatePart}
             </>
           ) : (
             item.date
