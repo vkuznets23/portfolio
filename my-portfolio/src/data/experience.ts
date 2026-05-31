@@ -27,6 +27,10 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
     educationHeader: 'Education & courses',
     workExperience: [
       {
+        date: 'May 2026 - Present',
+        name: 'Test automation trainee at SSH',
+      },
+      {
         date: 'Nov 2021 - Jun 2022',
         name: 'UX/UI designer at Func.',
         description:
@@ -87,6 +91,13 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/a549293c6e8d62a61ef1bec410b58162',
         category: 'course',
       },
+      {
+        date: 'May 2026',
+        name: 'DevOps with Docker: docker basics',
+        organization: 'University of Helsinki x Eficode',
+        link: 'https://courses.mooc.fi/certificates/validate/k6u2mctkupqtt4m',
+        category: 'course',
+      },
     ],
   },
   ru: {
@@ -96,6 +107,10 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
     workHeader: 'Опыт работы',
     educationHeader: 'Образование и курсы',
     workExperience: [
+      {
+        date: 'Май 2026 - Настоящее время',
+        name: 'Test automation trainee в SSH',
+      },
       {
         date: 'Ноябрь 2021 - Июнь 2022',
         name: 'UX/UI дизайнер в Func.',
@@ -153,6 +168,13 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         name: 'Learning Kotlin',
         organization: 'Codecademy',
         link: 'https://www.codecademy.com/profiles/byte5932266809/certificates/a549293c6e8d62a61ef1bec410b58162',
+        category: 'course',
+      },
+      {
+        date: 'Май 2026',
+        name: 'DevOps with Docker: docker basics',
+        organization: 'University of Helsinki x Eficode',
+        link: 'https://courses.mooc.fi/certificates/validate/k6u2mctkupqtt4m',
         category: 'course',
       },
     ],
