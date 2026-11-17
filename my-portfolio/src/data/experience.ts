@@ -75,8 +75,8 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'course',
       },
       {
-        date: 'Aug 2025 - present',
-        name: 'Vocational qualification in ICT',
+        date: 'Aug 2025 - Oct 2026',
+        name: 'Vocational qualification in ICT (AVG: 4.93/5.00)',
         organization: 'Business Collage',
         category: 'degree',
       },
@@ -165,7 +165,7 @@ export const experienceData: Record<'en' | 'ru', ExperienceData> = {
         category: 'course',
       },
       {
-        date: 'Авг 2025 - н.в.',
+        date: 'Авг 2025 - Окт 2026',
         name: 'Профессиональная квалификация в ICT',
         organization: 'Business Collage',
         category: 'degree',
