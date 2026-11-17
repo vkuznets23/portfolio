@@ -52,6 +52,16 @@ export const projectsData = {
         image: '/photos/wolt_assignment2025.mp4',
         poster: '/photos/wolt_assignment2025.webp',
       },
+      {
+        id: 3,
+        name: 'Wolt Backend Assignment — Delivery Order Price Calculator',
+        description:
+          "A backend take-home assignment built for Wolt's recruitment process.",
+        technologies: ['Kotlin + Spring'],
+        github: 'https://github.com/vkuznets23/wolt_backend_assignment_2025',
+        image: '/photos/wolt_assignment_back.mp4',
+        poster: '/photos/wolt_assignment_back.webp',
+      },
     ],
   },
   ru: {
@@ -90,6 +100,16 @@ export const projectsData = {
         github: 'https://github.com/vkuznets23/woltFrontend2025',
         image: '/photos/wolt_assignment2025.mp4',
         poster: '/photos/wolt_assignment2025.webp',
+      },
+      {
+        id: 3,
+        name: 'Задание на Backend — Калькулятор стоимости доставки',
+        description:
+          "A backend take-home assignment built for Wolt's recruitment process.",
+        technologies: ['Kotlin + Spring'],
+        github: 'https://github.com/vkuznets23/wolt_backend_assignment_2025',
+        image: '/photos/wolt_assignment_back.mp4',
+        poster: '/photos/wolt_assignment_back.webp',
       },
     ],
   },
