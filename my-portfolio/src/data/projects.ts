@@ -38,7 +38,7 @@ export const projectsData = {
       },
       {
         id: 2,
-        name: 'Wolt Frontend Assignment — Delivery Order Price Calculator',
+        name: 'Delivery Order Price Calculator [Frontend]',
         description:
           "A frontend take-home assignment built for Wolt's recruitment process. The task was to implement a delivery order price calculator — a form-based tool that computes the total delivery fee based on cart value, delivery distance, number of items, and time of order, following Wolt's specific pricing rules.",
         technologies: [
@@ -54,9 +54,9 @@ export const projectsData = {
       },
       {
         id: 3,
-        name: 'Wolt Backend Assignment — Delivery Order Price Calculator',
+        name: 'Delivery Order Price Calculator [Backend]',
         description:
-          "A backend take-home assignment built for Wolt's recruitment process.",
+          'It exposes a single public API that loads venue static and dynamic data from the Home Assignment API static and dynamic, then computes delivery distance, fees, small-order surcharge, and total price (amounts in the smallest currency unit).',
         technologies: ['Kotlin + Spring', 'PostgreSQL', 'Docker'],
         github: 'https://github.com/vkuznets23/wolt_backend_assignment_2025',
         image: '/photos/wolt_assignment_back.mp4',
